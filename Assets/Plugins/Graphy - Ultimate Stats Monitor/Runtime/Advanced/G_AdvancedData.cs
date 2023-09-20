@@ -76,11 +76,13 @@ namespace Tayx.Graphy.Advanced
 
         #region Methods -> Unity Callbacks
 
+        [System.Obsolete]
         private void OnEnable()
         {
             Init();
         }
 
+        [System.Obsolete]
         private void Update()
         {
             m_deltaTime += Time.unscaledDeltaTime;
@@ -255,6 +257,7 @@ namespace Tayx.Graphy.Advanced
 
         #region Methods -> Private
 
+        [System.Obsolete]
         private void Init()
         {
             G_IntString.Init( 0, 7680 );
