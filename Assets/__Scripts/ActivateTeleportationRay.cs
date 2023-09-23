@@ -8,18 +8,23 @@ public class ActivateTeleportationRay : MonoBehaviour
     [SerializeField] private GameObject leftTeleportationRay;
     [SerializeField] private GameObject rightTeleportationRay;
 
+    [Header("Active")]
     [SerializeField] private InputActionProperty leftActive;
     [SerializeField] private InputActionProperty rightActive;
 
+    [Header("Cancel")]
+    [SerializeField] private InputActionProperty leftCancel;
+    [SerializeField] private InputActionProperty rightCancel;
+
     private void Update()
     {
-        ActivateRay(leftTeleportationRay, leftActive);
-        ActivateRay(rightTeleportationRay, rightActive);
+        ActivateRay(leftTeleportationRay, leftActive, leftCancel);
+        ActivateRay(rightTeleportationRay, rightActive, rightCancel);
     }
 
-    void ActivateRay(GameObject teleportationRay, InputActionProperty condition)
+    void ActivateRay(GameObject teleportationRay, InputActionProperty active, InputActionProperty cancel)
     {
-        bool shouldActivate = condition.action.ReadValue<float>() > 0.1f;
+        bool shouldActivate = active.action.ReadValue<float>() > 0.1f && cancel.action.ReadValue<float>() == 0;
         teleportationRay.SetActive(shouldActivate);
     }
 }
