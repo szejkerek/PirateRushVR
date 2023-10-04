@@ -9,7 +9,7 @@ public class ShootObjectParabolic : MonoBehaviour
     [SerializeField] private float gravity;
     [Space, SerializeField] private Transform shootingPoint;
 
-    public void LunchProjectile(Transform target, Projectile projectile)
+    public void LunchProjectile(Vector3 target, Projectile projectile)
     {
         Vector3 direction = CalculateDirection(target);
 
@@ -19,10 +19,10 @@ public class ShootObjectParabolic : MonoBehaviour
         obj.SetVelocity(direction);
     }
 
-    public Vector3 CalculateDirection(Transform target)
+    public Vector3 CalculateDirection(Vector3 target)
     {
-        float displacementY = target.position.y - shootingPoint.position.y;
-        Vector3 displacementXZ = new Vector3(target.position.x - shootingPoint.position.x, 0, target.position.z - shootingPoint.position.z);
+        float displacementY = target.y - shootingPoint.position.y;
+        Vector3 displacementXZ = new Vector3(target.x - shootingPoint.position.x, 0, target.z - shootingPoint.position.z);
 
         Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * height);
         Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * height / gravity) + Mathf.Sqrt(2 * (displacementY - height) / gravity));

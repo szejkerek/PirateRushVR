@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotateCanonTowardsTarget : MonoBehaviour
 {
+
     [SerializeField] Transform canonBase;
     [SerializeField] Transform canonRifle;
 
@@ -14,42 +15,60 @@ public class RotateCanonTowardsTarget : MonoBehaviour
     bool baseLockedOnTarget = false;
     bool rifleLockedOnTarget = false;
     ShootObjectParabolic luncher;
+    Quaternion desiredBaseRotation;
+    Quaternion desiredRifleRotation;
 
     private void Awake()
     {
         luncher = GetComponent<ShootObjectParabolic>();
     }
 
-    public void Rotate(Transform target)
+    private void Update()
     {
-        //if (baseLockedOnTarget && rifleLockedOnTarget)
-        //{
-        //    return;
-        //}
+        Rotate();
+    }
+
+    public void LockRotation()
+    {
+        baseLockedOnTarget = true;
+        rifleLockedOnTarget = true;
+    }
+    
+    public void UnlockRotation()
+    {
+        baseLockedOnTarget = false;
+        rifleLockedOnTarget = false;
+    }
+
+    public void SetTarget(Vector3 target)
+    {
         Quaternion targetRotation = Quaternion.LookRotation(luncher.CalculateDirection(target));
-        baseLockedOnTarget = RotateBase(targetRotation);
-        rifleLockedOnTarget = RotateRifle(targetRotation);
-    }
-
-    private bool RotateBase(Quaternion targetRotation)
-    {
         Vector3 eulerRotation = targetRotation.eulerAngles;
-        Quaternion desiredRotation = Quaternion.Euler(new Vector3(canonBase.rotation.eulerAngles.x, eulerRotation.y, canonBase.rotation.eulerAngles.z));
+        desiredBaseRotation = Quaternion.Euler(new Vector3(canonBase.rotation.eulerAngles.x, eulerRotation.y, canonBase.rotation.eulerAngles.z));
+        desiredRifleRotation = Quaternion.Euler(new Vector3(eulerRotation.x, canonRifle.rotation.eulerAngles.y, canonRifle.rotation.eulerAngles.z));
 
-        canonBase.rotation = Quaternion.Lerp(canonBase.rotation, desiredRotation, baseSpeed * Time.deltaTime);
-        return isAimingAtTarget(canonBase.rotation, desiredRotation);
+        UnlockRotation();
     }
 
-    private bool RotateRifle(Quaternion targetRotation)
+    private void Rotate()
     {
-        Vector3 eulerRotation = targetRotation.eulerAngles;
-        Quaternion desiredRotation = Quaternion.Euler(new Vector3(eulerRotation.x, canonRifle.rotation.eulerAngles.y, canonRifle.rotation.eulerAngles.z));
+        if (IsLockedOnTarget())
+            return;
 
-        canonRifle.rotation = Quaternion.Lerp(canonRifle.rotation, desiredRotation, rifleSpeed * Time.deltaTime);
-        return isAimingAtTarget(canonRifle.rotation, desiredRotation);
+        canonRifle.rotation = Quaternion.Lerp(canonRifle.rotation, desiredRifleRotation, rifleSpeed * Time.deltaTime);
+        canonBase.rotation = Quaternion.Lerp(canonBase.rotation, desiredBaseRotation, baseSpeed * Time.deltaTime);
     }
 
-    private bool isAimingAtTarget(Quaternion currentRotation, Quaternion desiredRotation)
+    public bool IsLockedOnTarget()
+    {
+        baseLockedOnTarget = IsPartAimingAtTarget(canonBase.rotation, desiredBaseRotation);
+        rifleLockedOnTarget = IsPartAimingAtTarget(canonRifle.rotation, desiredRifleRotation);
+
+        return baseLockedOnTarget && rifleLockedOnTarget;
+    }
+
+    //Quaternion helper
+    private bool IsPartAimingAtTarget(Quaternion currentRotation, Quaternion desiredRotation)
     {
         return Quaternion.Angle(currentRotation, desiredRotation) <= rotationTolerance;
     }

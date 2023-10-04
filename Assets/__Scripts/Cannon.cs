@@ -22,18 +22,20 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) 
+        if(Input.GetKey(KeyCode.Space)) 
         {
-            Shoot();
+            rotate.SetTarget(target.position);
         }
-        rotate.Rotate(target);
 
+        if (Input.GetKey(KeyCode.Mouse0))
+            Shoot();
     }
 
     private void Shoot()
     {
-        luncher.LunchProjectile(target, BadBullet);
-
+        if (!rotate.IsLockedOnTarget())
+            return;
+        luncher.LunchProjectile(target.position, BadBullet);
     }
 
 }
