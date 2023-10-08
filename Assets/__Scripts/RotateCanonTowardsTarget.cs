@@ -6,7 +6,9 @@ public class RotateCanonTowardsTarget : MonoBehaviour
 {
 
     [SerializeField] Transform canonBase;
+    [SerializeField] float baseRotationOffset;
     [SerializeField] Transform canonRifle;
+    [SerializeField] float rifleRotationOffset;
 
     [SerializeField] float baseSpeed;
     [SerializeField] float rifleSpeed;
@@ -42,10 +44,9 @@ public class RotateCanonTowardsTarget : MonoBehaviour
 
     public void SetTarget(Vector3 target)
     {
-        Quaternion targetRotation = Quaternion.LookRotation(luncher.CalculateDirection(target));
-        Vector3 eulerRotation = targetRotation.eulerAngles;
-        desiredBaseRotation = Quaternion.Euler(new Vector3(canonBase.rotation.eulerAngles.x, eulerRotation.y, canonBase.rotation.eulerAngles.z));
-        desiredRifleRotation = Quaternion.Euler(new Vector3(eulerRotation.x, canonRifle.rotation.eulerAngles.y, canonRifle.rotation.eulerAngles.z));
+        Vector3 targetRotation = Quaternion.LookRotation(luncher.CalculateDirection(target)).eulerAngles;
+        desiredBaseRotation = Quaternion.Euler(new Vector3(canonBase.rotation.eulerAngles.x, targetRotation.y + baseRotationOffset, canonBase.rotation.eulerAngles.z));
+        desiredRifleRotation = Quaternion.Euler(new Vector3(targetRotation.x, canonRifle.rotation.eulerAngles.y, canonRifle.rotation.eulerAngles.z));
 
         UnlockRotation();
     }

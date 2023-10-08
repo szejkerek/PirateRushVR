@@ -7,24 +7,23 @@ public class Cannon : MonoBehaviour
     public Projectile GoodBullet;
     public Projectile BadBullet;
 
-    [SerializeField] private float rotationSpeed;
     [SerializeField] private Transform target;
 
+    private RotatePart[] rotateParts;
     private ShootObjectParabolic luncher;
-    private RotateCanonTowardsTarget rotate;
 
     private void Awake()
     {
         luncher = GetComponent<ShootObjectParabolic>();
-        rotate = GetComponent<RotateCanonTowardsTarget>();
+        rotateParts = GetComponentsInChildren<RotatePart>();
     }
 
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Space)) 
+        foreach (var rotatePart in rotateParts)
         {
-            rotate.SetTarget(target.position);
+            rotatePart.Rotate(luncher.CalculateDirection(target.position));
         }
 
         if (Input.GetKey(KeyCode.Mouse0))
@@ -33,8 +32,8 @@ public class Cannon : MonoBehaviour
 
     private void Shoot()
     {
-        if (!rotate.IsLockedOnTarget())
-            return;
+       // if (!rotate.IsLockedOnTarget())
+            //return;
         luncher.LunchProjectile(target.position, BadBullet);
     }
 
