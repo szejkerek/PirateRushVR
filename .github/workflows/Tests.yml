@@ -9,7 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - test-project
+          - EngineeringThesis
         testMode:
           - playmode
           - editmode
@@ -34,7 +34,7 @@ jobs:
         run: |
           # Run Unity tests here
           # Example command:
-          # unity -batchmode -projectPath ${{ matrix.projectPath }} -runTests -testPlatform ${{ matrix.testMode }}
+          unity -batchmode -projectPath ${{ matrix.projectPath }} -runTests -testPlatform ${{ matrix.testMode }}
           echo "Running Unity tests in ${{ matrix.testMode }}"
       - uses: game-ci/unity-test-runner@v3
         id: tests
