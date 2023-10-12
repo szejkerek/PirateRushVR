@@ -26,7 +26,6 @@ jobs:
           unityVersion: "2022.3.9f1"
           testMode: all
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+trudeaua.EasyAccessibility.*,-*Tests*'
-          packageMode: true
 
       # Upload coverage
       - name: Upload coverage results
