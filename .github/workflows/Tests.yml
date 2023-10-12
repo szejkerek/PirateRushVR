@@ -2,56 +2,26 @@ name: Run Unity Tests
 on: [push]
 
 jobs:
- testAllModes:
-    name: Test in ${{ matrix.testMode }}
+  tests:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        projectPath:
-          - ./copiedProject/EngineeringThesis
-        testMode:
-          - playmode
-          - editmode
-          - standalone
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2.4.0
-        with:
-          lfs: true
-      - name: copy dir to new dir
-        run: |
-          pwd
-          folderName=$(echo "${PWD##*/}")
-          rsync -r "$GITHUB_WORKSPACE" "copiedProject" 
-          ls -F "copiedProject/$folderName"
-      - uses: actions/cache@v2
-        with:
-          path: ${{ matrix.projectPath }}/Library
-          key: Library-${{ matrix.projectPath }}
-          restore-keys: |
-            Library-
+
       - name: Run tests
         id: runTests
-        run: echo "Running tests..."
-      - uses: game-ci/unity-test-runner@v3
+        uses: game-ci/unity-test-runner@v3
         env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+            UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          projectPath: ${{ matrix.projectPath }}
-          testMode: ${{ matrix.testMode }}
-          artifactsPath: ${{ matrix.testMode }}-artifacts
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          checkName: ${{ matrix.testMode }} Test Results
-          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+my.assembly.*'
-      - uses: actions/upload-artifact@v2
-        if: always()
+          projectPath: ./EngineeringThesis
+          testMode: all
+          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+szejkerek.EngineeringThesis.*,-*Tests*'
+
+      # Upload coverage
+      - name: Upload coverage results
+        uses: actions/upload-artifact@v3
         with:
-          name: Test results for ${{ matrix.testMode }}
-          path: ${{ steps.runTests.outputs.artifactsPath }}
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: Coverage results for ${{ matrix.testMode }}
+          name: Package Coverage results (all)
           path: ${{ steps.runTests.outputs.coveragePath }}
