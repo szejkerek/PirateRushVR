@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 5708165474126866774}
   - component: {fileID: 3020904145940417397}
   - component: {fileID: 4829709263863216841}
+  - component: {fileID: 8907948551654374621}
   m_Layer: 0
   m_Name: Katana
   m_TagString: Untagged
@@ -350,3 +351,19 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &8907948551654374621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975508508608820962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a74136bb70a324e8aa68d49b7ec9d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planeDebug: {fileID: 0}
+  target: {fileID: 0}
+  crossSectionMaterial: {fileID: 2100000, guid: 5de828e807de6c144be84b910e5d24bc, type: 2}
+  cutForce: 500
