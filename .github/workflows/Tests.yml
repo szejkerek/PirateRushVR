@@ -22,8 +22,9 @@ jobs:
           lfs: true
       - name: Copy Project
         run: |
-          cp -r $GITHUB_WORKSPACE "copiedProject"
-          ls -F "copiedProject"
+          mkdir copiedProject
+          cp -r $GITHUB_WORKSPACE/* copiedProject/
+          working-directory: ${{ runner.workspace }}
       - uses: actions/cache@v2
         with:
           path: ${{ matrix.projectPath }}/Library
