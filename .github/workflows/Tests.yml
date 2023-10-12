@@ -9,7 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - test-project
+          - ./copiedProject/EngineeringThesis
         testMode:
           - playmode
           - editmode
@@ -34,6 +34,7 @@ jobs:
             Library-
       - name: Run tests
         id: runTests
+        run: echo "Running tests..."
       - uses: game-ci/unity-test-runner@v3
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -48,9 +49,9 @@ jobs:
         if: always()
         with:
           name: Test results for ${{ matrix.testMode }}
-          path: ${{ steps.tests.outputs.artifactsPath }}
+          path: ${{ steps.runTests.outputs.artifactsPath }}
       - uses: actions/upload-artifact@v2
         if: always()
         with:
           name: Coverage results for ${{ matrix.testMode }}
-          path: ${{ steps.tests.outputs.coveragePath }}
+          path: ${{ steps.runTests.outputs.coveragePath }}
