@@ -17,7 +17,7 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           projectPath: ./EngineeringThesis
           testMode: all
-          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+szejkerek.EngineeringThesis.*,-*Tests*'
+          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport'
 
       # Upload coverage
       - name: Upload coverage results
