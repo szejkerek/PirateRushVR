@@ -1,0 +1,26 @@
+{
+    "m_Dictionary": {
+        "m_DictionaryValues": [
+            {
+                "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "IncludeAssemblies",
+                "value": "{\"m_Value\":\"Assembly-CSharp,Assembly-CSharp-Editor-firstpass,Assembly-CSharp-firstpass,EzySlice,Scripts,Tayx.Graphy,Tayx.Graphy.Editor,Tests,Unity.TestTools.CodeCoverage.Sample.Asteroids,Unity.TestTools.CodeCoverage.Sample.Asteroids.Tests,Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator,Unity.XR.Interaction.Toolkit.Samples.StarterAssets,Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor\"}"
+            },
+            {
+                "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Path",
+                "value": "{\"m_Value\":\"{ProjectPath}\"}"
+            },
+            {
+                "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "HistoryPath",
+                "value": "{\"m_Value\":\"{ProjectPath}\"}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "EnableCodeCoverage",
+                "value": "{\"m_Value\":true}"
+            }
+        ]
+    }
+}

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageReport scope="Summary">
+  <Summary>
+    <Generatedon>12.10.2023 - 20:22:39</Generatedon>
+    <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
+    <Assemblies>13</Assemblies>
+    <Classes>129</Classes>
+    <Files>127</Files>
+    <Coveredlines>1310</Coveredlines>
+    <Uncoveredlines>8670</Uncoveredlines>
+    <Coverablelines>9980</Coverablelines>
+    <Totallines>22559</Totallines>
+    <Linecoverage>13.1</Linecoverage>
+    <Coveredbranches>0</Coveredbranches>
+    <Totalbranches>0</Totalbranches>
+    <Coveredmethods>168</Coveredmethods>
+    <Totalmethods>1145</Totalmethods>
+    <Methodcoverage>14.6</Methodcoverage>
+  </Summary>
+  <Coverage>
+    <Assembly name="Assembly-CSharp" classes="34" coverage="0" coveredlines="0" coverablelines="2252" totallines="4939" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="165" methodcoverage="0">
+      <Class name="ChatController" coverage="0" coveredlines="0" coverablelines="19" totallines="51" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="DropdownSample" coverage="0" coveredlines="0" coverablelines="6" totallines="19" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="EnvMapAnimator" coverage="0" coveredlines="0" coverablelines="12" totallines="35" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="TMPro.Examples.Benchmark01" coverage="0" coveredlines="0" coverablelines="44" totallines="128" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="TMPro.Examples.Benchmark01_UGUI" coverage="0" coveredlines="0" coverablelines="39" totallines="135" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="TMPro.Examples.Benchmark02" coverage="0" coveredlines="0" coverablelines="54" totallines="97" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="TMPro.Examples.Benchmark03" coverage="0" coveredlines="0" coverablelines="46" totallines="92" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="TMPro.Examples.Benchmark04" coverage="0" coveredlines="0" coverablelines="30" totallines="85" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="TMPro.Examples.CameraController" coverage="0" coveredlines="0" coverablelines="168" totallines="292" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="TMPro.Examples.ObjectSpin" coverage="0" coveredlines="0" coverablelines="30" totallines="69" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="TMPro.Examples.ShaderPropAnimator" coverage="0" coveredlines="0" coverablelines="16" totallines="51" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="TMPro.Examples.SimpleScript" coverage="0" coveredlines="0" coverablelines="11" totallines="58" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="TMPro.Examples.SkewTextExample" coverage="0" coveredlines="0" coverablelines="78" totallines="158" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="TMPro.Examples.TeleType" coverage="0" coveredlines="0" coverablelines="28" totallines="83" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="TMPro.Examples.TextConsoleSimulator" coverage="0" coveredlines="0" coverablelines="60" totallines="121" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+      <Class name="TMPro.Examples.TextMeshProFloatingText" coverage="0" coveredlines="0" coverablelines="108" totallines="223" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
+      <Class name="TMPro.Examples.TextMeshSpawner" coverage="0" coveredlines="0" coverablelines="33" totallines="79" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="TMPro.Examples.TMP_ExampleScript_01" coverage="0" coveredlines="0" coverablelines="18" totallines="64" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="TMPro.Examples.TMP_FrameRateCounter" coverage="0" coveredlines="0" coverablelines="65" totallines="134" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="TMPro.Examples.TMP_TextEventCheck" coverage="0" coveredlines="0" coverablelines="40" totallines="73" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+      <Class name="TMPro.Examples.TMP_TextInfoDebugTool" coverage="0" coveredlines="0" coverablelines="344" totallines="652" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="14" methodcoverage="0" />
+      <Class name="TMPro.Examples.TMP_TextSelector_A" coverage="0" coveredlines="0" coverablelines="73" totallines="157" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="TMPro.Examples.TMP_TextSelector_B" coverage="0" coveredlines="0" coverablelines="198" totallines="547" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="11" methodcoverage="0" />
+      <Class name="TMPro.Examples.TMP_UiFrameRateCounter" coverage="0" coveredlines="0" coverablelines="71" totallines="125" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="TMPro.Examples.TMPro_InstructionOverlay" coverage="0" coveredlines="0" coverablelines="33" totallines="84" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="TMPro.Examples.VertexColorCycler" coverage="0" coveredlines="0" coverablelines="33" totallines="84" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="TMPro.Examples.VertexJitter" coverage="0" coveredlines="0" coverablelines="80" totallines="175" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+      <Class name="TMPro.Examples.VertexShakeA" coverage="0" coveredlines="0" coverablelines="80" totallines="161" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+      <Class name="TMPro.Examples.VertexShakeB" coverage="0" coveredlines="0" coverablelines="93" totallines="185" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+      <Class name="TMPro.Examples.VertexZoom" coverage="0" coveredlines="0" coverablelines="91" totallines="192" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+      <Class name="TMPro.Examples.WarpTextExample" coverage="0" coveredlines="0" coverablelines="70" totallines="144" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="TMPro.TMP_DigitValidator" coverage="0" coveredlines="0" coverablelines="8" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="TMPro.TMP_PhoneNumberValidator" coverage="0" coveredlines="0" coverablelines="66" totallines="105" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="TMPro.TMP_TextEventHandler" coverage="0" coveredlines="0" coverablelines="107" totallines="254" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="20" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Assembly-CSharp-Editor-firstpass" classes="2" coverage="27.5" coveredlines="59" coverablelines="214" totallines="325" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="6" totalmethods="15" methodcoverage="40">
+      <Class name="HierarchyIcons.Editor.FolderExtension" coverage="0" coveredlines="0" coverablelines="57" totallines="99" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
+      <Class name="HierarchyIcons.Editor.HierarchyIcons" coverage="37.5" coveredlines="59" coverablelines="157" totallines="226" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="6" totalmethods="9" methodcoverage="66.6" />
+    </Assembly>
+    <Assembly name="Assembly-CSharp-firstpass" classes="18" coverage="0" coveredlines="0" coverablelines="1306" totallines="3838" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="182" methodcoverage="0">
+      <Class name="DG.Tweening.DOTweenCYInstruction" coverage="0" coveredlines="0" coverablelines="44" totallines="389" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="12" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModuleAudio" coverage="0" coveredlines="0" coverablelines="56" totallines="198" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="15" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModulePhysics" coverage="0" coveredlines="0" coverablelines="83" totallines="216" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="11" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModulePhysics2D" coverage="0" coveredlines="0" coverablelines="76" totallines="193" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModuleSprite" coverage="0" coveredlines="0" coverablelines="34" totallines="93" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModuleUI" coverage="0" coveredlines="0" coverablelines="268" totallines="662" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="43" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModuleUnityVersion" coverage="0" coveredlines="0" coverablelines="118" totallines="389" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="16" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModuleUtils" coverage="0" coveredlines="0" coverablelines="46" totallines="167" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+      <Class name="HierarchyIcons.Folder" coverage="0" coveredlines="0" coverablelines="23" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="HierarchyIcons.IconsList" coverage="0" coveredlines="0" coverablelines="1" totallines="12" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="Tayx.Graphy.CustomizationScene.CustomizeGraphy" coverage="0" coveredlines="0" coverablelines="234" totallines="455" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="Tayx.Graphy.CustomizationScene.ForceSliderToMultipleOf3" coverage="0" coveredlines="0" coverablelines="9" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="Tayx.Graphy.CustomizationScene.ForceSliderToPowerOf2" coverage="0" coveredlines="0" coverablelines="16" totallines="67" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="Tayx.Graphy.CustomizationScene.G_CUIColorPicker" coverage="0" coveredlines="0" coverablelines="156" totallines="267" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="13" methodcoverage="0" />
+      <Class name="Tayx.Graphy.CustomizationScene.UpdateTextWithSliderValue" coverage="0" coveredlines="0" coverablelines="7" totallines="48" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="Unity.Services.Analytics.AnalyticsEventHandler" coverage="0" coveredlines="0" coverablelines="84" totallines="145" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="21" methodcoverage="0" />
+      <Class name="Unity.Services.Analytics.CustomEventSample" coverage="0" coveredlines="0" coverablelines="7" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="Unity.Services.Analytics.StandardEventSample" coverage="0" coveredlines="0" coverablelines="44" totallines="416" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="14" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="EzySlice" classes="11" coverage="0" coveredlines="0" coverablelines="1048" totallines="2311" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="111" methodcoverage="0">
+      <Class name="EzySlice.IntersectionResult" coverage="0" coveredlines="0" coverablelines="54" totallines="150" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="14" methodcoverage="0" />
+      <Class name="EzySlice.Intersector" coverage="0" coveredlines="0" coverablelines="277" totallines="491" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="EzySlice.Line" coverage="0" coveredlines="0" coverablelines="8" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="EzySlice.Plane" coverage="0" coveredlines="0" coverablelines="50" totallines="141" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="11" methodcoverage="0" />
+      <Class name="EzySlice.SlicedHull" coverage="0" coveredlines="0" coverablelines="63" totallines="141" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="10" methodcoverage="0" />
+      <Class name="EzySlice.Slicer" coverage="0" coveredlines="0" coverablelines="260" totallines="481" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="12" methodcoverage="0" />
+      <Class name="EzySlice.SlicerExtensions" coverage="0" coveredlines="0" coverablelines="52" totallines="98" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
+      <Class name="EzySlice.TextureRegion" coverage="0" coveredlines="0" coverablelines="23" totallines="115" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="10" methodcoverage="0" />
+      <Class name="EzySlice.TextureRegionExtension" coverage="0" coveredlines="0" coverablelines="16" totallines="115" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="EzySlice.Triangle" coverage="0" coveredlines="0" coverablelines="151" totallines="349" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="29" methodcoverage="0" />
+      <Class name="EzySlice.Triangulator" coverage="0" coveredlines="0" coverablelines="94" totallines="199" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Scripts" classes="9" coverage="0" coveredlines="0" coverablelines="125" totallines="306" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="27" methodcoverage="0">
+      <Class name="ActivateTeleportationRay" coverage="0" coveredlines="0" coverablelines="8" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="AnimateHandsOnInput" coverage="0" coveredlines="0" coverablelines="9" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="Cannon" coverage="0" coveredlines="0" coverablelines="15" totallines="40" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="DebugEffect" coverage="0" coveredlines="0" coverablelines="3" totallines="11" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="Projectile" coverage="0" coveredlines="0" coverablelines="25" totallines="47" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
+      <Class name="RocketControll" coverage="0" coveredlines="0" coverablelines="18" totallines="37" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="RotatePart" coverage="0" coveredlines="0" coverablelines="9" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="ShootObjectParabolic" coverage="0" coveredlines="0" coverablelines="13" totallines="35" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="SliceObject" coverage="0" coveredlines="0" coverablelines="25" totallines="48" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Tayx.Graphy" classes="20" coverage="0" coveredlines="0" coverablelines="1919" totallines="4600" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="250" methodcoverage="0">
+      <Class name="Tayx.Graphy.Advanced.G_AdvancedData" coverage="0" coveredlines="0" coverablelines="139" totallines="366" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Audio.G_AudioGraph" coverage="0" coveredlines="0" coverablelines="134" totallines="290" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Audio.G_AudioManager" coverage="0" coveredlines="0" coverablelines="118" totallines="235" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="10" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Audio.G_AudioMonitor" coverage="0" coveredlines="0" coverablelines="80" totallines="210" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="17" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Audio.G_AudioText" coverage="0" coveredlines="0" coverablelines="30" totallines="90" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Fps.G_FpsGraph" coverage="0" coveredlines="0" coverablelines="88" totallines="197" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Fps.G_FpsManager" coverage="0" coveredlines="0" coverablelines="129" totallines="249" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="10" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Fps.G_FpsMonitor" coverage="0" coveredlines="0" coverablelines="56" totallines="145" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="13" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Fps.G_FpsText" coverage="0" coveredlines="0" coverablelines="59" totallines="154" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
+      <Class name="Tayx.Graphy.G_GraphShader" coverage="0" coveredlines="0" coverablelines="43" totallines="137" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+      <Class name="Tayx.Graphy.GraphyDebugger" coverage="0" coveredlines="0" coverablelines="222" totallines="570" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="22" methodcoverage="0" />
+      <Class name="Tayx.Graphy.GraphyManager" coverage="0" coveredlines="0" coverablelines="389" totallines="848" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="86" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Ram.G_RamGraph" coverage="0" coveredlines="0" coverablelines="137" totallines="271" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Ram.G_RamManager" coverage="0" coveredlines="0" coverablelines="112" totallines="237" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="10" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Ram.G_RamMonitor" coverage="0" coveredlines="0" coverablelines="8" totallines="43" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Ram.G_RamText" coverage="0" coveredlines="0" coverablelines="32" totallines="96" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Utils.G_ExtensionMethods" coverage="0" coveredlines="0" coverablelines="21" totallines="65" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Utils.G_Singleton[T]" coverage="0" coveredlines="0" coverablelines="25" totallines="84" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Utils.NumString.G_FloatString" coverage="0" coveredlines="0" coverablelines="61" totallines="196" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="11" methodcoverage="0" />
+      <Class name="Tayx.Graphy.Utils.NumString.G_IntString" coverage="0" coveredlines="0" coverablelines="36" totallines="117" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Tayx.Graphy.Editor" classes="4" coverage="0" coveredlines="0" coverablelines="507" totallines="1595" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="19" methodcoverage="0">
+      <Class name="Tayx.Graphy.GraphyDebuggerEditor" coverage="0" coveredlines="0" coverablelines="227" totallines="577" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
+      <Class name="Tayx.Graphy.GraphyEditorStyle" coverage="0" coveredlines="0" coverablelines="42" totallines="118" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="8" methodcoverage="0" />
+      <Class name="Tayx.Graphy.GraphyManagerEditor" coverage="0" coveredlines="0" coverablelines="214" totallines="839" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="Tayx.Graphy.GraphyMenuItem" coverage="0" coveredlines="0" coverablelines="24" totallines="61" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Tests" classes="1" coverage="0" coveredlines="0" coverablelines="3" totallines="14" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0">
+      <Class name="SampleTest" coverage="0" coveredlines="0" coverablelines="3" totallines="14" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Unity.TestTools.CodeCoverage.Sample.Asteroids" classes="12" coverage="91.6" coveredlines="396" coverablelines="432" totallines="701" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="63" totalmethods="65" methodcoverage="96.9">
+      <Class name="AnimatorDisabler" coverage="100" coveredlines="4" coverablelines="4" totallines="11" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="AsteroidController" coverage="100" coveredlines="39" coverablelines="39" totallines="62" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="9" methodcoverage="100" />
+      <Class name="BaseProjectile" coverage="100" coveredlines="11" coverablelines="11" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
+      <Class name="DebrisController" coverage="100" coveredlines="19" coverablelines="19" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
+      <Class name="EngineTrail" coverage="100" coveredlines="17" coverablelines="17" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
+      <Class name="GameManager" coverage="89.7" coveredlines="88" coverablelines="98" totallines="161" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="14" totalmethods="15" methodcoverage="93.3" />
+      <Class name="InGameMenuController" coverage="86.6" coveredlines="13" coverablelines="15" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="4" methodcoverage="100" />
+      <Class name="LaserController" coverage="65.2" coveredlines="15" coverablelines="23" totallines="36" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="4" methodcoverage="75" />
+      <Class name="LifeCounter" coverage="92.8" coveredlines="39" coverablelines="42" totallines="63" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="4" methodcoverage="100" />
+      <Class name="ProjectileController" coverage="100" coveredlines="17" coverablelines="17" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="5" methodcoverage="100" />
+      <Class name="ScoreCounter" coverage="88.8" coveredlines="48" coverablelines="54" totallines="83" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="7" totalmethods="7" methodcoverage="100" />
+      <Class name="SpaceshipController" coverage="92.4" coveredlines="86" coverablelines="93" totallines="143" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="9" methodcoverage="100" />
+    </Assembly>
+    <Assembly name="Unity.TestTools.CodeCoverage.Sample.Asteroids.Tests" classes="7" coverage="100" coveredlines="855" coverablelines="855" totallines="1493" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="99" totalmethods="99" methodcoverage="100">
+      <Class name="AsteroidTests" coverage="100" coveredlines="162" coverablelines="162" totallines="266" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="22" totalmethods="22" methodcoverage="100" />
+      <Class name="CameraTests" coverage="100" coveredlines="19" coverablelines="19" totallines="64" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="4" methodcoverage="100" />
+      <Class name="FXTests" coverage="100" coveredlines="60" coverablelines="60" totallines="105" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="7" totalmethods="7" methodcoverage="100" />
+      <Class name="GameManagerTests" coverage="100" coveredlines="155" coverablelines="155" totallines="275" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="14" totalmethods="14" methodcoverage="100" />
+      <Class name="SpaceshipTests" coverage="100" coveredlines="187" coverablelines="187" totallines="302" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="23" totalmethods="23" methodcoverage="100" />
+      <Class name="UserInterfaceTests" coverage="100" coveredlines="131" coverablelines="131" totallines="243" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="9" methodcoverage="100" />
+      <Class name="WeaponTests" coverage="100" coveredlines="141" coverablelines="141" totallines="238" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="20" totalmethods="20" methodcoverage="100" />
+    </Assembly>
+    <Assembly name="Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator" classes="3" coverage="0" coveredlines="0" coverablelines="787" totallines="1600" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="102" methodcoverage="0">
+      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorControllerUI" coverage="0" coveredlines="0" coverablelines="112" totallines="253" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="13" methodcoverage="0" />
+      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorHandsUI" coverage="0" coveredlines="0" coverablelines="103" totallines="182" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="13" methodcoverage="0" />
+      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorUI" coverage="0" coveredlines="0" coverablelines="572" totallines="1165" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="76" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Unity.XR.Interaction.Toolkit.Samples.StarterAssets" classes="7" coverage="0" coveredlines="0" coverablelines="506" totallines="1265" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="104" methodcoverage="0">
+      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.ActionBasedControllerManager" coverage="0" coveredlines="0" coverablelines="236" totallines="464" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="30" methodcoverage="0" />
+      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.DestroySelf" coverage="0" coveredlines="0" coverablelines="6" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.DynamicMoveProvider" coverage="0" coveredlines="0" coverablelines="62" totallines="189" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="13" methodcoverage="0" />
+      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.GazeInputManager" coverage="0" coveredlines="0" coverablelines="45" totallines="95" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.IncrementUIText" coverage="0" coveredlines="0" coverablelines="11" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.ObjectSpawner" coverage="0" coveredlines="0" coverablelines="72" totallines="237" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="24" methodcoverage="0" />
+      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.XRPokeFollowAffordance" coverage="0" coveredlines="0" coverablelines="74" totallines="206" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="22" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor" classes="1" coverage="0" coveredlines="0" coverablelines="26" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0">
+      <Class name="UnityEditor.XR.Interaction.Toolkit.Samples.StarterAssetsSampleProjectValidation" coverage="0" coveredlines="0" coverablelines="26" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+    </Assembly>
+  </Coverage>
+</CoverageReport>
