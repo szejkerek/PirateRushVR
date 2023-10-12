@@ -7,6 +7,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.4.0
 
+      - name: copy dir to new dir
+        run: |
+          pwd
+          folderName=$(echo "${PWD##*/}")
+          rsync -r "$GITHUB_WORKSPACE" "copiedProject" 
+          ls -F "copiedProject/$folderName"
+
       - name: Run tests
         id: runTests
         uses: game-ci/unity-test-runner@v3
@@ -14,7 +21,7 @@ jobs:
             UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectPath: ./EngineeringThesis
+          projectPath: ./copiedProject/EngineeringThesis
           testMode: all
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport'
 
