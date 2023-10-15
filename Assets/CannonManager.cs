@@ -1,37 +1,26 @@
 // Copyright (c) Bartłomiej Gordon 2023. All rights reserved.
-using System;
 using UnityEngine;
 
 public class CannonManager : MonoBehaviour
 {
-    public static Action OnTick;
-    public int TickRate => tickRate;
-    [SerializeField] private int tickRate = 128;
+    public int count = 0;
+    [SerializeField] private int _tickRate = 32;
+    private TickEngine tickEngine;
 
-    private float tickTimer = 0;
-    
     void Awake()
     {
-        OnTick += DebugMsg;
+        tickEngine = new TickEngine(_tickRate);
+        tickEngine.OnTick += DebugMsg;
     }
 
     void Update()
     {
-        UpdateTicks();
-    }
-
-    private void UpdateTicks()
-    {
-        if (tickTimer <= 0)
-        {
-            tickTimer = 1 / tickRate;
-            OnTick?.Invoke();
-        }
-        tickTimer -= Time.deltaTime;
+        tickEngine.UpdateTicks(Time.deltaTime);
     }
 
     private void DebugMsg()
     {
         Debug.Log("Tick");
+        count++;
     }
 }

@@ -1433,6 +1433,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Teleport Ray
       objectReference: {fileID: 0}
+    - target: {fileID: 8970616274750318183, guid: 247708e23e69e334dab61bfe6dddca1a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970616274750318183, guid: 247708e23e69e334dab61bfe6dddca1a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970616274750318183, guid: 247708e23e69e334dab61bfe6dddca1a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970616274750318183, guid: 247708e23e69e334dab61bfe6dddca1a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970616274750318183, guid: 247708e23e69e334dab61bfe6dddca1a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1569,6 +1589,26 @@ PrefabInstance:
     - target: {fileID: 8780007829006345185, guid: 247708e23e69e334dab61bfe6dddca1a, type: 3}
       propertyPath: m_Name
       value: Left Teleport Ray
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970616274750318183, guid: 247708e23e69e334dab61bfe6dddca1a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970616274750318183, guid: 247708e23e69e334dab61bfe6dddca1a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970616274750318183, guid: 247708e23e69e334dab61bfe6dddca1a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970616274750318183, guid: 247708e23e69e334dab61bfe6dddca1a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970616274750318183, guid: 247708e23e69e334dab61bfe6dddca1a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outWeight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
