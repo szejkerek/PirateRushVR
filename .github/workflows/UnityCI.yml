@@ -20,10 +20,14 @@ jobs:
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
-          path: ${{ github.workspace }}/Library
+          path: |
+            ${{ github.workspace }}/Library
+            ${{ github.workspace }}/Assets
+            ${{ github.workspace }}/ProjectSettings
           key: Library-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
             Library-${{ runner.os }}-
+            
       - name: Copy Unity to temporary folder
         run: |
           pwd
