@@ -29,8 +29,9 @@ jobs:
 
       - name: Copy Project Directory
         run: |
-          cp -r "${{ github.workspace }}" "copiedProject"
-          ls -F "copiedProject"
+          mkdir -p copiedProject
+          cp -r "${{ github.workspace }}"/* copiedProject
+          ls -F copiedProject
 
       - name: Run Unity Tests
         id: runUnityTests
