@@ -24,7 +24,7 @@ jobs:
           key: Library-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
             Library-${{ runner.os }}-
-      - name: copy dir to new dir
+      - name: Copy Unity to temporary folder
         run: |
           pwd
           folderName=$(echo "${PWD##*/}")
