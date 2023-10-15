@@ -6,8 +6,11 @@ on:
       - main
 
 jobs:
-  common_steps:
+  unity_tests:
     runs-on: ubuntu-latest
+    env:
+      projectPath: EngineeringThesis
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2.4.0
@@ -24,20 +27,13 @@ jobs:
           key: Library-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
             Library-${{ runner.os }}-
-
-  unity_tests:
-    needs: common_steps
-    runs-on: ubuntu-latest
-    env:
-      projectPath: EngineeringThesis
-
-    steps:
+            
       - name: Copy Unity to temporary folder
         run: |
+          pwd
           folderName=$(echo "${PWD##*/}")
           rsync -r "$GITHUB_WORKSPACE" "copiedProject" 
           ls -F "copiedProject/$folderName"
-      
       - name: Run Unity Tests
         id: runUnityTests
         uses: game-ci/unity-test-runner@v3
@@ -56,21 +52,22 @@ jobs:
           path: ${{ steps.runUnityTests.outputs.coveragePath }}
 
   unity_build:
-    needs: common_steps
-    strategy:
-      matrix:
-          targetPlatform:
-          #- StandaloneOSX # Build a macOS standalone (Intel 64-bit).
-          #- StandaloneWindows # Build a Windows standalone.
-          #- StandaloneWindows64 # Build a Windows 64-bit standalone.
-          #- StandaloneLinux64 # Build a Linux 64-bit standalone.
-          #- iOS # Build an iOS player.
-          - Android # Build an Android .apk standalone app.
-          #- WebGL # WebGL.
-
+    needs: unity_tests
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2.4.0
+        with:
+          lfs: true
+
+      - name: Cache Unity Library
+        uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            Library-${{ runner.os }}-
       - name: Build Unity Project
         uses: game-ci/unity-builder@v3
         env:
