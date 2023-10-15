@@ -37,7 +37,7 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectPath: ./copiedProject/${{ matrix.projectPath }}
+          projectPath: ./copiedProject/${{ env.projectPath }}
           testMode: all
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport'
 
