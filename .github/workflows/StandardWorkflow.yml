@@ -27,12 +27,12 @@ jobs:
           restore-keys: |
             Library-${{ runner.os }}-
 
-      - name: Copy Project Directory
+      - name: copy dir to new dir
         run: |
-          mkdir -p intermediateDir
-          cp -r "${{ github.workspace }}/" intermediateDir
-          mv intermediateDir copiedProject
-          ls -F copiedProject
+          pwd
+          folderName=$(echo "${PWD##*/}")
+          rsync -r "$GITHUB_WORKSPACE" "copiedProject" 
+          ls -F "copiedProject/$folderName"
 
       - name: Run Unity Tests
         id: runUnityTests
