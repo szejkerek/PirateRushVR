@@ -25,7 +25,7 @@ public class CannonManager : MonoBehaviour
 
     void SpawnCannons(int count)
     {
-        List<Cannon> cannonsOnScene = FindObjectsOfType<Cannon>().ToList();
+        List<Cannon> cannonsOnScene = GetComponentsInChildren<Cannon>().ToList();
         int deactivateCount = cannonsOnScene.Count - count;
 
         List<Cannon> cannonsToBeRemoved = cannonsOnScene.SelectRandomElements(deactivateCount);
