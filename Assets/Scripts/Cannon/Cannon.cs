@@ -37,4 +37,9 @@ public class Cannon : MonoBehaviour
         luncher.LunchProjectile(target.position, BadBullet);
     }
 
+    public void Deactivate()
+    {
+        gameObject.SetActive(false);
+    }
+
 }

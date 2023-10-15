@@ -1,5 +1,4 @@
 // Copyright (c) Bartłomiej Gordon 2023. All rights reserved.
-
 using System;
 
 public class TickEngine
@@ -7,13 +6,13 @@ public class TickEngine
     public Action OnTick;
     public int TickRate => _tickRate;
     private int _tickRate;
+    private float tickTimer = 0;
 
     public TickEngine(int tickRate)
     {
         _tickRate = tickRate;
     }
 
-    private float tickTimer = 0;
     public void UpdateTicks(float delta)
     {
         tickTimer -= delta;
