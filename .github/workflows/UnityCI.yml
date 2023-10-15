@@ -1,4 +1,4 @@
-name: Unity CI Workflow
+name: Unity Continuous Integration Workflow
 
 on:
   push:
@@ -6,45 +6,30 @@ on:
       - main
 
 jobs:
-  unity_tests_and_build:
+  unity_tests:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-          targetPlatform:
-          #- StandaloneOSX # Build a macOS standalone (Intel 64-bit).
-          #- StandaloneWindows # Build a Windows standalone.
-          #- StandaloneWindows64 # Build a Windows 64-bit standalone.
-          #- StandaloneLinux64 # Build a Linux 64-bit standalone.
-          #- iOS # Build an iOS player.
-          - Android # Build an Android .apk standalone app.
-          #- WebGL # WebGL.
+    env:
+      projectPath: EngineeringThesis
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2.4.0
         with:
           lfs: true
-        env:
-          node-version: 16
 
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
-          path: |
-            ${{ github.workspace }}/Library
-            ${{ github.workspace }}/Assets
-            ${{ github.workspace }}/ProjectSettings
+          path: ${{ github.workspace }}/Library
           key: Library-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
             Library-${{ runner.os }}-
-
-      - name: Copy Project Directory
+      - name: copy dir to new dir
         run: |
+          pwd
           folderName=$(echo "${PWD##*/}")
           rsync -r "$GITHUB_WORKSPACE" "copiedProject" 
           ls -F "copiedProject/$folderName"
-
       - name: Run Unity Tests
         id: runUnityTests
         uses: game-ci/unity-test-runner@v3
@@ -52,7 +37,7 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectPath: ./copiedProject/EngineeringThesis
+          projectPath: ./copiedProject/${{ matrix.projectPath }}
           testMode: all
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport'
 
@@ -62,6 +47,23 @@ jobs:
           name: Test Coverage Results (all)
           path: ${{ steps.runUnityTests.outputs.coveragePath }}
 
+  unity_build:
+    needs: unity_tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2.4.0
+        with:
+          lfs: true
+
+      - name: Cache Unity Library
+        uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            Library-${{ runner.os }}-
       - name: Build Unity Project
         uses: game-ci/unity-builder@v3
         env:
