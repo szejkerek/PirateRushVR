@@ -75,7 +75,7 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
-          projectPath: ./copiedProject/${{ matrix.projectPath }}
+          #projectPath: ./copiedProject/${{ matrix.projectPath }}
 
       - name: Upload Unity Build
         uses: actions/upload-artifact@v2
