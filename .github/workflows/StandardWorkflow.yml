@@ -29,8 +29,9 @@ jobs:
 
       - name: Copy Project Directory
         run: |
-          mkdir -p copiedProject
-          cp -r "${{ github.workspace }}/." copiedProject
+          mkdir -p intermediateDir
+          cp -r "${{ github.workspace }}/" intermediateDir
+          mv intermediateDir copiedProject
           ls -F copiedProject
 
       - name: Run Unity Tests
