@@ -1,4 +1,4 @@
-name: Unity Continuous Integration Workflow
+name: Unity CI Workflow
 
 on:
   push:
@@ -6,56 +6,19 @@ on:
       - main
 
 jobs:
-  unity_tests:
+  unity_tests_and_build:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        projectPath: [EngineeringThesis]
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2.4.0
-        with:
-          lfs: true
-        env:
-          node-version: 16
-
-      - name: Cache Unity Library
-        uses: actions/cache@v2
-        with:
-          path: |
-            ${{ github.workspace }}/Library
-          key: Library-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
-          restore-keys: |
-            Library-${{ runner.os }}-
-      - name: copy dir to new dir
-        run: |
-          pwd
-          folderName=$(echo "${PWD##*/}")
-          rsync -r "$GITHUB_WORKSPACE" "copiedProject" 
-          ls -F "copiedProject/$folderName"
-
-      - name: Run Unity Tests
-        id: runUnityTests
-        uses: game-ci/unity-test-runner@v3
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectPath: ./copiedProject/${{ matrix.projectPath }}
-          testMode: all
-          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport'
-
-      - name: Upload Test Coverage Results
-        uses: actions/upload-artifact@v2
-        with:
-          name: Test Coverage Results (all)
-          path: ${{ steps.runUnityTests.outputs.coveragePath }}
-
-  unity_build:
-    needs: unity_tests
-    runs-on: ubuntu-latest
+          targetPlatform:
+          #- StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+          #- StandaloneWindows # Build a Windows standalone.
+          #- StandaloneWindows64 # Build a Windows 64-bit standalone.
+          #- StandaloneLinux64 # Build a Linux 64-bit standalone.
+          #- iOS # Build an iOS player.
+          - Android # Build an Android .apk standalone app.
+          #- WebGL # WebGL.
 
     steps:
       - name: Checkout Repository
@@ -76,13 +39,35 @@ jobs:
           restore-keys: |
             Library-${{ runner.os }}-
 
+      - name: Copy Project Directory
+        run: |
+          folderName=$(echo "${PWD##*/}")
+          rsync -r "$GITHUB_WORKSPACE" "copiedProject" 
+          ls -F "copiedProject/$folderName"
+
+      - name: Run Unity Tests
+        id: runUnityTests
+        uses: game-ci/unity-test-runner@v3
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectPath: ./copiedProject/EngineeringThesis
+          testMode: all
+          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport'
+
+      - name: Upload Test Coverage Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test Coverage Results (all)
+          path: ${{ steps.runUnityTests.outputs.coveragePath }}
+
       - name: Build Unity Project
         uses: game-ci/unity-builder@v3
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
-          #projectPath: ./copiedProject/${{ matrix.projectPath }}
 
       - name: Upload Unity Build
         uses: actions/upload-artifact@v2
