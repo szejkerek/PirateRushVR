@@ -18,15 +18,17 @@ jobs:
         uses: actions/checkout@v2.4.0
         with:
           lfs: true
+        env:
+          node-version: 16
 
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
-          path: ${{ github.workspace }}/Library
+          path: |
+            ${{ github.workspace }}/Library
           key: Library-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
             Library-${{ runner.os }}-
-
       - name: copy dir to new dir
         run: |
           pwd
@@ -60,11 +62,16 @@ jobs:
         uses: actions/checkout@v2.4.0
         with:
           lfs: true
+        env:
+          node-version: 16
 
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
-          path: Library
+          path: |
+            ${{ github.workspace }}/Library
+            ${{ github.workspace }}/Assets
+            ${{ github.workspace }}/ProjectSettings
           key: Library-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
             Library-${{ runner.os }}-
