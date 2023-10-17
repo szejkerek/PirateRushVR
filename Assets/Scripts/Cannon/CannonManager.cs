@@ -7,10 +7,9 @@ public class CannonManager : MonoBehaviour
 {
     public int TickRate => _tickRate;
     [SerializeField] private int _tickRate = 32;
-    [SerializeField] private DifficultyLevel _difficultyLevel;
+    public DifficultyLevel _difficultyLevel;
     
     private TickEngine tickEngine;
-    private List<Cannon> cannons;
 
     void Awake()
     {
