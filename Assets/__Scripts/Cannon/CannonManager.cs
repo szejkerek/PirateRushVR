@@ -10,6 +10,7 @@ public class CannonManager : MonoBehaviour
     public DifficultyLevel _difficultyLevel;
     
     private TickEngine tickEngine;
+    List<Cannon> cannonsOnScene;
 
     void Awake()
     {
@@ -24,7 +25,7 @@ public class CannonManager : MonoBehaviour
 
     void SpawnCannons(int count)
     {
-        List<Cannon> cannonsOnScene = GetComponentsInChildren<Cannon>().ToList();
+        cannonsOnScene = GetComponentsInChildren<Cannon>().ToList();
         int deactivateCount = cannonsOnScene.Count - count;
 
         List<Cannon> cannonsToBeRemoved = cannonsOnScene.SelectRandomElements(deactivateCount);
@@ -34,4 +35,5 @@ public class CannonManager : MonoBehaviour
             cannonsOnScene.Remove(cannon);
         });
     }
+
 }

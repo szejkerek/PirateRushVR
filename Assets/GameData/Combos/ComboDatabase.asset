@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 72515ba16a636414e9b27045783e3fbf, type: 3}
   m_Name: ComboDatabase
-  m_EditorClassIdentifier: Scripts::ComboDatabase
+  m_EditorClassIdentifier: 
   combos:
   - <Type>k__BackingField: 0
   - <Type>k__BackingField: 4
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 6
   - <Type>k__BackingField: 0
-  - <Type>k__BackingField: 2
+  - <Type>k__BackingField: 5
+  - <Type>k__BackingField: 0

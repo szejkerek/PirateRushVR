@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
+    public ComboManager ComboManager => comboManager;
+    ComboManager comboManager;
+
+
     public Projectile GoodBullet;
     public Projectile BadBullet;
 
@@ -16,6 +20,7 @@ public class Cannon : MonoBehaviour
     {
         luncher = GetComponent<ShootObjectParabolic>();
         rotateParts = GetComponentsInChildren<RotatePart>();
+        comboManager = GetComponent<ComboManager>();
     }
 
 
