@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       projectPath: EngineeringThesis
+      targetPlatform: Android
 
     steps:
       - name: Checkout Repository
@@ -73,10 +74,10 @@ jobs:
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          targetPlatform: ${{ matrix.targetPlatform }}
+          targetPlatform: ${{ env.targetPlatform }}
 
       - name: Upload Unity Build
         uses: actions/upload-artifact@v2
         with:
-          name: Unity Build-${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
+          name: Unity Build-${{ env.targetPlatform }}
+          path: build/${{ env.targetPlatform }}
