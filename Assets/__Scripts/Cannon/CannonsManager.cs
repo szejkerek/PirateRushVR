@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CannonManager : MonoBehaviour
+public class CannonsManager : MonoBehaviour
 {
     public int TickRate => _tickRate;
     [SerializeField] private int _tickRate = 32;
@@ -16,6 +16,7 @@ public class CannonManager : MonoBehaviour
     {
         tickEngine = new TickEngine(_tickRate);       
         SpawnCannons(_difficultyLevel.TowerCount);
+        cannonsOnScene.ForEach(cannon => tickEngine.OnTick += cannon.ComboManager.UpdateOnTick);
     }
 
     void Update()
