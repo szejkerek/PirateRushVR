@@ -1020,8 +1020,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa66ee8df5116bd478adf7de2abb08c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoodBullet: {fileID: -556851826983113292, guid: 1accdc650eede704caa101b56739724d, type: 3}
-  BadBullet: {fileID: -694612346164303958, guid: 75760639ce898c74b86b355c382365a0, type: 3}
   target: {fileID: 0}
 --- !u!114 &5804795592675096250
 MonoBehaviour:
@@ -1035,6 +1033,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a79a4ba5c23cd44a00f9047767a925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GoodBullet: {fileID: -556851826983113292, guid: 1accdc650eede704caa101b56739724d, type: 3}
+  BadBullet: {fileID: -694612346164303958, guid: 75760639ce898c74b86b355c382365a0, type: 3}
   speed: 1.48
   height: 10
   gravity: -12

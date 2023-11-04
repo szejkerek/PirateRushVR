@@ -1,22 +1,46 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootObjectParabolic : MonoBehaviour
+public class CannonShooting : MonoBehaviour
 {
+    public Projectile GoodBullet;
+    public Projectile BadBullet;
+
     [SerializeField] private float speed;
     [SerializeField] private float height;
     [SerializeField] private float gravity;
     [Space, SerializeField] private Transform shootingPoint;
 
-    public void LunchProjectile(Vector3 target, Projectile projectile)
+    public Transform Target => target;
+    Transform target;
+
+    private void Update()
     {
-        Vector3 direction = CalculateDirection(target);
+        if (Input.GetKey(KeyCode.Mouse0))
+            Shoot(GoodBullet);
+    }
+
+    public void SetTarget(Transform target)
+    {
+        this.target = target;   
+    }
+
+    public void Shoot(Projectile projectile)
+    {
+        Vector3 diffusedTargetPosition = CalculateTargerPosition(target);
+        Vector3 direction = CalculateDirection(diffusedTargetPosition);
 
         Projectile obj = Instantiate(projectile, shootingPoint);
 
         obj.SetGravity(gravity);
         obj.SetVelocity(direction);
+    }
+
+    private Vector3 CalculateTargerPosition(Transform target)
+    {
+        return target.position;
     }
 
     public Vector3 CalculateDirection(Vector3 target)
