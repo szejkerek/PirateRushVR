@@ -7,6 +7,7 @@ public class CannonShooting : MonoBehaviour
 {
     public Projectile GoodBullet;
     public Projectile BadBullet;
+    public Projectile SpecialBullet;
 
     [SerializeField] private float speed;
     [SerializeField] private float height;

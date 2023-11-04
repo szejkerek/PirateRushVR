@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class ComboController : MonoBehaviour
 {
-    int waitTick = 0;
+    public int TickRate => _tickRate;
+    int _tickRate = 0;
+
+    int waitTicks = 0;
     ComboItemFactory comboItemFactory;
 
     Queue<ICannonBehaviour> queuedBehaviours = new Queue<ICannonBehaviour>();
@@ -14,8 +17,9 @@ public class ComboController : MonoBehaviour
     public CannonShooting Luncher => luncher;
     CannonShooting luncher;
 
-    private void Awake()
+    private void Start()
     {
+        _tickRate = Systems.Instance.TickRate;
         comboItemFactory = new ComboItemFactory(this);
         luncher = GetComponent<CannonShooting>();
     }
@@ -29,11 +33,17 @@ public class ComboController : MonoBehaviour
     {
         if (isPaused())
             return;
-        
+
         if(queuedBehaviours.Count == 0)
         {
             queuedBehaviours.Enqueue(comboItemFactory.CreateSpawn(ComboItemType.Bomb));
-            queuedBehaviours.Enqueue(comboItemFactory.CreateWait(ComboItemType.Interval50ms));
+            queuedBehaviours.Enqueue(comboItemFactory.CreateWait(ComboItemType.Interval25ms));
+            queuedBehaviours.Enqueue(comboItemFactory.CreateWait(ComboItemType.Interval25ms));
+            queuedBehaviours.Enqueue(comboItemFactory.CreateSpawn(ComboItemType.SpecialItem));
+            queuedBehaviours.Enqueue(comboItemFactory.CreateWait(ComboItemType.Interval25ms));
+            queuedBehaviours.Enqueue(comboItemFactory.CreateWait(ComboItemType.Interval25ms));
+            queuedBehaviours.Enqueue(comboItemFactory.CreateSpawn(ComboItemType.NeutralProjectile));
+            queuedBehaviours.Enqueue(comboItemFactory.CreateWait(ComboItemType.Interval25ms));
         }
         else
         {
@@ -43,13 +53,13 @@ public class ComboController : MonoBehaviour
 
     private bool isPaused()
     {
-        waitTick--;
-        waitTick = Mathf.Max(0, waitTick);
-        return waitTick > 0;
+        waitTicks--;
+        waitTicks = Mathf.Max(0, waitTicks);
+        return waitTicks > 0;
     }
 
     public void Wait(int waitTick)
     {
-        this.waitTick = waitTick;
+        this.waitTicks = waitTick;
     }
 }

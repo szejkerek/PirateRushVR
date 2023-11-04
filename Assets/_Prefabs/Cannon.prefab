@@ -1035,6 +1035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoodBullet: {fileID: -556851826983113292, guid: 1accdc650eede704caa101b56739724d, type: 3}
   BadBullet: {fileID: -694612346164303958, guid: 75760639ce898c74b86b355c382365a0, type: 3}
+  SpecialBullet: {fileID: 1283188724476311818, guid: 0520cd5ab8d4bb74f9db28972bc69ab4, type: 3}
   speed: 1.48
   height: 10
   gravity: -12

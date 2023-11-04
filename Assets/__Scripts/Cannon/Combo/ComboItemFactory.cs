@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,39 +15,26 @@ public class ComboItemFactory
     {
         switch (wait)
         {
-            case ComboItemType.Interval25ms:
-                break;
-            case ComboItemType.Interval50ms:
-                break;
-            case ComboItemType.Interval75ms:
-                break;
-            case ComboItemType.Interval100ms:
-                break;
-            case ComboItemType.Interval150ms:
-                break;
-            default:
-                break;
-        }
+            case ComboItemType.Interval25ms:        return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 0.25f));
+            case ComboItemType.Interval50ms:        return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 0.50f));
+            case ComboItemType.Interval75ms:        return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 0.75f));
+            case ComboItemType.Interval100ms:       return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 1));
+            case ComboItemType.Interval150ms:       return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 1.5f));
+            default:                                return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 0.50f));    
 
-        return new CannonWaitBehaviour(context, 50);
+        }     
     }
 
     public ICannonBehaviour CreateSpawn(ComboItemType spawn)
     {
         switch (spawn)
         {
-            case ComboItemType.NeutralProjectile:
-                break;
-            case ComboItemType.Bomb:
-                break;
-            case ComboItemType.SpecialItem:
-                break;
-            default:
-                break;
-        }
-        return new CannonSpawnBehaviour(context, context.Luncher.BadBullet);
+            case ComboItemType.NeutralProjectile:  return new CannonSpawnBehaviour(context, context.Luncher.GoodBullet);
+            case ComboItemType.Bomb:               return new CannonSpawnBehaviour(context, context.Luncher.BadBullet);
+            case ComboItemType.SpecialItem:        return new CannonSpawnBehaviour(context, context.Luncher.SpecialBullet);
+            default:                               return new CannonSpawnBehaviour(context, context.Luncher.GoodBullet);
+        }       
     }
-
 }
 
 

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7152826e1f8b64e94344d9048acfde, type: 3}
   m_Name: SampleDifficultyLevel
   m_EditorClassIdentifier: 
-  <TowerCount>k__BackingField: 3
+  <TowerCount>k__BackingField: 1
