@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Systems : Singleton<Systems>
 {
-
+    public DifficultyLevel difficultyLevel;
 }

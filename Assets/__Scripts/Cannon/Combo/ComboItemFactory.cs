@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ComboItemFactory
 {
-    ComboManager context;
-    public ComboItemFactory(ComboManager comboManager)
+    ComboController context;
+    public ComboItemFactory(ComboController comboManager)
     {
         context = comboManager;
     }
@@ -58,9 +58,9 @@ public interface ICannonBehaviour
 public class CannonWaitBehaviour : ICannonBehaviour
 {
     int waitTickCount = 0;
-    ComboManager context;
+    ComboController context;
 
-    public CannonWaitBehaviour(ComboManager cannonManager, int ticks)
+    public CannonWaitBehaviour(ComboController cannonManager, int ticks)
     {
         waitTickCount = ticks;
         context = cannonManager;
@@ -75,9 +75,9 @@ public class CannonWaitBehaviour : ICannonBehaviour
 public class CannonSpawnBehaviour : ICannonBehaviour
 {
     GameObject projectile;
-    ComboManager context;
+    ComboController context;
 
-    public CannonSpawnBehaviour(ComboManager cannonManager, GameObject projectile)
+    public CannonSpawnBehaviour(ComboController cannonManager, GameObject projectile)
     {
         this.projectile = projectile;
         context = cannonManager;

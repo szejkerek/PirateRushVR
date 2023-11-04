@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComboManager : MonoBehaviour
+public class ComboController : MonoBehaviour
 {
     int waitTick = 0;
     ComboItemFactory comboItemFactory;
@@ -16,15 +16,16 @@ public class ComboManager : MonoBehaviour
         comboItemFactory = new ComboItemFactory(this);
     }
 
-    public void SetDifficulty(DifficultyLevel _difficultyLevel)
+    public void SetDifficulty(DifficultyLevel difficultyLevel)
     {
-        currentDifficulty = _difficultyLevel;
+        currentDifficulty = difficultyLevel;
     }
 
     public void UpdateOnTick()
     {
         if (isPaused())
             return;
+        Debug.Log("Tick work");
     }
 
     private bool isPaused()

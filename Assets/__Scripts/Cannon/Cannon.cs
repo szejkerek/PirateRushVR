@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    public ComboManager ComboManager => comboManager;
-    ComboManager comboManager;
+    public ComboController ComboManager => comboManager;
+    ComboController comboManager;
 
     [SerializeField] private Transform target;
 
@@ -16,7 +16,7 @@ public class Cannon : MonoBehaviour
     {
         luncher = GetComponent<CannonShooting>();
         rotateParts = GetComponentsInChildren<RotatePart>();
-        comboManager = GetComponent<ComboManager>();
+        comboManager = GetComponent<ComboController>();
         luncher.SetTarget(target);
     }
 

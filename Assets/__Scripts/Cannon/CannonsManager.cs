@@ -8,13 +8,14 @@ public class CannonsManager : MonoBehaviour
     public int TickRate => _tickRate;
     [SerializeField] private int _tickRate = 32;
     
-    [SerializeField] private DifficultyLevel _difficultyLevel;
-    
     private TickEngine tickEngine;
     List<Cannon> cannonsOnScene;
 
-    void Awake()
+    DifficultyLevel _difficultyLevel;
+
+    void Start()
     {
+        _difficultyLevel = Systems.Instance.difficultyLevel;
         tickEngine = new TickEngine(_tickRate);       
         SpawnCannons(_difficultyLevel.TowerCount);
         cannonsOnScene.ForEach(cannon => {
