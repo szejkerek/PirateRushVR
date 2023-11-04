@@ -11,9 +11,13 @@ public class ComboController : MonoBehaviour
     Queue<ICannonBehaviour> queuedBehaviours = new Queue<ICannonBehaviour>();
     DifficultyLevel currentDifficulty;
 
+    public CannonShooting Luncher => luncher;
+    CannonShooting luncher;
+
     private void Awake()
     {
         comboItemFactory = new ComboItemFactory(this);
+        luncher = GetComponent<CannonShooting>();
     }
 
     public void SetDifficulty(DifficultyLevel difficultyLevel)
@@ -25,7 +29,16 @@ public class ComboController : MonoBehaviour
     {
         if (isPaused())
             return;
-        Debug.Log("Tick work");
+        
+        if(queuedBehaviours.Count == 0)
+        {
+            queuedBehaviours.Enqueue(comboItemFactory.CreateSpawn(ComboItemType.Bomb));
+            queuedBehaviours.Enqueue(comboItemFactory.CreateWait(ComboItemType.Interval50ms));
+        }
+        else
+        {
+            queuedBehaviours.Dequeue().Execute();
+        }
     }
 
     private bool isPaused()
@@ -35,5 +48,8 @@ public class ComboController : MonoBehaviour
         return waitTick > 0;
     }
 
-
+    public void Wait(int waitTick)
+    {
+        this.waitTick = waitTick;
+    }
 }

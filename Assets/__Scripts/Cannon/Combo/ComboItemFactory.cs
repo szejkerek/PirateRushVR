@@ -44,7 +44,7 @@ public class ComboItemFactory
             default:
                 break;
         }
-        return new CannonSpawnBehaviour(context, GameObject.CreatePrimitive(PrimitiveType.Cube));
+        return new CannonSpawnBehaviour(context, context.Luncher.BadBullet);
     }
 
 }
@@ -68,16 +68,16 @@ public class CannonWaitBehaviour : ICannonBehaviour
 
     public void Execute()
     {
-        Debug.Log($"Wait for {waitTickCount}");
+        context.Wait(waitTickCount);
     }
 }
 
 public class CannonSpawnBehaviour : ICannonBehaviour
 {
-    GameObject projectile;
+    Projectile projectile;
     ComboController context;
 
-    public CannonSpawnBehaviour(ComboController cannonManager, GameObject projectile)
+    public CannonSpawnBehaviour(ComboController cannonManager, Projectile projectile)
     {
         this.projectile = projectile;
         context = cannonManager;
@@ -85,6 +85,6 @@ public class CannonSpawnBehaviour : ICannonBehaviour
 
     public void Execute()
     {
-        Debug.Log($"Spawning {projectile.name}");
+        context.Luncher.Shoot(projectile);
     }
 }
