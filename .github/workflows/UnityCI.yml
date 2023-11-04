@@ -21,13 +21,10 @@ jobs:
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
-          path: |
-            ${{ github.workspace }}/Library
-            ${{ github.workspace }}/Assets
-            ${{ github.workspace }}/ProjectSettings
-          key: Library-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
-          restore-keys: |
-            Library-${{ runner.os }}-
+              path: ${{ matrix.projectPath }}/Library
+              key: Library-${{ matrix.projectPath }}
+              restore-keys: |
+                 Library-
             
       - name: Copy Unity to temporary folder
         run: |
@@ -35,6 +32,7 @@ jobs:
           folderName=$(echo "${PWD##*/}")
           rsync -r "$GITHUB_WORKSPACE" "copiedProject" 
           ls -F "copiedProject/$folderName"
+          
       - name: Run Unity Tests
         id: runUnityTests
         uses: game-ci/unity-test-runner@v3
@@ -65,10 +63,11 @@ jobs:
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
-          path: Library
-          key: Library-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
-          restore-keys: |
-            Library-${{ runner.os }}-
+              path: ${{ matrix.projectPath }}/Library
+              key: Library-${{ matrix.projectPath }}
+              restore-keys: |
+                 Library-
+                 
       - name: Build Unity Project
         uses: game-ci/unity-builder@v3
         env:
