@@ -34,10 +34,7 @@ public class Projectile : MonoBehaviour
     public void ApplyEffects()
     {
         if (effects.Length == 0)
-        {
-            Debug.Log("Projectile has no effects!");
             return;
-        }
 
         foreach (var effect in effects)
         {

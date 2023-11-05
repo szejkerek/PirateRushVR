@@ -6,6 +6,6 @@ public class DebugEffect : MonoBehaviour, IEffect
 {
     public void ApplyEffect()
     {
-        Debug.Log("Debug Effect");
+        //Debug.Log("Debug Effect");
     }
 }
