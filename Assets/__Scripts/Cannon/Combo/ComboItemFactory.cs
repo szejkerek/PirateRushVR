@@ -29,10 +29,10 @@ public class ComboItemFactory
     {
         switch (spawn)
         {
-            case ComboItemType.NeutralProjectile:  return new CannonSpawnBehaviour(context, context.Luncher.GoodBullet);
-            case ComboItemType.Bomb:               return new CannonSpawnBehaviour(context, context.Luncher.BadBullet);
-            case ComboItemType.SpecialItem:        return new CannonSpawnBehaviour(context, context.Luncher.SpecialBullet);
-            default:                               return new CannonSpawnBehaviour(context, context.Luncher.GoodBullet);
+            case ComboItemType.NeutralProjectile:  return new CannonSpawnBehaviour(context, context.Luncher.GoodBullets.SelectRandomElement());
+            case ComboItemType.Bomb:               return new CannonSpawnBehaviour(context, context.Luncher.BadBullets.SelectRandomElement());
+            case ComboItemType.SpecialItem:        return new CannonSpawnBehaviour(context, context.Luncher.SpecialBullets.SelectRandomElement());
+            default:                               return new CannonSpawnBehaviour(context, context.Luncher.GoodBullets.SelectRandomElement());
         }       
     }
 }

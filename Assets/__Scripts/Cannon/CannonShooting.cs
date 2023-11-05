@@ -2,13 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class CannonShooting : MonoBehaviour
 {
-    public Projectile GoodBullet;
-    public Projectile BadBullet;
-    public Projectile SpecialBullet;
+    public List<Projectile> GoodBullets => goodBullets;
+    List<Projectile> goodBullets;
 
+    public List<Projectile> BadBullets => badBullets;
+    List<Projectile> badBullets;
+
+    public List<Projectile> SpecialBullets => specialBullets;
+    List<Projectile> specialBullets;
+
+
+    [Header("Adressables Labels")]
+    [SerializeField] AssetLabelReference goodBulletLabel;
+    [SerializeField] AssetLabelReference badBulletLabel;
+    [SerializeField] AssetLabelReference specialBulletLabel;
+
+    [Header("Settings")]
     [SerializeField] private float speed;
     [SerializeField] private float height;
     [SerializeField] private float gravity;
@@ -17,10 +30,18 @@ public class CannonShooting : MonoBehaviour
     public Transform Target => target;
     Transform target;
 
+    private void Start()
+    {
+        DataLoader<Projectile> dataLoader = new DataLoader<Projectile>();
+        goodBullets = dataLoader.Load(goodBulletLabel);
+        badBullets = dataLoader.Load(badBulletLabel);
+        specialBullets = dataLoader.Load(specialBulletLabel);
+    }
+
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
-            Shoot(GoodBullet);
+        //if (Input.GetKey(KeyCode.Mouse0))
+            //Shoot(GoodBullet);
     }
 
     public void SetTarget(Transform target)
