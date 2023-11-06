@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7731860254868353168}
   - component: {fileID: 6555295099244764100}
+  - component: {fileID: 8126264054480066505}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -47,6 +48,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TickRate: 64
   difficultyLevel: {fileID: 11400000, guid: d9a0ef03223f41744a67c389aa2b2e00, type: 2}
+--- !u!114 &8126264054480066505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2248701449982619513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1291f661c6347634ea86cc0032b8efab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &741128621319588007
 PrefabInstance:
   m_ObjectHideFlags: 0

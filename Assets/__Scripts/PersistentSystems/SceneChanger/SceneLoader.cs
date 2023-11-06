@@ -8,14 +8,14 @@ public enum SceneEnum
     Gameplay,
 }
 
-
 public class SceneLoader : Singleton<SceneLoader>
 {
     public Action OnSceneChanged;
     public Action OnSceneFullyLoaded;
-    [SerializeField] FadeScreen fadeScreen;
+    FadeScreen fadeScreen;
+
     public void LoadScene(int sceneIndex)
-    {
+    {       
         StartCoroutine(LoadSceneRoutine(sceneIndex));
     }
 
@@ -27,22 +27,31 @@ public class SceneLoader : Singleton<SceneLoader>
 
     IEnumerator LoadSceneRoutine(int sceneIndex)
     {
-        fadeScreen.FadeOut();
-        yield return new WaitForSeconds(fadeScreen.FadeDuration);
-
-        AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneIndex);
-        operation.allowSceneActivation = false;
-
-        float timer = 0f;
-        while (timer <= fadeScreen.FadeDuration && !operation.isDone)
+        fadeScreen = FindObjectOfType<FadeScreen>();
+        if(fadeScreen == null)
         {
-            timer += Time.deltaTime;
-            yield return null;
+            Debug.LogError("Couldn't get screen fader in scene!");
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneIndex);
         }
+        else
+        {
+            fadeScreen.FadeOut();
+            yield return new WaitForSeconds(fadeScreen.FadeDuration);
 
-        OnSceneChanged?.Invoke();
-        operation.allowSceneActivation = true;
-        fadeScreen.FadeIn();
+            AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneIndex);
+            operation.allowSceneActivation = false;
+
+            float timer = 0f;
+            while (timer <= fadeScreen.FadeDuration && !operation.isDone)
+            {
+                timer += Time.deltaTime;
+                yield return null;
+            }
+
+            OnSceneChanged?.Invoke();
+            operation.allowSceneActivation = true;
+            fadeScreen.FadeIn();
+        }
 
     }
 }
