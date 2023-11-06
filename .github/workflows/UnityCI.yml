@@ -5,12 +5,13 @@ on:
     branches:
       - main
 
+env:
+  targetPlatform: Android
+  projectPath: EngineeringThesis
+
 jobs:
   unity_tests:
     runs-on: ubuntu-latest
-    env:
-      projectPath: EngineeringThesis
-      targetPlatform: Android
 
     steps:
       - name: Checkout Repository
@@ -21,18 +22,18 @@ jobs:
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
-              path: ${{ matrix.projectPath }}/Library
-              key: Library-${{ matrix.projectPath }}
-              restore-keys: |
-                 Library-
-            
+          path: ${{ env.projectPath }}/Library
+          key: Library-${{ env.projectPath }}
+          restore-keys: |
+            Library-
+
       - name: Copy Unity to temporary folder
         run: |
           pwd
           folderName=$(echo "${PWD##*/}")
-          rsync -r "$GITHUB_WORKSPACE" "copiedProject" 
+          rsync -r "$GITHUB_WORKSPACE" "copiedProject"
           ls -F "copiedProject/$folderName"
-          
+
       - name: Run Unity Tests
         id: runUnityTests
         uses: game-ci/unity-test-runner@v3
@@ -41,6 +42,7 @@ jobs:
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           projectPath: ./copiedProject/${{ env.projectPath }}
+          targetPlatform: ${{ env.targetPlatform }}
           testMode: all
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport'
 
@@ -63,11 +65,11 @@ jobs:
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
-              path: ${{ matrix.projectPath }}/Library
-              key: Library-${{ matrix.projectPath }}
-              restore-keys: |
-                 Library-
-                 
+          path: ${{ env.projectPath }}/Library
+          key: Library-${{ env.projectPath }}
+          restore-keys: |
+            Library-
+
       - name: Build Unity Project
         uses: game-ci/unity-builder@v3
         env:
