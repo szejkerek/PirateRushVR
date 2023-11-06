@@ -8,19 +8,11 @@ public class CannonsManager : Singleton<CannonsManager>
     private TickEngine tickEngine;
     List<Cannon> cannonsOnScene;
 
-    DifficultyLevel _difficultyLevel;
-
     void Start()
     {
-        _difficultyLevel = Systems.Instance.difficultyLevel;
         tickEngine = new TickEngine(Systems.Instance.TickRate);       
-        SpawnCannons(_difficultyLevel.TowerCount);
-
-        cannonsOnScene.ForEach(cannon => {
-            cannon.ComboManager.SetDifficulty(_difficultyLevel);
-            tickEngine.OnTick += cannon.ComboManager.UpdateOnTick;
-        }      
-        );
+        SpawnCannons(Systems.Instance.difficultyLevel.TowerCount);
+        cannonsOnScene.ForEach(cannon => tickEngine.OnTick += cannon.ComboManager.UpdateOnTick);
     }
 
     void Update()

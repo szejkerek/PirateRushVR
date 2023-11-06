@@ -19,14 +19,10 @@ public class ComboController : MonoBehaviour
 
     private void Start()
     {
+        currentDifficulty = Systems.Instance.difficultyLevel;
         _tickRate = Systems.Instance.TickRate;
         comboItemFactory = new ComboItemFactory(this);
         luncher = GetComponent<CannonShooting>();
-    }
-
-    public void SetDifficulty(DifficultyLevel difficultyLevel)
-    {
-        currentDifficulty = difficultyLevel;
     }
 
     public void UpdateOnTick()
