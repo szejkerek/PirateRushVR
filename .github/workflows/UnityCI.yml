@@ -21,7 +21,7 @@ jobs:
 
       - name: List Files in Project Path
         run: |
-          ls -a ${{ env.projectPath }}
+          ls -a
         
       - name: Cache Unity Library
         uses: actions/cache@v2
@@ -68,7 +68,7 @@ jobs:
 
       - name: List Files in Project Path
         run: |
-          ls -a ${{ env.projectPath }}
+          ls -a
         
       - name: Cache Unity Library
         uses: actions/cache@v2
