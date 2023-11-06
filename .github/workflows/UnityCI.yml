@@ -12,7 +12,6 @@ jobs:
     env:
       projectPath: EngineeringThesis
 
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2.4.0
@@ -52,7 +51,6 @@ jobs:
           path: ${{ steps.runUnityTests.outputs.coveragePath }}
 
   unity_build:
-    needs: unity_tests
     runs-on: ubuntu-latest
 
     steps:
