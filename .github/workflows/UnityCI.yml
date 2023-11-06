@@ -41,7 +41,6 @@ jobs:
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           projectPath: ./copiedProject/${{ env.projectPath }}
-          targetPlatform: ${{ env.targetPlatform }}
           testMode: all
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport'
 
