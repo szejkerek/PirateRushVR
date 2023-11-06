@@ -23,23 +23,23 @@ MonoBehaviour:
     m_SerializedLabels:
     - PersistentSystems
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 30748a6d1a2f0f141b8a2c2de644d73b
-    m_Address: Assets/_Prefabs/Projectiles/BadProjectile.asset
+  - m_GUID: 6b3617652a49aac4db8f3df8435e77c4
+    m_Address: SpecialProjectiles
     m_ReadOnly: 0
     m_SerializedLabels:
-    - BadProjectiles
+    - SpecialProjectiles
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a161f389371e1244e91448b02c537414
-    m_Address: Assets/_Prefabs/Projectiles/GoodProjectile.asset
+  - m_GUID: c5825c38e621ea64dab7a2b962718813
+    m_Address: GoodProjectiles
     m_ReadOnly: 0
     m_SerializedLabels:
     - GoodProjectiles
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2cd5702e1a2f18b4390ef7d6bd57e2ca
-    m_Address: Assets/_Prefabs/Projectiles/SpecialProjectile.asset
+  - m_GUID: 06938c86b381ac148b5fa4db100d947a
+    m_Address: BadProjectiles
     m_ReadOnly: 0
     m_SerializedLabels:
-    - SpecialProjectiles
+    - BadProjectiles
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 07cf8be0a465bbb4f93c8b00292cbb08, type: 2}
