@@ -1,9 +1,9 @@
 ﻿public class CannonSpawnBehaviour : ICannonBehaviour
 {
-    Projectile projectile;
+    ProjectileSO projectile;
     ComboController context;
 
-    public CannonSpawnBehaviour(ComboController cannonManager, Projectile projectile)
+    public CannonSpawnBehaviour(ComboController cannonManager, ProjectileSO projectile)
     {
         this.projectile = projectile;
         context = cannonManager;

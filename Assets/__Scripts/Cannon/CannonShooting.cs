@@ -1,19 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 public class CannonShooting : MonoBehaviour
 {
-    public List<Projectile> GoodBullets => goodBullets;
-    List<Projectile> goodBullets;
+    public List<ProjectileSO> GoodBullets => goodBullets;
+    List<ProjectileSO> goodBullets;
 
-    public List<Projectile> BadBullets => badBullets;
-    List<Projectile> badBullets;
+    public List<ProjectileSO> BadBullets => badBullets;
+    List<ProjectileSO> badBullets;
 
-    public List<Projectile> SpecialBullets => specialBullets;
-    List<Projectile> specialBullets;
+    public List<ProjectileSO> SpecialBullets => specialBullets;
+    List<ProjectileSO> specialBullets;
 
 
     [Header("Adressables Labels")]
@@ -32,16 +33,10 @@ public class CannonShooting : MonoBehaviour
 
     private void Start()
     {
-        DataLoader<Projectile> dataLoader = new DataLoader<Projectile>();
+        DataLoader<ProjectileSO> dataLoader = new DataLoader<ProjectileSO>();
         goodBullets = dataLoader.Load(goodBulletLabel);
         badBullets = dataLoader.Load(badBulletLabel);
         specialBullets = dataLoader.Load(specialBulletLabel);
-    }
-
-    private void Update()
-    {
-        //if (Input.GetKey(KeyCode.Mouse0))
-            //Shoot(GoodBullet);
     }
 
     public void SetTarget(Transform target)
@@ -49,15 +44,23 @@ public class CannonShooting : MonoBehaviour
         this.target = target;   
     }
 
-    public void Shoot(Projectile projectile)
+    public void Shoot(ProjectileSO projectile)
     {
         Vector3 diffusedTargetPosition = CalculateTargerPosition(target);
         Vector3 direction = CalculateDirection(diffusedTargetPosition);
 
-        Projectile obj = Instantiate(projectile, shootingPoint);
+        SetupProjectile(projectile, direction);
 
-        obj.SetGravity(gravity);
-        obj.SetVelocity(direction);
+    }
+
+    private void SetupProjectile(ProjectileSO data, Vector3 direction)
+    {
+        GameObject obj = Instantiate(data.Model, shootingPoint);
+        obj.AddComponent<ConstantForce>();
+        Projectile projectile = obj.AddComponent<Projectile>();
+        projectile.SetGravity(gravity);
+        projectile.SetVelocity(direction);
+        projectile.SetEffects(data.Effects.ToList<IEffect>());
     }
 
     private Vector3 CalculateTargerPosition(Transform target)

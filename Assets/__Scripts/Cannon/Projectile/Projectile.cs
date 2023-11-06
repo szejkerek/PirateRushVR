@@ -7,18 +7,22 @@ public class Projectile : MonoBehaviour
     private Rigidbody rb;
     private ConstantForce cForce;
     public float Gravity => cForce.force.y;
-    IEffect[] effects;
+    List<IEffect> effects;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         cForce = GetComponent<ConstantForce>();
-        effects = GetComponents<IEffect>();
     }
 
     private void Start()
     {
         ApplyEffects();
+    }
+
+    public void SetEffects(List<IEffect> effects)
+    {
+        this.effects = effects;
     }
 
     public void SetVelocity(Vector3 velocity)
@@ -33,7 +37,7 @@ public class Projectile : MonoBehaviour
 
     public void ApplyEffects()
     {
-        if (effects.Length == 0)
+        if (effects.Count == 0)
             return;
 
         foreach (var effect in effects)

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public class DataLoader<T>
+public class DataLoader<T> where T : Object
 {
     public List<T> Load(AssetLabelReference label)
     {
