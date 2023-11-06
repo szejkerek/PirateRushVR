@@ -60,13 +60,6 @@ jobs:
         with:
           lfs: true
         
-      - name: Cache Unity Library
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-${{ env.projectPath }}
-          restore-keys: |
-            Library-
         
       - name: Build Unity Project
         uses: game-ci/unity-builder@v3
