@@ -26,7 +26,7 @@ jobs:
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
-          path: ${{ env.projectPath }}/Library
+          path: Library
           key: Library-${{ env.projectPath }}
           restore-keys: |
             Library-
@@ -73,7 +73,7 @@ jobs:
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
-          path: ${{ env.projectPath }}/Library
+          path: Library
           key: Library-${{ env.projectPath }}
           restore-keys: |
             Library-
@@ -81,6 +81,7 @@ jobs:
       - name: Build Unity Project
         uses: game-ci/unity-builder@v3
         env:
+          projectPath: ${{ github.workspace }}
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           targetPlatform: ${{ env.targetPlatform }}
