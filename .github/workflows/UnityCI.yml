@@ -19,6 +19,10 @@ jobs:
         with:
           lfs: true
 
+      - name: List Files in Project Path
+        run: |
+          ls -a ${{ env.projectPath }}
+        
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
@@ -26,7 +30,7 @@ jobs:
           key: Library-${{ env.projectPath }}
           restore-keys: |
             Library-
-
+        
       - name: Copy Unity to temporary folder
         run: |
           pwd
@@ -62,6 +66,10 @@ jobs:
         with:
           lfs: true
 
+      - name: List Files in Project Path
+        run: |
+          ls -a ${{ env.projectPath }}
+        
       - name: Cache Unity Library
         uses: actions/cache@v2
         with:
@@ -69,7 +77,7 @@ jobs:
           key: Library-${{ env.projectPath }}
           restore-keys: |
             Library-
-
+        
       - name: Build Unity Project
         uses: game-ci/unity-builder@v3
         env:
