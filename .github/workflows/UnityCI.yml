@@ -5,11 +5,12 @@ on:
     branches:
       - main
 env:
-    projectPath: EngineeringThesis
     targetPlatform: Android
 jobs:
   unity_tests:
     runs-on: ubuntu-latest
+    env:
+      projectPath: EngineeringThesis
 
 
     steps:
