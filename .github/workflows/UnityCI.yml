@@ -24,6 +24,7 @@ jobs:
               path: Library
               key: Library-${{ matrix.projectPath }}
               restore-keys: |
+                 Library-${{ matrix.projectPath }}
                  Library-
             
       - name: Copy Unity to temporary folder
@@ -63,19 +64,22 @@ jobs:
         uses: actions/cache@v2
         with:
               path: Library
-              key: Library-${{ env.projectPath }}
+              key: Library-${{ matrix.projectPath }}
               restore-keys: |
+                 Library-${{ matrix.projectPath }}
                  Library-
                  
       - name: Build Unity Project
         uses: game-ci/unity-builder@v3
+        id: BuildStep
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
+          versioning: Semantic
           targetPlatform: ${{ env.targetPlatform }}
 
       - name: Upload Unity Build
         uses: actions/upload-artifact@v2
         with:
-          name: Unity Build-${{ env.targetPlatform }}
+          name: Unity Build-${{ env.targetPlatform }}-${{steps.MyBuildStep.outputs.buildVersion}}
           path: build/${{ env.targetPlatform }}
