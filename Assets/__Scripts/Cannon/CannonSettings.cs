@@ -10,6 +10,7 @@ public class CannonSettings : ScriptableObject
     [field: SerializeField] public AssetLabelReference SpecialBulletLabel { private set; get; }
 
     [field: Header("Settings")]
+    [field: SerializeField] public float RandomTargetRange { private set; get; }
     [field: SerializeField] public float Height { private set; get; }
     [field: SerializeField] public float Gravity { private set; get; }
 }

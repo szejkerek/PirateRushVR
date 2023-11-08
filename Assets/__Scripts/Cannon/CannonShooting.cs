@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public class CannonShooting : MonoBehaviour
 {
@@ -39,11 +36,10 @@ public class CannonShooting : MonoBehaviour
 
     public void Shoot(ProjectileSO projectile)
     {
-        Vector3 diffusedTargetPosition = CalculateTargerPosition(target);
+        Vector3 diffusedTargetPosition = CalculateRandomTargetPosition(target);
         Vector3 direction = CalculateDirection(diffusedTargetPosition);
 
         SetupProjectile(projectile, direction);
-
     }
 
     private void SetupProjectile(ProjectileSO data, Vector3 direction)
@@ -56,9 +52,21 @@ public class CannonShooting : MonoBehaviour
         projectile.SetEffects(data.Effects.ToList<IEffect>());
     }
 
-    private Vector3 CalculateTargerPosition(Transform target)
+    private Vector3 CalculateRandomTargetPosition(Transform player)
     {
-        return target.position;
+        // Generate a random point within a circle of the specified radius
+        float randomAngle = Random.Range(0f, 360f);
+        float randomDistance = Random.Range(0f, Mathf.Abs(settings.RandomTargetRange));
+
+        // Calculate the new position based on the random angle and distance
+        Vector3 offset = new Vector3(
+            Mathf.Cos(randomAngle * Mathf.Deg2Rad) * randomDistance,
+            0f,
+            Mathf.Sin(randomAngle * Mathf.Deg2Rad) * randomDistance
+        );
+
+        // Add the offset to the player's position to get the random target position
+        return player.position + offset;
     }
 
     public Vector3 CalculateDirection(Vector3 target)
