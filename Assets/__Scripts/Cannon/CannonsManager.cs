@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using static UnityEngine.GraphicsBuffer;
 
 public class CannonsManager : Singleton<CannonsManager>
 {
+    [SerializeField] string playerTag;
     [SerializeField] AssetLabelReference combosLabel;
 
     private TickEngine tickEngine;
@@ -17,12 +19,18 @@ public class CannonsManager : Singleton<CannonsManager>
 
     void Start()
     {
+        Transform target = GameObject.FindGameObjectWithTag(playerTag).transform;
+
         tickEngine = new TickEngine(Systems.Instance.TickRate);       
         DataLoader<ComboDatabase> dataLoader = new DataLoader<ComboDatabase>();
         comboDatabases = dataLoader.Load(combosLabel);
 
         SpawnCannons(Systems.Instance.difficultyLevel.TowerCount);
-        cannonsOnScene.ForEach(cannon => tickEngine.OnTick += cannon.ComboManager.UpdateOnTick);
+        cannonsOnScene.ForEach(cannon =>
+        {
+            tickEngine.OnTick += cannon.ComboManager.UpdateOnTick;
+            cannon.Luncher.SetTarget(target);
+        });
     }
 
     void Update()

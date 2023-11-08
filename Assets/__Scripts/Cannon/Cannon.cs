@@ -7,17 +7,16 @@ public class Cannon : MonoBehaviour
     public ComboController ComboManager => comboManager;
     ComboController comboManager;
 
-    [SerializeField] private Transform target;
+    public CannonShooting Luncher => luncher;
+    private CannonShooting luncher;
 
     private RotatePart[] rotateParts;
-    private CannonShooting luncher;
 
     private void Awake()
     {
         luncher = GetComponent<CannonShooting>();
         rotateParts = GetComponentsInChildren<RotatePart>();
         comboManager = GetComponent<ComboController>();
-        luncher.SetTarget(target);
     }
 
     private void Update()
