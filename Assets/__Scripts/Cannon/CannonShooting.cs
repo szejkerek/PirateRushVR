@@ -16,27 +16,20 @@ public class CannonShooting : MonoBehaviour
     public List<ProjectileSO> SpecialBullets => specialBullets;
     List<ProjectileSO> specialBullets;
 
-
-    [Header("Adressables Labels")]
-    [SerializeField] AssetLabelReference goodBulletLabel;
-    [SerializeField] AssetLabelReference badBulletLabel;
-    [SerializeField] AssetLabelReference specialBulletLabel;
-
-    [Header("Settings")]
-    [SerializeField] private float speed;
-    [SerializeField] private float height;
-    [SerializeField] private float gravity;
-    [Space, SerializeField] private Transform shootingPoint;
+    [SerializeField] private Transform shootingPoint;
 
     public Transform Target => target;
     Transform target;
 
+    CannonSettings settings;
+
     private void Start()
     {
+        settings = CannonsManager.Instance.CannonSettings;
         DataLoader<ProjectileSO> dataLoader = new DataLoader<ProjectileSO>();
-        goodBullets = dataLoader.Load(goodBulletLabel);
-        badBullets = dataLoader.Load(badBulletLabel);
-        specialBullets = dataLoader.Load(specialBulletLabel);
+        goodBullets = dataLoader.Load(settings.GoodBulletLabel);
+        badBullets = dataLoader.Load(settings.BadBulletLabel);
+        specialBullets = dataLoader.Load(settings.SpecialBulletLabel);
     }
 
     public void SetTarget(Transform target)
@@ -55,10 +48,10 @@ public class CannonShooting : MonoBehaviour
 
     private void SetupProjectile(ProjectileSO data, Vector3 direction)
     {
-        GameObject obj = Instantiate(data.Model, shootingPoint);
+        GameObject obj = Instantiate(data.Model, shootingPoint.position, shootingPoint.rotation);
         obj.AddComponent<ConstantForce>();
         Projectile projectile = obj.AddComponent<Projectile>();
-        projectile.SetGravity(gravity);
+        projectile.SetGravity(settings.Gravity);
         projectile.SetVelocity(direction);
         projectile.SetEffects(data.Effects.ToList<IEffect>());
     }
@@ -73,8 +66,8 @@ public class CannonShooting : MonoBehaviour
         float displacementY = target.y - shootingPoint.position.y;
         Vector3 displacementXZ = new Vector3(target.x - shootingPoint.position.x, 0, target.z - shootingPoint.position.z);
 
-        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * height);
-        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * height / gravity) + Mathf.Sqrt(2 * (displacementY - height) / gravity));
+        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * settings.Gravity * settings.Height);
+        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * settings.Height / settings.Gravity) + Mathf.Sqrt(2 * (displacementY - settings.Height) / settings.Gravity));
 
 
         return velocityY + velocityXZ;

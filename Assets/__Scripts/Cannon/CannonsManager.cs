@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using static UnityEngine.GraphicsBuffer;
 
 public class CannonsManager : Singleton<CannonsManager>
 {
@@ -14,7 +13,10 @@ public class CannonsManager : Singleton<CannonsManager>
     List<Cannon> cannonsOnScene;
 
     public List<ComboDatabase> ComboDatabases => comboDatabases;
-    List<ComboDatabase> comboDatabases;
+    List<ComboDatabase> comboDatabases;    
+    
+    public CannonSettings CannonSettings => cannonSettings;
+    [SerializeField] CannonSettings cannonSettings;
 
 
     void Start()

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Projectile", menuName = "Projectile/Projectile", order = 1)]
+[CreateAssetMenu(fileName = "Projectile", menuName = "Cannon/Projectile/Projectile", order = 1)]
 public class ProjectileSO : ScriptableObject
 {
     [field: SerializeField] public string ProjectileName { private set; get; }
