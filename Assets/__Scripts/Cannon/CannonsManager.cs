@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class CannonsManager : Singleton<CannonsManager>
-{   
+{
+    [SerializeField] AssetLabelReference combosLabel;
+
     private TickEngine tickEngine;
     List<Cannon> cannonsOnScene;
+
+    public List<ComboDatabase> ComboDatabases => comboDatabases;
+    List<ComboDatabase> comboDatabases;
+
 
     void Start()
     {
         tickEngine = new TickEngine(Systems.Instance.TickRate);       
+        DataLoader<ComboDatabase> dataLoader = new DataLoader<ComboDatabase>();
+        comboDatabases = dataLoader.Load(combosLabel);
+
         SpawnCannons(Systems.Instance.difficultyLevel.TowerCount);
         cannonsOnScene.ForEach(cannon => tickEngine.OnTick += cannon.ComboManager.UpdateOnTick);
     }
@@ -23,7 +33,12 @@ public class CannonsManager : Singleton<CannonsManager>
     void SpawnCannons(int count)
     {
         cannonsOnScene = GetComponentsInChildren<Cannon>().ToList();
-        int deactivateCount = cannonsOnScene.Count - count;
+
+        int deactivateCount = 0;
+        if (count <= cannonsOnScene.Count)
+        {
+            deactivateCount = cannonsOnScene.Count - count;
+        }
 
         List<Cannon> cannonsToBeRemoved = cannonsOnScene.SelectRandomElements(deactivateCount);
         cannonsToBeRemoved.ForEach((cannon) =>

@@ -41,6 +41,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - BadProjectiles
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7dabc8932ea3dce4e9120c3c958a60e4
+    m_Address: Assets/GameData/Combos
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Combos
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 07cf8be0a465bbb4f93c8b00292cbb08, type: 2}
   m_SchemaSet:

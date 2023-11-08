@@ -8,6 +8,6 @@ public class EffectSO : ScriptableObject, IEffect
 
     public void ApplyEffect()
     {
-        Debug.Log(EffectName);
+        //Debug.Log(EffectName);
     }
 }

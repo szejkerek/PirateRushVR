@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25c427328c3c4b45bf3ba9f642d0f1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combosLabel:
+    m_LabelString: Combos
 --- !u!1001 &2283685243838306169
 PrefabInstance:
   m_ObjectHideFlags: 0

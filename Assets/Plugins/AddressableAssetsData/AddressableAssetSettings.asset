@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 2133170c629bad84ab89a5f55d81faee
   m_currentHash:
     serializedVersion: 2
-    Hash: d1c31dd50c2ad104fd5e60e1893acaa6
+    Hash: 054db5a75519febb575ecf1f16672d69
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
     - GoodProjectiles
     - BadProjectiles
     - SpecialProjectiles
+    - Combos
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: d7adc1f51c636b041ae514860f4de1ca, type: 2}
