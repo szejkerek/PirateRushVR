@@ -1,17 +1,25 @@
 using UnityEngine;
 using EzySlice;
+using Valve.VR.InteractionSystem;
 
 public class SliceObject : MonoBehaviour
 {
-    public Transform planeDebug;
-    public GameObject target;
+    [SerializeField] Transform startSlicePoint;
+    [SerializeField] Transform endSlicePoint;
+    [SerializeField] LayerMask sliceableLayer;
+    [SerializeField] VelocityEstimator endPointVelocity;
+
+
+
     public Material crossSectionMaterial;
     public float cutForce = 2000f;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
+        bool hasHit = Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out RaycastHit hit, sliceableLayer);
+        if (hasHit)
         {
+            GameObject target = hit.transform.gameObject;
             Slice(target);
         }
     }
@@ -21,7 +29,10 @@ public class SliceObject : MonoBehaviour
         if (target == null)
             return;
 
-        SlicedHull hull = target.Slice(planeDebug.position, planeDebug.up);
+        Vector3 velocity = endPointVelocity.GetVelocityEstimate();
+        Vector3 planeNormal = Vector3.Cross(endSlicePoint.position - startSlicePoint.position, velocity).normalized;
+
+        SlicedHull hull = target.Slice(endSlicePoint.position, planeNormal);
 
         if (hull == null)
             return;
