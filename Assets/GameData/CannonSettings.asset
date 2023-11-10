@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01509f93abe161c4f8c577509ea3630a, type: 3}
   m_Name: CannonSettings
   m_EditorClassIdentifier: 
+  <Projectiles>k__BackingField:
+  - {fileID: 11400000, guid: a161f389371e1244e91448b02c537414, type: 2}
   <GoodBulletLabel>k__BackingField:
     m_LabelString: GoodProjectiles
   <BadBulletLabel>k__BackingField:
     m_LabelString: BadProjectiles
   <SpecialBulletLabel>k__BackingField:
     m_LabelString: SpecialProjectiles
-  <RandomTargetRange>k__BackingField: 0
+  <RandomTargetRange>k__BackingField: 2
+  <RotationSmoothing>k__BackingField: 5.5
   <Height>k__BackingField: 4
   <Gravity>k__BackingField: -4

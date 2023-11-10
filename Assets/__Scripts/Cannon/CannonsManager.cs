@@ -23,7 +23,8 @@ public class CannonsManager : Singleton<CannonsManager>
     {
         Transform target = GameObject.FindGameObjectWithTag(playerTag).transform;
 
-        tickEngine = new TickEngine(Systems.Instance.TickRate);       
+        tickEngine = new TickEngine(Systems.Instance.TickRate);      
+        
         DataLoader<ComboDatabase> dataLoader = new DataLoader<ComboDatabase>();
         comboDatabases = dataLoader.Load(combosLabel);
 

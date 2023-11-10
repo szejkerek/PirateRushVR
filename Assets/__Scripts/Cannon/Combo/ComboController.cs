@@ -22,6 +22,7 @@ public class ComboController : MonoBehaviour
         _tickRate = Systems.Instance.TickRate;
         comboItemFactory = new ComboItemFactory(this);
         luncher = GetComponent<CannonShooting>();
+        EnqueueRandomWaits(currentDifficulty.CountOf25msWaits);
     }
 
     public void UpdateOnTick()
@@ -60,15 +61,13 @@ public class ComboController : MonoBehaviour
 
     private void AddLocalCombo()
     {
-        Vector2Int wait = currentDifficulty.MinMaxCountOf25msIntervals;
-
         EnqueueRandomProjectile();
-        EnqueueRandomWaits(wait);
+        EnqueueRandomWaits(currentDifficulty.CountOf25msWaits);
     }
 
-    private void EnqueueRandomWaits(Vector2Int wait)
+    private void EnqueueRandomWaits(Interval<int> wait)
     {
-        int waitCount = Random.Range(wait.x, wait.y);
+        int waitCount = wait.GetValueBetween();
         for (int i = 0; i < waitCount; i++)
         {
             queuedBehaviours.Enqueue(comboItemFactory.CreateWait(ComboWaitTime.Interval25ms));

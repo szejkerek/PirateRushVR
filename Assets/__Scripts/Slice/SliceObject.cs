@@ -9,8 +9,6 @@ public class SliceObject : MonoBehaviour
     [SerializeField] LayerMask sliceableLayer;
     [SerializeField] VelocityEstimator endPointVelocity;
 
-
-
     public Material crossSectionMaterial;
     public float cutForce = 2000f;
 

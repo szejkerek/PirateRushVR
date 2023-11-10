@@ -10,21 +10,12 @@ public class Cannon : MonoBehaviour
     public CannonShooting Luncher => luncher;
     private CannonShooting luncher;
 
-    private RotatePart[] rotateParts;
+    
 
     private void Awake()
     {
-        luncher = GetComponent<CannonShooting>();
-        rotateParts = GetComponentsInChildren<RotatePart>();
+        luncher = GetComponent<CannonShooting>();     
         comboManager = GetComponent<ComboController>();
-    }
-
-    private void Update()
-    {
-        foreach (var rotatePart in rotateParts)
-        {
-            rotatePart.Rotate(luncher.CalculateDirection(luncher.Target.position));
-        }
     }
 
     public void Deactivate()

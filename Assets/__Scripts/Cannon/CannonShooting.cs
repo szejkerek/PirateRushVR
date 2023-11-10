@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.WSA;
 
 public class CannonShooting : MonoBehaviour
 {
@@ -15,10 +16,11 @@ public class CannonShooting : MonoBehaviour
 
     [SerializeField] private Transform shootingPoint;
 
-    public Transform Target => target;
-    Transform target;
-
     CannonSettings settings;
+    Transform target;
+    Vector3 targetDirection;
+    RotatePart[] rotateParts;
+
 
     private void Start()
     {
@@ -27,19 +29,35 @@ public class CannonShooting : MonoBehaviour
         goodBullets = dataLoader.Load(settings.GoodBulletLabel);
         badBullets = dataLoader.Load(settings.BadBulletLabel);
         specialBullets = dataLoader.Load(settings.SpecialBulletLabel);
+        rotateParts = GetComponentsInChildren<RotatePart>();
+        
+    }
+
+    private void Update()
+    {
+        RotateTower(targetDirection);
+    }
+
+    private void RotateTower(Vector3 dir)
+    {
+        foreach (var rotatePart in rotateParts)
+        {
+            rotatePart.Rotate(dir.normalized, settings.RotationSmoothing);
+        }
     }
 
     public void SetTarget(Transform target)
     {
-        this.target = target;   
+        this.target = target;
+        targetDirection = CalculateDirection(target.position);
     }
 
     public void Shoot(ProjectileSO projectile)
     {
         Vector3 diffusedTargetPosition = CalculateRandomTargetPosition(target);
-        Vector3 direction = CalculateDirection(diffusedTargetPosition);
+        targetDirection = CalculateDirection(diffusedTargetPosition);    
 
-        SetupProjectile(projectile, direction);
+        SetupProjectile(projectile, targetDirection);
     }
 
     private void SetupProjectile(ProjectileSO data, Vector3 direction)

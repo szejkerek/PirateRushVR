@@ -15,5 +15,7 @@ MonoBehaviour:
   <TowerCount>k__BackingField: 2
   <BombToNeutralRatio>k__BackingField: 0.202
   <SpecialOverrideChance>k__BackingField: 0.067
-  <GlobalComboChance>k__BackingField: 0.05
-  <MinMaxCountOf25msIntervals>k__BackingField: {x: 5, y: 12}
+  <GlobalComboChance>k__BackingField: 0.046
+  <CountOf25msWaits>k__BackingField:
+    _bottomBound: 15
+    _upperBound: 21

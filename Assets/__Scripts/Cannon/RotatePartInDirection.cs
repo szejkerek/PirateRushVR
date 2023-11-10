@@ -8,12 +8,10 @@ public class RotatePart : MonoBehaviour
     [SerializeField] float offsetY;
     [SerializeField] bool z;
     [SerializeField] float offsetZ;
-    [Space]
-    [SerializeField] float smoothSpeed;
 
     Quaternion _desiredRotation = Quaternion.identity;
 
-    public void Rotate(Vector3 direction)
+    public void Rotate(Vector3 direction, float smoothSpeed)
     {
         Vector3 targetRotation = Quaternion.LookRotation(direction).eulerAngles;
         _desiredRotation = Quaternion.Euler(new Vector3(
