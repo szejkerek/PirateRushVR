@@ -32,7 +32,7 @@ public class CannonsManager : Singleton<CannonsManager>
         cannonsOnScene.ForEach(cannon =>
         {
             tickEngine.OnTick += cannon.ComboManager.UpdateOnTick;
-            cannon.Luncher.SetTarget(target);
+            cannon.Launcher.SetTarget(target);
         });
     }
 

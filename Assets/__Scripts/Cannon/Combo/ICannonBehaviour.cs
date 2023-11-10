@@ -1,4 +1,4 @@
-﻿public interface ICannonBehaviour
+﻿public interface ICannonBehavior
 {
     public void Execute();
 }

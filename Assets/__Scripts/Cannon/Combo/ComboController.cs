@@ -10,18 +10,18 @@ public class ComboController : MonoBehaviour
     int waitTicks = 0;
     ComboItemFactory comboItemFactory;
 
-    Queue<ICannonBehaviour> queuedBehaviours = new Queue<ICannonBehaviour>();
+    Queue<ICannonBehavior> queuedBehaviors = new Queue<ICannonBehavior>();
     DifficultyLevel currentDifficulty;
 
-    public CannonShooting Luncher => luncher;
-    CannonShooting luncher;
+    public CannonShooting Launcher => launcher;
+    CannonShooting launcher;
 
     private void Start()
     {
         currentDifficulty = Systems.Instance.difficultyLevel;
         _tickRate = Systems.Instance.TickRate;
         comboItemFactory = new ComboItemFactory(this);
-        luncher = GetComponent<CannonShooting>();
+        launcher = GetComponent<CannonShooting>();
         EnqueueRandomWaits(currentDifficulty.CountOf25msWaits);
     }
 
@@ -30,9 +30,9 @@ public class ComboController : MonoBehaviour
         if (isPaused())
             return;
 
-        if(queuedBehaviours.Count != 0)
+        if(queuedBehaviors.Count != 0)
         {
-            queuedBehaviours.Dequeue().Execute();
+            queuedBehaviors.Dequeue().Execute();
         }
         else
         {
@@ -53,8 +53,8 @@ public class ComboController : MonoBehaviour
         ComboDatabase comboDatabase = CannonsManager.Instance.ComboDatabases.SelectRandomElement();
         foreach(var combo in comboDatabase.combos)
         {
-            queuedBehaviours.Enqueue(comboItemFactory.CreateSpawn(combo.Projectile));
-            queuedBehaviours.Enqueue(comboItemFactory.CreateWait(combo.Wait));
+            queuedBehaviors.Enqueue(comboItemFactory.CreateSpawn(combo.Projectile));
+            queuedBehaviors.Enqueue(comboItemFactory.CreateWait(combo.Wait));
         }
 
     }
@@ -70,7 +70,7 @@ public class ComboController : MonoBehaviour
         int waitCount = wait.GetValueBetween();
         for (int i = 0; i < waitCount; i++)
         {
-            queuedBehaviours.Enqueue(comboItemFactory.CreateWait(ComboWaitTime.Interval25ms));
+            queuedBehaviors.Enqueue(comboItemFactory.CreateWait(ComboWaitTime.Interval25ms));
         }
     }
 
@@ -87,7 +87,7 @@ public class ComboController : MonoBehaviour
             float randomValue = Random.Range(0f, 1f);
             itemType = (randomValue <= currentDifficulty.BombToNeutralRatio) ? ComboSpawnType.Bomb : ComboSpawnType.NeutralProjectile;
         }
-        queuedBehaviours.Enqueue(comboItemFactory.CreateSpawn(itemType));
+        queuedBehaviors.Enqueue(comboItemFactory.CreateSpawn(itemType));
     }
 
     private bool isPaused()

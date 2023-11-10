@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketControll : MonoBehaviour
+public class RocketControl : MonoBehaviour
 {
     public float speed = 5f;  // Speed of the rocket.
     public float range = 10f; // Maximum range for random movement.

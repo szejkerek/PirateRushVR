@@ -7,14 +7,14 @@ public class Cannon : MonoBehaviour
     public ComboController ComboManager => comboManager;
     ComboController comboManager;
 
-    public CannonShooting Luncher => luncher;
-    private CannonShooting luncher;
+    public CannonShooting Launcher => launcher;
+    private CannonShooting launcher;
 
     
 
     private void Awake()
     {
-        luncher = GetComponent<CannonShooting>();     
+        launcher = GetComponent<CannonShooting>();     
         comboManager = GetComponent<ComboController>();
     }
 

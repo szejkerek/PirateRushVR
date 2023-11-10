@@ -82,7 +82,6 @@ public class CannonShooting : MonoBehaviour
             Mathf.Sin(randomAngle * Mathf.Deg2Rad) * randomDistance
         );
 
-        // Add the offset to the player's position to get the random target position
         return player.position + offset;
     }
 

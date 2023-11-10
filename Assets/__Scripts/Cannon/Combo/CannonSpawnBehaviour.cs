@@ -1,9 +1,9 @@
-﻿public class CannonSpawnBehaviour : ICannonBehaviour
+﻿public class CannonSpawnBehavior : ICannonBehavior
 {
     ProjectileSO projectile;
     ComboController context;
 
-    public CannonSpawnBehaviour(ComboController cannonManager, ProjectileSO projectile)
+    public CannonSpawnBehavior(ComboController cannonManager, ProjectileSO projectile)
     {
         this.projectile = projectile;
         context = cannonManager;
@@ -11,6 +11,6 @@
 
     public void Execute()
     {
-        context.Luncher.Shoot(projectile);
+        context.Launcher.Shoot(projectile);
     }
 }

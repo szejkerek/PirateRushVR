@@ -1,9 +1,9 @@
-﻿public class CannonWaitBehaviour : ICannonBehaviour
+﻿public class CannonWaitBehavior : ICannonBehavior
 {
     int waitTickCount = 0;
     ComboController context;
 
-    public CannonWaitBehaviour(ComboController cannonManager, int ticks)
+    public CannonWaitBehavior(ComboController cannonManager, int ticks)
     {
         waitTickCount = ticks;
         context = cannonManager;

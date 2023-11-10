@@ -11,7 +11,7 @@ public class ComboItemFactory
         context = comboManager;
     }
 
-    public ICannonBehaviour CreateWait(ComboWaitTime wait)
+    public ICannonBehavior CreateWait(ComboWaitTime wait)
     {
         int ticks = CalculateTicks(0.50f);
         switch (wait)
@@ -32,25 +32,25 @@ public class ComboItemFactory
                 ticks = CalculateTicks(1.5f);
                 break;
         }
-        return new CannonWaitBehaviour(context, ticks);
+        return new CannonWaitBehavior(context, ticks);
     }
 
-    public ICannonBehaviour CreateSpawn(ComboSpawnType spawn)
+    public ICannonBehavior CreateSpawn(ComboSpawnType spawn)
     {
-        ProjectileSO selectedBullet = context.Luncher.GoodBullets.SelectRandomElement();
+        ProjectileSO selectedBullet = context.Launcher.GoodBullets.SelectRandomElement();
         switch (spawn)
         {
             case ComboSpawnType.NeutralProjectile:
-                selectedBullet = context.Luncher.GoodBullets.SelectRandomElement();
+                selectedBullet = context.Launcher.GoodBullets.SelectRandomElement();
                 break;
             case ComboSpawnType.Bomb:
-                selectedBullet = context.Luncher.BadBullets.SelectRandomElement();
+                selectedBullet = context.Launcher.BadBullets.SelectRandomElement();
                 break;
             case ComboSpawnType.SpecialItem:
-                selectedBullet = context.Luncher.SpecialBullets.SelectRandomElement();
+                selectedBullet = context.Launcher.SpecialBullets.SelectRandomElement();
                 break;
         }
-        return new CannonSpawnBehaviour(context, selectedBullet);
+        return new CannonSpawnBehavior(context, selectedBullet);
     }
 
     private int CalculateTicks(float seconds)
