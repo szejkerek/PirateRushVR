@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ComboItemFactory
@@ -50,6 +51,18 @@ public class ComboItemFactory
     {
         List<ProjectileSO> allBullets = context.Launcher.Settings.Projectiles;
 
-        return allBullets;
+        List<ProjectileSO> typeSubset = allBullets
+       .Where(projectile => projectile.Type == type)
+       .ToList();
+
+        if (typeSubset.Count == 0) // No items of this type
+        {
+            Debug.LogError($"No projectiles of type {type} in projectile list!");
+            return null; 
+        }
+        else
+        {
+            return typeSubset;
+        }
     }
 }

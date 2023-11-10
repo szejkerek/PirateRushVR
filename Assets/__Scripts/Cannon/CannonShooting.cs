@@ -32,11 +32,6 @@ public class CannonShooting : MonoBehaviour
         }
     }
 
-    public void SetCannonSettings(CannonSettings settings)
-    {
-        this.settings = settings;
-    } 
-
     private void SetTarget(string tag)
     {
         target = GameObject.FindGameObjectWithTag(tag).transform;
@@ -48,16 +43,17 @@ public class CannonShooting : MonoBehaviour
         Vector3 diffusedTargetPosition = CalculateRandomTargetPosition(target);
         targetDirection = CalculateDirection(diffusedTargetPosition);    
 
-        SetupProjectile(projectile, targetDirection);
+        InitProjectile(projectile, targetDirection);
     }
 
-    private void SetupProjectile(ProjectileSO data, Vector3 direction)
+    private void InitProjectile(ProjectileSO data, Vector3 direction)
     {
         GameObject obj = Instantiate(data.Model, shootingPoint.position, shootingPoint.rotation);
         obj.AddComponent<ConstantForce>();
         Projectile projectile = obj.AddComponent<Projectile>();
         projectile.SetGravity(settings.Gravity);
         projectile.SetVelocity(direction);
+        projectile.SetCrossSectionMaterial(data.CrossSectionMaterial);
         projectile.SetEffects(data.Effects.ToList<IEffect>());
     }
 

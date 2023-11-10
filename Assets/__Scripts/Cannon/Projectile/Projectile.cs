@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public float Gravity => cForce.force.y;
     private Rigidbody rb;
     private ConstantForce cForce;
-    public float Gravity => cForce.force.y;
+    private Material crossSectionMaterial;
     List<IEffect> effects;
 
     private void Awake()
@@ -33,6 +34,21 @@ public class Projectile : MonoBehaviour
     public void SetGravity(float value)
     {
         cForce.force = new Vector3(0, value - Physics.gravity.y, 0);
+    }
+
+    public void SetCrossSectionMaterial(Material material)
+    {
+        if (material != null)
+        {
+            crossSectionMaterial = material;
+        }
+        else
+        {
+            Debug.LogWarning($"{gameObject.name} has no CrossSection material selected!");
+            Material redMaterial = new Material(Shader.Find("Standard"));
+            redMaterial.color = Color.red;
+            crossSectionMaterial = redMaterial;
+        }
     }
 
     public void ApplyEffects()

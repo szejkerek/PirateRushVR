@@ -50,7 +50,7 @@ public class CannonsManager : Singleton<CannonsManager>
         List<Cannon> cannonsToBeRemoved = cannonsOnScene.SelectRandomElements(deactivateCount);
         cannonsToBeRemoved.ForEach((cannon) =>
         {
-            cannon.Deactivate();
+            cannon.gameObject.SetActive(false);
             cannonsOnScene.Remove(cannon);
         });
     }
