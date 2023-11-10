@@ -6,7 +6,6 @@ using UnityEngine.AddressableAssets;
 
 public class CannonsManager : Singleton<CannonsManager>
 {
-    [SerializeField] string playerTag;
     [SerializeField] AssetLabelReference combosLabel;
 
     private TickEngine tickEngine;
@@ -15,24 +14,21 @@ public class CannonsManager : Singleton<CannonsManager>
     public List<ComboDatabase> ComboDatabases => comboDatabases;
     List<ComboDatabase> comboDatabases;    
     
-    public CannonSettings CannonSettings => cannonSettings;
-    [SerializeField] CannonSettings cannonSettings;
-
-
-    void Start()
-    {
-        Transform target = GameObject.FindGameObjectWithTag(playerTag).transform;
-
+    protected override void Awake()
+    {        
+        base.Awake();
         tickEngine = new TickEngine(Systems.Instance.TickRate);      
-        
+       
         DataLoader<ComboDatabase> dataLoader = new DataLoader<ComboDatabase>();
         comboDatabases = dataLoader.Load(combosLabel);
+    }
 
+    private void Start()
+    {
         SpawnCannons(Systems.Instance.difficultyLevel.TowerCount);
         cannonsOnScene.ForEach(cannon =>
         {
             tickEngine.OnTick += cannon.ComboManager.UpdateOnTick;
-            cannon.Launcher.SetTarget(target);
         });
     }
 

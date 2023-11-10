@@ -4,32 +4,19 @@ using UnityEngine;
 
 public class CannonShooting : MonoBehaviour
 {
-    public List<ProjectileSO> GoodBullets => goodBullets;
-    List<ProjectileSO> goodBullets;
-
-    public List<ProjectileSO> BadBullets => badBullets;
-    List<ProjectileSO> badBullets;
-
-    public List<ProjectileSO> SpecialBullets => specialBullets;
-    List<ProjectileSO> specialBullets;
+    public CannonSettings Settings => settings;
+    [SerializeField] CannonSettings settings;
 
     [SerializeField] private Transform shootingPoint;
 
-    CannonSettings settings;
     Transform target;
     Vector3 targetDirection;
     RotatePart[] rotateParts;
 
-
     private void Start()
     {
-        settings = CannonsManager.Instance.CannonSettings;
-        DataLoader<ProjectileSO> dataLoader = new DataLoader<ProjectileSO>();
-        goodBullets = dataLoader.Load(settings.GoodBulletLabel);
-        badBullets = dataLoader.Load(settings.BadBulletLabel);
-        specialBullets = dataLoader.Load(settings.SpecialBulletLabel);
+        SetTarget("Player");
         rotateParts = GetComponentsInChildren<RotatePart>();
-        
     }
 
     private void Update()
@@ -45,9 +32,14 @@ public class CannonShooting : MonoBehaviour
         }
     }
 
-    public void SetTarget(Transform target)
+    public void SetCannonSettings(CannonSettings settings)
     {
-        this.target = target;
+        this.settings = settings;
+    } 
+
+    private void SetTarget(string tag)
+    {
+        target = GameObject.FindGameObjectWithTag(tag).transform;
         targetDirection = CalculateDirection(target.position);
     }
 

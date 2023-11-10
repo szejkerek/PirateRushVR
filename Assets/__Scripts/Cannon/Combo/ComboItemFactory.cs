@@ -37,24 +37,19 @@ public class ComboItemFactory
 
     public ICannonBehavior CreateSpawn(ComboSpawnType spawn)
     {
-        ProjectileSO selectedBullet = context.Launcher.GoodBullets.SelectRandomElement();
-        switch (spawn)
-        {
-            case ComboSpawnType.NeutralProjectile:
-                selectedBullet = context.Launcher.GoodBullets.SelectRandomElement();
-                break;
-            case ComboSpawnType.Bomb:
-                selectedBullet = context.Launcher.BadBullets.SelectRandomElement();
-                break;
-            case ComboSpawnType.SpecialItem:
-                selectedBullet = context.Launcher.SpecialBullets.SelectRandomElement();
-                break;
-        }
+        ProjectileSO selectedBullet = SelectSubset(spawn).SelectRandomElement();
         return new CannonSpawnBehavior(context, selectedBullet);
     }
 
     private int CalculateTicks(float seconds)
     {
         return Mathf.CeilToInt(context.TickRate * seconds);
+    }
+
+    private List<ProjectileSO> SelectSubset(ComboSpawnType type)
+    {
+        List<ProjectileSO> allBullets = context.Launcher.Settings.Projectiles;
+
+        return allBullets;
     }
 }

@@ -23,24 +23,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - PersistentSystems
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6b3617652a49aac4db8f3df8435e77c4
-    m_Address: SpecialProjectiles
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SpecialProjectiles
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c5825c38e621ea64dab7a2b962718813
-    m_Address: GoodProjectiles
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - GoodProjectiles
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 06938c86b381ac148b5fa4db100d947a
-    m_Address: BadProjectiles
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - BadProjectiles
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7dabc8932ea3dce4e9120c3c958a60e4
     m_Address: Assets/GameData/Combos
     m_ReadOnly: 0

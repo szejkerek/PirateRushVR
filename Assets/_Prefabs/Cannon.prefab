@@ -68,7 +68,6 @@ MonoBehaviour:
   offsetY: 90
   z: 0
   offsetZ: 0
-  smoothSpeed: 3.86
 --- !u!1 &680034349869702247
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +123,6 @@ MonoBehaviour:
   offsetY: 0
   z: 1
   offsetZ: 0
-  smoothSpeed: 40
 --- !u!1 &1898969338086161058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,6 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a79a4ba5c23cd44a00f9047767a925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 78ddc84630ea8c742b268de989e554b2, type: 2}
   shootingPoint: {fileID: 3346188032015467760}
 --- !u!114 &-1236606511423103301
 MonoBehaviour:
