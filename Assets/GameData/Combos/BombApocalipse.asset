@@ -13,17 +13,19 @@ MonoBehaviour:
   m_Name: BombApocalipse
   m_EditorClassIdentifier: 
   combos:
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
-  - <Type>k__BackingField: 1
+  - <Projectile>k__BackingField: 1
+    wait: 2
+  - <Projectile>k__BackingField: 0
+    wait: 2
+  - <Projectile>k__BackingField: 1
+    wait: 2
+  - <Projectile>k__BackingField: 0
+    wait: 2
+  - <Projectile>k__BackingField: 1
+    wait: 2
+  - <Projectile>k__BackingField: 0
+    wait: 2
+  - <Projectile>k__BackingField: 1
+    wait: 2
+  - <Projectile>k__BackingField: 0
+    wait: 2

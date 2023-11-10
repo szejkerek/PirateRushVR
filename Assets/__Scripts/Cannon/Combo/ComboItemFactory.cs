@@ -11,28 +11,50 @@ public class ComboItemFactory
         context = comboManager;
     }
 
-    public ICannonBehaviour CreateWait(ComboItemType wait)
+    public ICannonBehaviour CreateWait(ComboWaitTime wait)
     {
+        int ticks = CalculateTicks(0.50f);
         switch (wait)
         {
-            case ComboItemType.Interval25ms:        return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 0.25f));
-            case ComboItemType.Interval50ms:        return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 0.50f));
-            case ComboItemType.Interval75ms:        return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 0.75f));
-            case ComboItemType.Interval100ms:       return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 1));
-            case ComboItemType.Interval150ms:       return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 1.5f));
-            default:                                return new CannonWaitBehaviour(context, Mathf.CeilToInt(context.TickRate * 0.50f));    
-
-        }     
+            case ComboWaitTime.Interval25ms:
+                ticks = CalculateTicks(0.25f);
+                break;
+            case ComboWaitTime.Interval50ms:
+                ticks = CalculateTicks(0.50f);
+                break;
+            case ComboWaitTime.Interval75ms:
+                ticks = CalculateTicks(0.75f);
+                break;
+            case ComboWaitTime.Interval100ms:
+                ticks = CalculateTicks(1);
+                break;
+            case ComboWaitTime.Interval150ms:
+                ticks = CalculateTicks(1.5f);
+                break;
+        }
+        return new CannonWaitBehaviour(context, ticks);
     }
 
-    public ICannonBehaviour CreateSpawn(ComboItemType spawn)
+    public ICannonBehaviour CreateSpawn(ComboSpawnType spawn)
     {
+        ProjectileSO selectedBullet = context.Luncher.GoodBullets.SelectRandomElement();
         switch (spawn)
         {
-            case ComboItemType.NeutralProjectile:  return new CannonSpawnBehaviour(context, context.Luncher.GoodBullets.SelectRandomElement());
-            case ComboItemType.Bomb:               return new CannonSpawnBehaviour(context, context.Luncher.BadBullets.SelectRandomElement());
-            case ComboItemType.SpecialItem:        return new CannonSpawnBehaviour(context, context.Luncher.SpecialBullets.SelectRandomElement());
-            default:                               return new CannonSpawnBehaviour(context, context.Luncher.GoodBullets.SelectRandomElement());
-        }       
+            case ComboSpawnType.NeutralProjectile:
+                selectedBullet = context.Luncher.GoodBullets.SelectRandomElement();
+                break;
+            case ComboSpawnType.Bomb:
+                selectedBullet = context.Luncher.BadBullets.SelectRandomElement();
+                break;
+            case ComboSpawnType.SpecialItem:
+                selectedBullet = context.Luncher.SpecialBullets.SelectRandomElement();
+                break;
+        }
+        return new CannonSpawnBehaviour(context, selectedBullet);
+    }
+
+    private int CalculateTicks(float seconds)
+    {
+        return Mathf.CeilToInt(context.TickRate * seconds);
     }
 }

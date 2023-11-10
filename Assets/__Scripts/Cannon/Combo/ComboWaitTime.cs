@@ -1,9 +1,7 @@
 ﻿[System.Serializable]
-public enum ComboItemType
+public enum ComboWaitTime
 {
-    NeutralProjectile,
-    Bomb,
-    SpecialItem,
+    None,
     Interval25ms,
     Interval50ms,
     Interval75ms,

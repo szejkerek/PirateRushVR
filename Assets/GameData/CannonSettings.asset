@@ -20,4 +20,4 @@ MonoBehaviour:
     m_LabelString: SpecialProjectiles
   <RandomTargetRange>k__BackingField: 0
   <Height>k__BackingField: 4
-  <Gravity>k__BackingField: -58.96
+  <Gravity>k__BackingField: -4
