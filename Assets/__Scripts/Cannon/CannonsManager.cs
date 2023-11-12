@@ -21,15 +21,18 @@ public class CannonsManager : Singleton<CannonsManager>
        
         DataLoader<ComboDatabase> dataLoader = new DataLoader<ComboDatabase>();
         comboDatabases = dataLoader.Load(combosLabel);
-    }
 
-    private void Start()
-    {
-        SpawnCannons(Systems.Instance.difficultyLevel.TowerCount);
+        int towerCount = FindObjectOfType<Systems>().difficultyLevel.TowerCount;
+        SpawnCannons(towerCount);
         cannonsOnScene.ForEach(cannon =>
         {
             tickEngine.OnTick += cannon.ComboManager.UpdateOnTick;
         });
+    }
+
+    private void Start()
+    {
+
     }
 
     void Update()
