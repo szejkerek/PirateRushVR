@@ -14,25 +14,19 @@ public class CannonsManager : Singleton<CannonsManager>
     public List<ComboDatabase> ComboDatabases => comboDatabases;
     List<ComboDatabase> comboDatabases;    
     
-    protected override void Awake()
+    void Start()
     {        
-        base.Awake();
         tickEngine = new TickEngine(Systems.Instance.TickRate);      
        
         DataLoader<ComboDatabase> dataLoader = new DataLoader<ComboDatabase>();
         comboDatabases = dataLoader.Load(combosLabel);
 
-        int towerCount = FindObjectOfType<Systems>().difficultyLevel.TowerCount;
+        int towerCount = Systems.Instance.difficultyLevel.TowerCount;
         SpawnCannons(towerCount);
         cannonsOnScene.ForEach(cannon =>
         {
             tickEngine.OnTick += cannon.ComboManager.UpdateOnTick;
         });
-    }
-
-    private void Start()
-    {
-
     }
 
     void Update()

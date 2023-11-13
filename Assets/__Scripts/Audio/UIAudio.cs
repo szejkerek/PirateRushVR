@@ -9,16 +9,19 @@ public class UIAudio : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        AudioManager.Instance.PlayGlobal(clickAudio);
+        if (clickAudio != null)
+            AudioManager.Instance.PlayGlobal(clickAudio);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        AudioManager.Instance.PlayGlobal(hoverEnterAudio);
+        if (hoverEnterAudio != null)
+            AudioManager.Instance.PlayGlobal(hoverEnterAudio);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        AudioManager.Instance.PlayGlobal(hoverExitAudio);
+        if (hoverExitAudio != null)
+            AudioManager.Instance.PlayGlobal(hoverExitAudio);
     }
 }
