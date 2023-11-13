@@ -12,20 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72515ba16a636414e9b27045783e3fbf, type: 3}
   m_Name: BombApocalipse
   m_EditorClassIdentifier: 
-  combos:
+  <combos>k__BackingField:
   - <Projectile>k__BackingField: 1
-    wait: 2
-  - <Projectile>k__BackingField: 0
-    wait: 2
+    <Wait>k__BackingField: 1
   - <Projectile>k__BackingField: 1
-    wait: 2
-  - <Projectile>k__BackingField: 0
-    wait: 2
+    <Wait>k__BackingField: 1
   - <Projectile>k__BackingField: 1
-    wait: 2
-  - <Projectile>k__BackingField: 0
-    wait: 2
+    <Wait>k__BackingField: 1
   - <Projectile>k__BackingField: 1
-    wait: 2
-  - <Projectile>k__BackingField: 0
-    wait: 2
+    <Wait>k__BackingField: 1
+  - <Projectile>k__BackingField: 1
+    <Wait>k__BackingField: 1
+  - <Projectile>k__BackingField: 1
+    <Wait>k__BackingField: 1
