@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SFXLib", menuName = "Audio/SFXLib", order = 1)]
+[CreateAssetMenu(fileName = "SFXLib", menuName = "Audio/Libraries/SFXLib", order = 1)]
 public class SFXLib : ScriptableObject
 {
 

@@ -1,35 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class UIAudio : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public string clickAudioName;
-    public string hoverEnterAudioName;
-    public string hoverExitAudioName;
+    public Sound clickAudio;
+    public Sound hoverEnterAudio;
+    public Sound hoverExitAudio;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(clickAudioName != "")
-        {
-            AudioManager.Instance.Play(clickAudioName);
-        }
+        AudioManager.Instance.PlayGlobal(clickAudio);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (hoverEnterAudioName != "")
-        {
-            AudioManager.Instance.Play(hoverEnterAudioName);
-        }
+        AudioManager.Instance.PlayGlobal(hoverEnterAudio);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (hoverExitAudioName != "")
-        {
-            AudioManager.Instance.Play(hoverExitAudioName);
-        }
+        AudioManager.Instance.PlayGlobal(hoverExitAudio);
     }
 }
