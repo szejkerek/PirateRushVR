@@ -1,6 +1,6 @@
 public class GameManager : Singleton<GameManager>
 {
-    protected override void Awake()
+    void Start()
     {
         base.Awake();
         SetHandItemsAccordingToPreference();

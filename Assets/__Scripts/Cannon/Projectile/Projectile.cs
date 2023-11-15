@@ -5,14 +5,15 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Material CrossSectionMaterial => crossSectionMaterial;
-    private Material crossSectionMaterial;
-    public float Gravity => cForce.force.y;
+    [SerializeField ]private Material crossSectionMaterial;
+
     private Rigidbody rb;
     private ConstantForce cForce;
     List<IEffect> effects;
 
     private void Awake()
     {
+        effects = new List<IEffect>();
         rb = GetComponent<Rigidbody>();
         cForce = GetComponent<ConstantForce>();
     }

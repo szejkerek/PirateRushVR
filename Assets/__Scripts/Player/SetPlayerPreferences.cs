@@ -4,7 +4,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class SetPlayerPreferences : MonoBehaviour
 {
-    [SerializeField] HandHeldType startingItems;
     [SerializeField] HandItems left;
     [SerializeField] HandItems right;
 
@@ -16,7 +15,6 @@ public class SetPlayerPreferences : MonoBehaviour
         snapTurn = GetComponent<ActionBasedSnapTurnProvider>();
         continuousTurn = GetComponent<ActionBasedContinuousTurnProvider>();
         ApplyPlayerPref();
-        SetHandItems(startingItems);
     }
     
     public void SetHandItems(HandHeldType type)

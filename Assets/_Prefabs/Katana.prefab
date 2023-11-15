@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 6812329081957993458}
   - component: {fileID: 5479066261313531593}
   - component: {fileID: 3667280097362404004}
-  - component: {fileID: 5808795058328693681}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -115,27 +114,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5808795058328693681
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3572008103505451614}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.83305013, y: 58.791595, z: 3.8182113}
-  m_Center: {x: 0.023052385, y: 20.379498, z: 0.5580901}
 --- !u!1 &5975508508608820962
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +168,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   endPointVelocity: {fileID: 5525332262947585470}
-  crossSectionMaterial: {fileID: 2100000, guid: 5de828e807de6c144be84b910e5d24bc, type: 2}
   cutForce: 500
 --- !u!1 &7886578072281729767
 GameObject:
