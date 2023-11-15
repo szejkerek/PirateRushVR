@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public Material CrossSectionMaterial => crossSectionMaterial;
+    private Material crossSectionMaterial;
     public float Gravity => cForce.force.y;
     private Rigidbody rb;
     private ConstantForce cForce;
-    private Material crossSectionMaterial;
     List<IEffect> effects;
 
     private void Awake()
