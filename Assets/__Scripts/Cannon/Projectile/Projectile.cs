@@ -60,6 +60,7 @@ public class Projectile : MonoBehaviour
         if(isPerfect)
         {
             Debug.Log("Perfect Slice");
+            AudioManager.Instance.PlayGlobal(AudioManager.Instance.SFXLib.PerfectSlice);
         }
         else
         {

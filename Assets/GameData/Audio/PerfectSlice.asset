@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0b722fc45c64ed4e88871796261240e, type: 3}
-  m_Name: SFXLib
+  m_Script: {fileID: 11500000, guid: 9dec4304bb045504e83ddec80e5d3b78, type: 3}
+  m_Name: PerfectSlice
   m_EditorClassIdentifier: 
-  <PerfectSlice>k__BackingField: {fileID: 11400000, guid: fa6ec2c2d46665c46827cc81d2c53fd1, type: 2}
+  <Clip>k__BackingField: {fileID: 8300000, guid: 2e8bd2a2e875fce43b7b28fb5318fb7d, type: 3}
+  volume: 1
+  pitch: 1
+  loop: 0
