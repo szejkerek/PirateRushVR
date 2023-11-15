@@ -5,11 +5,12 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Material CrossSectionMaterial => crossSectionMaterial;
-    [SerializeField ]private Material crossSectionMaterial;
+    [SerializeField ] Material crossSectionMaterial;
+    public List<IEffect> Effects => effects;
+    List<IEffect> effects;
 
     private Rigidbody rb;
     private ConstantForce cForce;
-    List<IEffect> effects;
 
     private void Awake()
     {
@@ -20,7 +21,7 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        ApplyEffects();
+        effects.ForEach(e => e.ApplyStartEffect());
     }
 
     public void SetEffects(List<IEffect> effects)
@@ -50,17 +51,6 @@ public class Projectile : MonoBehaviour
             Material redMaterial = new Material(Shader.Find("Standard"));
             redMaterial.color = Color.red;
             crossSectionMaterial = redMaterial;
-        }
-    }
-
-    public void ApplyEffects()
-    {
-        if (effects.Count == 0)
-            return;
-
-        foreach (var effect in effects)
-        {
-            effect.ApplyEffect();
         }
     }
 }

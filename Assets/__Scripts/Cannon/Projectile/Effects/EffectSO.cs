@@ -6,7 +6,12 @@ public class EffectSO : ScriptableObject, IEffect
 {
     [field: SerializeField] public string EffectName { private set; get; }
 
-    public void ApplyEffect()
+    public void ApplySlicedEffect()
+    {
+        //Debug.Log(EffectName);
+    }
+
+    public void ApplyStartEffect()
     {
         //Debug.Log(EffectName);
     }
