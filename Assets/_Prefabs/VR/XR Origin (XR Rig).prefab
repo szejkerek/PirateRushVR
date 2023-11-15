@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fc6632ed707ab4698ecc7d2baf862f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingItems: 3
+  startingItems: 0
   left:
     Katana: {fileID: 3051104569223284753}
     Pistol: {fileID: 8250402251518794179}
