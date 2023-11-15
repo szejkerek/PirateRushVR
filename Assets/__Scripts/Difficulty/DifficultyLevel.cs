@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SampleDifficultyLevel", menuName = "ScriptableObjects/DifficultyLevel", order = 1)]
 public class DifficultyLevel : ScriptableObject
 {
+    [field: SerializeField, Range(0f, 0.5f)] public float PerfectSliceTolerance { private set; get; }
     [field: SerializeField] public int TowerCount { private set; get; }
     [field: SerializeField, Range(0f, 1f)] public float BombToNeutralRatio { private set; get; }
     [field: SerializeField, Range(0f, 1f)] public float SpecialOverrideChance { private set; get; }

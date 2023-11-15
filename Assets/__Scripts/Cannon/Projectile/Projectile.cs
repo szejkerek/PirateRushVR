@@ -5,12 +5,11 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Material CrossSectionMaterial => crossSectionMaterial;
-    [SerializeField ] Material crossSectionMaterial;
-    public List<IEffect> Effects => effects;
-    List<IEffect> effects;
+    [SerializeField] Material crossSectionMaterial;
 
     private Rigidbody rb;
     private ConstantForce cForce;
+    List<IEffect> effects;
 
     private void Awake()
     {
@@ -51,6 +50,20 @@ public class Projectile : MonoBehaviour
             Material redMaterial = new Material(Shader.Find("Standard"));
             redMaterial.color = Color.red;
             crossSectionMaterial = redMaterial;
+        }
+    }
+
+    public void OnSliced(bool isPerfect)
+    {
+        effects.ForEach(e => e.ApplySlicedEffect());
+
+        if(isPerfect)
+        {
+            Debug.Log("Perfect Slice");
+        }
+        else
+        {
+            Debug.Log("Normal Slice");
         }
     }
 }
