@@ -4,6 +4,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class SetPlayerPreferences : MonoBehaviour
 {
+    [SerializeField] HandHeldType startingItems;
+    [SerializeField] HandItems left;
+    [SerializeField] HandItems right;
+
     ActionBasedSnapTurnProvider snapTurn;
     ActionBasedContinuousTurnProvider continuousTurn;
 
@@ -12,6 +16,33 @@ public class SetPlayerPreferences : MonoBehaviour
         snapTurn = GetComponent<ActionBasedSnapTurnProvider>();
         continuousTurn = GetComponent<ActionBasedContinuousTurnProvider>();
         ApplyPlayerPref();
+        SetHandItems(startingItems);
+    }
+    
+    public void SetHandItems(HandHeldType type)
+    {
+        left.TurnOffAll();
+        right.TurnOffAll();
+
+        switch (type)
+        {
+            case HandHeldType.PistolLeftKatanaRight:
+                left.Pistol.SetActive(true);
+                right.Katana.SetActive(true);
+                break;
+            case HandHeldType.KatanaLeftPistolRight:
+                left.Katana.SetActive(true);
+                right.Pistol.SetActive(true);
+                break;
+            case HandHeldType.UIRays:
+                left.UIRay.SetActive(true);
+                right.UIRay.SetActive(true);
+                break;
+            case HandHeldType.TeleportRays:
+                left.TeleportRay.SetActive(true);
+                right.TeleportRay.SetActive(true);
+                break;
+        }
     }
 
     public void ApplyPlayerPref()
