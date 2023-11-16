@@ -3185,21 +3185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af07645f3014a1347a5b1232afc24251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 1163744328}
-  selectWeapon: {fileID: 872788110}
-  selectDifficulty: {fileID: 0}
-  options: {fileID: 96565793}
-  about: {fileID: 79910497}
-  startButton: {fileID: 448256129}
-  rightButton: {fileID: 1340241229}
-  leftButton: {fileID: 1455735033}
-  optionButton: {fileID: 1517863461}
-  aboutButton: {fileID: 299148710}
-  quitButton: {fileID: 1101969936}
-  returnButtons:
-  - {fileID: 1144905150}
-  - {fileID: 656018491}
-  - {fileID: 50405527}
 --- !u!1 &1270602017
 GameObject:
   m_ObjectHideFlags: 0
@@ -4121,6 +4106,10 @@ PrefabInstance:
     - target: {fileID: 177638, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Name
       value: '[Graphy]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 177638, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22323726, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Camera
