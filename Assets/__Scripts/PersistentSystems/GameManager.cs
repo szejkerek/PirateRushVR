@@ -2,7 +2,6 @@ public class GameManager : Singleton<GameManager>
 {
     void Start()
     {
-        base.Awake();
         SetHandItemsAccordingToPreference();
     }
 
