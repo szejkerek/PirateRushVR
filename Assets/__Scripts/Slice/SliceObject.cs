@@ -74,18 +74,62 @@ public class SliceObject : MonoBehaviour
 
     private float CalculateVolume(Collider collider)
     {
-        Bounds bounds = collider.bounds;
-        return bounds.size.x * bounds.size.y * bounds.size.z;
+        if (collider is MeshCollider meshCollider)
+        {
+            Mesh mesh = meshCollider.sharedMesh;
+            if (mesh != null)
+            {
+                Vector3[] vertices = mesh.vertices;
+                int[] triangles = mesh.triangles;
+
+                float volume = 0f;
+                for (int i = 0; i < triangles.Length; i += 3)
+                {
+                    Vector3 v1 = vertices[triangles[i]];
+                    Vector3 v2 = vertices[triangles[i + 1]];
+                    Vector3 v3 = vertices[triangles[i + 2]];
+
+                    volume += SignedVolumeOfTriangle(v1, v2, v3);
+                }
+                return Mathf.Abs(volume);
+            }
+        }
+        else if (collider is BoxCollider boxCollider)
+        {
+            return boxCollider.size.x * boxCollider.size.y * boxCollider.size.z;
+        }
+        else if (collider is SphereCollider sphereCollider)
+        {
+            return (4f / 3f) * Mathf.PI * Mathf.Pow(sphereCollider.radius, 3);
+        }
+        else if (collider is CapsuleCollider capsuleCollider)
+        {
+            float radius = capsuleCollider.radius;
+            float height = capsuleCollider.height;
+
+            float cylinderVolume = Mathf.PI * Mathf.Pow(radius, 2) * height;
+            float sphereVolume = (4f / 3f) * Mathf.PI * Mathf.Pow(radius, 3);
+
+            return cylinderVolume + sphereVolume;
+        }
+        return 0f;
+    }
+
+    private float SignedVolumeOfTriangle(Vector3 p1, Vector3 p2, Vector3 p3)
+    {
+        return Vector3.Dot(Vector3.Cross(p1, p2), p3) / 6f;
     }
 
     private bool IsSlicePerfect(GameObject target, GameObject upperHull, GameObject lowerHull)
     {
-        float totalVolume = CalculateVolume(target.GetComponent<Collider>());
         float upperVolume = CalculateVolume(upperHull.GetComponent<Collider>());
         float lowerVolume = CalculateVolume(lowerHull.GetComponent<Collider>());
+        float totalVolume = upperVolume + lowerVolume;
+
 
         float upperRatio = upperVolume / totalVolume;
         float lowerRatio = lowerVolume / totalVolume;
+        Debug.Log($"Lower {lowerRatio}, Upper {upperRatio}");
 
         return IsWithinPerfectSlice(upperRatio) && IsWithinPerfectSlice(lowerRatio);
     }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -59,12 +58,8 @@ public class Projectile : MonoBehaviour
 
         if(isPerfect)
         {
-            Debug.Log("Perfect Slice");
             AudioManager.Instance.PlayGlobal(AudioManager.Instance.SFXLib.PerfectSlice);
-        }
-        else
-        {
-            Debug.Log("Normal Slice");
+            Debug.Log("Perfect Slice");
         }
     }
 }
