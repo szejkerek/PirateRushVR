@@ -23,8 +23,6 @@ public class GameStartMenu : MonoBehaviour
     [SerializeField] private Button rightButton;
     [SerializeField] private Button leftButton;
 
-    [Header("Select weapon Buttons")]
-    [SerializeField] private Button selectDifficultyButton;
 
     [Space]
     [SerializeField] private List<Button> returnButtons;
@@ -37,7 +35,6 @@ public class GameStartMenu : MonoBehaviour
         rightButton.onClick.AddListener(() => StartGame(rightHand: true));
         leftButton.onClick.AddListener(() => StartGame(rightHand: false));
         startButton.onClick.AddListener(() => EnableView(selectDifficulty));
-        startButton.onClick.AddListener(() => EnableView(selectWeapon));
         optionButton.onClick.AddListener(() => EnableView(options));
         aboutButton.onClick.AddListener(() => EnableView(about));
         quitButton.onClick.AddListener(QuitGame);
@@ -60,6 +57,12 @@ public class GameStartMenu : MonoBehaviour
         Systems.Instance.KatanaRight = rightHand;
         SceneLoader.Instance.LoadScene(SceneEnum.Gameplay);
     }    
+
+    public void SetDifficulty(DifficultyLevel difficultySO)
+    {
+        Systems.Instance.difficultyLevel = difficultySO;
+        EnableView(selectWeapon);
+    }
 
     public void EnableView(GameObject view)
     {

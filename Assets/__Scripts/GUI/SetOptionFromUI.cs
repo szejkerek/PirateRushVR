@@ -17,10 +17,22 @@ public class SetOptionFromUI : MonoBehaviour
         turnDropdown.onValueChanged.AddListener(SetTurnPlayerPref);
 
         if (PlayerPrefs.HasKey("turn"))
+        { 
             turnDropdown.value = PlayerPrefs.GetInt("turn");
+        }
+        else
+        {
+            SetTurnPlayerPref(0);
+        }
         
         if (PlayerPrefs.HasKey("volume"))
+        {
             volumeSlider.value = PlayerPrefs.GetFloat("turn");
+        }
+        else
+        {
+            SetGlobalVolume(1);
+        }
     }
 
     public void SetGlobalVolume(float value)
@@ -31,7 +43,7 @@ public class SetOptionFromUI : MonoBehaviour
 
     public void SetTurnPlayerPref(int value)
     {
-        turnTypeFromPlayerPref.ApplyPlayerPref();
+        turnTypeFromPlayerPref.SetTurnType();
         PlayerPrefs.SetInt("turn", value); 
     }
 }

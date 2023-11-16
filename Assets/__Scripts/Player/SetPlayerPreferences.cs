@@ -14,7 +14,7 @@ public class SetPlayerPreferences : MonoBehaviour
     {
         snapTurn = GetComponent<ActionBasedSnapTurnProvider>();
         continuousTurn = GetComponent<ActionBasedContinuousTurnProvider>();
-        ApplyPlayerPref();
+        SetTurnType();
     }
     
     public void SetHandItems(HandHeldType type)
@@ -43,7 +43,7 @@ public class SetPlayerPreferences : MonoBehaviour
         }
     }
 
-    public void ApplyPlayerPref()
+    public void SetTurnType()
     {
         if (!PlayerPrefs.HasKey("turn"))
             return;
