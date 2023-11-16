@@ -40,18 +40,19 @@ public class CannonShooting : MonoBehaviour
 
     public void Shoot(ProjectileSO projectile)
     {
+        float gravity = settings.Gravity.GetValueBetween(); ;
         Vector3 diffusedTargetPosition = CalculateRandomTargetPosition(target);
-        targetDirection = CalculateDirection(diffusedTargetPosition);    
+        targetDirection = CalculateDirection(diffusedTargetPosition, gravity);    
 
-        InitProjectile(projectile, targetDirection);
+        InitProjectile(projectile, targetDirection, gravity);
     }
 
-    private void InitProjectile(ProjectileSO data, Vector3 direction)
+    private void InitProjectile(ProjectileSO data, Vector3 direction, float gravity)
     {
         GameObject obj = Instantiate(data.Model, shootingPoint.position, shootingPoint.rotation);
         obj.AddComponent<ConstantForce>();
         Projectile projectile = obj.AddComponent<Projectile>();
-        projectile.SetGravity(settings.Gravity);
+        projectile.SetGravity(gravity);
         projectile.SetVelocity(direction);
         projectile.SetCrossSectionMaterial(data.CrossSectionMaterial);
         projectile.SetEffects(data.Effects.ToList<IEffect>());
@@ -59,11 +60,9 @@ public class CannonShooting : MonoBehaviour
 
     private Vector3 CalculateRandomTargetPosition(Transform player)
     {
-        // Generate a random point within a circle of the specified radius
         float randomAngle = Random.Range(0f, 360f);
         float randomDistance = Random.Range(0f, Mathf.Abs(settings.RandomTargetRange));
 
-        // Calculate the new position based on the random angle and distance
         Vector3 offset = new Vector3(
             Mathf.Cos(randomAngle * Mathf.Deg2Rad) * randomDistance,
             0f,
@@ -73,13 +72,15 @@ public class CannonShooting : MonoBehaviour
         return player.position + offset;
     }
 
-    public Vector3 CalculateDirection(Vector3 target)
+    public Vector3 CalculateDirection(Vector3 target, float gravity = -9.81f)
     {
+        float height = settings.Height.GetValueBetween();
+        
         float displacementY = target.y - shootingPoint.position.y;
         Vector3 displacementXZ = new Vector3(target.x - shootingPoint.position.x, 0, target.z - shootingPoint.position.z);
 
-        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * settings.Gravity * settings.Height);
-        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * settings.Height / settings.Gravity) + Mathf.Sqrt(2 * (displacementY - settings.Height) / settings.Gravity));
+        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * height);
+        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * height / gravity) + Mathf.Sqrt(2 * (displacementY - height) / gravity));
 
 
         return velocityY + velocityXZ;

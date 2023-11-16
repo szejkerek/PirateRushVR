@@ -10,6 +10,6 @@ public class CannonSettings : ScriptableObject
     [field: Header("Settings")]
     [field: SerializeField] public float RandomTargetRange { private set; get; }
     [field: SerializeField] public float RotationSmoothing { private set; get; }
-    [field: SerializeField] public float Height { private set; get; }
-    [field: SerializeField] public float Gravity { private set; get; }
+    [field: SerializeField] public Interval<float> Height { private set; get; }
+    [field: SerializeField] public Interval<float> Gravity { private set; get; }
 }
