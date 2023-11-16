@@ -8,18 +8,25 @@ public class GameStartMenu : MonoBehaviour
 {
     [Header("UI Pages")]
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject selectDifficulty;
     [SerializeField] private GameObject selectWeapon;
     [SerializeField] private GameObject options;
     [SerializeField] private GameObject about;
 
     [Header("Main Menu Buttons")]
     [SerializeField] private Button startButton;
-    [SerializeField] private Button rightButton;
-    [SerializeField] private Button leftButton;
     [SerializeField] private Button optionButton;
     [SerializeField] private Button aboutButton;
     [SerializeField] private Button quitButton;
 
+    [Header("Select weapon Buttons")]
+    [SerializeField] private Button rightButton;
+    [SerializeField] private Button leftButton;
+
+    [Header("Select weapon Buttons")]
+    [SerializeField] private Button selectDifficultyButton;
+
+    [Space]
     [SerializeField] private List<Button> returnButtons;
 
     void Awake()
@@ -29,6 +36,7 @@ public class GameStartMenu : MonoBehaviour
 
         rightButton.onClick.AddListener(() => StartGame(rightHand: true));
         leftButton.onClick.AddListener(() => StartGame(rightHand: false));
+        startButton.onClick.AddListener(() => EnableView(selectDifficulty));
         startButton.onClick.AddListener(() => EnableView(selectWeapon));
         optionButton.onClick.AddListener(() => EnableView(options));
         aboutButton.onClick.AddListener(() => EnableView(about));
@@ -68,6 +76,7 @@ public class GameStartMenu : MonoBehaviour
     {
         mainMenu.SetActive(false);
         options.SetActive(false);
+        selectDifficulty.SetActive(false);
         about.SetActive(false);
         selectWeapon.SetActive(false);
     }
