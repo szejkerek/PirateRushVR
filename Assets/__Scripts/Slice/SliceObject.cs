@@ -50,7 +50,7 @@ public class SliceObject : MonoBehaviour
         GameObject lowerHull = hull.CreateLowerHull(target, projectile.CrossSectionMaterial);
         SetUpHull(lowerHull);
 
-        projectile.OnSliced(IsSlicePerfect(target, upperHull, lowerHull));
+        projectile.OnSliced(IsSlicePerfect(upperHull, lowerHull));
 
         Destroy(target);
     }
@@ -69,7 +69,7 @@ public class SliceObject : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         obj.transform.DOScale(Vector3.zero, animationTime);
-        Destroy(obj, animationTime);
+        Destroy(obj, animationTime + 0.5f);
     }
 
     private float CalculateVolume(Collider collider)
@@ -120,16 +120,14 @@ public class SliceObject : MonoBehaviour
         return Vector3.Dot(Vector3.Cross(p1, p2), p3) / 6f;
     }
 
-    private bool IsSlicePerfect(GameObject target, GameObject upperHull, GameObject lowerHull)
+    private bool IsSlicePerfect(GameObject upperHull, GameObject lowerHull)
     {
         float upperVolume = CalculateVolume(upperHull.GetComponent<Collider>());
         float lowerVolume = CalculateVolume(lowerHull.GetComponent<Collider>());
         float totalVolume = upperVolume + lowerVolume;
 
-
         float upperRatio = upperVolume / totalVolume;
         float lowerRatio = lowerVolume / totalVolume;
-        Debug.Log($"Lower {lowerRatio}, Upper {upperRatio}");
 
         return IsWithinPerfectSlice(upperRatio) && IsWithinPerfectSlice(lowerRatio);
     }
