@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class GameStartMenu : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject selectDifficulty;
     [SerializeField] private GameObject selectWeapon;
+    [SerializeField] private GameObject selectNickname;
     [SerializeField] private GameObject options;
     [SerializeField] private GameObject about;
 
@@ -21,8 +23,11 @@ public class GameStartMenu : MonoBehaviour
 
     [Header("Select weapon Buttons")]
     [SerializeField] private Button rightButton;
-    [SerializeField] private Button leftButton;
-
+    [SerializeField] private Button leftButton;    
+    
+    [Header("Select weapon Buttons")]
+    [SerializeField] private Button selectNicknameBtn;
+    [SerializeField] private TMP_InputField nicknameInputField;
 
     [Space]
     [SerializeField] private List<Button> returnButtons;
@@ -32,11 +37,18 @@ public class GameStartMenu : MonoBehaviour
         EnablePlayerUIRays();
         EnableView(mainMenu);
 
+
+
+        startButton.onClick.AddListener(() =>{ 
+            EnableView(selectNickname);
+            nicknameInputField.text = "x";
+        });
+        selectNicknameBtn.onClick.AddListener(() => EnableView(selectDifficulty));
+
+        aboutButton.onClick.AddListener(() => EnableView(about));
+        optionButton.onClick.AddListener(() => EnableView(options));
         rightButton.onClick.AddListener(() => StartGame(rightHand: true));
         leftButton.onClick.AddListener(() => StartGame(rightHand: false));
-        startButton.onClick.AddListener(() => EnableView(selectDifficulty));
-        optionButton.onClick.AddListener(() => EnableView(options));
-        aboutButton.onClick.AddListener(() => EnableView(about));
         quitButton.onClick.AddListener(QuitGame);
 
         foreach (var item in returnButtons)
@@ -78,6 +90,7 @@ public class GameStartMenu : MonoBehaviour
     private void HideAll()
     {
         mainMenu.SetActive(false);
+        selectNickname.SetActive(false);
         options.SetActive(false);
         selectDifficulty.SetActive(false);
         about.SetActive(false);
