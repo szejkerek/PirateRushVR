@@ -84,5 +84,5 @@ jobs:
       - name: Upload Unity Build
         uses: actions/upload-artifact@v2
         with:
-          name: Unity Build-${{ env.targetPlatform }}-${{steps.myBuildStep.outputs.buildVersion}}
+          name: Unity-Build-${{ env.targetPlatform }}-${{steps.myBuildStep.outputs.buildVersion}}
           path: build/${{ env.targetPlatform }}
