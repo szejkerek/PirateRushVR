@@ -1,62 +1,33 @@
-using Microsoft.MixedReality.Toolkit.Experimental.UI;
-using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
 public class ShowKeyboardOnSelect : MonoBehaviour
 {
-    [SerializeField] float smoothingFactor = 5.0f;
-    [SerializeField] float verticalOffset = -0.5f;
-    [SerializeField] float distance;
-    [SerializeField] Transform positionSource;
+    [SerializeField] UIWarning warning;
     TMP_InputField inputField;
-
-    private void Start()
+    SetPlayerPreferences playerPreferences;
+    private void Awake()
     {
+#if UNITY_EDITOR
+        warning.ShowWarning("Use system keyboard");
+#else
+        playerPreferences = FindObjectOfType<SetPlayerPreferences>();
         inputField = GetComponent<TMP_InputField>();
-        inputField.onSelect.AddListener(_ => ShowKeyboard());
-        FollowTarget(lerp: false);
+        inputField.onSelect.AddListener(_ => playerPreferences.SetHandItems(HandHeldType.None));
+        inputField.onDeselect.AddListener(_ => InvokeOnNextFrame());
+#endif
     }
 
-    void ShowKeyboard()
+    private void InvokeOnNextFrame()
     {
-        NonNativeKeyboard.Instance.InputField = inputField;
-        NonNativeKeyboard.Instance.PresentKeyboard(inputField.text);
-        NonNativeKeyboard.Instance.OnClosed += ClearCaret;
+        StartCoroutine(DelayedMethod());
     }
 
-    void LateUpdate()
+    private IEnumerator DelayedMethod()
     {
-        FollowTarget();
+        yield return new WaitForSeconds(0.1f);
+        playerPreferences.SetHandItems(HandHeldType.UIRays);
     }
 
-    void FollowTarget(bool lerp = true)
-    {
-        Vector3 dir = positionSource.forward;
-        dir.y = 0;
-        dir.Normalize();
-        Vector3 targetPosition = positionSource.position + dir * distance + Vector3.up * verticalOffset;
-
-        Vector3 newPos;
-        if (lerp)
-        {
-            newPos = Vector3.Lerp(NonNativeKeyboard.Instance.transform.position, targetPosition, Time.deltaTime * smoothingFactor);
-        }
-        else
-        {
-            newPos = targetPosition;
-        }
-        NonNativeKeyboard.Instance.RepositionKeyboard(newPos);
-    }
-
-    public void HideKeyboard()
-    {
-        NonNativeKeyboard.Instance.Close();
-        NonNativeKeyboard.Instance.OnClosed -= ClearCaret;
-    }
-
-    private void ClearCaret(object sender, EventArgs e)
-    {
-        NonNativeKeyboard.Instance.OnClosed -= ClearCaret;
-    }
 }

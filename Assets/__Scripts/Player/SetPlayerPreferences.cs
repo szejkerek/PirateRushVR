@@ -22,6 +22,8 @@ public class SetPlayerPreferences : MonoBehaviour
         left.TurnOffAll();
         right.TurnOffAll();
 
+        left.Model.SetActive(true);
+        right.Model.SetActive(true);
         switch (type)
         {
             case HandHeldType.PistolLeftKatanaRight:
@@ -39,6 +41,10 @@ public class SetPlayerPreferences : MonoBehaviour
             case HandHeldType.TeleportRays:
                 left.TeleportRay.SetActive(true);
                 right.TeleportRay.SetActive(true);
+                break;
+            case HandHeldType.None:
+                left.Model.SetActive(false);
+                right.Model.SetActive(false);
                 break;
         }
     }

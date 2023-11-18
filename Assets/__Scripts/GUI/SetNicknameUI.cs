@@ -1,15 +1,22 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetNicknameUI : MonoBehaviour
 {
-    public TMP_InputField nicknameInput;
-    public string GenerateGuestNick()
+    [SerializeField] TMP_InputField nicknameInput;
+    [SerializeField] Button generateGuestBtn;
+    [SerializeField] Button selectBtn;
+
+    private void Awake()
     {
-        string uuid = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 4);
-        return $"Guest{uuid}";
+        generateGuestBtn.onClick.AddListener(GenerateGuestNick);
+    }
+
+    public void GenerateGuestNick()
+    {
+        string uuid = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 5);
+        nicknameInput.text =  $"Guest{uuid}";
     }
 }

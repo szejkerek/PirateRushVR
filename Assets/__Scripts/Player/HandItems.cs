@@ -4,6 +4,7 @@ using UnityEngine;
 [Serializable]
 public class HandItems
 {
+    public GameObject Model;
     public GameObject Katana;
     public GameObject Pistol;
     public GameObject TeleportRay;
@@ -11,6 +12,7 @@ public class HandItems
 
     public void TurnOffAll()
     {
+        Model?.SetActive(false);
         Katana?.SetActive(false);
         Pistol?.SetActive(false);
         TeleportRay?.SetActive(false);
