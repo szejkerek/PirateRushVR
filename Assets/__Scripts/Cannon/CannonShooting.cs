@@ -52,11 +52,8 @@ public class CannonShooting : MonoBehaviour
         GameObject obj = Instantiate(data.Model, shootingPoint.position, shootingPoint.rotation);
         obj.AddComponent<ConstantForce>();
         Projectile projectile = obj.AddComponent<Projectile>();
-        projectile.SetGravity(gravity);
-        projectile.SetVelocity(direction);
-        projectile.SetCrossSectionMaterial(data.CrossSectionMaterial);
-        projectile.SetEffects(data.Effects.ToList<IEffect>());
-    }
+        projectile.Init(data, direction, gravity);
+     }
 
     private Vector3 CalculateRandomTargetPosition(Transform player)
     {

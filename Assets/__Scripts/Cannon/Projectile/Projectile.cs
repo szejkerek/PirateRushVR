@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public Material CrossSectionMaterial => crossSectionMaterial;
-    [SerializeField] Material crossSectionMaterial;
+    public ProjectileSO Data => data;
+    private ProjectileSO data;
 
     private Rigidbody rb;
     private ConstantForce cForce;
@@ -17,39 +17,29 @@ public class Projectile : MonoBehaviour
         cForce = GetComponent<ConstantForce>();
     }
 
+    public void Init(ProjectileSO data, Vector3 velocity, float gravity)
+    {
+        this.data = data;
+        rb.velocity = velocity;
+        cForce.force = new Vector3(0, gravity - Physics.gravity.y, 0);
+    }
+
     private void Start()
     {
         effects.ForEach(e => e.ApplyStartEffect());
     }
 
-    public void SetEffects(List<IEffect> effects)
+    public Material GetCrossSectionMaterial()
     {
-        this.effects = effects;
-    }
-
-    public void SetVelocity(Vector3 velocity)
-    {
-        rb.velocity = velocity;
-    }
-
-    public void SetGravity(float value)
-    {
-        cForce.force = new Vector3(0, value - Physics.gravity.y, 0);
-    }
-
-    public void SetCrossSectionMaterial(Material material)
-    {
-        if (material != null)
-        {
-            crossSectionMaterial = material;
-        }
-        else
+        if (data.CrossSectionMaterial == null)
         {
             Debug.LogWarning($"{gameObject.name} has no CrossSection material selected!");
             Material redMaterial = new Material(Shader.Find("Standard"));
             redMaterial.color = Color.red;
-            crossSectionMaterial = redMaterial;
+            return redMaterial;
         }
+
+        return data.CrossSectionMaterial;
     }
 
     public void OnSliced(bool isPerfect)
