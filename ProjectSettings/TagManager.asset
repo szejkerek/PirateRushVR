@@ -15,8 +15,8 @@ TagManager:
   - Interactable
   - Sliceable
   - ProjectileNonCollision
-  - 
-  - 
+  - Shootable
+  - Collectible
   - 
   - 
   - 
