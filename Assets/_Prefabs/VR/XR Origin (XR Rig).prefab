@@ -1002,11 +1002,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   left:
+    Model: {fileID: 8594066517565025035}
     Katana: {fileID: 3051104569223284753}
     Pistol: {fileID: 8250402251518794179}
     TeleportRay: {fileID: 300894372545206486}
     UIRay: {fileID: 4804991101430278635}
   right:
+    Model: {fileID: 8335446900946633127}
     Katana: {fileID: 7623050029888609281}
     Pistol: {fileID: 316884474295993794}
     TeleportRay: {fileID: 1542494437138741116}
@@ -2915,6 +2917,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
   m_PrefabInstance: {fileID: 4414724060493899861}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8335446900946633127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+  m_PrefabInstance: {fileID: 4414724060493899861}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7831988582431184029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3063,6 +3070,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+--- !u!1 &8594066517565025035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+  m_PrefabInstance: {fileID: 8556992922129031958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8594066517565192043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 109434732395451517, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
