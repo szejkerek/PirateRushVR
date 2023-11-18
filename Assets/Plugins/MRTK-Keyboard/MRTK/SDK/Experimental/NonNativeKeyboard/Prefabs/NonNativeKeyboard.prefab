@@ -15479,8 +15479,8 @@ MonoBehaviour:
   AlphaWebKeys: {fileID: 11409552}
   AlphaMailKeys: {fileID: 11433708}
   m_MaxScale: 1
-  m_MinScale: 0.3
-  m_MaxDistance: 3
+  m_MinScale: 0.6
+  m_MaxDistance: 3.5
   m_MinDistance: 1
   CloseOnInactivity: 0
   CloseOnInactivityTime: 15

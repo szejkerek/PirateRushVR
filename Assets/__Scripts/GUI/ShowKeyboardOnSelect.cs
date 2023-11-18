@@ -5,41 +5,48 @@ using UnityEngine;
 
 public class ShowKeyboardOnSelect : MonoBehaviour
 {
+    [SerializeField] float smoothingFactor = 5.0f;
     [SerializeField] float verticalOffset = -0.5f;
     [SerializeField] float distance;
     [SerializeField] Transform positionSource;
     TMP_InputField inputField;
 
-    private void Awake()
+    private void Start()
     {
         inputField = GetComponent<TMP_InputField>();
         inputField.onSelect.AddListener(_ => ShowKeyboard());
+        FollowTarget(lerp: false);
     }
 
     void ShowKeyboard()
     {
         NonNativeKeyboard.Instance.InputField = inputField;
         NonNativeKeyboard.Instance.PresentKeyboard(inputField.text);
-
         NonNativeKeyboard.Instance.OnClosed += ClearCaret;
     }
 
     void LateUpdate()
     {
-        SmoothlyFollowTarget();
+        FollowTarget();
     }
 
-    void SmoothlyFollowTarget()
+    void FollowTarget(bool lerp = true)
     {
         Vector3 dir = positionSource.forward;
         dir.y = 0;
         dir.Normalize();
         Vector3 targetPosition = positionSource.position + dir * distance + Vector3.up * verticalOffset;
 
-        // Smoothly move the keyboard to the target position
-        float smoothingFactor = 5.0f; // Adjust this value to control the smoothness of the movement
-        Vector3 smoothedPosition = Vector3.Lerp(NonNativeKeyboard.Instance.transform.position, targetPosition, Time.deltaTime * smoothingFactor);
-        NonNativeKeyboard.Instance.RepositionKeyboard(smoothedPosition);
+        Vector3 newPos;
+        if (lerp)
+        {
+            newPos = Vector3.Lerp(NonNativeKeyboard.Instance.transform.position, targetPosition, Time.deltaTime * smoothingFactor);
+        }
+        else
+        {
+            newPos = targetPosition;
+        }
+        NonNativeKeyboard.Instance.RepositionKeyboard(newPos);
     }
 
     public void HideKeyboard()

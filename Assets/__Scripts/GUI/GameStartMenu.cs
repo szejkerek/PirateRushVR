@@ -25,9 +25,10 @@ public class GameStartMenu : MonoBehaviour
     [SerializeField] private Button rightButton;
     [SerializeField] private Button leftButton;    
     
-    [Header("Select weapon Buttons")]
+    [Header("Select nickname")]
     [SerializeField] private Button selectNicknameBtn;
     [SerializeField] private TMP_InputField nicknameInputField;
+    [SerializeField] private UIWarning nicknameWarning;
 
     [Space]
     [SerializeField] private List<Button> returnButtons;
@@ -37,13 +38,22 @@ public class GameStartMenu : MonoBehaviour
         EnablePlayerUIRays();
         EnableView(mainMenu);
 
-
-
         startButton.onClick.AddListener(() =>{ 
             EnableView(selectNickname);
-            nicknameInputField.text = "x";
+            nicknameInputField.text = Systems.Instance.Nickname;
         });
-        selectNicknameBtn.onClick.AddListener(() => EnableView(selectDifficulty));
+        selectNicknameBtn.onClick.AddListener(() => { 
+            if(nicknameInputField.text != "")
+            {
+                EnableView(selectDifficulty);
+                Systems.Instance.SetNickname(nicknameInputField.text);
+            }
+            else
+            {
+                nicknameWarning.ShowWarning("Nickname cannot be empty!");
+            }
+            
+        });
 
         aboutButton.onClick.AddListener(() => EnableView(about));
         optionButton.onClick.AddListener(() => EnableView(options));
