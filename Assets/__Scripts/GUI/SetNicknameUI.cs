@@ -12,11 +12,17 @@ public class SetNicknameUI : MonoBehaviour
     private void Awake()
     {
         generateGuestBtn.onClick.AddListener(GenerateGuestNick);
+        selectBtn.onClick.AddListener(OnSelected);
     }
 
     public void GenerateGuestNick()
     {
         string uuid = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 5);
         nicknameInput.text =  $"Guest{uuid}";
+    }
+
+    public void OnSelected()
+    {
+
     }
 }

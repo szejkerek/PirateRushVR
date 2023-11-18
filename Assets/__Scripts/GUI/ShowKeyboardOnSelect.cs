@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class ShowKeyboardOnSelect : MonoBehaviour
 {
-    [SerializeField] UIWarning warning;
     TMP_InputField inputField;
     SetPlayerPreferences playerPreferences;
     private void Awake()
     {
 #if UNITY_EDITOR
-        warning.ShowWarning("Use system keyboard");
+        Debug.LogWarning("Use system keyboard!");
 #else
         playerPreferences = FindObjectOfType<SetPlayerPreferences>();
         inputField = GetComponent<TMP_InputField>();

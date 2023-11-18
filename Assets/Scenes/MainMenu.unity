@@ -7486,6 +7486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nicknameInput: {fileID: 272265034}
   generateGuestBtn: {fileID: 1426239878}
+  selectBtn: {fileID: 2009864993}
 --- !u!1 &1871360335
 GameObject:
   m_ObjectHideFlags: 0
