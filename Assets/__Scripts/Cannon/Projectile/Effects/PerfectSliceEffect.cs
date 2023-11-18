@@ -7,6 +7,6 @@ public class PerfectSlice : Effect
     public override void ApplyHitEffect(Projectile context)
     {
         AudioManager.Instance.PlayGlobal(AudioManager.Instance.SFXLib.PerfectSlice);
-        Debug.Log("Perfect Slice");
+        Debug.Log("Perfect SliceableBehavioir");
     }
 }

@@ -5,15 +5,12 @@ using System.Collections;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-public class Katana : MonoBehaviour
+public class Katana : Weapon
 {
     [SerializeField] Transform startSlicePoint;
     [SerializeField] Transform endSlicePoint;
     [SerializeField] VelocityEstimator endPointVelocity;
     [Space]
-    [SerializeField] LayerMask sliceableLayer;
-    [SerializeField] LayerMask shootableLayer;
-    [SerializeField] LayerMask collectibleLayer;
     [SerializeField] float cutForce = 2000f;
 
     float perfectSliceTolerance;
@@ -22,58 +19,40 @@ public class Katana : MonoBehaviour
         perfectSliceTolerance = Systems.Instance.difficultyLevel.PerfectSliceTolerance;
     }
 
-    private void FixedUpdate()
+    protected override void ShootableBehaviour(Projectile projectile)
     {
-        if(DidHit(out RaycastHit hitSliceable, sliceableLayer))
-        {
-            Slice(hitSliceable.transform.gameObject);
-        }
-        else if(DidHit(out RaycastHit hitShootable, shootableLayer))
-        {
-            ShootBehaviour(hitShootable.transform.gameObject);
-        }
-        else
-        {
-
-        }
+        Debug.Log("Hit shootable layer");
     }
 
-    private void ShootBehaviour(GameObject gameObject)
-    {
-        
-    }
-
-    private bool DidHit(out RaycastHit hit, int layerMask)
+    protected override bool DidHit(out RaycastHit hit, int layerMask)
     {
        return Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out hit, layerMask);
     }
 
-    private void Slice(GameObject target)
+    protected override void SliceableBehavioir(Projectile hit) 
     {
-        if (target == null)
+        if (hit == null)
             return;
 
         Vector3 velocity = endPointVelocity.GetVelocityEstimate();
         Vector3 planeNormal = Vector3.Cross(endSlicePoint.position - startSlicePoint.position, velocity).normalized;
 
-        SlicedHull hull = target.Slice(endSlicePoint.position, planeNormal);
+        SlicedHull hull = hit.gameObject.Slice(endSlicePoint.position, planeNormal);
 
         if (hull == null)
             return;
 
-        Projectile projectile = target.GetComponent<Projectile>();
+        Material mat = hit.Data.CrossSectionMaterial;
 
-        Material mat = projectile.Data.CrossSectionMaterial;
-
-        GameObject upperHull = hull.CreateUpperHull(target, mat);
+        GameObject upperHull = hull.CreateUpperHull(hit.gameObject, mat);
         SetUpHull(upperHull);
 
-        GameObject lowerHull = hull.CreateLowerHull(target, mat);
+        GameObject lowerHull = hull.CreateLowerHull(hit.gameObject, mat);
         SetUpHull(lowerHull);
 
-        projectile.ApplyEffects(IsSlicePerfect(upperHull, lowerHull));
+        hit.ApplyEffects(IsSlicePerfect(upperHull, lowerHull));
 
-        Destroy(target);
+        Destroy(hit);
     }
 
     private void SetUpHull(GameObject hull)
@@ -160,5 +139,4 @@ public class Katana : MonoBehaviour
         float upperBound = 0.5f + perfectSliceTolerance;
         return (value >= lowerBound && value <= upperBound);
     }
-
 }
