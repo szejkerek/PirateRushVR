@@ -35,10 +35,12 @@ public class SliceObjectTest : MonoBehaviour
         if (hull == null)
             return;
 
-        GameObject upperHull = hull.CreateUpperHull(target, projectile.CrossSectionMaterial);
+        Material mat = projectile.Data.CrossSectionMaterial;
+
+        GameObject upperHull = hull.CreateUpperHull(target, mat);
         SetUpHull(upperHull);
 
-        GameObject lowerHull = hull.CreateLowerHull(target, projectile.CrossSectionMaterial);
+        GameObject lowerHull = hull.CreateLowerHull(target, mat);
         SetUpHull(lowerHull);
 
         Destroy(target);

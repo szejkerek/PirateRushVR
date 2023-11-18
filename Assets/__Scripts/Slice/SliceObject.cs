@@ -44,10 +44,12 @@ public class SliceObject : MonoBehaviour
 
         Projectile projectile = target.GetComponent<Projectile>();
 
-        GameObject upperHull = hull.CreateUpperHull(target, projectile.CrossSectionMaterial);
+        Material mat = projectile.Data.CrossSectionMaterial;
+
+        GameObject upperHull = hull.CreateUpperHull(target, mat);
         SetUpHull(upperHull);
 
-        GameObject lowerHull = hull.CreateLowerHull(target, projectile.CrossSectionMaterial);
+        GameObject lowerHull = hull.CreateLowerHull(target, mat);
         SetUpHull(lowerHull);
 
         projectile.OnSliced(IsSlicePerfect(upperHull, lowerHull));
@@ -72,11 +74,11 @@ public class SliceObject : MonoBehaviour
         Destroy(obj, animationTime + 0.5f);
     }
 
-    private float CalculateVolume(Collider collider)
+    private float CalculateVolume(MeshCollider collider)
     {
-        if (collider is MeshCollider meshCollider)
-        {
-            Mesh mesh = meshCollider.sharedMesh;
+        //if (collider is MeshCollider meshCollider)
+        //{
+            Mesh mesh = collider.sharedMesh;
             if (mesh != null)
             {
                 Vector3[] vertices = mesh.vertices;
@@ -93,25 +95,26 @@ public class SliceObject : MonoBehaviour
                 }
                 return Mathf.Abs(volume);
             }
-        }
-        else if (collider is BoxCollider boxCollider)
-        {
-            return boxCollider.size.x * boxCollider.size.y * boxCollider.size.z;
-        }
-        else if (collider is SphereCollider sphereCollider)
-        {
-            return (4f / 3f) * Mathf.PI * Mathf.Pow(sphereCollider.radius, 3);
-        }
-        else if (collider is CapsuleCollider capsuleCollider)
-        {
-            float radius = capsuleCollider.radius;
-            float height = capsuleCollider.height;
+        //}
+        //}
+        //else if (collider is BoxCollider boxCollider)
+        //{
+        //    return boxCollider.size.x * boxCollider.size.y * boxCollider.size.z;
+        //}
+        //else if (collider is SphereCollider sphereCollider)
+        //{
+        //    return (4f / 3f) * Mathf.PI * Mathf.Pow(sphereCollider.radius, 3);
+        //}
+        //else if (collider is CapsuleCollider capsuleCollider)
+        //{
+        //    float radius = capsuleCollider.radius;
+        //    float height = capsuleCollider.height;
 
-            float cylinderVolume = Mathf.PI * Mathf.Pow(radius, 2) * height;
-            float sphereVolume = (4f / 3f) * Mathf.PI * Mathf.Pow(radius, 3);
+        //    float cylinderVolume = Mathf.PI * Mathf.Pow(radius, 2) * height;
+        //    float sphereVolume = (4f / 3f) * Mathf.PI * Mathf.Pow(radius, 3);
 
-            return cylinderVolume + sphereVolume;
-        }
+        //    return cylinderVolume + sphereVolume;
+        //}
         return 0f;
     }
 
@@ -122,8 +125,8 @@ public class SliceObject : MonoBehaviour
 
     private bool IsSlicePerfect(GameObject upperHull, GameObject lowerHull)
     {
-        float upperVolume = CalculateVolume(upperHull.GetComponent<Collider>());
-        float lowerVolume = CalculateVolume(lowerHull.GetComponent<Collider>());
+        float upperVolume = CalculateVolume(upperHull.GetComponent<MeshCollider>());
+        float lowerVolume = CalculateVolume(lowerHull.GetComponent<MeshCollider>());
         float totalVolume = upperVolume + lowerVolume;
 
         float upperRatio = upperVolume / totalVolume;
