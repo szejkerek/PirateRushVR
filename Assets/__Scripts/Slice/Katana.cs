@@ -1,16 +1,19 @@
 using DG.Tweening;
 using EzySlice;
+using System;
 using System.Collections;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-public class SliceObject : MonoBehaviour
+public class Katana : MonoBehaviour
 {
     [SerializeField] Transform startSlicePoint;
     [SerializeField] Transform endSlicePoint;
     [SerializeField] VelocityEstimator endPointVelocity;
     [Space]
     [SerializeField] LayerMask sliceableLayer;
+    [SerializeField] LayerMask shootableLayer;
+    [SerializeField] LayerMask collectibleLayer;
     [SerializeField] float cutForce = 2000f;
 
     float perfectSliceTolerance;
@@ -21,12 +24,28 @@ public class SliceObject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        bool hasHit = Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out RaycastHit hit, sliceableLayer);
-        if (hasHit)
+        if(DidHit(out RaycastHit hitSliceable, sliceableLayer))
         {
-            GameObject target = hit.transform.gameObject;
-            Slice(target);
+            Slice(hitSliceable.transform.gameObject);
         }
+        else if(DidHit(out RaycastHit hitShootable, shootableLayer))
+        {
+            ShootBehaviour(hitShootable.transform.gameObject);
+        }
+        else
+        {
+
+        }
+    }
+
+    private void ShootBehaviour(GameObject gameObject)
+    {
+        
+    }
+
+    private bool DidHit(out RaycastHit hit, int layerMask)
+    {
+       return Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out hit, layerMask);
     }
 
     public void Slice(GameObject target)
@@ -64,14 +83,14 @@ public class SliceObject : MonoBehaviour
         collider.convex = true;
         rb.AddExplosionForce(cutForce, hull.transform.position, 1);
 
-        StartCoroutine(DisappearAfterDelay(hull, 3, 0.65f));
+        StartCoroutine(DisappearAfterDelay(hull, 2, 0.25f));
     }
 
     private IEnumerator DisappearAfterDelay(GameObject obj, float delay, float animationTime)
     {
         yield return new WaitForSeconds(delay);
         obj.transform.DOScale(Vector3.zero, animationTime);
-        Destroy(obj, animationTime + 0.5f);
+        Destroy(obj, animationTime + 0.2f);
     }
 
     private float CalculateVolume(MeshCollider collider)
