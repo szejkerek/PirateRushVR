@@ -2,17 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DebugEffect", menuName = "Cannon/Projectile/Effects/DebugEffect", order = 1)]
-public class EffectSO : ScriptableObject, IEffect
+public class EffectSO : Effect
 {
     [field: SerializeField] public string EffectName { private set; get; }
 
-    public void ApplySlicedEffect()
+    public override void ApplyHitEffect(Projectile context)
     {
-        //Debug.Log(EffectName);
-    }
-
-    public void ApplyStartEffect()
-    {
-        //Debug.Log(EffectName);
+        Debug.Log(EffectName);
     }
 }

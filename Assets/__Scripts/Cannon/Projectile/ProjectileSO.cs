@@ -9,5 +9,6 @@ public class ProjectileSO : ScriptableObject
     [field: SerializeField] public Material CrossSectionMaterial { private set; get; }
     [field: SerializeField] public AudioClip SliceSound { private set; get; }
     [field: SerializeField] public Color SliceParticles { private set; get; }
-    [field: SerializeField] public List<EffectSO> Effects { private set; get; }
+    [field: SerializeField] public List<Effect> NormalEffects { private set; get; }
+    [field: SerializeField] public Effect CriticalEffect { private set; get; }
 }

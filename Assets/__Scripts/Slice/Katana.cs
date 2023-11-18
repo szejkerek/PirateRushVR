@@ -48,7 +48,7 @@ public class Katana : MonoBehaviour
        return Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out hit, layerMask);
     }
 
-    public void Slice(GameObject target)
+    private void Slice(GameObject target)
     {
         if (target == null)
             return;
@@ -71,7 +71,7 @@ public class Katana : MonoBehaviour
         GameObject lowerHull = hull.CreateLowerHull(target, mat);
         SetUpHull(lowerHull);
 
-        projectile.OnSliced(IsSlicePerfect(upperHull, lowerHull));
+        projectile.ApplyEffects(IsSlicePerfect(upperHull, lowerHull));
 
         Destroy(target);
     }

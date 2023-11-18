@@ -1,5 +1,6 @@
-public interface IEffect
+using UnityEngine;
+
+public abstract class Effect : ScriptableObject
 {
-    public void ApplyStartEffect();
-    public void ApplySlicedEffect();
+    public abstract void ApplyHitEffect(Projectile context);
 }

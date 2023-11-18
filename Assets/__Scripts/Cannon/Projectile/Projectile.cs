@@ -8,11 +8,9 @@ public class Projectile : MonoBehaviour
 
     private Rigidbody rb;
     private ConstantForce cForce;
-    List<IEffect> effects;
 
     private void Awake()
     {
-        effects = new List<IEffect>();
         rb = GetComponent<Rigidbody>();
         cForce = GetComponent<ConstantForce>();
     }
@@ -22,11 +20,6 @@ public class Projectile : MonoBehaviour
         this.data = data;
         rb.velocity = velocity;
         cForce.force = new Vector3(0, gravity - Physics.gravity.y, 0);
-    }
-
-    private void Start()
-    {
-        effects.ForEach(e => e.ApplyStartEffect());
     }
 
     public Material GetCrossSectionMaterial()
@@ -42,14 +35,14 @@ public class Projectile : MonoBehaviour
         return data.CrossSectionMaterial;
     }
 
-    public void OnSliced(bool isPerfect)
+    public void ApplyEffects(bool critical)
     {
-        effects.ForEach(e => e.ApplySlicedEffect());
+        data.NormalEffects.ForEach(e => e.ApplyHitEffect(this));
 
-        if(isPerfect)
+        if(critical)
         {
-            AudioManager.Instance.PlayGlobal(AudioManager.Instance.SFXLib.PerfectSlice);
-            Debug.Log("Perfect Slice");
+            data.CriticalEffect.ApplyHitEffect(this);
         }
+
     }
 }

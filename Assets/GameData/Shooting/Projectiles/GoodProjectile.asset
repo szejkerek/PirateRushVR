@@ -17,5 +17,6 @@ MonoBehaviour:
   <CrossSectionMaterial>k__BackingField: {fileID: 2100000, guid: 68c861077ac644a48be731198a80737a, type: 2}
   <SliceSound>k__BackingField: {fileID: 0}
   <SliceParticles>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
-  <Effects>k__BackingField:
+  <NormalEffects>k__BackingField:
   - {fileID: 11400000, guid: abf7cbf402ec586479e3bd38a0a663c3, type: 2}
+  <CriticalEffect>k__BackingField: {fileID: 11400000, guid: d82eae14d4fd0654f86c92c3b811bcb5, type: 2}
