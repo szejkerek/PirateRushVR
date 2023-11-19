@@ -79,12 +79,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a74136bb70a324e8aa68d49b7ec9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
   startSlicePoint: {fileID: 6065085771502809476}
   endSlicePoint: {fileID: 1106602387671599703}
   endPointVelocity: {fileID: 5525332262947585470}
-  sliceableLayer:
-    serializedVersion: 2
-    m_Bits: 256
   cutForce: 500
 --- !u!1 &7886578072281729767
 GameObject:

@@ -1,33 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Pistol : Weapon
+public class Pistol : MonoBehaviour
 {
-    protected override bool DidHit(out RaycastHit hit, int projectileLayer)
+    [SerializeField] private Bullet bulletPrefab; // Prefab of the bullet object
+    [SerializeField] private Transform shootingPoint; // Point from where bullets are shot
+    [SerializeField] private InputActionReference shootInputLeft; // Input action for shooting (left)
+    [SerializeField] private InputActionReference shootInputRight; // Input action for shooting (right)
+    [SerializeField] private float shootForce; // Input action for shooting (right)
+
+    private void OnEnable()
     {
-        throw new System.NotImplementedException();
+        if(Systems.Instance.KatanaRight)
+        {
+            shootInputLeft.action.performed += Shoot;
+        }
+        else
+        {
+            shootInputRight.action.performed += Shoot;
+        }
     }
 
-    protected override void ShootableBehaviour(Projectile projectile)
+    private void OnDisable()
     {
-        throw new System.NotImplementedException();
+        shootInputLeft.action.performed -= Shoot;
+        shootInputRight.action.performed -= Shoot;
     }
 
-    protected override void SliceableBehavioir(Projectile projectile)
+    private void Shoot(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
-    }
+        Bullet newBullet = Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation);
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Rigidbody bulletRigidbody = newBullet.GetComponent<Rigidbody>();
+        bulletRigidbody.AddForce(shootingPoint.forward * shootForce, ForceMode.Impulse);     
     }
 }

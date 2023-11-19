@@ -19,17 +19,23 @@ public class Katana : Weapon
         perfectSliceTolerance = Systems.Instance.difficultyLevel.PerfectSliceTolerance;
     }
 
-    protected override void ShootableBehaviour(Projectile projectile)
+    protected override void ShootableBehavior(Projectile projectile)
     {
         Debug.Log("Hit shootable layer");
     }
 
-    protected override bool DidHit(out RaycastHit hit, int layerMask)
+    protected override bool DidHit(out Projectile hit, int layerMask)
     {
-       return Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out hit, layerMask);
+       hit = null;
+       if( Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out RaycastHit info, layerMask))
+       {
+            hit = info.transform.GetComponent<Projectile>();
+            return hit != null;
+       }
+       return false;
     }
 
-    protected override void SliceableBehavioir(Projectile hit) 
+    protected override void SliceableBehavior(Projectile hit) 
     {
         if (hit == null)
             return;
@@ -52,7 +58,7 @@ public class Katana : Weapon
 
         hit.ApplyEffects(IsSlicePerfect(upperHull, lowerHull));
 
-        Destroy(hit);
+        Destroy(hit.gameObject);
     }
 
     private void SetUpHull(GameObject hull)

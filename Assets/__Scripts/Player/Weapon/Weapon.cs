@@ -3,38 +3,34 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] LayerMask mask;
+    [SerializeField] LayerMask layerMask;
     private void Update()
     {
-        if (DidHit(out RaycastHit hit, mask))
+        if (DidHit(out Projectile projectile, layerMask))
         {
-            if (hit.transform.gameObject.TryGetComponent(out Projectile projectile))
+            switch (projectile.Data.Type)
             {
-                switch (projectile.Data.Type)
-                {
-                    case ComboSpawnType.NeutralProjectile:
-                        SliceableBehavioir(projectile);
-                        break;
-                    case ComboSpawnType.Bomb:
-                        CollectibleBehaviour(projectile);
-                        break;
-                    case ComboSpawnType.SpecialItem:
-                        ShootableBehaviour(projectile);
-                        break;
-                }
-
-            }
+                case ComboSpawnType.NeutralProjectile:
+                    SliceableBehavior(projectile);
+                    break;
+                case ComboSpawnType.Bomb:
+                    CollectibleBehavior(projectile);
+                    break;
+                case ComboSpawnType.SpecialItem:
+                    ShootableBehavior(projectile);
+                    break;
+            }     
         }
     }
 
-    protected abstract bool DidHit(out RaycastHit hit, int projectileLayer);
-    protected abstract void ShootableBehaviour(Projectile projectile);
-    protected abstract void SliceableBehavioir(Projectile projectile);
-    private void CollectibleBehaviour(Projectile projectile)
+    protected abstract bool DidHit(out Projectile hit, int projectileLayer);
+    protected abstract void ShootableBehavior(Projectile projectile);
+    protected abstract void SliceableBehavior(Projectile projectile);
+    private void CollectibleBehavior(Projectile projectile)
     {
         projectile.ApplyEffects(false);
         Debug.Log("Hit collectible layer");
-        Destroy(gameObject);     
+        Destroy(projectile.gameObject);     
     }
     
 }

@@ -25,9 +25,7 @@ public class ShowKeyboardOnSelect : MonoBehaviour
 
     private IEnumerator DelayedMethod()
     {
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.01f);
         playerPreferences.SetHandItems(HandHeldType.UIRays);
     }
 

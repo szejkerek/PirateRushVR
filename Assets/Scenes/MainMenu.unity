@@ -4457,7 +4457,6 @@ MonoBehaviour:
   leftButton: {fileID: 1455735033}
   selectNicknameBtn: {fileID: 2009864993}
   nicknameInputField: {fileID: 272265034}
-  nicknameWarning: {fileID: 1045635236}
   returnButtons:
   - {fileID: 50405527}
   - {fileID: 1144905150}
@@ -6111,6 +6110,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 316884474295993794, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
+      propertyPath: m_Name
+      value: Pistol
+      objectReference: {fileID: 0}
     - target: {fileID: 3645396275417868758, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
@@ -7161,9 +7164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b95b6b007ddc24794d9f13e4662b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nicknameMaxLength: 15
   nicknameInput: {fileID: 272265034}
   generateGuestBtn: {fileID: 1426239878}
   selectBtn: {fileID: 2009864993}
+  nicknameWarning: {fileID: 1045635236}
 --- !u!1 &1871360335
 GameObject:
   m_ObjectHideFlags: 0
@@ -7910,9 +7915,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 272265037}
-        m_TargetAssemblyTypeName: ShowKeyboardOnSelect, Scripts
-        m_MethodName: HideKeyboard
+      - m_Target: {fileID: 1824373747}
+        m_TargetAssemblyTypeName: SetNicknameUI, Scripts
+        m_MethodName: SetNicknameFromUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
