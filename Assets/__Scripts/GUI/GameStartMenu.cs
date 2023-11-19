@@ -28,7 +28,7 @@ public class GameStartMenu : MonoBehaviour
     [Header("Select nickname")]
     [SerializeField] private Button selectNicknameBtn;
     [SerializeField] private TMP_InputField nicknameInputField;
-    [SerializeField] private UIWarning nicknameWarning;
+    
 
     [Space]
     [SerializeField] private List<Button> returnButtons;
@@ -38,27 +38,12 @@ public class GameStartMenu : MonoBehaviour
         EnablePlayerUIRays();
         EnableView(mainMenu);
 
-        startButton.onClick.AddListener(() =>{ 
-            EnableView(selectNickname);
-            nicknameInputField.text = Systems.Instance.Nickname;
-        });
-        selectNicknameBtn.onClick.AddListener(() => { 
-            if(nicknameInputField.text != "")
-            {
-                EnableView(selectDifficulty);
-                Systems.Instance.SetNickname(nicknameInputField.text);
-            }
-            else
-            {
-                nicknameWarning.ShowWarning("Nickname cannot be empty!");
-            }
-            
-        });
-
+        startButton.onClick.AddListener(() => EnableView(selectNickname));
+        selectNicknameBtn.onClick.AddListener(() => EnableView(selectDifficulty));
         aboutButton.onClick.AddListener(() => EnableView(about));
         optionButton.onClick.AddListener(() => EnableView(options));
-        rightButton.onClick.AddListener(() => StartGame(rightHand: true));
-        leftButton.onClick.AddListener(() => StartGame(rightHand: false));
+        rightButton.onClick.AddListener(() => StartGame(isRightHand: true));
+        leftButton.onClick.AddListener(() => StartGame(isRightHand: false));
         quitButton.onClick.AddListener(QuitGame);
 
         foreach (var item in returnButtons)
@@ -73,10 +58,10 @@ public class GameStartMenu : MonoBehaviour
         setPlayer.SetHandItems(HandHeldType.UIRays);
     }
 
-    public void StartGame(bool rightHand)
+    public void StartGame(bool isRightHand)
     {
         HideAll();
-        Systems.Instance.KatanaRight = rightHand;
+        Systems.Instance.KatanaRight = isRightHand;
         SceneLoader.Instance.LoadScene(SceneEnum.Gameplay);
     }    
 
