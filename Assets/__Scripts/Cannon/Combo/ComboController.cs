@@ -24,7 +24,7 @@ public class ComboController : MonoBehaviour
         launcher = GetComponent<CannonShooting>();
         EnqueueRandomWaits(currentDifficulty.CountOf25msWaits);
     }
-
+    int i = 0;
     public void UpdateOnTick()
     {
         if (isPaused())

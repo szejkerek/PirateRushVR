@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
@@ -8,18 +7,18 @@ public abstract class Weapon : MonoBehaviour
     {
         if (DidHit(out Projectile projectile, layerMask))
         {
-            switch (projectile.Data.Type)
+            switch (projectile.Data.ProjectileType)
             {
-                case ComboSpawnType.NeutralProjectile:
+                case ProjectileType.Sliceable:
                     SliceableBehavior(projectile);
                     break;
-                case ComboSpawnType.Bomb:
-                    CollectibleBehavior(projectile);
-                    break;
-                case ComboSpawnType.SpecialItem:
+                case ProjectileType.Shootable:
                     ShootableBehavior(projectile);
                     break;
-            }     
+                case ProjectileType.Collectible:
+                    CollectibleBehavior(projectile);
+                    break;
+            }
         }
     }
 
@@ -32,5 +31,5 @@ public abstract class Weapon : MonoBehaviour
         Debug.Log("Hit collectible layer");
         Destroy(projectile.gameObject);     
     }
-    
+
 }

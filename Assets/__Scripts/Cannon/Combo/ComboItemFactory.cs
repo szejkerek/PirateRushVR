@@ -52,7 +52,7 @@ public class ComboItemFactory
         List<ProjectileSO> allBullets = context.Launcher.Settings.Projectiles;
 
         List<ProjectileSO> typeSubset = allBullets
-       .Where(projectile => projectile.Type == type)
+       .Where(projectile => projectile.ComboSpawnType == type)
        .ToList();
 
         if (typeSubset.Count == 0) // No items of this type

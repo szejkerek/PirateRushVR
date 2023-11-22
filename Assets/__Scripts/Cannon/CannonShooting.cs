@@ -51,6 +51,7 @@ public class CannonShooting : MonoBehaviour
     {
         GameObject obj = Instantiate(data.Model, shootingPoint.position, shootingPoint.rotation);
         obj.AddComponent<ConstantForce>();
+        //obj.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         Projectile projectile = obj.AddComponent<Projectile>();
         projectile.Init(data, direction, gravity);
      }

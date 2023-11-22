@@ -6,9 +6,9 @@ public class Bullet : Weapon
 {
     [SerializeField] private float sphereRadius = 0.2f; // Adjust this radius as needed
     bool didHit = false;
-    protected override bool DidHit(out Projectile hit, int projectileLayer)
+    protected override bool DidHit(out Projectile projectile, int projectileLayer)
     {
-        hit = null;
+        projectile = null;
         if (didHit)
             return false;
 
@@ -16,7 +16,7 @@ public class Bullet : Weapon
 
         if (colliders.Length > 0)
         {
-            // Find the closest hit among the colliders
+            // Find the closest projectile among the colliders
             float closestDistance = Mathf.Infinity;
             Collider closestCollider = null;
 
@@ -32,8 +32,7 @@ public class Bullet : Weapon
 
             if (closestCollider != null)
             {
-                hit = closestCollider.GetComponent<Projectile>();
-                if(hit != null)
+                if(closestCollider.TryGetComponent(out projectile))
                 {
                     didHit = true;
                     return true;
@@ -46,12 +45,13 @@ public class Bullet : Weapon
     protected override void ShootableBehavior(Projectile projectile)
     {
         Debug.Log("Shootable");
-        //throw new System.NotImplementedException();
+        Destroy(projectile.gameObject);
     }
 
     protected override void SliceableBehavior(Projectile projectile)
     {
         Debug.Log("Sliceable");
         //throw new System.NotImplementedException();
+        
     }
 }

@@ -12,14 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d54d3914f9ce84b98ef235a66704ff, type: 3}
   m_Name: BadProjectile
   m_EditorClassIdentifier: 
-  <Type>k__BackingField: 1
-  <Mask>k__BackingField:
-    serializedVersion: 2
-    m_Bits: 0
+  <ComboSpawnType>k__BackingField: 1
+  <ProjectileType>k__BackingField: 2
   <Model>k__BackingField: {fileID: 4651976423527068040, guid: 75760639ce898c74b86b355c382365a0, type: 3}
   <CrossSectionMaterial>k__BackingField: {fileID: 2100000, guid: 5de828e807de6c144be84b910e5d24bc, type: 2}
-  <SliceSound>k__BackingField: {fileID: 0}
-  <SliceParticles>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
   <NormalEffects>k__BackingField:
   - {fileID: 11400000, guid: abf7cbf402ec586479e3bd38a0a663c3, type: 2}
   <CriticalEffect>k__BackingField: {fileID: 0}
