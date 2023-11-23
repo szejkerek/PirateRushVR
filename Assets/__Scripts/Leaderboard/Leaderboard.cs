@@ -3,18 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 
 [Serializable]
-public class Leaderboard: ISaveable
+public class Leaderboard: ISavable
 {
-    public string gówno = "xd";
-    public int cipa = 69;
-    public List<HighscoreEntry> HighscoreEntries;
-
     public string SaveDataFileName => "Leaderboard.dat";
+    public List<HighscoreEntry> HighscoreEntries;
 
     public Leaderboard() 
     {
         HighscoreEntries = new List<HighscoreEntry>();
-        //Load();
     }
 
     public void Save()
@@ -48,16 +44,8 @@ public class Leaderboard: ISaveable
         Save();
     }
 
-
     private void SortHighscores()
     {
         HighscoreEntries = HighscoreEntries.OrderByDescending(e => e.Score).ToList();
     }
-}
-
-public interface ISaveable
-{
-    string SaveDataFileName { get; }
-    void Save();
-    void Load(); 
 }
