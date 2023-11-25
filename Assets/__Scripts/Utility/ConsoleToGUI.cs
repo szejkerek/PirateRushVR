@@ -20,13 +20,8 @@ public class ConsoleToGUI : MonoBehaviour
 
     public void Log(string logString, string stackTrace, LogType type)
     {
-        // Enqueue the log message
         lines.Enqueue(logString + "\n");
-
-        // Update the text by joining the lines in the queue
         text.text = string.Join("", lines.ToArray());
-
-        // Remove oldest logs if the queue exceeds lineCount
         while (lines.Count > lineCount)
         {
             lines.Dequeue();

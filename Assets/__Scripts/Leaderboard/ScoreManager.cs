@@ -17,7 +17,5 @@ public class ScoreManager : Singleton<ScoreManager>
     {
         string currentNickname = Systems.Instance.Nickname;
         leaderboard.UpdateScore(currentNickname, points);
-
-
     }
 }

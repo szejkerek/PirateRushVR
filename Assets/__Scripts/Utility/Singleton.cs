@@ -1,6 +1,5 @@
 using UnityEngine;
 
-//Acts simillar to singleton but when creating new instance it overwrites the previous one
 public abstract class StaticInstance<T> : MonoBehaviour where T : MonoBehaviour
 {
     public static T Instance { get; private set; }
@@ -16,7 +15,6 @@ public abstract class StaticInstance<T> : MonoBehaviour where T : MonoBehaviour
     }
 }
 
-//This transform static instance into basic singleton
 public abstract class Singleton<T> : StaticInstance<T> where T : MonoBehaviour
 {
     protected override void Awake()

@@ -5,7 +5,6 @@ using System.Linq;
 [Serializable]
 public class Leaderboard: ISavable
 {
-    public string SaveDataFileName => "Leaderboard.dat";
     public List<HighscoreEntry> HighscoreEntries;
 
     public Leaderboard() 
@@ -15,12 +14,12 @@ public class Leaderboard: ISavable
 
     public void Save()
     {
-        SaveManager<Leaderboard>.Save(this, SaveDataFileName);
+        SaveManager<Leaderboard>.Save(this, GetDataFileName());
     }
 
     public void Load()
     {
-        Leaderboard loaded = SaveManager<Leaderboard>.Load(SaveDataFileName);
+        Leaderboard loaded = SaveManager<Leaderboard>.Load(GetDataFileName());
         HighscoreEntries = loaded.HighscoreEntries;
     }
 
@@ -47,5 +46,10 @@ public class Leaderboard: ISavable
     private void SortHighscores()
     {
         HighscoreEntries = HighscoreEntries.OrderByDescending(e => e.Score).ToList();
+    }
+
+    public string GetDataFileName()
+    {
+        return "Leaderboard.dat";
     }
 }

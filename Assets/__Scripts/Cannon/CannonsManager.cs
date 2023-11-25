@@ -8,12 +8,13 @@ public class CannonsManager : Singleton<CannonsManager>
 {
     [SerializeField] AssetLabelReference combosLabel;
 
-    private TickEngine tickEngine;
-    List<Cannon> cannonsOnScene;
-
     public List<ComboDatabase> ComboDatabases => comboDatabases;
-    List<ComboDatabase> comboDatabases;    
-    
+    List<ComboDatabase> comboDatabases;
+
+
+    TickEngine tickEngine;
+    List<ComboController> cannonsOnScene;
+
     void Start()
     {        
         tickEngine = new TickEngine(Systems.Instance.TickRate);      
@@ -25,7 +26,7 @@ public class CannonsManager : Singleton<CannonsManager>
         SpawnCannons(towerCount);
         cannonsOnScene.ForEach(cannon =>
         {
-            tickEngine.OnTick += cannon.ComboManager.UpdateOnTick;
+            tickEngine.OnTick += cannon.UpdateOnTick;
         });
     }
 
@@ -36,7 +37,7 @@ public class CannonsManager : Singleton<CannonsManager>
 
     void SpawnCannons(int count)
     {
-        cannonsOnScene = GetComponentsInChildren<Cannon>().ToList();
+        cannonsOnScene = GetComponentsInChildren<ComboController>().ToList();
 
         int deactivateCount = 0;
         if (count <= cannonsOnScene.Count)
@@ -44,7 +45,7 @@ public class CannonsManager : Singleton<CannonsManager>
             deactivateCount = cannonsOnScene.Count - count;
         }
 
-        List<Cannon> cannonsToBeRemoved = cannonsOnScene.SelectRandomElements(deactivateCount);
+        List<ComboController> cannonsToBeRemoved = cannonsOnScene.SelectRandomElements(deactivateCount);
         cannonsToBeRemoved.ForEach((cannon) =>
         {
             cannon.gameObject.SetActive(false);

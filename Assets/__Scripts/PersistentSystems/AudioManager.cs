@@ -10,7 +10,7 @@ public class AudioManager : Singleton<AudioManager>
 
     [SerializeField] AudioSource musicSource;
 
-    public void Play(Sound sound, AudioSource source)
+    public static void Play(Sound sound, AudioSource source)
     {
         if (sound == null)
         {
