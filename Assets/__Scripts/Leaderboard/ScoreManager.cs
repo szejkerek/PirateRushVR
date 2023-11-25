@@ -1,21 +1,19 @@
-  using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class ScoreManager : Singleton<ScoreManager>
 {
+    float multiplier = 0;
+    HighscoreEntry entry;
     Leaderboard leaderboard;
 
     protected override void Awake()
     {
         base.Awake();
+        entry = new HighscoreEntry(0, Systems.Instance.Nickname);
         leaderboard = new Leaderboard();
         leaderboard.Load();
     }
 
     public void AddPoints(float points)
     {
-        string currentNickname = Systems.Instance.Nickname;
-        leaderboard.UpdateScore(currentNickname, points);
+        leaderboard.UpdateScore(entry);
     }
 }

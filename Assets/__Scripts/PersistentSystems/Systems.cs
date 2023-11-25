@@ -5,7 +5,7 @@ public class Systems : Singleton<Systems>
 {
     public string Nickname => nickname;
     string nickname;
-    public bool KatanaRight = true;
+    public bool KatanaRight = false;
     public int TickRate = 32;
     public DifficultyLevel difficultyLevel;
 

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2297687d5bffe14a823ba719bb12535, type: 3}
   m_Name: AddPoints100
   m_EditorClassIdentifier: 
-  <Points>k__BackingField: 0
+  <Points>k__BackingField: 100

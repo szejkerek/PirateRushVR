@@ -23,19 +23,19 @@ public class Leaderboard: ISavable
         HighscoreEntries = loaded.HighscoreEntries;
     }
 
-    public void UpdateScore(string nickname, float score)
+    public void UpdateScore(HighscoreEntry entry)
     {
-        HighscoreEntry entry = HighscoreEntries.FirstOrDefault(a => a.Nickname == nickname);
+        HighscoreEntry foundEntry = HighscoreEntries.FirstOrDefault(item => entry == item);
 
-        if (entry == null)
+        if (foundEntry == null)
         {
-            HighscoreEntries.Add(new HighscoreEntry { Nickname = nickname, Score = score });
+            HighscoreEntries.Add(entry);
         }
         else
         {
-            if(score > entry.Score)
+            if(entry.Score > foundEntry.Score)
             {
-                entry.Score = score;
+                foundEntry.Score = entry.Score;
             }
         }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2525,7 +2525,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -2552,8 +2554,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17
-  m_fontSizeBase: 17
+  m_fontSize: 29.63
+  m_fontSizeBase: 29.63
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3437,14 +3439,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575536172}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.5024828, z: -0, w: 0.86458725}
-  m_LocalPosition: {x: -6.1898, y: 4.2638, z: 0.1117}
+  m_LocalRotation: {x: -0, y: -0.34821492, z: -0, w: 0.9374147}
+  m_LocalPosition: {x: -4.52, y: 4.2638, z: 5.4}
   m_LocalScale: {x: 3.476597, y: 5.7781634, z: 0.0743301}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 610733862}
   m_Father: {fileID: 347591473}
-  m_LocalEulerAnglesHint: {x: 0, y: -60.329, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -40.756, z: 0}
 --- !u!65 &1575536174
 BoxCollider:
   m_ObjectHideFlags: 0
