@@ -1,12 +1,23 @@
-using System.Collections;
+  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : Singleton<ScoreManager>
 {
-    private void Awake()
+    Leaderboard leaderboard;
+
+    protected override void Awake()
     {
-        Leaderboard l = new Leaderboard();
-        l.Load();
+        base.Awake();
+        leaderboard = new Leaderboard();
+        leaderboard.Load();
+    }
+
+    public void AddPoints(float points)
+    {
+        string currentNickname = Systems.Instance.Nickname;
+        leaderboard.UpdateScore(currentNickname, points);
+
+
     }
 }
