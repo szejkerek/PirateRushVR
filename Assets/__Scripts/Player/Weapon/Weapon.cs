@@ -28,8 +28,9 @@ public abstract class Weapon : MonoBehaviour
     private void CollectibleBehavior(Projectile projectile)
     {
         projectile.ApplyEffects(false);
-        Debug.Log("Hit collectible layer");
+        projectile.ApplyPoints();
         Destroy(projectile.gameObject);     
+        Debug.Log("Hit collectible layer");
     }
 
 }

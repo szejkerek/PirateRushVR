@@ -4695,10 +4695,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Pistol
       objectReference: {fileID: 0}
-    - target: {fileID: 1225017919766816353, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_RequestedTrackingOriginMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3051104569223284753, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
       propertyPath: m_Name
       value: Left Katana

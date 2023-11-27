@@ -48,7 +48,7 @@ namespace TMPro.Examples
         }
 
         /// <summary>
-        /// Method to animate vertex colors of a TMP Text object.
+        /// Method to animate vertex colors of a TMP ScoreText object.
         /// </summary>
         /// <returns></returns>
         IEnumerator AnimateVertexColors()

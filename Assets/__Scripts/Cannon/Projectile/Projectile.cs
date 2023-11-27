@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public partial class Projectile : MonoBehaviour
 {
     public ProjectileSO Data => data;
-    private ProjectileSO data;
-
-    private Rigidbody rb;
-    private ConstantForce cForce;
+    
+    ProjectileSO data;
+    Rigidbody rb;
+    ConstantForce cForce;
+    bool pointsApplied = false;
 
     private void Awake()
     {
@@ -37,12 +38,40 @@ public class Projectile : MonoBehaviour
 
     public void ApplyEffects(bool critical)
     {
-        data.NormalEffects.ForEach(e => e.ApplyHitEffect(this));
+        data.Effects.ForEach(e => e.ApplyHitEffect(this));
 
         if(critical)
         {
-            data.CriticalEffect.ApplyHitEffect(this);
+            data.CriticalEffect?.ApplyHitEffect(this);
+        }
+    }
+
+    public void ApplyPoints(bool negative = false, bool critical = false)
+    {
+        if (pointsApplied)
+            return;
+
+        float points;
+        ScoreManager scoreManager = ScoreManager.Instance;
+
+        if (data.AlwaysNegativePoints) negative = true;
+
+        if (negative)
+        {
+            points = scoreManager.CalculatePoints(data.Points, negative: true);
+            scoreManager.ResetMultiplier();          
+        }
+        else
+        {
+            points = scoreManager.CalculatePoints(data.Points);
+            scoreManager.IncrementMultiplier();
         }
 
+        scoreManager.AddPoints(points);
+        ScoreText text = Instantiate(scoreManager.ScoreText, transform.position, Quaternion.identity);
+        text.Init(points, critical);
+
+        pointsApplied = true;
+        Debug.Log($"Added {points} for {Systems.Instance.Nickname}!");
     }
 }

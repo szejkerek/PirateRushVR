@@ -16,6 +16,7 @@ MonoBehaviour:
   <ProjectileType>k__BackingField: 2
   <Model>k__BackingField: {fileID: 4651976423527068040, guid: 75760639ce898c74b86b355c382365a0, type: 3}
   <CrossSectionMaterial>k__BackingField: {fileID: 2100000, guid: 5de828e807de6c144be84b910e5d24bc, type: 2}
-  <NormalEffects>k__BackingField:
-  - {fileID: 11400000, guid: abf7cbf402ec586479e3bd38a0a663c3, type: 2}
+  <Points>k__BackingField: 100
+  <AlwaysNegativePoints>k__BackingField: 1
   <CriticalEffect>k__BackingField: {fileID: 0}
+  <Effects>k__BackingField: []

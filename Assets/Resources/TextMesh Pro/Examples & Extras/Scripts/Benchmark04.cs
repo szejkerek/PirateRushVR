@@ -32,7 +32,7 @@ namespace TMPro.Examples
                 if (SpawnType == 0)
                 {
                     // TextMesh Pro Implementation
-                    GameObject go = new GameObject("Text - " + i + " Pts");
+                    GameObject go = new GameObject("ScoreText - " + i + " Pts");
 
                     if (lineHeight > orthoSize * 2) return;
 

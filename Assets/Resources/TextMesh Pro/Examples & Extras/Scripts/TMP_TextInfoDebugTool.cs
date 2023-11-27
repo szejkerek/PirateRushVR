@@ -47,7 +47,7 @@ namespace TMPro.Examples
             // Get a reference to the text object's textInfo
             m_TextInfo = m_TextComponent.textInfo;
 
-            // Update Text Statistics
+            // Update ScoreText Statistics
             ObjectStats = "Characters: " + m_TextInfo.characterCount + "   Words: " + m_TextInfo.wordCount + "   Spaces: " + m_TextInfo.spaceCount + "   Sprites: " + m_TextInfo.spriteCount + "   Links: " + m_TextInfo.linkCount
                           + "\nLines: " + m_TextInfo.lineCount + "   Pages: " + m_TextInfo.pageCount;
 

@@ -15,8 +15,9 @@ MonoBehaviour:
   <PerfectSliceTolerance>k__BackingField: 0.082
   <TowerCount>k__BackingField: 2
   <BombToNeutralRatio>k__BackingField: 0.202
-  <SpecialOverrideChance>k__BackingField: 0.067
+  <SpecialOverrideChance>k__BackingField: 0.346
   <GlobalComboChance>k__BackingField: 0.049
+  <MultiplierIncrement>k__BackingField: 0.1
   <CountOf25msWaits>k__BackingField:
     _bottomBound: 15
     _upperBound: 21

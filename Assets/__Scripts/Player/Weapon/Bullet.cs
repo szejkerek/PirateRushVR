@@ -22,13 +22,17 @@ public class Bullet : Weapon
     protected override void ShootableBehavior(Projectile projectile)
     {
         Debug.Log("Shootable");
+        projectile.ApplyEffects(false);
+        projectile.ApplyPoints();
         Destroy(projectile.gameObject);
     }
 
     protected override void SliceableBehavior(Projectile projectile)
     {
         Debug.Log("Sliceable");
-        
+        projectile.ApplyEffects(false);
+        projectile.ApplyPoints(negative: true);
+
     }
     private void OnCollisionEnter(Collision collision)
     {

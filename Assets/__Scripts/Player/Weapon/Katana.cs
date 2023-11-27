@@ -1,6 +1,5 @@
 using DG.Tweening;
 using EzySlice;
-using System;
 using System.Collections;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
@@ -21,44 +20,47 @@ public class Katana : Weapon
 
     protected override void ShootableBehavior(Projectile projectile)
     {
+        projectile.ApplyPoints(negative: true);
         Debug.Log("Hit shootable layer");
     }
 
-    protected override bool DidHit(out Projectile hit, int layerMask)
+    protected override bool DidHit(out Projectile projectile, int layerMask)
     {
-       hit = null;
+       projectile = null;
        if( Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out RaycastHit info, layerMask))
        {
-            hit = info.transform.GetComponent<Projectile>();
-            return hit != null;
+            projectile = info.transform.GetComponent<Projectile>();
+            return projectile != null;
        }
        return false;
     }
 
-    protected override void SliceableBehavior(Projectile hit) 
+    protected override void SliceableBehavior(Projectile projectile) 
     {
-        if (hit == null)
+        if (projectile == null)
             return;
 
         Vector3 velocity = endPointVelocity.GetVelocityEstimate();
         Vector3 planeNormal = Vector3.Cross(endSlicePoint.position - startSlicePoint.position, velocity).normalized;
 
-        SlicedHull hull = hit.gameObject.Slice(endSlicePoint.position, planeNormal);
+        SlicedHull hull = projectile.gameObject.Slice(endSlicePoint.position, planeNormal);
 
         if (hull == null)
             return;
 
-        Material mat = hit.Data.CrossSectionMaterial;
+        Material mat = projectile.Data.CrossSectionMaterial;
 
-        GameObject upperHull = hull.CreateUpperHull(hit.gameObject, mat);
+        GameObject upperHull = hull.CreateUpperHull(projectile.gameObject, mat);
         SetUpHull(upperHull);
 
-        GameObject lowerHull = hull.CreateLowerHull(hit.gameObject, mat);
+        GameObject lowerHull = hull.CreateLowerHull(projectile.gameObject, mat);
         SetUpHull(lowerHull);
 
-        hit.ApplyEffects(IsSlicePerfect(upperHull, lowerHull));
+        bool isPerfect = IsSlicePerfect(upperHull, lowerHull);
+        projectile.ApplyEffects(isPerfect);
+        projectile.ApplyPoints(false, isPerfect);
 
-        Destroy(hit.gameObject);
+        Destroy(projectile.gameObject);
     }
 
     private void SetUpHull(GameObject hull)

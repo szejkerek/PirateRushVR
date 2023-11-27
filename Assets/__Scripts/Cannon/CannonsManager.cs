@@ -19,8 +19,7 @@ public class CannonsManager : Singleton<CannonsManager>
     {        
         tickEngine = new TickEngine(Systems.Instance.TickRate);      
        
-        DataLoader<ComboDatabase> dataLoader = new DataLoader<ComboDatabase>();
-        comboDatabases = dataLoader.Load(combosLabel);
+        comboDatabases = DataLoader<ComboDatabase>.Load(combosLabel);
 
         int towerCount = Systems.Instance.difficultyLevel.TowerCount;
         SpawnCannons(towerCount);
