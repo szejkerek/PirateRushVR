@@ -9,7 +9,6 @@ public class TickEngine
     private int _tickRate;
     public int TickRate => _tickRate;
 
-    bool isPaused = false;
     public TickEngine(int tickRate)
     {
         if (tickRate <= 0)
@@ -21,21 +20,8 @@ public class TickEngine
         _tickTimer = 1.0f / tickRate;
     }
 
-    public void Pause()
-    {
-        isPaused = true;
-    }
-
-    public void UnPause()
-    {
-        isPaused = false;
-    }
-
     public void UpdateTicks(float delta)
     {
-        if (isPaused)
-            return;
-
         _tickTimer -= delta;
         if (_tickTimer <= 0)
         {

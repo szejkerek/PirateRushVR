@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58cad9e0a04ba374fbd8090d92b9eae3, type: 3}
-  m_Name: DebugEffect
+  m_Script: {fileID: 11500000, guid: 576537ef35a1d1d4397155e4d777ef8e, type: 3}
+  m_Name: DamageEffect
   m_EditorClassIdentifier: 
-  <EffectName>k__BackingField: DebugEffect

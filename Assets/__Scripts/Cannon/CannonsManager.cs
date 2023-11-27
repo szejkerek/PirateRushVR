@@ -1,4 +1,5 @@
 // Copyright (c) Bartłomiej Gordon 2023. All rights reserved.
+using DG.Tweening;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,9 +12,9 @@ public class CannonsManager : Singleton<CannonsManager>
     public List<ComboDatabase> ComboDatabases => comboDatabases;
     List<ComboDatabase> comboDatabases;
 
-
-    TickEngine tickEngine;
     List<ComboController> cannonsOnScene;
+    bool isPaused = false;
+    TickEngine tickEngine;
 
     void Start()
     {        
@@ -31,7 +32,33 @@ public class CannonsManager : Singleton<CannonsManager>
 
     void Update()
     {
+        if (isPaused)
+            return;
+
         tickEngine.UpdateTicks(Time.deltaTime);
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+    }
+
+    public void UnPause()
+    {
+        isPaused = false;
+    }
+
+    public void ClearAllProjectiles()
+    {
+        Projectile[] allProjectiles = FindObjectsOfType<Projectile>();
+
+        foreach (Projectile projectile in allProjectiles)
+        {
+            projectile.transform.DOScale(Vector3.zero, 0.25f).OnComplete(() =>
+            {
+                Destroy(projectile.gameObject);
+            });
+        }
     }
 
     void SpawnCannons(int count)
