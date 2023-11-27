@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,14 +8,22 @@ public class AnimateHandsOnInput : MonoBehaviour
     [SerializeField] private InputActionProperty gripAnimationAction;
 
     private Animator handAnimator;
-
+    bool shouldAnimate = true;
     void Awake()
     {
         handAnimator = GetComponent<Animator>();
     }
 
+    public void SetAnimationActive(bool active)
+    {
+        shouldAnimate = active;
+    }
+
     void Update()
     {
+        if (!shouldAnimate)
+            return;
+
         float triggerValue = pichAnimationAction.action.ReadValue<float>();
         handAnimator.SetFloat("Trigger", triggerValue);
 

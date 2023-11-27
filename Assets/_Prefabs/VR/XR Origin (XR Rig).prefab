@@ -653,6 +653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fc6632ed707ab4698ecc7d2baf862f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftAnim: {fileID: 4866180268604909853}
+  rightAnim: {fileID: 8208055644319083959}
   left:
     Model: {fileID: 8594066517565025035}
     Katana: {fileID: 3051104569223284753}
@@ -2572,6 +2574,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+--- !u!114 &8208055644319083959 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5524965915933574626, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+  m_PrefabInstance: {fileID: 4414724060493899861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335446900946633127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d8e0e9f67b4d448a84a07a94b873d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8335446900946345415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
@@ -2730,6 +2743,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+--- !u!114 &4866180268604909853 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3839510641035282955, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+  m_PrefabInstance: {fileID: 8556992922129031958}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8594066517565025035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d8e0e9f67b4d448a84a07a94b873d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8594066517565025035 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}

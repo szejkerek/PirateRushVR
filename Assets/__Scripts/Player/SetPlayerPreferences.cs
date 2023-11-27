@@ -4,6 +4,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class SetPlayerPreferences : MonoBehaviour
 {
+    [SerializeField] AnimateHandsOnInput leftAnim;
+    [SerializeField] AnimateHandsOnInput rightAnim;
+
     [SerializeField] HandItems left;
     [SerializeField] HandItems right;
 
@@ -22,8 +25,9 @@ public class SetPlayerPreferences : MonoBehaviour
         left.TurnOffAll();
         right.TurnOffAll();
 
-        left.Model.SetActive(true);
-        right.Model.SetActive(true);
+        SetModelsActive(true);
+        SetAnimationsActive(false);
+
         switch (type)
         {
             case HandHeldType.PistolLeftKatanaRight:
@@ -35,18 +39,35 @@ public class SetPlayerPreferences : MonoBehaviour
                 right.Pistol.SetActive(true);
                 break;
             case HandHeldType.UIRays:
-                left.UIRay.SetActive(true);
-                right.UIRay.SetActive(true);
+                SetAnimationsActive(true);
+                SetUIRaysActive(true);
                 break;
             case HandHeldType.TeleportRays:
-                left.TeleportRay.SetActive(true);
-                right.TeleportRay.SetActive(true);
+                SetAnimationsActive(true);
+                SetTeleportRaysActive(true);
                 break;
             case HandHeldType.None:
-                left.Model.SetActive(false);
-                right.Model.SetActive(false);
+                SetModelsActive(false);
                 break;
         }
+    }
+
+    private void SetModelsActive(bool active)
+    {
+        left.Model.SetActive(active);
+        right.Model.SetActive(active);
+    }
+
+    private void SetTeleportRaysActive(bool active)
+    {
+        left.TeleportRay.SetActive(active);
+        right.TeleportRay.SetActive(active);
+    }
+
+    private void SetUIRaysActive(bool active)
+    {
+        left.UIRay.SetActive(active);
+        right.UIRay.SetActive(active);
     }
 
     public void SetTurnType()
@@ -69,5 +90,11 @@ public class SetPlayerPreferences : MonoBehaviour
             continuousTurn.leftHandTurnAction.action.Enable();
             continuousTurn.rightHandTurnAction.action.Enable();
         }
+    }
+
+    void SetAnimationsActive(bool active)
+    {
+        leftAnim.SetAnimationActive(active);
+        rightAnim.SetAnimationActive(active);
     }
 }
