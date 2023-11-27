@@ -77,9 +77,8 @@ public class ScoreText : MonoBehaviour
         {
             MoveCanvas();
 
+            RainbowShift(perfectText);
             FadeAway(perfectText);
-
-
 
             FadeAway(pointsText);
 
@@ -88,6 +87,14 @@ public class ScoreText : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    private void RainbowShift(TMP_Text text)
+    {
+        float initialHue = 0f;
+        float hue = initialHue + (timer / timerCount * 360f);
+        Color rainbowColor = Color.HSVToRGB(hue / 360f, 1f, 1f);
+        text.color = rainbowColor;
     }
 
     private void MoveCanvas()

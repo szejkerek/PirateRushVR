@@ -25,7 +25,7 @@ public class Leaderboard: ISavable
 
     public void UpdateScore(HighscoreEntry entry)
     {
-        HighscoreEntry foundEntry = HighscoreEntries.FirstOrDefault(item => entry == item);
+        HighscoreEntry foundEntry = HighscoreEntries.FirstOrDefault(item => entry.Nickname == item.Nickname);
 
         if (foundEntry == null)
         {
