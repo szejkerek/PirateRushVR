@@ -38,7 +38,7 @@ public partial class Projectile : MonoBehaviour
 
     public void ApplyEffects(bool critical)
     {
-        data.Effects.ForEach(e => e.ApplyHitEffect(this));
+        data.MutualEffects.ForEach(e => e.ApplyHitEffect(this));
 
         if(critical)
         {

@@ -11,5 +11,5 @@ public class ProjectileSO : ScriptableObject
     [field: SerializeField] public float Points { private set; get; }
     [field: SerializeField] public bool AlwaysNegativePoints { private set; get; }
     [field: SerializeField] public Effect CriticalEffect { private set; get; }
-    [field: SerializeField] public List<Effect> Effects { private set; get; }
+    [field: SerializeField] public List<Effect> MutualEffects { private set; get; }
 }

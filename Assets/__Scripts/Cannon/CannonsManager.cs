@@ -54,9 +54,12 @@ public class CannonsManager : Singleton<CannonsManager>
 
         foreach (Projectile projectile in allProjectiles)
         {
-            projectile.transform.DOScale(Vector3.zero, 0.25f).OnComplete(() =>
+            projectile.transform.DOScale(Vector3.zero, 0.35f).OnComplete(() =>
             {
-                Destroy(projectile.gameObject);
+                if(projectile != null)
+                {
+                    Destroy(projectile.gameObject, 0.1f);
+                }
             });
         }
     }

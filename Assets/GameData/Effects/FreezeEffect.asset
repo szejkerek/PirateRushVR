@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f46ba77f02aadd419391a6a1d2fcd96, type: 3}
   m_Name: FreezeEffect
   m_EditorClassIdentifier: 
-  <Duration>k__BackingField: 0
+  <Duration>k__BackingField: 6

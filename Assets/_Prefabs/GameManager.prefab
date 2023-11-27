@@ -2170,3 +2170,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freezeDuration: 0.45
   unfreezeDuration: 1.5
+  targetFreeze: 0.6

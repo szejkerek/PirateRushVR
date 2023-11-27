@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CriticalEffect", menuName = "Cannon/Projectile/Effects/CriticalEffect", order = 1)]
+[CreateAssetMenu(fileName = "CriticalEffect", menuName = "Cannon/Projectile/MutualEffects/CriticalEffect", order = 1)]
 public class CriticalEffect : Effect
 {
     public override void ApplyHitEffect(Projectile context)

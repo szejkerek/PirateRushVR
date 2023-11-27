@@ -22,7 +22,7 @@ public class HealthManager : Singleton<HealthManager>
             currentHealth--;
         }
 
-        if(currentHealth < 0)
+        if(currentHealth <= 0)
         {
             OnDeath?.Invoke();
         }
