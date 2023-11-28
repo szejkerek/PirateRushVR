@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class CannonShooting : MonoBehaviour
@@ -50,8 +48,9 @@ public class CannonShooting : MonoBehaviour
     private void InitProjectile(ProjectileSO data, Vector3 direction, float gravity)
     {
         GameObject obj = Instantiate(data.Model, shootingPoint.position, shootingPoint.rotation);
+        obj.transform.SetParent(CannonsManager.Instance.transform);
         obj.AddComponent<ConstantForce>();
-        //obj.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        obj.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         Projectile projectile = obj.AddComponent<Projectile>();
         projectile.Init(data, direction, gravity);
      }

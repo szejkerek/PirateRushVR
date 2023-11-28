@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +10,26 @@ public partial class Projectile : MonoBehaviour
     Rigidbody rb;
     ConstantForce cForce;
     bool pointsApplied = false;
+    private float minHeight = -15f; 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         cForce = GetComponent<ConstantForce>();
+    }
+
+    private void Update()
+    {
+        if (transform.position.y < minHeight)
+        {
+            transform.DOScale(Vector3.zero, 0.35f).OnComplete(() =>
+            {
+                if (gameObject != null)
+                {
+                    Destroy(gameObject, 0.1f);
+                }
+            });
+        }
     }
 
     public void Init(ProjectileSO data, Vector3 velocity, float gravity)
