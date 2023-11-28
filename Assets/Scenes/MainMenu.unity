@@ -6630,9 +6630,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus
-    felis a rutrum aliquam. Cras quis mi dui. Nullam congue ut lorem sed mollis.
-    Fusce a orci nec ipsum interdum aliquam. Proin aliquam dignissim nisi.
+  m_text: "Bart\u0142omiej Gordon's 2023 Engineering Project is an exhilarating VR
+    pirate game, combining cutting-edge tech with thrilling gameplay."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5b036e831c0c90547b32a8a896d80f79, type: 2}
   m_sharedMaterial: {fileID: 2427308795250815149, guid: 5b036e831c0c90547b32a8a896d80f79, type: 2}
