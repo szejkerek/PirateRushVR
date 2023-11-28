@@ -12,11 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679327de6d365894f953ca42d192aa8f, type: 3}
   m_Name: TutorialPanelSO
   m_EditorClassIdentifier: 
-  <ComboSpawnType>k__BackingField: 0
-  <ProjectileType>k__BackingField: 0
-  <Model>k__BackingField: {fileID: 0}
-  <CrossSectionMaterial>k__BackingField: {fileID: 0}
-  <Points>k__BackingField: 0
-  <AlwaysNegativePoints>k__BackingField: 0
-  <CriticalEffect>k__BackingField: {fileID: 0}
-  <MutualEffects>k__BackingField: []
+  <Title>k__BackingField: "TYTU\u0141"
+  <Text>k__BackingField: TEXT1
+  <Image>k__BackingField: {fileID: 0}

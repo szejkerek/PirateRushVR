@@ -21,6 +21,7 @@ public class Leaderboard: ISavable
     {
         Leaderboard loaded = SaveManager<Leaderboard>.Load(GetDataFileName());
         HighscoreEntries = loaded.HighscoreEntries;
+        Save();
     }
 
     public void UpdateScore(HighscoreEntry entry)

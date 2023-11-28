@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class StartGamePanel : MonoBehaviour
 {
-    [SerializeField] Button startGameBtn;
     [SerializeField] Button endGameBtn;
     [SerializeField] Button tutorialBtn;
     [SerializeField] Button mainBtn;
@@ -25,8 +24,7 @@ public class StartGamePanel : MonoBehaviour
 
     private void Awake()
     {
-        startGameBtn.onClick.AddListener(GameManager.Instance.StartGame);
-        startGameBtn.onClick.AddListener(BackToMenu);
+        endGameBtn.onClick.AddListener(BackToMenu);
         mainBtn.onClick.AddListener(HideTutorial);
         tutorialBtn.onClick.AddListener(ShowTutorial);
         nextTutorialPanel.onClick.AddListener(ShowNextTutorialPanel);

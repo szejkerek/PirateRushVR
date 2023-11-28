@@ -1,11 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HealthManager : Singleton<HealthManager>   
 {
     public Action OnDeath;
+    public Action OnHealChange;
+
+    [SerializeField] TMP_Text healthDisplay;
     int currentHealth;
     int maxHealth;
 
@@ -13,6 +17,8 @@ public class HealthManager : Singleton<HealthManager>
     {
         maxHealth = Systems.Instance.difficultyLevel.MaxHealth;
         currentHealth = maxHealth;
+        OnHealChange += DisplayHealth;
+        DisplayHealth();
     }
 
     public void TakeHit()
@@ -26,6 +32,8 @@ public class HealthManager : Singleton<HealthManager>
         {
             OnDeath?.Invoke();
         }
+
+        OnHealChange?.Invoke();
     }
 
     public void Heal(bool toMaximum = false)
@@ -39,6 +47,11 @@ public class HealthManager : Singleton<HealthManager>
             currentHealth++;
             currentHealth = Math.Clamp(currentHealth, 0, maxHealth);
         }
+        OnHealChange?.Invoke();
     }
 
+    private void DisplayHealth()
+    {
+        healthDisplay.text = $"Health: {currentHealth}";
+    }
 }

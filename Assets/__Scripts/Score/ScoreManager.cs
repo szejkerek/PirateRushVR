@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ScoreManager : Singleton<ScoreManager>
@@ -5,7 +6,11 @@ public class ScoreManager : Singleton<ScoreManager>
     public ScoreText ScoreText => scoreText;
     [SerializeField] ScoreText scoreText;
 
+    [SerializeField] TMP_Text scoreDisplay;
+
     float multiplier = 0;
+    int multiplierCount = 0;
+
     HighscoreEntry entry;
     Leaderboard leaderboard;
     DifficultyLevel difficultyLevel;
@@ -16,11 +21,12 @@ public class ScoreManager : Singleton<ScoreManager>
         entry = new HighscoreEntry(0, Systems.Instance.Nickname);
         leaderboard = new Leaderboard();
         leaderboard.Load();
+        DisplayScore();
     }
 
     private void Start()
     {
-        difficultyLevel = Systems.Instance.difficultyLevel;
+        multiplier = Systems.Instance.difficultyLevel.MultiplierIncrement;
     }
 
     public void AddPoints(float points)
@@ -28,6 +34,12 @@ public class ScoreManager : Singleton<ScoreManager>
         entry.Score += CalculatePoints(points);
 
         leaderboard.UpdateScore(entry);
+        DisplayScore();
+    }
+
+    void DisplayScore()
+    {
+        scoreDisplay.text = $"Score: {entry.Score} (X{multiplierCount + 1})";
     }
 
     public float CalculatePoints(float points, bool negative = false)
@@ -38,18 +50,18 @@ public class ScoreManager : Singleton<ScoreManager>
             return -Mathf.Ceil(points / 2);
         }
 
-        return Mathf.Ceil(points + points * multiplier);
+        return Mathf.Ceil(points + points * multiplier * multiplierCount);
     }
 
     public void ResetMultiplier()
     {
-        multiplier = 0;
+        multiplierCount = 0;
         Debug.Log("Multiplier has been reset.");
     }
 
     public void IncrementMultiplier()
     {
-        multiplier += difficultyLevel.MultiplierIncrement;
-        Debug.Log($"Current multiplier: {multiplier}");
+        multiplierCount++;
+        Debug.Log($"Current multiplier: {multiplier*multiplierCount}");
     }
 }

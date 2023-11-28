@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using UnityEngine;
 
@@ -15,23 +16,34 @@ public class GameManager : Singleton<GameManager>
         playerPrefs.SetHandItems(HandHeldType.UIRays);
         HealthManager.Instance.OnDeath += EndGame;
         CannonsManager.Instance.Pause();
+
+        Sequence sequence = DOTween.Sequence();
+        startGamePanel.transform.localScale = Vector3.zero;
+        endGamePanel.transform.localScale = Vector3.zero;
+        sequence.AppendInterval(1.0f);
+        sequence.Append(startGamePanel.transform.DOScale(1f, 1.50f).SetEase(Ease.OutBounce));
     }
 
     public void StartGame()
     {
         SetHandItemsAccordingToPreference();
-        startGamePanel.SetActive(false);
+        startGamePanel.transform.DOScale(0f, 0.5f).OnComplete(() => {
+            startGamePanel.SetActive(false);
+        });
+
         CannonsManager.Instance.UnPause();
-    }    
+    }
 
     private void EndGame()
     {
         playerPrefs.SetHandItems(HandHeldType.UIRays);
         endGamePanel.SetActive(true);
-        CannonsManager.Instance.Pause();
-        CannonsManager.Instance.ClearAllProjectiles();   
-    }
 
+        endGamePanel.transform.DOScale(1f, 0.5f).SetEase(Ease.OutBounce);
+
+        CannonsManager.Instance.Pause();
+        CannonsManager.Instance.ClearAllProjectiles();
+    }
 
     void SetHandItemsAccordingToPreference()
     {
