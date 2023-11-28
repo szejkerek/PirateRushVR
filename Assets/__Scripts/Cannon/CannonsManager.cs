@@ -51,18 +51,16 @@ public class CannonsManager : Singleton<CannonsManager>
     public void ClearAllProjectiles()
     {
         Projectile[] allProjectiles = FindObjectsOfType<Projectile>();
-
         foreach (Projectile projectile in allProjectiles)
         {
-            projectile.transform.DOScale(Vector3.zero, 0.35f).OnComplete(() =>
+            if (projectile != null && projectile.gameObject != null)
             {
-                if(projectile != null)
-                {
-                    Destroy(projectile.gameObject, 0.1f);
-                }
-            });
+                projectile.gameObject.SetActive(false);
+            }
+
         }
     }
+
 
     void SpawnCannons(int count)
     {

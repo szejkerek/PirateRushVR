@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dec4304bb045504e83ddec80e5d3b78, type: 3}
-  m_Name: PerfectSlice
+  m_Script: {fileID: 11500000, guid: 14045975872bc364ea1b77a640688870, type: 3}
+  m_Name: CriticalEffect
   m_EditorClassIdentifier: 
-  <Clip>k__BackingField: {fileID: 8300000, guid: 2e8bd2a2e875fce43b7b28fb5318fb7d, type: 3}
-  volume: 1
-  pitch: 1
-  loop: 0
+  <EffectName>k__BackingField: 

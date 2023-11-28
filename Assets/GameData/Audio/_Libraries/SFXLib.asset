@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b722fc45c64ed4e88871796261240e, type: 3}
   m_Name: SFXLib
   m_EditorClassIdentifier: 
-  <PerfectSlice>k__BackingField: {fileID: 11400000, guid: fa6ec2c2d46665c46827cc81d2c53fd1, type: 2}
+  <CriticalStrike>k__BackingField: {fileID: 11400000, guid: fa6ec2c2d46665c46827cc81d2c53fd1, type: 2}

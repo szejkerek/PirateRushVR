@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class FreezeManager : Singleton<FreezeManager>
 {
-    [SerializeField] float freezeDuration;
-    [SerializeField] float unfreezeDuration;
+    [SerializeField] float freezingSpeed;
+    [SerializeField] float unfreezingSpeed;
 
-    [SerializeField] float targetFreeze;
+    [SerializeField] float targetFreezeValue;
 
     Coroutine freezeCoroutine;
 
@@ -26,13 +26,13 @@ public class FreezeManager : Singleton<FreezeManager>
         float currentTime = 0f;
         float initialTimeScale = Time.timeScale;
 
-        while (currentTime < freezeDuration)
+        while (currentTime < freezingSpeed)
         {
-            Time.timeScale = Mathf.Lerp(initialTimeScale, targetFreeze, currentTime / freezeDuration);
+            Time.timeScale = Mathf.Lerp(initialTimeScale, targetFreezeValue, currentTime / freezingSpeed);
             currentTime += Time.unscaledDeltaTime;
             yield return null;
         }
-        Time.timeScale = targetFreeze;
+        Time.timeScale = targetFreezeValue;
 
         currentTime = 0f;
         while (currentTime < duration)
@@ -43,10 +43,10 @@ public class FreezeManager : Singleton<FreezeManager>
 
         currentTime = 0f;
         
-        initialTimeScale = targetFreeze;
-        while (currentTime < unfreezeDuration)
+        initialTimeScale = targetFreezeValue;
+        while (currentTime < unfreezingSpeed)
         {
-            Time.timeScale = Mathf.Lerp(initialTimeScale, 1.0f, currentTime / unfreezeDuration);
+            Time.timeScale = Mathf.Lerp(initialTimeScale, 1.0f, currentTime / unfreezingSpeed);
             currentTime += Time.unscaledDeltaTime;
             yield return null;
         }

@@ -19,5 +19,5 @@ MonoBehaviour:
   <Points>k__BackingField: 100
   <AlwaysNegativePoints>k__BackingField: 1
   <CriticalEffect>k__BackingField: {fileID: 0}
-  <Effects>k__BackingField:
+  <MutualEffects>k__BackingField:
   - {fileID: 11400000, guid: 2e09b9360b0b9d04ab992ce8aa05234b, type: 2}

@@ -9,10 +9,10 @@ public class CriticalEffect : Effect
         switch (context.Data.ProjectileType)
         {
             case ProjectileType.Sliceable:
-                AudioManager.Instance.PlayGlobal(AudioManager.Instance.SFXLib.PerfectSlice);
-                Debug.Log("Perfect SliceableBehavior");
+                AudioManager.Instance.PlayGlobal(AudioManager.Instance.SFXLib.CriticalStrike);
                 break;
             case ProjectileType.Shootable:
+                AudioManager.Instance.PlayGlobal(AudioManager.Instance.SFXLib.CriticalStrike);
                 break;
             case ProjectileType.Collectible:
                 break;

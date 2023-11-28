@@ -5,14 +5,16 @@ public class ScoreManager : Singleton<ScoreManager>
 {
     public ScoreText ScoreText => scoreText;
     [SerializeField] ScoreText scoreText;
+    public Leaderboard Leaderboard => leaderboard;
+    Leaderboard leaderboard;
 
     [SerializeField] TMP_Text scoreDisplay;
 
     float multiplier = 0;
     int multiplierCount = 0;
 
+
     HighscoreEntry entry;
-    Leaderboard leaderboard;
     DifficultyLevel difficultyLevel;
 
     protected override void Awake()
@@ -31,7 +33,7 @@ public class ScoreManager : Singleton<ScoreManager>
 
     public void AddPoints(float points)
     {
-        entry.Score += CalculatePoints(points);
+        entry.Score += points;
 
         leaderboard.UpdateScore(entry);
         DisplayScore();
@@ -42,16 +44,25 @@ public class ScoreManager : Singleton<ScoreManager>
         scoreDisplay.text = $"Score: {entry.Score} (X{multiplierCount + 1})";
     }
 
-    public float CalculatePoints(float points, bool negative = false)
+    public float CalculatePoints(float basePoints, bool isNegative = false, bool isCritical = false)
     {
-        points = Mathf.Abs(points);
-        if (negative)
+        basePoints = Mathf.Abs(basePoints);
+
+        if (isNegative)
         {
-            return -Mathf.Ceil(points / 2);
+            float negativePoints = -Mathf.Ceil(basePoints / 2);
+            return negativePoints;
+        }
+        else if (isCritical)
+        {
+            float criticalPoints = Mathf.Ceil(basePoints * (1 + multiplierCount * multiplier)) * 2;
+            return criticalPoints;
         }
 
-        return Mathf.Ceil(points + points * multiplier * multiplierCount);
+        float regularPoints = Mathf.Ceil(basePoints * (1 + multiplierCount * multiplier));
+        return regularPoints;
     }
+
 
     public void ResetMultiplier()
     {

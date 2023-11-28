@@ -24,6 +24,7 @@ public class StartGamePanel : MonoBehaviour
 
     private void Awake()
     {
+        tutorialPanel.SetActive(false);
         endGameBtn.onClick.AddListener(BackToMenu);
         mainBtn.onClick.AddListener(HideTutorial);
         tutorialBtn.onClick.AddListener(ShowTutorial);
@@ -44,7 +45,7 @@ public class StartGamePanel : MonoBehaviour
 
         mainPanel.SetActive(false);
         tutorialPanel.SetActive(true);
-        ShowCurrentTutorialPanel(0);
+        ShowTutorialPanel(0);
     }
 
     public void HideTutorial()
@@ -53,7 +54,7 @@ public class StartGamePanel : MonoBehaviour
         tutorialPanel.SetActive(false);
     }
 
-    private void ShowCurrentTutorialPanel(int index)
+    private void ShowTutorialPanel(int index)
     {
         if (index >= 0 && index < tutorialPanels.Count)
         {
@@ -71,7 +72,7 @@ public class StartGamePanel : MonoBehaviour
         {
             currentTutorialIndex = 0;
         }
-        ShowCurrentTutorialPanel(currentTutorialIndex);
+        ShowTutorialPanel(currentTutorialIndex);
     }
 
     public void ShowPreviousTutorialPanel()
@@ -81,6 +82,6 @@ public class StartGamePanel : MonoBehaviour
         {
             currentTutorialIndex = tutorialPanels.Count - 1; // Go to the last panel
         }
-        ShowCurrentTutorialPanel(currentTutorialIndex);
+        ShowTutorialPanel(currentTutorialIndex);
     }
 }

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,17 +19,25 @@ public partial class Projectile : MonoBehaviour
         cForce = GetComponent<ConstantForce>();
     }
 
-    private void Update()
+    private void Start()
     {
-        if (transform.position.y < minHeight)
+        StartCoroutine(CheckBulletPosition());
+    }
+
+    private IEnumerator CheckBulletPosition()
+    {
+        while (true)
         {
-            transform.DOScale(Vector3.zero, 0.35f).OnComplete(() =>
+            yield return new WaitForSeconds(1f);
+
+            if (transform.position.y < minHeight)
             {
                 if (gameObject != null)
                 {
-                    Destroy(gameObject, 0.1f);
+                    Destroy(gameObject);
                 }
-            });
+                yield break;
+            }
         }
     }
 
@@ -74,7 +83,7 @@ public partial class Projectile : MonoBehaviour
 
         if (negative)
         {
-            points = scoreManager.CalculatePoints(data.Points, negative: true);
+            points = scoreManager.CalculatePoints(data.Points, isNegative: true);
             scoreManager.ResetMultiplier();          
         }
         else
@@ -88,6 +97,5 @@ public partial class Projectile : MonoBehaviour
         text.Init(points, critical);
 
         pointsApplied = true;
-        Debug.Log($"Added {points} for {Systems.Instance.Nickname}!");
     }
 }

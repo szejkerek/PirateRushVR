@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class Bullet : Weapon
 {
     Projectile hitProjectile;
@@ -21,15 +20,14 @@ public class Bullet : Weapon
 
     protected override void ShootableBehavior(Projectile projectile)
     {
-        Debug.Log("Shootable");
-        projectile.ApplyEffects(false);
-        projectile.ApplyPoints();
+        bool isPerfect = IsPerfect();
+        projectile.ApplyEffects(critical: isPerfect);
+        projectile.ApplyPoints(critical: isPerfect);
         Destroy(projectile.gameObject);
     }
 
     protected override void SliceableBehavior(Projectile projectile)
     {
-        Debug.Log("Sliceable");
         projectile.ApplyEffects(false);
         projectile.ApplyPoints(negative: true);
 
@@ -40,5 +38,10 @@ public class Bullet : Weapon
         {
             hitProjectile = proj;
         }
+    }
+
+    private bool IsPerfect()
+    {
+        return Random.Range(0, 5) == 0;
     }
 }
