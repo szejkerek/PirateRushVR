@@ -42,10 +42,6 @@ public class SetPlayerPreferences : MonoBehaviour
                 SetAnimationsActive(true);
                 SetUIRaysActive(true);
                 break;
-            case HandHeldType.TeleportRays:
-                SetAnimationsActive(true);
-                SetTeleportRaysActive(true);
-                break;
             case HandHeldType.None:
                 SetModelsActive(false);
                 break;
@@ -56,12 +52,6 @@ public class SetPlayerPreferences : MonoBehaviour
     {
         left.Model.SetActive(active);
         right.Model.SetActive(active);
-    }
-
-    private void SetTeleportRaysActive(bool active)
-    {
-        left.TeleportRay.SetActive(active);
-        right.TeleportRay.SetActive(active);
     }
 
     private void SetUIRaysActive(bool active)

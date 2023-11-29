@@ -8,5 +8,4 @@ public enum HandHeldType
     PistolLeftKatanaRight,
     KatanaLeftPistolRight,
     UIRays,
-    TeleportRays
 }

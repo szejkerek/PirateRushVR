@@ -11,7 +11,7 @@ public partial class Projectile : MonoBehaviour
     Rigidbody rb;
     ConstantForce cForce;
     bool pointsApplied = false;
-    private float minHeight = -15f; 
+    bool underWater = false;
 
     private void Awake()
     {
@@ -19,24 +19,21 @@ public partial class Projectile : MonoBehaviour
         cForce = GetComponent<ConstantForce>();
     }
 
-    private void Start()
+    private void Update()
     {
-        StartCoroutine(CheckBulletPosition());
-    }
-
-    private IEnumerator CheckBulletPosition()
-    {
-        while (true)
+        if (transform.position.y < Systems.Instance.waterLevel && !underWater)
         {
-            yield return new WaitForSeconds(1f);
+            underWater = true;
+            if (data.ProjectileType == ProjectileType.Collectible)
+                return;
+            ScoreManager.Instance.DecrementMultiplier();
+        }
 
-            if (transform.position.y < minHeight)
+        if (transform.position.y < Systems.Instance.minHeight)
+        {
+            if (gameObject != null)
             {
-                if (gameObject != null)
-                {
-                    Destroy(gameObject);
-                }
-                yield break;
+                Destroy(gameObject);
             }
         }
     }
@@ -88,7 +85,7 @@ public partial class Projectile : MonoBehaviour
         }
         else
         {
-            points = scoreManager.CalculatePoints(data.Points);
+            points = scoreManager.CalculatePoints(data.Points, isCritical: critical);
             scoreManager.IncrementMultiplier();
         }
 

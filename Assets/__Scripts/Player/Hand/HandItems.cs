@@ -7,7 +7,6 @@ public class HandItems
     public GameObject Model;
     public GameObject Katana;
     public GameObject Pistol;
-    public GameObject TeleportRay;
     public GameObject UIRay;
 
     public void TurnOffAll()
@@ -15,7 +14,6 @@ public class HandItems
         Model?.SetActive(false);
         Katana?.SetActive(false);
         Pistol?.SetActive(false);
-        TeleportRay?.SetActive(false);
         UIRay?.SetActive(false);
     }
 }

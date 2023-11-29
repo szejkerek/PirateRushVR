@@ -13,12 +13,14 @@ public class GameStartMenu : MonoBehaviour
     [SerializeField] private GameObject selectWeapon;
     [SerializeField] private GameObject selectNickname;
     [SerializeField] private GameObject options;
+    [SerializeField] private GameObject tutorial;
     [SerializeField] private GameObject about;
 
     [Header("Main Menu Buttons")]
     [SerializeField] private Button startButton;
     [SerializeField] private Button optionButton;
     [SerializeField] private Button aboutButton;
+    [SerializeField] private Button tutorialButton;
     [SerializeField] private Button quitButton;
 
     [Header("Select weapon Buttons")]
@@ -42,6 +44,7 @@ public class GameStartMenu : MonoBehaviour
         selectNicknameBtn.onClick.AddListener(() => EnableView(selectDifficulty));
         aboutButton.onClick.AddListener(() => EnableView(about));
         optionButton.onClick.AddListener(() => EnableView(options));
+        tutorialButton.onClick.AddListener(() => EnableView(tutorial));
         rightButton.onClick.AddListener(() => StartGame(isRightHand: true));
         leftButton.onClick.AddListener(() => StartGame(isRightHand: false));
         quitButton.onClick.AddListener(QuitGame);

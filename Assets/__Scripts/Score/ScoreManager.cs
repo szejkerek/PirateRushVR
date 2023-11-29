@@ -34,7 +34,10 @@ public class ScoreManager : Singleton<ScoreManager>
 
     public void AddPoints(float points)
     {
-        entry.Score += points;
+        if(entry.Score + points >= 0)
+        {
+            entry.Score += points;
+        }     
 
         leaderboard.UpdateScore(entry);
         DisplayScore();
@@ -79,6 +82,17 @@ public class ScoreManager : Singleton<ScoreManager>
     public void ResetMultiplier()
     {
         multiplierCount = 0;
+        DisplayScore();
+    }
+
+    public void DecrementMultiplier()
+    {
+        multiplierCount--;
+        if(multiplierCount <= 0)
+        {
+            multiplierCount = 0;
+        }
+        DisplayScore();
     }
 
     public void IncrementMultiplier()

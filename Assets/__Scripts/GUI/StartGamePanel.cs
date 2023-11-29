@@ -8,8 +8,10 @@ public class StartGamePanel : MonoBehaviour
 {
     [SerializeField] Button endGameBtn;
     [SerializeField] Button tutorialBtn;
+    [SerializeField] Button leaderboardBtn;
     [Space]
     [SerializeField] GameObject mainPanel;
+    [SerializeField] GameObject leaderboardPanel;
     [SerializeField] GameObject tutorialPanel;
 
 
@@ -17,6 +19,7 @@ public class StartGamePanel : MonoBehaviour
     {
         tutorialPanel.SetActive(false);
         endGameBtn.onClick.AddListener(BackToMenu);
+        leaderboardBtn.onClick.AddListener(ShowLeaderboard);
         tutorialBtn.onClick.AddListener(ShowTutorial);
 
     }
@@ -31,5 +34,11 @@ public class StartGamePanel : MonoBehaviour
     {
         mainPanel.SetActive(false);
         tutorialPanel.SetActive(true);
+    }       
+    
+    public void ShowLeaderboard()
+    {
+        mainPanel.SetActive(false);
+        leaderboardPanel.SetActive(true);
     }   
 }

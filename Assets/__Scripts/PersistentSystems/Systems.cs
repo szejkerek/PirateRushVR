@@ -7,6 +7,8 @@ public class Systems : Singleton<Systems>
     string nickname;
     public bool KatanaRight = false;
     public int TickRate = 32;
+    public float minHeight = -5f;
+    public float waterLevel = 0f;
     public DifficultyLevel difficultyLevel;
 
     protected override void Awake()

@@ -4686,69 +4686,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 226748049903551022, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: material
-      value: 
-      objectReference: {fileID: 7390553463975553142, guid: 7ab6f3b0fd1a6ba41b2a47766c16613f, type: 3}
-    - target: {fileID: 316884474295993794, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_Name
-      value: Right Pistol
-      objectReference: {fileID: 0}
-    - target: {fileID: 3051104569223284753, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_Name
-      value: Left Katana
-      objectReference: {fileID: 0}
     - target: {fileID: 3645396275417868758, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7404274
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7404274
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.7404274
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.008
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.096
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.028
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.61029285
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.07660453
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.78621787
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.05946341
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -104.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003010013225867173, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -11.13
       objectReference: {fileID: 0}
     - target: {fileID: 4149957078002763644, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4790,21 +4730,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4663656410354619966, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: crossSectionMaterial
+    - target: {fileID: 5584550788673280848, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
+      propertyPath: m_LocomotionProvider
       value: 
-      objectReference: {fileID: 7390553463975553142, guid: 7ab6f3b0fd1a6ba41b2a47766c16613f, type: 3}
-    - target: {fileID: 7623050029888609281, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_Name
-      value: Right Katana
       objectReference: {fileID: 0}
-    - target: {fileID: 8250402251518794179, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_Name
-      value: Left Pistol
+    - target: {fileID: 5975704151250358465, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
+      propertyPath: left.TeleportRay
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975704151250358465, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
+      propertyPath: right.TeleportRay
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8250402251518794179, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
