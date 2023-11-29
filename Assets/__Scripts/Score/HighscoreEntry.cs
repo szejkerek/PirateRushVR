@@ -3,12 +3,14 @@ using System;
 [Serializable]
 public class HighscoreEntry
 {
-    public HighscoreEntry(float score, string nickname)
+    public HighscoreEntry(float score, string nickname, string difficultyName)
     {
-        this.Score = score;
-        this.Nickname = nickname;
+        Score = score;
+        Nickname = nickname;
+        DifficultyName = difficultyName;
     }
 
     public float Score;
     public string Nickname;
+    public string DifficultyName;
 }

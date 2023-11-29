@@ -24,9 +24,27 @@ public class Leaderboard: ISavable
         Save();
     }
 
+    public float GetHighscore(HighscoreEntry entry)
+    {
+        HighscoreEntry foundEntry = HighscoreEntries.FirstOrDefault(item =>
+        entry.Nickname == item.Nickname &&
+        entry.DifficultyName == item.DifficultyName);
+
+        if (foundEntry == null)
+        {
+            return 0;
+        }
+        else
+        {
+            return foundEntry.Score;
+        }
+    }
+
     public void UpdateScore(HighscoreEntry entry)
     {
-        HighscoreEntry foundEntry = HighscoreEntries.FirstOrDefault(item => entry.Nickname == item.Nickname);
+        HighscoreEntry foundEntry = HighscoreEntries.FirstOrDefault(item => 
+        entry.Nickname == item.Nickname && 
+        entry.DifficultyName == item.DifficultyName);
 
         if (foundEntry == null)
         {

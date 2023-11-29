@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
@@ -10,19 +12,13 @@ public class EndGamePanel : MonoBehaviour
     [SerializeField] Button restartBtn;
     [SerializeField] Button mainMenuBtn;
     [SerializeField] Button leaderboardBtn;
-    [SerializeField] Button backBtn;
-    [Space]
-    [SerializeField] Transform leaderboardContainer;
-    [SerializeField] LeaderboardEntry leaderboardEntry;
+
 
     private void Awake()
     {
         restartBtn.onClick.AddListener(RestartGame);
         mainMenuBtn.onClick.AddListener(LoadMainMenu);
         leaderboardBtn.onClick.AddListener(ShowLeaderboard);
-        backBtn.onClick.AddListener(HideLeaderboard);
-
-        LoadMainMenu();
     }
 
     void LoadMainMenu()
@@ -39,18 +35,5 @@ public class EndGamePanel : MonoBehaviour
     {
         mainPanel.SetActive(false);
         leaderboardPanel.SetActive(true);
-    }
-
-    void HideLeaderboard()
-    {
-        mainPanel.SetActive(true);
-        leaderboardPanel.SetActive(false);
-    }
-
-    void UpdateLeaderboard()
-    {
-        Leaderboard leaderboard = ScoreManager.Instance.Leaderboard;
-
-
     }
 }

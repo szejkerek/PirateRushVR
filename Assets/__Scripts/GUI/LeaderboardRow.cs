@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class LeaderboardEntry : MonoBehaviour
+public class LeaderboardRow : MonoBehaviour
 {
     [SerializeField] TMP_Text Nickname;
     [SerializeField] TMP_Text Score;

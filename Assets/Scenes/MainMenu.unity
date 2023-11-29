@@ -4145,6 +4145,7 @@ GameObject:
   - component: {fileID: 1161247350}
   - component: {fileID: 1161247349}
   - component: {fileID: 1161247348}
+  - component: {fileID: 1161247352}
   m_Layer: 5
   m_Name: Medium difficulty
   m_TagString: Untagged
@@ -4230,19 +4231,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1161247350}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1212402847}
-        m_TargetAssemblyTypeName: GameStartMenu, Scripts
-        m_MethodName: SetDifficulty
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 0cc4ddfbf28470e4695cff41d829046d, type: 2}
-          m_ObjectArgumentAssemblyTypeName: DifficultyLevel, Scripts
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1161247350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4281,6 +4270,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161247346}
   m_CullTransparentMesh: 1
+--- !u!114 &1161247352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161247346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9634477bab59f4644bce4372d86e166b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedLevel: {fileID: 11400000, guid: 0cc4ddfbf28470e4695cff41d829046d, type: 2}
 --- !u!1 &1163744328
 GameObject:
   m_ObjectHideFlags: 0
@@ -6177,6 +6179,7 @@ GameObject:
   - component: {fileID: 1664646203}
   - component: {fileID: 1664646202}
   - component: {fileID: 1664646201}
+  - component: {fileID: 1664646205}
   m_Layer: 5
   m_Name: Hard difficulty
   m_TagString: Untagged
@@ -6262,19 +6265,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1664646203}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1212402847}
-        m_TargetAssemblyTypeName: GameStartMenu, Scripts
-        m_MethodName: SetDifficulty
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: e97f23a903a895444a852f293b6de006, type: 2}
-          m_ObjectArgumentAssemblyTypeName: DifficultyLevel, Scripts
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1664646203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6313,6 +6304,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664646199}
   m_CullTransparentMesh: 1
+--- !u!114 &1664646205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664646199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9634477bab59f4644bce4372d86e166b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedLevel: {fileID: 11400000, guid: e97f23a903a895444a852f293b6de006, type: 2}
 --- !u!1 &1687143547
 GameObject:
   m_ObjectHideFlags: 0
@@ -7525,6 +7529,7 @@ GameObject:
   - component: {fileID: 1957522912}
   - component: {fileID: 1957522911}
   - component: {fileID: 1957522910}
+  - component: {fileID: 1957522914}
   m_Layer: 5
   m_Name: Easy difficulty
   m_TagString: Untagged
@@ -7610,19 +7615,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1957522912}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1212402847}
-        m_TargetAssemblyTypeName: GameStartMenu, Scripts
-        m_MethodName: SetDifficulty
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: d9a0ef03223f41744a67c389aa2b2e00, type: 2}
-          m_ObjectArgumentAssemblyTypeName: DifficultyLevel, Scripts
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1957522912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7661,6 +7654,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957522908}
   m_CullTransparentMesh: 1
+--- !u!114 &1957522914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957522908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9634477bab59f4644bce4372d86e166b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedLevel: {fileID: 11400000, guid: d9a0ef03223f41744a67c389aa2b2e00, type: 2}
 --- !u!1 &1993365212
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,21 +8,21 @@ public class ScoreManager : Singleton<ScoreManager>
     public Leaderboard Leaderboard => leaderboard;
     Leaderboard leaderboard;
 
+    [SerializeField] TMP_Text highscoreText;
     [SerializeField] TMP_Text scoreDisplay;
 
     float multiplier = 0;
     int multiplierCount = 0;
-
-
     HighscoreEntry entry;
-    DifficultyLevel difficultyLevel;
-
+    float highscore;
     protected override void Awake()
     {
         base.Awake();
-        entry = new HighscoreEntry(0, Systems.Instance.Nickname);
+        entry = new HighscoreEntry(0, Systems.Instance.Nickname, Systems.Instance.difficultyLevel.DifficultyName);
         leaderboard = new Leaderboard();
         leaderboard.Load();
+        highscore = leaderboard.GetHighscore(entry);
+        highscoreText.gameObject.SetActive(false);
         DisplayScore();
     }
 
@@ -30,6 +30,7 @@ public class ScoreManager : Singleton<ScoreManager>
     {
         multiplier = Systems.Instance.difficultyLevel.MultiplierIncrement;
     }
+
 
     public void AddPoints(float points)
     {
@@ -39,8 +40,19 @@ public class ScoreManager : Singleton<ScoreManager>
         DisplayScore();
     }
 
+
+
     void DisplayScore()
     {
+        if(highscore != 0 && entry.Score > highscore)
+        {
+            highscoreText.gameObject.SetActive(true);
+        }
+        else
+        {
+            highscoreText.gameObject.SetActive(false);
+        }
+
         scoreDisplay.text = $"Score: {entry.Score} (X{multiplierCount + 1})";
     }
 
@@ -67,7 +79,6 @@ public class ScoreManager : Singleton<ScoreManager>
     public void ResetMultiplier()
     {
         multiplierCount = 0;
-        Debug.Log("Multiplier has been reset.");
     }
 
     public void IncrementMultiplier()

@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 8341260548634519463}
   - component: {fileID: 6182917003726084915}
   m_Layer: 5
-  m_Name: LeaderboardEntry
+  m_Name: LeaderboardRow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8672097519839293301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8153e3c1bac03d479cab673f87f9d34, type: 3}
+  m_Script: {fileID: 11500000, guid: a1538e2f254d284488a89c0e8a46100a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Nickname: {fileID: 8420918513614970556}

@@ -21,7 +21,6 @@ public class Katana : Weapon
     protected override void ShootableBehavior(Projectile projectile)
     {
         projectile.ApplyPoints(negative: true);
-        Debug.Log("Hit shootable layer");
     }
 
     protected override bool DidHit(out Projectile projectile, int layerMask)
