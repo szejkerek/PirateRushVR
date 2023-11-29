@@ -27,7 +27,7 @@ public class SetOptionFromUI : MonoBehaviour
         
         if (PlayerPrefs.HasKey("volume"))
         {
-            volumeSlider.value = PlayerPrefs.GetFloat("turn");
+            volumeSlider.value = PlayerPrefs.GetFloat("volume");
         }
         else
         {
