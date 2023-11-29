@@ -10,5 +10,10 @@ public class LeaderboardRow : MonoBehaviour
     {
         Nickname.text = entry.Nickname;
         Score.text = Mathf.CeilToInt(entry.Score).ToString();
+
+        if (Systems.Instance.Nickname == entry.Nickname)
+        {
+            Nickname.color = Color.yellow;
+        }
     }
 }
