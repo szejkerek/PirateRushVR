@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7152826e1f8b64e94344d9048acfde, type: 3}
   m_Name: HardDifficulty
   m_EditorClassIdentifier: 
+  <DifficultyName>k__BackingField: Hard
   <PerfectSliceTolerance>k__BackingField: 0.082
   <TowerCount>k__BackingField: 2
   <MaxHealth>k__BackingField: 1

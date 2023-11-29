@@ -18,23 +18,25 @@ public class Katana : Weapon
         perfectSliceTolerance = Systems.Instance.difficultyLevel.PerfectSliceTolerance;
     }
 
-    protected override void ShootableBehavior(Projectile projectile)
+    protected override void ShootableBehavior(Projectile projectile, Vector3 point)
     {
         projectile.ApplyPoints(negative: true);
     }
 
-    protected override bool DidHit(out Projectile projectile, int layerMask)
+    protected override bool DidHit(out Projectile projectile, out Vector3 point, int layerMask)
     {
        projectile = null;
+       point = Vector3.zero;
        if( Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out RaycastHit info, layerMask))
        {
             projectile = info.transform.GetComponent<Projectile>();
+            point = info.point;
             return projectile != null;
        }
        return false;
     }
 
-    protected override void SliceableBehavior(Projectile projectile) 
+    protected override void SliceableBehavior(Projectile projectile, Vector3 point) 
     {
         if (projectile == null)
             return;
