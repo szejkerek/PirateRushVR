@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SetOptionFromUI : MonoBehaviour
 {
-    public Scrollbar volumeSlider;
+    public Slider volumeSlider;
     public TMP_Dropdown turnDropdown;
     
     SetPlayerPreferences turnTypeFromPlayerPref;
