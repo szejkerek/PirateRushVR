@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ClickUI
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: c00193f69f150124cbf3f5671b986b63, type: 3}
-  volume: 1
+  volume: 0.105
   pitch: 1
   loop: 0

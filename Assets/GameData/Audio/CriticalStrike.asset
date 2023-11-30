@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CriticalStrike
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: 2e8bd2a2e875fce43b7b28fb5318fb7d, type: 3}
-  volume: 1
+  volume: 0.105
   pitch: 1
   loop: 0

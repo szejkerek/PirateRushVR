@@ -31,7 +31,7 @@ public class SetOptionFromUI : MonoBehaviour
         }
         else
         {
-            SetGlobalVolume(1);
+            SetGlobalVolume(0.2f);
         }
     }
 

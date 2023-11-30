@@ -2,13 +2,17 @@ using DG.Tweening;
 using UnityEngine;
 public class Bullet : Weapon
 {
-
     [SerializeField] float minExplosionForce;
     [SerializeField] float maxExplosionForce;
     [SerializeField] float explosionForceRadius;
 
     Projectile hitProjectile;
     Vector3 hitPoint;
+
+    private void Start()
+    {
+        Destroy(gameObject, 4f);
+    }
 
     bool hitOnce = false;
     protected override bool DidHit(out Projectile projectile, out Vector3 point, int projectileLayer)
