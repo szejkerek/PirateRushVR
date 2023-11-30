@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ComboSpawnType>k__BackingField: 0
   <ProjectileType>k__BackingField: 1
-  <Model>k__BackingField: {fileID: 3893885303875165760, guid: ed68cfd36c620e34bac59134a6447464, type: 3}
-  <FracturedModel>k__BackingField: {fileID: 0}
+  <Model>k__BackingField: {fileID: 1603012539103236719, guid: ed68cfd36c620e34bac59134a6447464, type: 3}
+  <FracturedModel>k__BackingField: {fileID: 37824037329144355, guid: fe43f867e8967894a8c6c7a71580a64c, type: 3}
   <CrossSectionMaterial>k__BackingField: {fileID: 0}
   <Points>k__BackingField: 50
   <AlwaysNegativePoints>k__BackingField: 0

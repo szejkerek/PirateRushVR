@@ -1,6 +1,12 @@
+using DG.Tweening;
 using UnityEngine;
 public class Bullet : Weapon
 {
+
+    [SerializeField] float minExplosionForce;
+    [SerializeField] float maxExplosionForce;
+    [SerializeField] float explosionForceRadius;
+
     Projectile hitProjectile;
     Vector3 hitPoint;
 
@@ -21,12 +27,32 @@ public class Bullet : Weapon
         return false;
     }
 
-
     protected override void ShootableBehavior(Projectile projectile, Vector3 point)
     {
         bool isPerfect = IsPerfect();
         projectile.ApplyEffects(critical: isPerfect);
         projectile.ApplyPoints(critical: isPerfect);
+
+        if(projectile.Data.FracturedModel != null)
+        {
+            GameObject obj = Instantiate(projectile.Data.FracturedModel, projectile.transform.position, projectile.transform.rotation);
+
+            foreach (Transform t in obj.transform)
+            {
+                var rb = t.GetComponent<Rigidbody>();
+                if(rb != null)
+                {
+                    rb.AddExplosionForce(Random.Range(minExplosionForce, maxExplosionForce), transform.position, explosionForceRadius);
+                }
+
+                Sequence sequence = DOTween.Sequence();
+                sequence.AppendInterval(Random.Range(3, 5))
+                    .AppendCallback(() => Destroy(t.gameObject)); 
+                sequence.Play();
+            }
+
+        }
+
         Destroy(projectile.gameObject);
     }
 
