@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12d54d3914f9ce84b98ef235a66704ff, type: 3}
-  m_Name: Barrel1Projectile
+  m_Name: BoxProjectile
   m_EditorClassIdentifier: 
   <ComboSpawnType>k__BackingField: 0
   <ProjectileType>k__BackingField: 1

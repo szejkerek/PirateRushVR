@@ -98,6 +98,5 @@ public class ScoreManager : Singleton<ScoreManager>
     public void IncrementMultiplier()
     {
         multiplierCount++;
-        Debug.Log($"Current multiplier: {multiplier*multiplierCount}");
     }
 }

@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Projectiles>k__BackingField:
   - {fileID: 11400000, guid: 30748a6d1a2f0f141b8a2c2de644d73b, type: 2}
-  - {fileID: 11400000, guid: a161f389371e1244e91448b02c537414, type: 2}
   - {fileID: 11400000, guid: 8e4a333360d5b1e43ae2916dad35072d, type: 2}
   - {fileID: 11400000, guid: 2cd5702e1a2f18b4390ef7d6bd57e2ca, type: 2}
   <RandomTargetRange>k__BackingField: 0.75

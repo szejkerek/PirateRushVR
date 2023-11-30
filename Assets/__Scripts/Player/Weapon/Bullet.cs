@@ -45,16 +45,15 @@ public class Bullet : Weapon
                     rb.AddExplosionForce(Random.Range(minExplosionForce, maxExplosionForce), transform.position, explosionForceRadius);
                 }
 
-                Sequence sequence = DOTween.Sequence();
-                sequence.AppendInterval(Random.Range(3, 5))
-                    .AppendCallback(() => Destroy(t.gameObject)); 
-                sequence.Play();
+                Destroy(t.gameObject, Random.Range(3, 5)); 
             }
 
         }
 
         Destroy(projectile.gameObject);
     }
+
+
 
     protected override void SliceableBehavior(Projectile projectile, Vector3 point)
     {
