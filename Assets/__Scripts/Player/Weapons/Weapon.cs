@@ -33,7 +33,6 @@ public abstract class Weapon : MonoBehaviour
         projectile.ApplyEffects(false);
         projectile.ApplyPoints();
         Destroy(projectile.gameObject);     
-        Debug.Log("Hit collectible layer");
     }
 
 }
