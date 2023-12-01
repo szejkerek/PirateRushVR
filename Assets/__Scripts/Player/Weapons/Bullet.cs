@@ -9,8 +9,10 @@ public class Bullet : Weapon
     Projectile hitProjectile;
     Vector3 hitPoint;
 
+    float perfectShootChance;
     private void Start()
     {
+        perfectShootChance = Systems.Instance.difficultyLevel.PerfectShootChance;
         Destroy(gameObject, 4f);
     }
 
@@ -76,6 +78,6 @@ public class Bullet : Weapon
 
     private bool IsPerfect()
     {
-        return Random.Range(0, 5) == 0;
+        return Random.Range(0f, 1f) <= perfectShootChance;
     }
 }

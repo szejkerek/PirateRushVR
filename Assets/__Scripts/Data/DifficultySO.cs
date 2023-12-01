@@ -6,6 +6,7 @@ public class DifficultySO : ScriptableObject
 {
     [field: SerializeField] public string DifficultyName { private set; get; }
     [field: SerializeField, Range(0f, 0.5f)] public float PerfectSliceTolerance { private set; get; }
+    [field: SerializeField, Range(0f, 1f)] public float PerfectShootChance { private set; get; }
     [field: SerializeField] public int TowerCount { private set; get; }
     [field: SerializeField] public int MaxHealth { private set; get; }
     [field: SerializeField, Range(0f, 1f)] public float BombToNeutralRatio { private set; get; }

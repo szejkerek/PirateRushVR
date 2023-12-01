@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DifficultyName>k__BackingField: Hard
   <PerfectSliceTolerance>k__BackingField: 0.031
+  <PerfectShootChance>k__BackingField: 0.063
   <TowerCount>k__BackingField: 2
   <MaxHealth>k__BackingField: 1
   <BombToNeutralRatio>k__BackingField: 0.277
