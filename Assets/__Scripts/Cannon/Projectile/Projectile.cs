@@ -51,7 +51,7 @@ public partial class Projectile : MonoBehaviour
 
     public Material GetCrossSectionMaterial()
     {
-        if (data.CrossSectionMaterial == null)
+        if (data.OptionalData.CrossSectionMaterial == null)
         {
             Debug.LogWarning($"{gameObject.name} has no CrossSection material selected!");
             Material redMaterial = new Material(Shader.Find("Standard"));
@@ -59,7 +59,7 @@ public partial class Projectile : MonoBehaviour
             return redMaterial;
         }
 
-        return data.CrossSectionMaterial;
+        return data.OptionalData.CrossSectionMaterial;
     }
 
     public void ApplyEffects(bool critical)
@@ -68,7 +68,7 @@ public partial class Projectile : MonoBehaviour
 
         if(critical)
         {
-            data.CriticalEffect?.ApplyHitEffect(this);
+            AudioManager.Instance.PlayGlobal(AudioManager.Instance.SFXLib.CriticalStrike);
         }
     }
 
@@ -80,7 +80,7 @@ public partial class Projectile : MonoBehaviour
         float points;
         ScoreManager scoreManager = ScoreManager.Instance;
 
-        if (data.AlwaysNegativePoints) negative = true;
+        if (data.OptionalData.AlwaysNegativePoints) negative = true;
 
         if (negative)
         {

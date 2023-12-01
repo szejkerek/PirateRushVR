@@ -595,6 +595,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5712799631658199452}
   - {fileID: 8396105747564917274}
   - {fileID: 4596921735929896480}
   - {fileID: 3635990422656351207}
@@ -783,7 +784,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8669754149947751549}
-  - {fileID: 5712799631658199452}
   m_Father: {fileID: 1599985154148792742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -888,6 +888,9 @@ MonoBehaviour:
   clickAudio: {fileID: 11400000, guid: faf662bf9f6f82c4eb97008665d87eac, type: 2}
   hoverEnterAudio: {fileID: 11400000, guid: 29ee5081ea8044645a7e3e6993abe9db, type: 2}
   hoverExitAudio: {fileID: 0}
+  mainTheme: {fileID: 0}
+  hoverTheme: {fileID: 0}
+  clickTheme: {fileID: 0}
 --- !u!1 &8552242152160000711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,7 +2584,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 4596921735929896480}
+    m_TransformParent: {fileID: 1599985154148792742}
     m_Modifications:
     - target: {fileID: 615543936843459160, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
       propertyPath: m_Pivot.x
@@ -2645,11 +2648,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 615543936843459160, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 595.9
+      value: 478.40002
       objectReference: {fileID: 0}
     - target: {fileID: 615543936843459160, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -154
+      value: 141.54999
       objectReference: {fileID: 0}
     - target: {fileID: 615543936843459160, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2662,46 +2665,6 @@ PrefabInstance:
     - target: {fileID: 615543936843459160, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341186281508731483, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
-      propertyPath: m_fontStyle
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341186281508731483, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341186281508731483, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341186281508731483, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341186281508731483, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 8420918513614970556, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
-      propertyPath: m_fontStyle
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8420918513614970556, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8420918513614970556, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8420918513614970556, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8420918513614970556, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8672097519839293301, guid: 3ecbf36a76d37b4439e96c0c4a2ddea9, type: 3}
       propertyPath: m_Name

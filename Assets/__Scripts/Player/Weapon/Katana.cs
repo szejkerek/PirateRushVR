@@ -49,7 +49,7 @@ public class Katana : Weapon
         if (hull == null)
             return;
 
-        Material mat = projectile.Data.CrossSectionMaterial;
+        Material mat = projectile.GetCrossSectionMaterial();
 
         GameObject upperHull = hull.CreateUpperHull(projectile.gameObject, mat);
         SetUpHull(upperHull);
@@ -83,45 +83,24 @@ public class Katana : Weapon
 
     private float CalculateVolume(MeshCollider collider)
     {
-        //if (collider is MeshCollider meshCollider)
-        //{
-            Mesh mesh = collider.sharedMesh;
-            if (mesh != null)
+        Mesh mesh = collider.sharedMesh;
+        if (mesh != null)
+        {
+            Vector3[] vertices = mesh.vertices;
+            int[] triangles = mesh.triangles;
+
+            float volume = 0f;
+            for (int i = 0; i < triangles.Length; i += 3)
             {
-                Vector3[] vertices = mesh.vertices;
-                int[] triangles = mesh.triangles;
+                Vector3 v1 = vertices[triangles[i]];
+                Vector3 v2 = vertices[triangles[i + 1]];
+                Vector3 v3 = vertices[triangles[i + 2]];
 
-                float volume = 0f;
-                for (int i = 0; i < triangles.Length; i += 3)
-                {
-                    Vector3 v1 = vertices[triangles[i]];
-                    Vector3 v2 = vertices[triangles[i + 1]];
-                    Vector3 v3 = vertices[triangles[i + 2]];
-
-                    volume += SignedVolumeOfTriangle(v1, v2, v3);
-                }
-                return Mathf.Abs(volume);
+                volume += SignedVolumeOfTriangle(v1, v2, v3);
             }
-        //}
-        //}
-        //else if (collider is BoxCollider boxCollider)
-        //{
-        //    return boxCollider.size.x * boxCollider.size.y * boxCollider.size.z;
-        //}
-        //else if (collider is SphereCollider sphereCollider)
-        //{
-        //    return (4f / 3f) * Mathf.PI * Mathf.Pow(sphereCollider.radius, 3);
-        //}
-        //else if (collider is CapsuleCollider capsuleCollider)
-        //{
-        //    float radius = capsuleCollider.radius;
-        //    float height = capsuleCollider.height;
-
-        //    float cylinderVolume = Mathf.PI * Mathf.Pow(radius, 2) * height;
-        //    float sphereVolume = (4f / 3f) * Mathf.PI * Mathf.Pow(radius, 3);
-
-        //    return cylinderVolume + sphereVolume;
-        //}
+            return Mathf.Abs(volume);
+        }
+      
         return 0f;
     }
 

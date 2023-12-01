@@ -37,9 +37,9 @@ public class Bullet : Weapon
         projectile.ApplyEffects(critical: isPerfect);
         projectile.ApplyPoints(critical: isPerfect);
 
-        if(projectile.Data.FracturedModel != null)
+        if(projectile.Data.OptionalData.FracturedModel != null)
         {
-            GameObject obj = Instantiate(projectile.Data.FracturedModel, projectile.transform.position, projectile.transform.rotation);
+            GameObject obj = Instantiate(projectile.Data.OptionalData.FracturedModel, projectile.transform.position, projectile.transform.rotation);
 
             foreach (Transform t in obj.transform)
             {

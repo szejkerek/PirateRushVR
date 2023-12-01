@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class LeaderboardPanel : MonoBehaviour
 {
@@ -40,13 +41,15 @@ public class LeaderboardPanel : MonoBehaviour
         }
         
         Leaderboard leaderboard = ScoreManager.Instance.Leaderboard;
-        foreach (HighscoreEntry entry in leaderboard.HighscoreEntries)
+        for (int i = 0; i < leaderboard.HighscoreEntries.Count; i++)
         {
+            HighscoreEntry entry = leaderboard.HighscoreEntries[i];
             if (entry.DifficultyName != difficultyName)
                 continue;
 
             LeaderboardRow leaderboardRow = Instantiate(leaderboardEntry, leaderboardContainer);
-            leaderboardRow.Init(entry);
+            leaderboardRow.Init(i+1, entry);
         }
+
     }
 }
