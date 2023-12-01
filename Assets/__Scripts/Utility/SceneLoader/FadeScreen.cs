@@ -26,6 +26,7 @@ public class FadeScreen : MonoBehaviour
 
     public void FadeOut()
     {
+        FindObjectOfType<SetPlayerPreferences>()?.SetHandItems(HandHeldType.None);
         Fade(0, 1);
     }
 

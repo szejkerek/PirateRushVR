@@ -15,6 +15,8 @@ public class LeaderboardRow : MonoBehaviour
 
         if (Systems.Instance.Nickname == entry.Nickname)
         {
+            Lp.color = Color.yellow;
+            Score.color = Color.yellow;
             Nickname.color = Color.yellow;
         }
     }
