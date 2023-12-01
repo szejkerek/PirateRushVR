@@ -87,7 +87,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _METALNESS: 1
+    - _METALNESS: 0.62
     - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
@@ -95,7 +95,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SPECULAR_IOR: 1.5
+    - _SPECULAR_IOR: 1.64
     - _SPECULAR_ROUGHNESS: 19.7
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
