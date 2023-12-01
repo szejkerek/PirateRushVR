@@ -36,7 +36,6 @@ public class Bomb : MonoBehaviour
                 continue;
             
             rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
-            Debug.Log(obj.name);
         }
 
         GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
