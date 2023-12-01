@@ -68,7 +68,7 @@ public class GameStartMenu : MonoBehaviour
         SceneLoader.Instance.LoadScene(SceneEnum.Gameplay);
     }    
 
-    public void SetDifficulty(DifficultyLevel difficultySO)
+    public void SetDifficulty(DifficultySO difficultySO)
     {
         Systems.Instance.difficultyLevel = difficultySO;
         EnableView(selectWeapon);

@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e7152826e1f8b64e94344d9048acfde, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e6c11cebd7df7c40a87e40457b6ecca, type: 3}
   m_Name: MediumDifficulty
   m_EditorClassIdentifier: 
   <DifficultyName>k__BackingField: Medium
-  <PerfectSliceTolerance>k__BackingField: 0.082
+  <PerfectSliceTolerance>k__BackingField: 0.065
   <TowerCount>k__BackingField: 2
   <MaxHealth>k__BackingField: 2
-  <BombToNeutralRatio>k__BackingField: 0.202
-  <SpecialOverrideChance>k__BackingField: 0.067
-  <GlobalComboChance>k__BackingField: 0.046
-  <MultiplierIncrement>k__BackingField: 0.1
+  <BombToNeutralRatio>k__BackingField: 0.429
+  <SpecialOverrideChance>k__BackingField: 0.165
+  <GlobalComboChance>k__BackingField: 0.076
+  <MultiplierIncrement>k__BackingField: 0.2
   <CountOf25msWaits>k__BackingField:
-    _bottomBound: 15
-    _upperBound: 21
+    _bottomBound: 11
+    _upperBound: 17

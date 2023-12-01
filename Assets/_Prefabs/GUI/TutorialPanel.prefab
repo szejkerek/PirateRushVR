@@ -199,12 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e419a4d4b65dfb94bae6eddedee04926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickAudio: {fileID: 11400000, guid: faf662bf9f6f82c4eb97008665d87eac, type: 2}
-  hoverEnterAudio: {fileID: 11400000, guid: 29ee5081ea8044645a7e3e6993abe9db, type: 2}
-  hoverExitAudio: {fileID: 0}
-  mainTheme: {fileID: 21300000, guid: 7d30a7673c95044c5ba541d8597d4f60, type: 3}
-  hoverTheme: {fileID: 21300000, guid: 03ba77e79215547be8d047beaaf2e040, type: 3}
-  clickTheme: {fileID: 21300000, guid: bd73fe59d7c2747eeace8a3cf7a92671, type: 3}
+  theme: {fileID: 11400000, guid: 749d8e33282f7924d8aa8fa76924df7e, type: 2}
 --- !u!1 &3200117944960382864
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,12 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e419a4d4b65dfb94bae6eddedee04926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickAudio: {fileID: 11400000, guid: faf662bf9f6f82c4eb97008665d87eac, type: 2}
-  hoverEnterAudio: {fileID: 11400000, guid: 29ee5081ea8044645a7e3e6993abe9db, type: 2}
-  hoverExitAudio: {fileID: 0}
-  mainTheme: {fileID: 21300000, guid: 7d30a7673c95044c5ba541d8597d4f60, type: 3}
-  hoverTheme: {fileID: 21300000, guid: 03ba77e79215547be8d047beaaf2e040, type: 3}
-  clickTheme: {fileID: 21300000, guid: bd73fe59d7c2747eeace8a3cf7a92671, type: 3}
+  theme: {fileID: 11400000, guid: 749d8e33282f7924d8aa8fa76924df7e, type: 2}
 --- !u!1 &3351342491554343581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,9 +1112,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e419a4d4b65dfb94bae6eddedee04926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickAudio: {fileID: 11400000, guid: faf662bf9f6f82c4eb97008665d87eac, type: 2}
-  hoverEnterAudio: {fileID: 11400000, guid: 29ee5081ea8044645a7e3e6993abe9db, type: 2}
-  hoverExitAudio: {fileID: 0}
-  mainTheme: {fileID: 21300000, guid: 7d30a7673c95044c5ba541d8597d4f60, type: 3}
-  hoverTheme: {fileID: 21300000, guid: 03ba77e79215547be8d047beaaf2e040, type: 3}
-  clickTheme: {fileID: 21300000, guid: bd73fe59d7c2747eeace8a3cf7a92671, type: 3}
+  theme: {fileID: 11400000, guid: 749d8e33282f7924d8aa8fa76924df7e, type: 2}

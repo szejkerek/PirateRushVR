@@ -1,8 +1,8 @@
 // Copyright (c) Bartłomiej Gordon 2023. All rights reserved.
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SampleDifficultyLevel", menuName = "ScriptableObjects/DifficultyLevel", order = 1)]
-public class DifficultyLevel : ScriptableObject
+[CreateAssetMenu(fileName = "SampleDifficultyLevel", menuName = "ScriptableObjects/Difficulty", order = 1)]
+public class DifficultySO : ScriptableObject
 {
     [field: SerializeField] public string DifficultyName { private set; get; }
     [field: SerializeField, Range(0f, 0.5f)] public float PerfectSliceTolerance { private set; get; }

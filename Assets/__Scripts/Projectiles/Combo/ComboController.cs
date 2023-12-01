@@ -10,7 +10,7 @@ public class ComboController : MonoBehaviour
     ComboItemFactory comboItemFactory;
 
     Queue<ICannonBehavior> queuedBehaviors = new Queue<ICannonBehavior>();
-    DifficultyLevel currentDifficulty;
+    DifficultySO currentDifficulty;
 
     public CannonShooting Launcher => launcher;
     CannonShooting launcher;

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIDifficultyButton : MonoBehaviour
 {
-    [SerializeField] DifficultyLevel selectedLevel;
+    [SerializeField] DifficultySO selectedLevel;
     GameStartMenu gameStartMenu;
     Button button;
     TMP_Text buttonText;

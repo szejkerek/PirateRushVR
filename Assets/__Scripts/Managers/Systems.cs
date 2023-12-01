@@ -9,7 +9,7 @@ public class Systems : Singleton<Systems>
     public int TickRate = 32;
     public float minHeight = -5f;
     public float waterLevel = 0f;
-    public DifficultyLevel difficultyLevel;
+    public DifficultySO difficultyLevel;
 
     protected override void Awake()
     {

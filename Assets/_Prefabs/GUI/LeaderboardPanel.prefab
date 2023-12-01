@@ -885,12 +885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e419a4d4b65dfb94bae6eddedee04926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickAudio: {fileID: 11400000, guid: faf662bf9f6f82c4eb97008665d87eac, type: 2}
-  hoverEnterAudio: {fileID: 11400000, guid: 29ee5081ea8044645a7e3e6993abe9db, type: 2}
-  hoverExitAudio: {fileID: 0}
-  mainTheme: {fileID: 0}
-  hoverTheme: {fileID: 0}
-  clickTheme: {fileID: 0}
+  theme: {fileID: 11400000, guid: 749d8e33282f7924d8aa8fa76924df7e, type: 2}
 --- !u!1 &8552242152160000711
 GameObject:
   m_ObjectHideFlags: 0
