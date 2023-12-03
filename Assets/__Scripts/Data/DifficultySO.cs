@@ -13,6 +13,8 @@ public class DifficultySO : ScriptableObject
     [field: SerializeField, Range(0f, 1f)] public float SpecialOverrideChance { private set; get; }
     [field: SerializeField, Range(0f, 1f)] public float GlobalComboChance { private set; get; }
     [field: SerializeField] public float MultiplierIncrement { private set; get; }
+    [field: SerializeField] public bool DecrementPointsOnMiss { private set; get; }
+    [field: SerializeField] public bool DecrementMultiplierOnMiss { private set; get; }
     [field: SerializeField] public Interval<int> CountOf25msWaits { private set; get; }
 
 }

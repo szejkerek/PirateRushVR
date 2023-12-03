@@ -21,6 +21,8 @@ MonoBehaviour:
   <SpecialOverrideChance>k__BackingField: 0.165
   <GlobalComboChance>k__BackingField: 0.076
   <MultiplierIncrement>k__BackingField: 0.2
+  <DecrementPointsOnMiss>k__BackingField: 0
+  <DecrementMultiplierOnMiss>k__BackingField: 1
   <CountOf25msWaits>k__BackingField:
     _bottomBound: 11
     _upperBound: 17

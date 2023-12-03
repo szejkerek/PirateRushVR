@@ -26,17 +26,36 @@ public partial class Projectile : MonoBehaviour
             underWater = true;
             if (data.ProjectileType == ProjectileType.Collectible)
                 return;
-            ScoreManager.Instance.DecrementMultiplier();
+            FallDownBehavior();
         }
 
+        Despawn();
+    }
+
+    private void Despawn()
+    {
         if (transform.position.y < Systems.Instance.minHeight)
         {
-            if (gameObject != null)
+            Destroy(gameObject);
+        }
+    }
+
+    private void FallDownBehavior()
+    {
+        if (data.ProjectileType != ProjectileType.Collectible)
+        {
+            if (Systems.Instance.difficultyLevel.DecrementPointsOnMiss)
             {
-                Destroy(gameObject);
+                ApplyPoints(negative: true);
+            }
+
+            if (Systems.Instance.difficultyLevel.DecrementMultiplierOnMiss)
+            {
+                ScoreManager.Instance.DecrementMultiplier();
             }
         }
     }
+
 
     public void Init(ProjectileSO data, Vector3 velocity, float gravity)
     {

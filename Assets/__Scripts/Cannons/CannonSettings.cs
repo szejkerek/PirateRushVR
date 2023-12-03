@@ -13,3 +13,4 @@ public class CannonSettings : ScriptableObject
     [field: SerializeField] public Interval<float> Height { private set; get; }
     [field: SerializeField] public Interval<float> Gravity { private set; get; }
 }
+
