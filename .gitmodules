@@ -1,0 +1,3 @@
+[submodule "Thesis"]
+	path = Thesis
+	url = https://github.com/szejkerek/Thesis.git

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: EasyDifficulty
   m_EditorClassIdentifier: 
   <DifficultyName>k__BackingField: Easy
-  <PerfectSliceTolerance>k__BackingField: 0.158
+  <PerfectSliceTolerance>k__BackingField: 0.144
   <PerfectShootChance>k__BackingField: 0.339
   <TowerCount>k__BackingField: 2
   <MaxHealth>k__BackingField: 3
-  <BombToNeutralRatio>k__BackingField: 0.446
-  <SpecialOverrideChance>k__BackingField: 0.223
-  <GlobalComboChance>k__BackingField: 0.076
+  <BombToNeutralRatio>k__BackingField: 0.563
+  <SpecialOverrideChance>k__BackingField: 0.221
+  <GlobalComboChance>k__BackingField: 0.077
   <MultiplierIncrement>k__BackingField: 0.3
   <CountOf25msWaits>k__BackingField:
     _bottomBound: 9

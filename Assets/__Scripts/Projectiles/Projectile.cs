@@ -66,10 +66,15 @@ public partial class Projectile : MonoBehaviour
     {
         data.MutualEffects.ForEach(e => e.ApplyHitEffect(this));
 
-        if(critical)
+        if( critical )
         {
-            AudioManager.Instance.PlayGlobal(AudioManager.Instance.SFXLib.CriticalStrike);
+            ApplyCritical();
         }
+    }
+
+    private static void ApplyCritical()
+    {
+        AudioManager.Instance.PlayGlobal(AudioManager.Instance.SFXLib.CriticalStrike);
     }
 
     public void ApplyPoints(bool negative = false, bool critical = false)
