@@ -3445,6 +3445,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2116150240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1568247591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3645396275417868758, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
+  m_PrefabInstance: {fileID: 2429318928392243184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1568247599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4149957078002763644, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
+  m_PrefabInstance: {fileID: 2429318928392243184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1568247600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568247591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c8067203996d947a36c41cea485dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraOffset: {fileID: 1806960599}
+  target: {fileID: 2068539052}
+  heightAboveOffset: 2.75
 --- !u!1 &1575536172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3810,6 +3835,11 @@ Transform:
   - {fileID: 108695486}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1806960599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1451505355145109763, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
+  m_PrefabInstance: {fileID: 2429318928392243184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1848753146
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,6 +4477,37 @@ Transform:
   - {fileID: 1424861203}
   m_Father: {fileID: 1745799195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2068539051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2068539052}
+  m_Layer: 7
+  m_Name: CannonTarget
+  m_TagString: Target
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2068539052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068539051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1568247599}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2115727880
 GameObject:
   m_ObjectHideFlags: 0
@@ -4774,8 +4835,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4149957078002763644, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 2068539052}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3645396275417868758, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568247600}
   m_SourcePrefab: {fileID: 100100000, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
 --- !u!1001 &4307634150520256598
 PrefabInstance:

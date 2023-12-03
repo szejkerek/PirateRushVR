@@ -13,7 +13,7 @@ public class CannonShooting : MonoBehaviour
 
     private void Start()
     {
-        SetTarget("Player");
+        SetTarget("Target");
         rotateParts = GetComponentsInChildren<RotatePart>();
     }
 
