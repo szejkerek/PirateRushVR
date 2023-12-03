@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -9,13 +8,23 @@ public class HealthManager : Singleton<HealthManager>
     public Action OnDeath;
     public Action OnHealChange;
 
-    [SerializeField] TMP_Text healthDisplay;
+    [SerializeField] Transform healthContainer;
+    [SerializeField] HealthIcon healthIcon;
+
     int currentHealth;
     int maxHealth;
+
+    List<HealthIcon> healthIcons = new List<HealthIcon>();
 
     private void Start()
     {
         maxHealth = Systems.Instance.difficultyLevel.MaxHealth;
+
+        for (int i = 0; i < maxHealth; i++)
+        {
+            healthIcons.Add(Instantiate(healthIcon, healthContainer));
+        }
+
         currentHealth = maxHealth;
         OnHealChange += DisplayHealth;
         DisplayHealth();
@@ -52,6 +61,13 @@ public class HealthManager : Singleton<HealthManager>
 
     private void DisplayHealth()
     {
-        healthDisplay.text = $"Health: {currentHealth}";
-    }
+        foreach (var health in healthIcons)
+        {
+            health.Kill();
+        }
+
+        for (int i = 0;i < currentHealth; i++) { //od drugiej stroy
+            healthIcons[i].Restore();
+        }
+     }
 }
