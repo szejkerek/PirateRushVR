@@ -6,6 +6,7 @@ using Valve.VR.InteractionSystem;
 
 public class Katana : Weapon
 {
+    [SerializeField] GameObject sparksEffect;
     [SerializeField] Transform startSlicePoint;
     [SerializeField] Transform endSlicePoint;
     [SerializeField] VelocityEstimator endPointVelocity;
@@ -20,6 +21,10 @@ public class Katana : Weapon
 
     protected override void ShootableBehavior(Projectile projectile, Vector3 point)
     {
+        Vector3 velocity = endPointVelocity.GetVelocityEstimate();
+        Vector3 sparksDirection = Vector3.Cross(endSlicePoint.position - startSlicePoint.position, velocity).normalized;
+        var effect = Instantiate(sparksEffect, point, Quaternion.LookRotation(sparksDirection));
+        Destroy(effect, 2f);
         projectile.ApplyPoints(negative: true);
     }
 
@@ -68,6 +73,7 @@ public class Katana : Weapon
     {
         Rigidbody rb = hull.AddComponent<Rigidbody>();
         MeshCollider collider = hull.AddComponent<MeshCollider>();
+        rb.gameObject.layer = LayerMask.NameToLayer("ProjectileNonCollision");
         collider.convex = true;
         rb.AddExplosionForce(cutForce, hull.transform.position, 1);
 

@@ -6,12 +6,14 @@ using UnityEngine;
 public partial class Projectile : MonoBehaviour
 {
     public ProjectileSO Data => data;
-    
     ProjectileSO data;
+    public bool PointsChanged => pointsChanged;
+    bool pointsChanged = false;
+    
     Rigidbody rb;
     ConstantForce cForce;
-    bool pointsApplied = false;
-    bool underWater = false;
+
+    float aliveTime = 0f;
 
     private void Awake()
     {
@@ -21,41 +23,17 @@ public partial class Projectile : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.y < Systems.Instance.waterLevel && !underWater)
-        {
-            underWater = true;
-            if (data.ProjectileType == ProjectileType.Collectible)
-                return;
-            FallDownBehavior();
-        }
-
+        aliveTime += Time.deltaTime;
         Despawn();
     }
 
     private void Despawn()
     {
-        if (transform.position.y < Systems.Instance.minHeight)
+        if (aliveTime >= 10f)
         {
             Destroy(gameObject);
         }
     }
-
-    private void FallDownBehavior()
-    {
-        if (data.ProjectileType != ProjectileType.Collectible)
-        {
-            if (Systems.Instance.difficultyLevel.DecrementPointsOnMiss)
-            {
-                ApplyPoints(negative: true);
-            }
-
-            if (Systems.Instance.difficultyLevel.DecrementMultiplierOnMiss)
-            {
-                ScoreManager.Instance.DecrementMultiplier();
-            }
-        }
-    }
-
 
     public void Init(ProjectileSO data, Vector3 velocity, float gravity)
     {
@@ -102,7 +80,7 @@ public partial class Projectile : MonoBehaviour
 
     public void ApplyPoints(bool negative = false, bool critical = false)
     {
-        if (pointsApplied)
+        if (pointsChanged)
             return;
 
         float points;
@@ -125,6 +103,6 @@ public partial class Projectile : MonoBehaviour
         ScoreText text = Instantiate(scoreManager.ScoreText, transform.position, Quaternion.identity);
         text.Init(points, critical);
 
-        pointsApplied = true;
+        pointsChanged = true;
     }
 }
