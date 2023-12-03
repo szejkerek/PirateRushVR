@@ -153,8 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireEffect: {fileID: 8655989198403668455}
   explosionEffect: {fileID: 8184112020493263289, guid: 60fffee13d900e34d91240067ba9d24a, type: 3}
-  explosionForce: 500
-  explosionRadius: 6
+  explosionForce: 900
+  explosionRadius: 12
 --- !u!1001 &4961368519514615227
 PrefabInstance:
   m_ObjectHideFlags: 0

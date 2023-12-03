@@ -62,10 +62,14 @@ public partial class Projectile : MonoBehaviour
         this.data = data;
         rb.velocity = velocity;
         cForce.force = new Vector3(0, gravity - Physics.gravity.y, 0);
-
         float randomSpinSpeed = Random.Range(10f, 50f); 
         Vector3 randomSpinAxis = Random.onUnitSphere;
         rb.angularVelocity = randomSpinAxis * randomSpinSpeed;
+
+        foreach(Transform t in transform)
+        {
+            t.gameObject.layer = LayerMask.NameToLayer("Projectile");
+        }   
     }
 
     public Material GetCrossSectionMaterial()

@@ -43,17 +43,24 @@ public class Bullet : Weapon
         {
             GameObject obj = Instantiate(projectile.Data.OptionalData.FracturedModel, projectile.transform.position, projectile.transform.rotation);
 
+
             foreach (Transform t in obj.transform)
             {
-                var rb = t.GetComponent<Rigidbody>();
-                if(rb != null)
+                MeshCollider collider = t.gameObject.AddComponent<MeshCollider>();
+                collider.convex = true;
+
+                t.gameObject.layer = LayerMask.NameToLayer("ProjectileNonCollision");
+                Rigidbody rb = t.gameObject.AddComponent<Rigidbody>();
+
+                if (rb != null)
                 {
+                    rb.mass = 0.01f;
                     rb.AddExplosionForce(Random.Range(minExplosionForce, maxExplosionForce), transform.position, explosionForceRadius);
                 }
 
-                Destroy(t.gameObject, Random.Range(3, 5)); 
             }
 
+            Destroy(obj, Random.Range(3, 5));
         }
 
         Destroy(projectile.gameObject);
