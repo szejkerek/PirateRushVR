@@ -83,6 +83,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   sparksEffect: {fileID: 3820671097694520992, guid: 782e934d4cd5a7040a47443cf2ccb214, type: 3}
+  splashEffect: {fileID: 3433760107342558875, guid: 7ea0ec99985cbf64ca71cdf0b6375c79, type: 3}
   startSlicePoint: {fileID: 6065085771502809476}
   endSlicePoint: {fileID: 1106602387671599703}
   endPointVelocity: {fileID: 5525332262947585470}

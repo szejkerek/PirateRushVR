@@ -11,6 +11,5 @@ public class ProjectileOptionalData
     
     [field: Header("Slicing")]
     [field: SerializeField] public Material CrossSectionMaterial { private set; get; }
-    [field: SerializeField] public GameObject SliceParticleEffect { private set; get; }
     [field: SerializeField] public Color SliceParticleEffectColor { private set; get; }
 }

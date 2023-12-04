@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ComboSpawnType>k__BackingField: 0
   <ProjectileType>k__BackingField: 0
-  <Mass>k__BackingField: 20
   <Model>k__BackingField: {fileID: 2792831702634236873, guid: 1accdc650eede704caa101b56739724d, type: 3}
   <Points>k__BackingField: 50
   <MutualEffects>k__BackingField: []
@@ -22,5 +21,4 @@ MonoBehaviour:
     <AlwaysNegativePoints>k__BackingField: 0
     <FracturedModel>k__BackingField: {fileID: 0}
     <CrossSectionMaterial>k__BackingField: {fileID: 2100000, guid: 5de828e807de6c144be84b910e5d24bc, type: 2}
-    <SliceParticleEffect>k__BackingField: {fileID: 0}
-    <SliceParticleEffectColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+    <SliceParticleEffectColor>k__BackingField: {r: 0.4675634, g: 1, b: 0, a: 1}

@@ -7,6 +7,8 @@ using Valve.VR.InteractionSystem;
 public class Katana : Weapon
 {
     [SerializeField] GameObject sparksEffect;
+    [SerializeField] GameObject splashEffect;
+    [Space]
     [SerializeField] Transform startSlicePoint;
     [SerializeField] Transform endSlicePoint;
     [SerializeField] VelocityEstimator endPointVelocity;
@@ -65,6 +67,11 @@ public class Katana : Weapon
         bool isPerfect = IsSlicePerfect(upperHull, lowerHull);
         projectile.ApplyEffects(isPerfect);
         projectile.ApplyPoints(false, isPerfect);
+
+
+        SplashEffect effect = Instantiate(splashEffect, point, Quaternion.LookRotation(planeNormal)).GetComponent<SplashEffect>();
+        effect.Init(projectile.Data.OptionalData.SliceParticleEffectColor);
+        //Destroy(effect.gameObject, 1.5f);
 
         Destroy(projectile.gameObject);
     }
