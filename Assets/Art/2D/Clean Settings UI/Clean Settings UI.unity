@@ -133,11 +133,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 22401644, guid: 4c5368a58301e4892a15a0228d4fb291, type: 3}
       propertyPath: m_Pivot.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22401644, guid: 4c5368a58301e4892a15a0228d4fb291, type: 3}
       propertyPath: m_Pivot.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22401644, guid: 4c5368a58301e4892a15a0228d4fb291, type: 3}
       propertyPath: m_RootOrder
@@ -145,19 +145,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22401644, guid: 4c5368a58301e4892a15a0228d4fb291, type: 3}
       propertyPath: m_AnchorMax.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22401644, guid: 4c5368a58301e4892a15a0228d4fb291, type: 3}
       propertyPath: m_AnchorMax.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22401644, guid: 4c5368a58301e4892a15a0228d4fb291, type: 3}
       propertyPath: m_AnchorMin.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22401644, guid: 4c5368a58301e4892a15a0228d4fb291, type: 3}
       propertyPath: m_AnchorMin.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22401644, guid: 4c5368a58301e4892a15a0228d4fb291, type: 3}
       propertyPath: m_SizeDelta.x
@@ -313,11 +313,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 22470234, guid: 6be3c193bde54499393516aa7046d5c4, type: 3}
       propertyPath: m_Pivot.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22470234, guid: 6be3c193bde54499393516aa7046d5c4, type: 3}
       propertyPath: m_Pivot.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22470234, guid: 6be3c193bde54499393516aa7046d5c4, type: 3}
       propertyPath: m_RootOrder
@@ -325,19 +325,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22470234, guid: 6be3c193bde54499393516aa7046d5c4, type: 3}
       propertyPath: m_AnchorMax.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22470234, guid: 6be3c193bde54499393516aa7046d5c4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22470234, guid: 6be3c193bde54499393516aa7046d5c4, type: 3}
       propertyPath: m_AnchorMin.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22470234, guid: 6be3c193bde54499393516aa7046d5c4, type: 3}
       propertyPath: m_AnchorMin.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22470234, guid: 6be3c193bde54499393516aa7046d5c4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -984,11 +984,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 22474900, guid: 576b0985066f948b29da42ea6ff0aedb, type: 3}
       propertyPath: m_Pivot.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22474900, guid: 576b0985066f948b29da42ea6ff0aedb, type: 3}
       propertyPath: m_Pivot.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22474900, guid: 576b0985066f948b29da42ea6ff0aedb, type: 3}
       propertyPath: m_RootOrder
@@ -996,19 +996,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22474900, guid: 576b0985066f948b29da42ea6ff0aedb, type: 3}
       propertyPath: m_AnchorMax.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22474900, guid: 576b0985066f948b29da42ea6ff0aedb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22474900, guid: 576b0985066f948b29da42ea6ff0aedb, type: 3}
       propertyPath: m_AnchorMin.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22474900, guid: 576b0985066f948b29da42ea6ff0aedb, type: 3}
       propertyPath: m_AnchorMin.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22474900, guid: 576b0985066f948b29da42ea6ff0aedb, type: 3}
       propertyPath: m_SizeDelta.x
