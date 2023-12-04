@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ComboSpawnType>k__BackingField: 0
   <ProjectileType>k__BackingField: 0
-  <Model>k__BackingField: {fileID: 6055923927196804653, guid: 3d8e2b5e9d6775741bb7472a09b07a3a, type: 3}
+  <Model>k__BackingField: {fileID: 0}
   <Points>k__BackingField: 120
   <MutualEffects>k__BackingField: []
   <OptionalData>k__BackingField:
