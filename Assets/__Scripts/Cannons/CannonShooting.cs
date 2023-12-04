@@ -48,6 +48,15 @@ public class CannonShooting : MonoBehaviour
     private void InitProjectile(ProjectileSO data, Vector3 direction, float gravity)
     {
         GameObject obj = Instantiate(data.Model, shootingPoint.position, shootingPoint.rotation);
+        MeshCollider meshObj = obj.AddComponent<MeshCollider>();
+        meshObj.convex = true;
+        obj.layer = LayerMask.NameToLayer("Projectile");
+        foreach (Transform t  in obj.transform)
+        {
+            MeshCollider mesh = t.gameObject.AddComponent<MeshCollider>();
+            mesh.convex = true;
+            t.gameObject.layer = LayerMask.NameToLayer("Projectile");
+        }
         obj.transform.SetParent(CannonsManager.Instance.transform);
         obj.AddComponent<ConstantForce>();
         Rigidbody rb = obj.GetComponent<Rigidbody>();
