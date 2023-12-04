@@ -1,12 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-[Serializable]
-public class HandItems
+public class HandItems: MonoBehaviour
 {
     public GameObject Model;
     public GameObject Katana;
+    public GameObject KatanaHand;
     public GameObject Pistol;
+    public GameObject PistolHand;
     public GameObject UIRay;
 
     public void TurnOffAll()
@@ -15,5 +16,7 @@ public class HandItems
         Katana?.SetActive(false);
         Pistol?.SetActive(false);
         UIRay?.SetActive(false);
+        PistolHand?.SetActive(false);
+        KatanaHand?.SetActive(false);
     }
 }

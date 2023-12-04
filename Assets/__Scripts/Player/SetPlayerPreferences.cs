@@ -23,27 +23,34 @@ public class SetPlayerPreferences : MonoBehaviour
     public void SetHandItems(HandHeldType type)
     {
         left.TurnOffAll();
-        right.TurnOffAll();
-
-        SetModelsActive(true);
+        right.TurnOffAll();     
         SetAnimationsActive(false);
 
         switch (type)
         {
             case HandHeldType.PistolLeftKatanaRight:
                 left.Pistol.SetActive(true);
+                left.PistolHand.SetActive(true);
                 right.Katana.SetActive(true);
+                right.KatanaHand.SetActive(true);
                 break;
             case HandHeldType.KatanaLeftPistolRight:
                 left.Katana.SetActive(true);
+                left.KatanaHand.SetActive(true);
                 right.Pistol.SetActive(true);
+                right.PistolHand.SetActive(true);
                 break;
             case HandHeldType.UIRays:
                 SetAnimationsActive(true);
+                SetModelsActive(true);
                 SetUIRaysActive(true);
                 break;
+            case HandHeldType.FreeHands:
+                SetModelsActive(true);
+                break;
             case HandHeldType.None:
-                SetModelsActive(false);
+                left.TurnOffAll();
+                right.TurnOffAll();
                 break;
         }
     }

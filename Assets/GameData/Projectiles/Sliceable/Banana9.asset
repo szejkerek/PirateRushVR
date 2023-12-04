@@ -15,10 +15,10 @@ MonoBehaviour:
   <ComboSpawnType>k__BackingField: 0
   <ProjectileType>k__BackingField: 0
   <Model>k__BackingField: {fileID: 1805414572443928716, guid: 03776a8850063924dbedb464422f74b0, type: 3}
-  <Points>k__BackingField: 50
+  <Points>k__BackingField: 400
   <MutualEffects>k__BackingField: []
   <OptionalData>k__BackingField:
     <AlwaysNegativePoints>k__BackingField: 0
     <FracturedModel>k__BackingField: {fileID: 0}
-    <CrossSectionMaterial>k__BackingField: {fileID: 2100000, guid: 1c82198b3a5bf9645810d64f3601b218, type: 2}
+    <CrossSectionMaterial>k__BackingField: {fileID: 2100000, guid: 333c7e3f9edc9994fa24e349ac239ce7, type: 2}
     <SliceParticleEffectColor>k__BackingField: {r: 1, g: 0.9780938, b: 0.6933962, a: 1}
