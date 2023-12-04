@@ -17,9 +17,9 @@ MonoBehaviour:
   <PerfectShootChance>k__BackingField: 0.339
   <TowerCount>k__BackingField: 2
   <MaxHealth>k__BackingField: 3
-  <BombToNeutralRatio>k__BackingField: 0
-  <SpecialOverrideChance>k__BackingField: 0
-  <GlobalComboChance>k__BackingField: 0
+  <BombToNeutralRatio>k__BackingField: 0.183
+  <SpecialOverrideChance>k__BackingField: 0.089
+  <GlobalComboChance>k__BackingField: 0.036
   <MultiplierIncrement>k__BackingField: 0.3
   <DecrementPointsOnMiss>k__BackingField: 0
   <DecrementMultiplierOnMiss>k__BackingField: 0
