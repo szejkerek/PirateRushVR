@@ -619,7 +619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraOffset: {fileID: 1451505355145109763}
   target: {fileID: 8797476620914118080}
-  heightAboveOffset: 2.75
+  heightAboveOffset: 4.05
 --- !u!1 &4804991101430278635
 GameObject:
   m_ObjectHideFlags: 0
