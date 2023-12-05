@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6555295099244764100}
   - component: {fileID: 8126264054480066505}
   - component: {fileID: 7919675426289716703}
+  - component: {fileID: 4480059432291682473}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -77,6 +78,18 @@ MonoBehaviour:
   _SFXLib: {fileID: 11400000, guid: e12921b2d049a514aa797036d51bd411, type: 2}
   musicLib: {fileID: 11400000, guid: ef57746b20784f34b98f56440a03097b, type: 2}
   musicSource: {fileID: 1051659473884883090}
+--- !u!114 &4480059432291682473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2248701449982619513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27306b5d6f5009745bd233390e6cb8c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4690575969516916747
 GameObject:
   m_ObjectHideFlags: 0
