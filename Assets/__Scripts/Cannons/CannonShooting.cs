@@ -5,6 +5,7 @@ public class CannonShooting : MonoBehaviour
     public CannonSettings Settings => settings;
     [SerializeField] CannonSettings settings;
 
+    [SerializeField] private GameObject cannonSmoke;
     [SerializeField] private Transform shootingPoint;
 
     Transform target;
@@ -43,6 +44,9 @@ public class CannonShooting : MonoBehaviour
         targetDirection = CalculateDirection(diffusedTargetPosition, gravity);    
 
         InitProjectile(projectile, targetDirection, gravity);
+
+        var effect = Instantiate(cannonSmoke, shootingPoint.transform.position, shootingPoint.transform.rotation);
+        Destroy(effect, 1.5f);
     }
 
     private void InitProjectile(ProjectileSO data, Vector3 direction, float gravity)
