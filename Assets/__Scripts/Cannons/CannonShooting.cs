@@ -45,8 +45,8 @@ public class CannonShooting : MonoBehaviour
 
         InitProjectile(projectile, targetDirection, gravity);
 
-        //GameObject effect = Instantiate(cannonSmoke, shootingPoint.transform.position, Quaternion.LookRotation(shootingPoint.transform.forward));
-        //Destroy(effect, 3f);
+        GameObject effect = Instantiate(cannonSmoke, shootingPoint.transform.position, Quaternion.LookRotation(shootingPoint.transform.forward));
+        Destroy(effect, 5f);
     }
 
     private void InitProjectile(ProjectileSO data, Vector3 direction, float gravity)
