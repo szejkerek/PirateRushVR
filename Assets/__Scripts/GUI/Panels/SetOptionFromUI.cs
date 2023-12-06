@@ -27,11 +27,8 @@ public class SetOptionFromUI : MonoBehaviour
                 turnDropdown.SetValueWithoutNotify(1);
                 break;
         }
-        FindObjectOfType<SetPlayerPreferences>()?.SetTurnType(type);
-
 
         float volume = GlobalSettingManager.Instance.GetVolume();
-        AudioManager.Instance.SetVolume(volume);
         volumeSlider.SetValueWithoutNotify(volume * 100);
     }
 

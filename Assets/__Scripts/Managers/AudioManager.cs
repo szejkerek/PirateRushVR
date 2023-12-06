@@ -27,7 +27,14 @@ public class AudioManager : Singleton<AudioManager>
         SetMixer(musicSource, SoundType.Music);
     }
 
-    public void Play(Sound sound, AudioSource source, SoundType type)
+    private void Start()
+    {
+        float volume = GlobalSettingManager.Instance.GetVolume();
+        SetVolume(volume);
+    }
+
+
+    public void Play(Sound sound, AudioSource source, SoundType type, float pitchVariation = 0f)
     {
         if (sound == null)
         {
@@ -41,9 +48,20 @@ public class AudioManager : Singleton<AudioManager>
             return;
         }
 
+        pitchVariation = Mathf.Clamp01(pitchVariation);
+
         source.clip = sound.Clip;
         source.volume = sound.Volume;
-        source.pitch = sound.Pitch;
+
+        if (sound.ShouldRandomizePitch)
+        {
+            source.pitch = sound.InitialPitch + Random.Range(-pitchVariation, pitchVariation);
+        }
+        else
+        {
+            source.pitch = sound.InitialPitch;
+        }
+
         source.loop = sound.Loop;
 
         SetMixer(source, type);
@@ -86,7 +104,7 @@ public class AudioManager : Singleton<AudioManager>
     {
         value = Mathf.Clamp01(value) * 40 - 20; // -20db -- 20db range
 
-        if (value <= -18)
+        if (value <= -19)
             value = float.MinValue;
 
         masterMixer.audioMixer.SetFloat("MasterVolume", value);
