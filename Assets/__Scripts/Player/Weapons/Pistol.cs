@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 
 public class Pistol : MonoBehaviour
 {
-    [SerializeField] private Bullet bulletPrefab; // Prefab of the bullet object
-    [SerializeField] private Transform shootingPoint; // Point from where bullets are shot
-    [SerializeField] private InputActionReference shootInputLeft; // Input action for shooting (left)
-    [SerializeField] private InputActionReference shootInputRight; // Input action for shooting (right)
-    [SerializeField] private float shootForce; // Input action for shooting (right)
+    [SerializeField] private GameObject muzzleFlashEffect; 
+    [SerializeField] private Bullet bulletPrefab; 
+    [SerializeField] private Transform shootingPoint; 
+    [SerializeField] private InputActionReference shootInputLeft; 
+    [SerializeField] private InputActionReference shootInputRight; 
+    [SerializeField] private float shootForce; 
 
     private void OnEnable()
     {
@@ -34,6 +35,10 @@ public class Pistol : MonoBehaviour
         Bullet newBullet = Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation);
 
         Rigidbody bulletRigidbody = newBullet.GetComponent<Rigidbody>();
-        bulletRigidbody.AddForce(shootingPoint.forward * shootForce, ForceMode.Impulse);     
+        bulletRigidbody.AddForce(shootingPoint.forward * shootForce, ForceMode.Impulse);
+
+        var effect = Instantiate(muzzleFlashEffect, shootingPoint.transform);
+        effect.transform.rotation = Quaternion.LookRotation(shootingPoint.forward);
+        Destroy(effect, 2f);
     }
 }
