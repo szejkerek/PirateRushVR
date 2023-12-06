@@ -34,7 +34,7 @@ public class AudioManager : Singleton<AudioManager>
     }
 
 
-    public void Play(Sound sound, AudioSource source, SoundType type, float pitchVariation = 0f)
+    public void Play(Sound sound, AudioSource source, SoundType type)
     {
         if (sound == null)
         {
@@ -48,14 +48,12 @@ public class AudioManager : Singleton<AudioManager>
             return;
         }
 
-        pitchVariation = Mathf.Clamp01(pitchVariation);
-
         source.clip = sound.Clip;
         source.volume = sound.Volume;
 
         if (sound.ShouldRandomizePitch)
         {
-            source.pitch = sound.InitialPitch + Random.Range(-pitchVariation, pitchVariation);
+            source.pitch = sound.InitialPitch + Random.Range(-sound.PitchVariation, sound.PitchVariation);
         }
         else
         {
