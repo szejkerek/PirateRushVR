@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public enum TurnType
 {
     Snap,
@@ -46,7 +48,6 @@ public class GlobalSettingManager : Singleton<GlobalSettingManager>
 
     public void SetVolume(float volume)
     {
-        volume = Mathf.Clamp01(volume);
         currentSettings.Volume = volume;
         currentSettings.Save();
     }

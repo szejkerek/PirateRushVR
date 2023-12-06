@@ -5,45 +5,59 @@ using UnityEngine.UI;
 
 public class SetOptionFromUI : MonoBehaviour
 {
-    public Slider volumeSlider;
-    public TMP_Dropdown turnDropdown;
-    
-    SetPlayerPreferences turnTypeFromPlayerPref;
+    [SerializeField] Slider volumeSlider;
+    [SerializeField] TMP_Dropdown turnDropdown;
 
-    private void Awake()
+    private void Start()
     {
-        turnTypeFromPlayerPref = FindObjectOfType<SetPlayerPreferences>();
+        UpdateSettingsValue();
         volumeSlider.onValueChanged.AddListener(SetGlobalVolume);
         turnDropdown.onValueChanged.AddListener(SetTurnPlayerPref);
+    }
 
-        if (PlayerPrefs.HasKey("turn"))
-        { 
-            turnDropdown.value = PlayerPrefs.GetInt("turn");
-        }
-        else
+    private void UpdateSettingsValue()
+    {
+        TurnType type = GlobalSettingManager.Instance.GetTurnType();
+        switch (type)
         {
-            SetTurnPlayerPref(0);
+            case TurnType.Snap:
+                turnDropdown.SetValueWithoutNotify(0);               
+                break;
+            case TurnType.Continuous:
+                turnDropdown.SetValueWithoutNotify(1);
+                break;
         }
-        
-        if (PlayerPrefs.HasKey("volume"))
-        {
-            volumeSlider.value = PlayerPrefs.GetFloat("volume");
-        }
-        else
-        {
-            SetGlobalVolume(0.2f);
-        }
+        FindObjectOfType<SetPlayerPreferences>()?.SetTurnType(type);
+
+
+        float volume = GlobalSettingManager.Instance.GetVolume();
+        AudioManager.Instance.SetVolume(volume);
+        volumeSlider.SetValueWithoutNotify(volume * 100);
     }
 
     public void SetGlobalVolume(float value)
     {
-        AudioListener.volume = value;
-        PlayerPrefs.SetFloat("volume", value);
+        float normalizedValue = value / 100f;
+        AudioManager.Instance.SetVolume(normalizedValue);
+        GlobalSettingManager.Instance.SetVolume(normalizedValue);
     }
 
     public void SetTurnPlayerPref(int value)
     {
-        PlayerPrefs.SetInt("turn", value); 
-        turnTypeFromPlayerPref.SetTurnType();
+        TurnType type;
+        switch (value)
+        {
+            case 0:
+                type = TurnType.Snap;
+                break;
+            case 1:
+                type = TurnType.Continuous;
+                break;
+            default:
+                type = TurnType.Snap;
+                break;
+        }
+        FindObjectOfType<SetPlayerPreferences>()?.SetTurnType(type);
+        GlobalSettingManager.Instance.SetTurnType(type);
     }
 }

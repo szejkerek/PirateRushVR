@@ -75,6 +75,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc44c5eb69748a45b697397b0740ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24300002, guid: ecd3c9b1087025544bc71b89313f8575, type: 2}
+  sfxMixer: {fileID: -636237569808303686, guid: ecd3c9b1087025544bc71b89313f8575, type: 2}
+  musicMixer: {fileID: -1673366790831486636, guid: ecd3c9b1087025544bc71b89313f8575, type: 2}
   _SFXLib: {fileID: 11400000, guid: e12921b2d049a514aa797036d51bd411, type: 2}
   musicLib: {fileID: 11400000, guid: ef57746b20784f34b98f56440a03097b, type: 2}
   musicSource: {fileID: 1051659473884883090}

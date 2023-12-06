@@ -17,7 +17,7 @@ public class SetPlayerPreferences : MonoBehaviour
     {
         snapTurn = GetComponent<ActionBasedSnapTurnProvider>();
         continuousTurn = GetComponent<ActionBasedContinuousTurnProvider>();
-        SetTurnType();
+        SetTurnType(GlobalSettingManager.Instance.GetTurnType());
     }
     
     public void SetHandItems(HandHeldType type)
@@ -67,9 +67,9 @@ public class SetPlayerPreferences : MonoBehaviour
         right.UIRay.SetActive(active);
     }
 
-    public void SetTurnType()
+    public void SetTurnType(TurnType type)
     {
-        switch (GlobalSettingManager.Instance.GetTurnType())
+        switch (type)
         {
             case TurnType.Snap:
                 EnableSnapTurn();
