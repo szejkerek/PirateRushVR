@@ -9,6 +9,8 @@ public class SetPlayerPreferences : MonoBehaviour
 
     [SerializeField] HandItems left;
     [SerializeField] HandItems right;
+    [Space]
+    [SerializeField] GameObject vignette;
 
     ActionBasedSnapTurnProvider snapTurn;
     ActionBasedContinuousTurnProvider continuousTurn;
@@ -18,8 +20,14 @@ public class SetPlayerPreferences : MonoBehaviour
         snapTurn = GetComponent<ActionBasedSnapTurnProvider>();
         continuousTurn = GetComponent<ActionBasedContinuousTurnProvider>();
         SetTurnType(GlobalSettingManager.Instance.GetTurnType());
+        SetVignetteUsage(GlobalSettingManager.Instance.GetVignetteUsage());
     }
-    
+
+    public void SetVignetteUsage(bool arg)
+    {
+        vignette.SetActive(arg);
+    }
+
     public void SetHandItems(HandHeldType type)
     {
         left.TurnOffAll();

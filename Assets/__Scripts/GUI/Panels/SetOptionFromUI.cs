@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,12 +8,20 @@ public class SetOptionFromUI : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
     [SerializeField] TMP_Dropdown turnDropdown;
+    [SerializeField] Toggle vignetteToggle;
 
     private void Start()
     {
         UpdateSettingsValue();
         volumeSlider.onValueChanged.AddListener(SetGlobalVolume);
         turnDropdown.onValueChanged.AddListener(SetTurnPlayerPref);
+        vignetteToggle.onValueChanged.AddListener(SetVignetteUsage);
+    }
+
+    private void SetVignetteUsage(bool arg)
+    {
+        FindObjectOfType<SetPlayerPreferences>()?.SetVignetteUsage(arg);
+        GlobalSettingManager.Instance.SetVignetteUsage(arg);
     }
 
     private void UpdateSettingsValue()
@@ -30,6 +39,8 @@ public class SetOptionFromUI : MonoBehaviour
 
         float volume = GlobalSettingManager.Instance.GetVolume();
         volumeSlider.SetValueWithoutNotify(volume * 100);
+
+        vignetteToggle.SetIsOnWithoutNotify(GlobalSettingManager.Instance.GetVignetteUsage());
     }
 
     public void SetGlobalVolume(float value)

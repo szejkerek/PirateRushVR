@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: HoverUI
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: 4885bb3bfe406a44ab63462c4440da59, type: 3}
-  volume: 0.105
-  pitch: 1
+  volume: 0.139
+  initialPitch: 1
+  shouldRandomizePitch: 0
+  pitchVariation: 0
   loop: 0
