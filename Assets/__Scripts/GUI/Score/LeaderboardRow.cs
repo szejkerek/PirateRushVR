@@ -13,7 +13,7 @@ public class LeaderboardRow : MonoBehaviour
         Nickname.text = entry.Nickname;
         Score.text = Mathf.CeilToInt(entry.Score).ToString();
 
-        if (Systems.Instance.Nickname == entry.Nickname)
+        if (GlobalSettingManager.Instance.GetNickname() == entry.Nickname)
         {
             Lp.color = Color.yellow;
             Score.color = Color.yellow;

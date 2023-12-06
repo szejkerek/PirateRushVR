@@ -29,7 +29,7 @@ public class GameManager : Singleton<GameManager>
 
     public void DisplayNickname()
     {
-        nicknameDisplay.text = Systems.Instance.Nickname;
+        nicknameDisplay.text = GlobalSettingManager.Instance.GetNickname();
     }
 
     public void StartGame()

@@ -18,7 +18,7 @@ public class ScoreManager : Singleton<ScoreManager>
     protected override void Awake()
     {
         base.Awake();
-        entry = new HighscoreEntry(0, Systems.Instance.Nickname, Systems.Instance.difficultyLevel.DifficultyName);
+        entry = new HighscoreEntry(0, GlobalSettingManager.Instance.GetNickname(), Systems.Instance.difficultyLevel.DifficultyName);
         leaderboard = new Leaderboard();
         leaderboard.Load();
         highscore = leaderboard.GetHighscore(entry);

@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GlobalSettingManager : MonoBehaviour
+public enum TurnType
 {
-    GlobalSettings currentSettings;
+    Snap,
+    Continuous
+}
 
-    private void Awake()
+public class GlobalSettingManager : Singleton<GlobalSettingManager>
+{
+    GlobalSettings currentSettings = new GlobalSettings();
+
+    protected override void Awake()
     {
+        base.Awake();
         currentSettings.Load();
     }
 
@@ -17,18 +24,23 @@ public class GlobalSettingManager : MonoBehaviour
         currentSettings.Save();
     }
 
-    public void SetTurnType(string turnType)
+    public void SetTurnType(TurnType turnType)
     {
-        if (turnType != "snap" || turnType != "continous")
-            return;
-
-        currentSettings.TurnType = turnType;
+        switch (turnType)
+        {
+            case TurnType.Snap:
+                currentSettings.TurnType = "snap";
+                break;
+            case TurnType.Continuous:
+                currentSettings.TurnType = "continuous";
+                break;
+        }
         currentSettings.Save();
     }
 
-    public void SetVignieteUsage(bool isUsing)
+    public void SetVignetteUsage(bool isUsing)
     {
-        currentSettings.UsingVigniete = isUsing;
+        currentSettings.UsingVignette = isUsing;
         currentSettings.Save();
     }
 
@@ -41,19 +53,28 @@ public class GlobalSettingManager : MonoBehaviour
 
     public string GetNickname()
     {
+        currentSettings.Load();
         return currentSettings.LastNickname;
     }
-    public string GetTurnType()
+    public TurnType GetTurnType()
     {
-        return currentSettings.TurnType;
+        currentSettings.Load();
+        switch (currentSettings.TurnType)
+        {
+            case "snap": return TurnType.Snap;
+            case "continuous": return TurnType.Continuous;
+            default: return TurnType.Snap;
+        }
     }
 
     public bool GetVignetteUsage()
     {
-        return currentSettings.UsingVigniete;
+        currentSettings.Load();
+        return currentSettings.UsingVignette;
     }
     public float GetVolume()
     {
+        currentSettings.Load();
         return currentSettings.Volume;
     }
 

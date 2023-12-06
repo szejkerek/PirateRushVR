@@ -13,7 +13,7 @@ public class SetPlayerPreferences : MonoBehaviour
     ActionBasedSnapTurnProvider snapTurn;
     ActionBasedContinuousTurnProvider continuousTurn;
 
-    void Awake()
+    void Start()
     {
         snapTurn = GetComponent<ActionBasedSnapTurnProvider>();
         continuousTurn = GetComponent<ActionBasedContinuousTurnProvider>();
@@ -69,24 +69,31 @@ public class SetPlayerPreferences : MonoBehaviour
 
     public void SetTurnType()
     {
-        if (!PlayerPrefs.HasKey("turn"))
-            return;
+        switch (GlobalSettingManager.Instance.GetTurnType())
+        {
+            case TurnType.Snap:
+                EnableSnapTurn();
+                break;
+            case TurnType.Continuous:
+                EnableContinuousTurn();
+                break;
+        }
+    }
 
-        bool useContinuousTurn = Convert.ToBoolean(PlayerPrefs.GetInt("turn"));
-        if(!useContinuousTurn)
-        {
-            snapTurn.leftHandSnapTurnAction.action.Enable();
-            snapTurn.rightHandSnapTurnAction.action.Enable();
-            continuousTurn.leftHandTurnAction.action.Disable();
-            continuousTurn.rightHandTurnAction.action.Disable();
-        }
-        else
-        {
-            snapTurn.leftHandSnapTurnAction.action.Disable();
-            snapTurn.rightHandSnapTurnAction.action.Disable();
-            continuousTurn.leftHandTurnAction.action.Enable();
-            continuousTurn.rightHandTurnAction.action.Enable();
-        }
+    private void EnableContinuousTurn()
+    {
+        snapTurn.leftHandSnapTurnAction.action.Disable();
+        snapTurn.rightHandSnapTurnAction.action.Disable();
+        continuousTurn.leftHandTurnAction.action.Enable();
+        continuousTurn.rightHandTurnAction.action.Enable();
+    }
+
+    private void EnableSnapTurn()
+    {
+        snapTurn.leftHandSnapTurnAction.action.Enable();
+        snapTurn.rightHandSnapTurnAction.action.Enable();
+        continuousTurn.leftHandTurnAction.action.Disable();
+        continuousTurn.rightHandTurnAction.action.Disable();
     }
 
     void SetAnimationsActive(bool active)

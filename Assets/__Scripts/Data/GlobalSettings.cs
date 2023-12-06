@@ -6,7 +6,7 @@ public class GlobalSettings : ISavable
     public string LastNickname = "";
     public float Volume = 1f;
     public string TurnType = "snap";
-    public bool UsingVigniete = false;
+    public bool UsingVignette = false;
 
     public string GetDataFileName()
     {
@@ -24,7 +24,7 @@ public class GlobalSettings : ISavable
         LastNickname = loaded.LastNickname;
         Volume = loaded.Volume;
         TurnType = loaded.TurnType;
-        UsingVigniete = loaded.UsingVigniete;
+        UsingVignette = loaded.UsingVignette;
         Save();
     }
 }

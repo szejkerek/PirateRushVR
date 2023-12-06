@@ -11,21 +11,32 @@ public class SetNicknameUI : MonoBehaviour
     [SerializeField] Button selectBtn;
     [SerializeField] UIWarning nicknameWarning;
 
-    private void Awake()
+    private void Start()
     {
-        generateGuestBtn.onClick.AddListener(GenerateGuestNick);
+        generateGuestBtn.onClick.AddListener(GenerateGuestNickButton);
         selectBtn.onClick.AddListener(SetNicknameFromUI);
     }
 
-    public void GenerateGuestNick()
+    public void GenerateGuestNickButton()
+    {    
+        nicknameInput.text = GenerateGuestNickname();
+    }
+
+    public static string GenerateGuestNickname()
     {
         string uuid = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 5);
-        nicknameInput.text =  $"Guest-{uuid}";
+        return $"Guest-{uuid}";
     }
 
     private void OnEnable()
     {
-        nicknameInput.text = Systems.Instance.Nickname;
+        string nickname = GlobalSettingManager.Instance.GetNickname();
+
+        if(String.IsNullOrEmpty(nickname))
+        {
+            nicknameInput.text = GenerateGuestNickname();
+        }
+        nicknameInput.text = nickname;
     }
 
     public void SetNicknameFromUI()
@@ -42,7 +53,7 @@ public class SetNicknameUI : MonoBehaviour
             return;
         }
 
-        Systems.Instance.SetNickname(nicknameInput.text);
+        GlobalSettingManager.Instance.SetNickname(nicknameInput.text);
         
     }
 }

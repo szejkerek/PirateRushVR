@@ -45,8 +45,8 @@ public class CannonShooting : MonoBehaviour
 
         InitProjectile(projectile, targetDirection, gravity);
 
-        var effect = Instantiate(cannonSmoke, shootingPoint.transform.position, shootingPoint.transform.rotation);
-        Destroy(effect, 1.5f);
+        //GameObject effect = Instantiate(cannonSmoke, shootingPoint.transform.position, Quaternion.LookRotation(shootingPoint.transform.forward));
+        //Destroy(effect, 3f);
     }
 
     private void InitProjectile(ProjectileSO data, Vector3 direction, float gravity)
@@ -85,7 +85,7 @@ public class CannonShooting : MonoBehaviour
 
     public Vector3 CalculateDirection(Vector3 target, float gravity = -9.81f)
     {
-        float height = settings.Height.GetValueBetween();
+        float height = Mathf.Max(settings.Height.GetValueBetween(), target.y);
         
         float displacementY = target.y - shootingPoint.position.y;
         Vector3 displacementXZ = new Vector3(target.x - shootingPoint.position.x, 0, target.z - shootingPoint.position.z);
