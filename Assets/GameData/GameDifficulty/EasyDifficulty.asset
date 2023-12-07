@@ -18,7 +18,7 @@ MonoBehaviour:
   <TowerCount>k__BackingField: 5
   <MaxHealth>k__BackingField: 3
   <BombToNeutralRatio>k__BackingField: 0.183
-  <SpecialOverrideChance>k__BackingField: 0.089
+  <SpecialOverrideChance>k__BackingField: 0.113
   <GlobalComboChance>k__BackingField: 0.036
   <MultiplierIncrement>k__BackingField: 0.3
   <DecrementPointsOnMiss>k__BackingField: 0

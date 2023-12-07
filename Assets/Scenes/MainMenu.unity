@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.61202294, g: 0.61202294, b: 0.61202294, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1662,6 +1662,18 @@ PrefabInstance:
     - target: {fileID: 22407258, guid: 4abb88e9aa99e429b8dbded4e9743a56, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730271794756867371, guid: 4abb88e9aa99e429b8dbded4e9743a56, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 345.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730271794756867371, guid: 4abb88e9aa99e429b8dbded4e9743a56, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 11.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492591056982477839, guid: 4abb88e9aa99e429b8dbded4e9743a56, type: 3}
+      propertyPath: m_text
+      value: Comfort Mode
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
