@@ -14,14 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ComboSpawnType>k__BackingField: 1
   <ProjectileType>k__BackingField: 2
-  <Mass>k__BackingField: 500
   <Model>k__BackingField: {fileID: 5674695293976198322, guid: 2d23367965322954494bd1449cbd8183, type: 3}
-  <Points>k__BackingField: 100
+  <Points>k__BackingField: 250
   <MutualEffects>k__BackingField:
   - {fileID: 11400000, guid: 2e09b9360b0b9d04ab992ce8aa05234b, type: 2}
   <OptionalData>k__BackingField:
     <AlwaysNegativePoints>k__BackingField: 1
     <FracturedModel>k__BackingField: {fileID: 0}
     <CrossSectionMaterial>k__BackingField: {fileID: 2100000, guid: 68c861077ac644a48be731198a80737a, type: 2}
-    <SliceParticleEffect>k__BackingField: {fileID: 0}
     <SliceParticleEffectColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
