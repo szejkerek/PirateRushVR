@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12d54d3914f9ce84b98ef235a66704ff, type: 3}
-  m_Name: HearthProjectile
+  m_Name: GoldProjectile
   m_EditorClassIdentifier: 
   <ComboSpawnType>k__BackingField: 2
   <ProjectileType>k__BackingField: 2
-  <Model>k__BackingField: {fileID: 5579724799483550337, guid: 48f244def1bfa494cbe08f6402f7fdbb, type: 3}
-  <Points>k__BackingField: 200
-  <MutualEffects>k__BackingField:
-  - {fileID: 11400000, guid: de727c349d12ce84589ca4bdb7a99c99, type: 2}
+  <Model>k__BackingField: {fileID: 931819882333031929, guid: 17b8c0447923c04439db7243fee89950, type: 3}
+  <Points>k__BackingField: 500
+  <MutualEffects>k__BackingField: []
   <OptionalData>k__BackingField:
     <AlwaysNegativePoints>k__BackingField: 0
     <FracturedModel>k__BackingField: {fileID: 0}

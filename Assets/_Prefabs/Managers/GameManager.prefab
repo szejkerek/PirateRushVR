@@ -3141,8 +3141,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7225582006346117915}
   - component: {fileID: 6861541771076599544}
-  - component: {fileID: 9201296719320197011}
-  - component: {fileID: 125228809294313433}
   - component: {fileID: 5666971847064973675}
   m_Layer: 0
   m_Name: GameManager
@@ -3184,35 +3182,6 @@ MonoBehaviour:
   startGamePanel: {fileID: 4104605507380201905}
   endGamePanel: {fileID: 7177041276775101422}
   nicknameDisplay: {fileID: 4125906403916349474}
---- !u!114 &9201296719320197011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8362219673174365818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9aa64c9f103ef14199fc925a15fdeea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 201885702629053599, guid: e6e6b871cc91150479ed2c73d3ca3486, type: 3}
-  highscoreText: {fileID: 7383488140737488603}
-  scoreDisplay: {fileID: 92994420241776531}
---- !u!114 &125228809294313433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8362219673174365818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44696be353e40cf4ab990ca0b0f11b9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthContainer: {fileID: 1324441648666850457}
-  healthIcon: {fileID: 5159593540799339194, guid: 83a702a1f23162f48b08e0ae9aff31d1, type: 3}
 --- !u!114 &5666971847064973675
 MonoBehaviour:
   m_ObjectHideFlags: 0
