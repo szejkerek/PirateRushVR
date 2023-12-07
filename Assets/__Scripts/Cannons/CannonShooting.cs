@@ -5,7 +5,7 @@ public class CannonShooting : MonoBehaviour
     public CannonSettings Settings => settings;
     [SerializeField] CannonSettings settings;
 
-    [SerializeField] private GameObject cannonSmoke;
+    //[SerializeField] private GameObject cannonSmoke;
     [SerializeField] private Transform shootingPoint;
 
     Transform target;
@@ -45,8 +45,8 @@ public class CannonShooting : MonoBehaviour
 
         InitProjectile(projectile, targetDirection, gravity);
 
-        GameObject effect = Instantiate(cannonSmoke, shootingPoint.transform.position, Quaternion.LookRotation(shootingPoint.transform.forward));
-        Destroy(effect, 5f);
+        //GameObject effect = Instantiate(cannonSmoke, shootingPoint.transform.position, Quaternion.LookRotation(shootingPoint.transform.forward));
+        //Destroy(effect, 5f);
     }
 
     private void InitProjectile(ProjectileSO data, Vector3 direction, float gravity)
@@ -55,19 +55,28 @@ public class CannonShooting : MonoBehaviour
         MeshCollider meshObj = obj.AddComponent<MeshCollider>();
         meshObj.convex = true;
         obj.layer = LayerMask.NameToLayer("Projectile");
-        foreach (Transform t  in obj.transform)
-        {
-            MeshCollider mesh = t.gameObject.AddComponent<MeshCollider>();
-            mesh.convex = true;
-            t.gameObject.layer = LayerMask.NameToLayer("Projectile");
-        }
+
+        AddMeshCollidersRecursively(obj.transform);
+
         obj.transform.SetParent(CannonsManager.Instance.transform);
         obj.AddComponent<ConstantForce>();
         Rigidbody rb = obj.GetComponent<Rigidbody>();
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         Projectile projectile = obj.AddComponent<Projectile>();
         projectile.Init(data, direction, gravity);
-     }
+    }
+
+    void AddMeshCollidersRecursively(Transform parentTransform)
+    {
+        foreach (Transform childTransform in parentTransform)
+        {
+            MeshCollider mesh = childTransform.gameObject.AddComponent<MeshCollider>();
+            mesh.convex = true;
+            childTransform.gameObject.layer = LayerMask.NameToLayer("Projectile");
+
+            AddMeshCollidersRecursively(childTransform);
+        }
+    }
 
     private Vector3 CalculateRandomTargetPosition(Transform player)
     {
