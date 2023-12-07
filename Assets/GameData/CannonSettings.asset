@@ -15,8 +15,10 @@ MonoBehaviour:
   <Projectiles>k__BackingField:
   - {fileID: 11400000, guid: 30748a6d1a2f0f141b8a2c2de644d73b, type: 2}
   - {fileID: 11400000, guid: de6e12da6db2ca4408fa385eb489e19b, type: 2}
-  - {fileID: 11400000, guid: 2cd5702e1a2f18b4390ef7d6bd57e2ca, type: 2}
   - {fileID: 11400000, guid: 02a785993c20f15418c19137242f500d, type: 2}
+  - {fileID: 11400000, guid: fd07c43760506cf4db1c7dfe99fc70fb, type: 2}
+  - {fileID: 11400000, guid: 2cd5702e1a2f18b4390ef7d6bd57e2ca, type: 2}
+  - {fileID: 11400000, guid: 5198afb34e0fc9c40b5f460d685d0a2e, type: 2}
   <RandomTargetRange>k__BackingField: 0.75
   <RotationSmoothing>k__BackingField: 5.5
   <Height>k__BackingField:
