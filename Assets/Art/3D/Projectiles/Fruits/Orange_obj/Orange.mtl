@@ -1,0 +1,23 @@
+# Blender 4.0.2 MTL File: 'None'
+# www.blender.org
+
+newmtl Skin.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.614620 0.614620 0.614620
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Color.jpg
+map_Bump Normal.jpg
+
+newmtl Stub.001
+Ns 96.078453
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd Color.jpg
