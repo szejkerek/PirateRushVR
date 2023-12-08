@@ -52,8 +52,8 @@ Material:
     m_Floats:
     - _DepthFade: 0.35
     - _FoamDistance: 4.15
-    - _Height: 0.009
-    - _NoiseScale: 3.53
+    - _Height: 0.02
+    - _NoiseScale: 1.57
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothnes: 1.31

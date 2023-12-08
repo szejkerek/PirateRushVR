@@ -593,6 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9aa64c9f103ef14199fc925a15fdeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nicknameText: {fileID: 8755888493560155145}
   scoreText: {fileID: 201885702629053599, guid: e6e6b871cc91150479ed2c73d3ca3486, type: 3}
   highscoreText: {fileID: 7661179870603690513}
   scoreDisplay: {fileID: 4142955016367932554}

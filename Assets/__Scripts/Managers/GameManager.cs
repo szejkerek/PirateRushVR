@@ -7,12 +7,10 @@ public class GameManager : Singleton<GameManager>
 {
     [SerializeField] GameObject startGamePanel;
     [SerializeField] GameObject endGamePanel;
-    [SerializeField] TMP_Text nicknameDisplay;
 
     SetPlayerPreferences playerPrefs;
     void Start()
     {
-        DisplayNickname();
         startGamePanel.SetActive(true);
         endGamePanel.SetActive(false);
         playerPrefs = FindObjectOfType<SetPlayerPreferences>();
@@ -25,11 +23,6 @@ public class GameManager : Singleton<GameManager>
         endGamePanel.transform.localScale = Vector3.zero;
         sequence.AppendInterval(1.0f);
         sequence.Append(startGamePanel.transform.DOScale(1f, 1.50f).SetEase(Ease.OutBounce));
-    }
-
-    public void DisplayNickname()
-    {
-        nicknameDisplay.text = GlobalSettingManager.Instance.GetNickname();
     }
 
     public void StartGame()

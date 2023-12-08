@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ScoreManager : Singleton<ScoreManager>
 {
+    [SerializeField] TMP_Text nicknameText;
     public ScoreText ScoreText => scoreText;
     [SerializeField] ScoreText scoreText;
     public Leaderboard Leaderboard => leaderboard;
@@ -20,6 +21,8 @@ public class ScoreManager : Singleton<ScoreManager>
     protected override void Awake()
     {
         base.Awake();
+        DisplayNickname();
+
         entry = new HighscoreEntry(0, GlobalSettingManager.Instance.GetNickname(), Systems.Instance.difficultyLevel.DifficultyName);
         leaderboard = new Leaderboard();
         leaderboard.Load();
@@ -29,6 +32,11 @@ public class ScoreManager : Singleton<ScoreManager>
         highscore = leaderboard.GetHighscore(entry);
         highscoreText.gameObject.SetActive(false);
         DisplayScore();
+    }
+
+    private void DisplayNickname()
+    {
+        nicknameText.text = GlobalSettingManager.Instance.GetNickname();
     }
 
     private void CreateMockLeaderboardData()
