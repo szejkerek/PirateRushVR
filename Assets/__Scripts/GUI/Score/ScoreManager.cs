@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -21,10 +23,45 @@ public class ScoreManager : Singleton<ScoreManager>
         entry = new HighscoreEntry(0, GlobalSettingManager.Instance.GetNickname(), Systems.Instance.difficultyLevel.DifficultyName);
         leaderboard = new Leaderboard();
         leaderboard.Load();
+
+        CreateMockLeaderboardData();
+
         highscore = leaderboard.GetHighscore(entry);
         highscoreText.gameObject.SetActive(false);
         DisplayScore();
     }
+
+    private void CreateMockLeaderboardData()
+    {
+        Random.State originalSeed = Random.state; 
+
+        Random.InitState(123);
+
+        List<string> allNicknames = new List<string> {
+        "BeginnerBuddy", "EasyGoer", "NoSweat", "Chill Champ", "SimpleSimon",
+        "RandomRider", "Moderate Master", "DecentDabbler", "AverageAce", "Midway Maven",
+        "QueenOfChaos", "HardcoreHero", "ToughCookie", "Ruthless Ruler", "Challenge Champ",
+        "Perceptive Pro", "StrategicSultan", "Limitless Legend", "Resilient Rider",
+        "SupremeSovereign", "Whiz Wanderer", "TrailblazingTactician", "Sly Sorcerer",
+        "UnstoppableUtopian", "Boundless Boss", "DaringDynamo", "MajesticMaestro",
+        "UltimateUnderdog", "Ambitious Adventurer", "Intrepid Innovator", "Phenomenal Pathfinder"
+        };
+
+        List<string> allDifficulties = new List<string> {"Easy", "Medium", "Hard"};
+
+        foreach (var nickname in allNicknames)
+        {
+            foreach (var difficulty in allDifficulties)
+            {
+                int score = Random.Range(1, 10000);
+                leaderboard.UpdateScore(new HighscoreEntry(score, nickname, difficulty));
+            }
+        }
+
+        Random.state = originalSeed;
+    }
+
+
 
     private void Start()
     {
