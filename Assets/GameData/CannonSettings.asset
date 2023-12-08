@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5198afb34e0fc9c40b5f460d685d0a2e, type: 2}
   - {fileID: 11400000, guid: acd740692c5bc3944a34b94494ed2b25, type: 2}
   - {fileID: 11400000, guid: 9070d9ebe60919441977e939a9793596, type: 2}
+  - {fileID: 11400000, guid: d17b2da3e92732d4e9b2daec6691a2c7, type: 2}
   <RandomTargetRange>k__BackingField: 0.75
   <RotationSmoothing>k__BackingField: 5.5
   <Height>k__BackingField:
