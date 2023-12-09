@@ -14,10 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Projectiles>k__BackingField:
   - {fileID: 11400000, guid: 30748a6d1a2f0f141b8a2c2de644d73b, type: 2}
-  - {fileID: 11400000, guid: de6e12da6db2ca4408fa385eb489e19b, type: 2}
+  - {fileID: 11400000, guid: acd740692c5bc3944a34b94494ed2b25, type: 2}
   - {fileID: 11400000, guid: fd07c43760506cf4db1c7dfe99fc70fb, type: 2}
   - {fileID: 11400000, guid: 2cd5702e1a2f18b4390ef7d6bd57e2ca, type: 2}
+  - {fileID: 11400000, guid: 8e4a333360d5b1e43ae2916dad35072d, type: 2}
+  - {fileID: 11400000, guid: de6e12da6db2ca4408fa385eb489e19b, type: 2}
+  - {fileID: 11400000, guid: a161f389371e1244e91448b02c537414, type: 2}
+  - {fileID: 11400000, guid: 1c8c0ebb75bfd5c4982ccb21693f45c1, type: 2}
+  - {fileID: 11400000, guid: d56737d0e816b8e4d8e8328c2a82a2fb, type: 2}
+  - {fileID: 11400000, guid: debb50c0ecef55a4ca781bd7bd6b9c37, type: 2}
+  - {fileID: 11400000, guid: b099d8f1aeacd2247be9b86cc5172685, type: 2}
+  - {fileID: 11400000, guid: 5198afb34e0fc9c40b5f460d685d0a2e, type: 2}
+  - {fileID: 11400000, guid: 9070d9ebe60919441977e939a9793596, type: 2}
+  - {fileID: 11400000, guid: 02a785993c20f15418c19137242f500d, type: 2}
+  - {fileID: 11400000, guid: fa10e8878ce00584c87e5b068f2f442e, type: 2}
   - {fileID: 11400000, guid: 9a8113b05a1c00846852b6083d607c82, type: 2}
+  - {fileID: 11400000, guid: d17b2da3e92732d4e9b2daec6691a2c7, type: 2}
+  - {fileID: 11400000, guid: b2d0ef23e389946468463817c7e74a00, type: 2}
   <RandomTargetRange>k__BackingField: 0.75
   <RotationSmoothing>k__BackingField: 5.5
   <Height>k__BackingField:
