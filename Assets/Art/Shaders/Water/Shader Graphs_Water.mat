@@ -53,10 +53,10 @@ Material:
     - _DepthFade: 0.35
     - _FoamDistance: 4.15
     - _Height: 0.02
-    - _NoiseScale: 1.57
+    - _NoiseScale: 4.02
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothnes: 1.31
+    - _Smoothnes: 0
     - _WaterScrollSpeed: 0.12
     m_Colors:
     - _DeepColor: {r: 0, g: 0.4361701, b: 1, a: 0}

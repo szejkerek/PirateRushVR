@@ -71,6 +71,7 @@ public class Katana : Weapon
 
         SplashEffect effect = Instantiate(splashEffect, point, Quaternion.LookRotation(planeNormal)).GetComponent<SplashEffect>();
         effect.Init(projectile.Data.OptionalData.SliceParticleEffectColor);
+        Destroy(effect.gameObject, 3f);
 
         Destroy(projectile.gameObject);
     }

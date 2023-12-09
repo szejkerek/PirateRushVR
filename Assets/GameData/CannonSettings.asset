@@ -21,8 +21,8 @@ MonoBehaviour:
   <RandomTargetRange>k__BackingField: 0.75
   <RotationSmoothing>k__BackingField: 5.5
   <Height>k__BackingField:
-    _bottomBound: 2
-    _upperBound: 3
+    _bottomBound: 3.94
+    _upperBound: 5.31
   <Gravity>k__BackingField:
-    _bottomBound: -3
-    _upperBound: -5
+    _bottomBound: -1.8
+    _upperBound: -3.53
