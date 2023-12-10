@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: MediumDifficulty
   m_EditorClassIdentifier: 
   <DifficultyName>k__BackingField: Medium
-  <PerfectSliceTolerance>k__BackingField: 0.065
-  <PerfectShootChance>k__BackingField: 0.107
-  <TowerCount>k__BackingField: 2
+  <PerfectSliceTolerance>k__BackingField: 0.1
+  <PerfectShootChance>k__BackingField: 0.2
+  <TowerCount>k__BackingField: 3
   <MaxHealth>k__BackingField: 2
-  <BombToNeutralRatio>k__BackingField: 0.429
-  <SpecialOverrideChance>k__BackingField: 0.165
-  <GlobalComboChance>k__BackingField: 0.076
+  <BombToNeutralRatio>k__BackingField: 0.09
+  <SpecialOverrideChance>k__BackingField: 0.035
+  <GlobalComboChance>k__BackingField: 0.08
   <MultiplierIncrement>k__BackingField: 0.2
   <DecrementPointsOnMiss>k__BackingField: 0
   <DecrementMultiplierOnMiss>k__BackingField: 1
   <CountOf25msWaits>k__BackingField:
-    _bottomBound: 11
-    _upperBound: 17
+    _bottomBound: 14
+    _upperBound: 25

@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: HardDifficulty
   m_EditorClassIdentifier: 
   <DifficultyName>k__BackingField: Hard
-  <PerfectSliceTolerance>k__BackingField: 0.031
-  <PerfectShootChance>k__BackingField: 0.063
-  <TowerCount>k__BackingField: 2
+  <PerfectSliceTolerance>k__BackingField: 0.1
+  <PerfectShootChance>k__BackingField: 0.15
+  <TowerCount>k__BackingField: 5
   <MaxHealth>k__BackingField: 1
-  <BombToNeutralRatio>k__BackingField: 0.277
-  <SpecialOverrideChance>k__BackingField: 0.098
-  <GlobalComboChance>k__BackingField: 0.071
+  <BombToNeutralRatio>k__BackingField: 0.12
+  <SpecialOverrideChance>k__BackingField: 0.025
+  <GlobalComboChance>k__BackingField: 0.08
   <MultiplierIncrement>k__BackingField: 0.1
   <DecrementPointsOnMiss>k__BackingField: 1
   <DecrementMultiplierOnMiss>k__BackingField: 1
   <CountOf25msWaits>k__BackingField:
-    _bottomBound: 5
-    _upperBound: 11
+    _bottomBound: 10
+    _upperBound: 25
