@@ -999,7 +999,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.56953377, y: -0.4190839, z: -0.4190839, w: 0.56953377}
   m_LocalPosition: {x: 3.8, y: 1.056, z: 12.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4685, y: 1.4685, z: 1.4685}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7699163266351548750}
@@ -1018,7 +1018,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 78ddc84630ea8c742b268de989e554b2, type: 2}
-  cannonSmoke: {fileID: 510816997227591164, guid: 34df54f83f7d7254290c56842e700535, type: 3}
   shootingPoint: {fileID: 3346188032015467760}
 --- !u!114 &-1236606511423103301
 MonoBehaviour:
