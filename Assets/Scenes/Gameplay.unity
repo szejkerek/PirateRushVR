@@ -796,10 +796,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1745799195}
     m_Modifications:
-    - target: {fileID: 3514199247474356306, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: m_Height
-      value: 1.88
-      objectReference: {fileID: 0}
     - target: {fileID: 3645396275417868758, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
@@ -843,10 +839,6 @@ PrefabInstance:
     - target: {fileID: 4149957078002763644, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6019300966450420344, guid: d9e6bce6e4227554da80944f0faec8ba, type: 3}
-      propertyPath: heightAboveOffset
-      value: 0.86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2638,6 +2630,10 @@ PrefabInstance:
     - target: {fileID: 9174778942950148459, guid: cb8023970bbd62147ba1b145685c0a02, type: 3}
       propertyPath: m_Name
       value: Plant_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174778942950148459, guid: cb8023970bbd62147ba1b145685c0a02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9174778942950148459, guid: cb8023970bbd62147ba1b145685c0a02, type: 3}
       propertyPath: m_StaticEditorFlags
