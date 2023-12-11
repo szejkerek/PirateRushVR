@@ -20,7 +20,7 @@ Material:
   - _ALPHABLEND_ON
   - _GLOSSYREFLECTIONS_OFF
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: 3000
   stringTagMap:

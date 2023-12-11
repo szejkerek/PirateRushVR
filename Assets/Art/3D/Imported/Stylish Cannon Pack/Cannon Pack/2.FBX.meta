@@ -1,97 +1,269 @@
 fileFormatVersion: 2
 guid: 3e2224ed8ee0546b6b907176c4baf88a
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Box014
-    100004: Cylinder052
-    100006: Cylinder053
-    100008: Group064
-    100010: Group065
-    100012: Group066
-    100014: Object078
-    100016: Object079
-    100018: Object080
-    100020: Sphere019
-    100022: Sphere020
-    100024: Sphere021
-    100026: Sphere022
-    100028: Tube018
-    100030: Tube019
-    400000: //RootNode
-    400002: Box014
-    400004: Cylinder052
-    400006: Cylinder053
-    400008: Group064
-    400010: Group065
-    400012: Group066
-    400014: Object078
-    400016: Object079
-    400018: Object080
-    400020: Sphere019
-    400022: Sphere020
-    400024: Sphere021
-    400026: Sphere022
-    400028: Tube018
-    400030: Tube019
-    2100000: 'Material #37'
-    2100002: 'Material #26'
-    2100004: 'Material #27'
-    2100006: 'Material #28'
-    2100008: 'Material #29'
-    2100010: 'Material #39'
-    2300000: Box014
-    2300002: Cylinder052
-    2300004: Cylinder053
-    2300006: Object078
-    2300008: Object079
-    2300010: Object080
-    2300012: Sphere019
-    2300014: Sphere020
-    2300016: Sphere021
-    2300018: Sphere022
-    2300020: Tube018
-    2300022: Tube019
-    3300000: Box014
-    3300002: Cylinder052
-    3300004: Cylinder053
-    3300006: Object078
-    3300008: Object079
-    3300010: Object080
-    3300012: Sphere019
-    3300014: Sphere020
-    3300016: Sphere021
-    3300018: Sphere022
-    3300020: Tube018
-    3300022: Tube019
-    4300000: Box014
-    4300002: Object078
-    4300004: Sphere019
-    4300006: Sphere020
-    4300008: Cylinder052
-    4300010: Object079
-    4300012: Sphere021
-    4300014: Tube018
-    4300016: Cylinder053
-    4300018: Object080
-    4300020: Sphere022
-    4300022: Tube019
-    6400000: Box014
-    6400002: Cylinder052
-    6400004: Cylinder053
-    6400006: Object078
-    6400008: Object079
-    6400010: Object080
-    6400012: Sphere019
-    6400014: Sphere020
-    6400016: Sphere021
-    6400018: Sphere022
-    6400020: Tube018
-    6400022: Tube019
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Box014
+  - first:
+      1: 100004
+    second: Cylinder052
+  - first:
+      1: 100006
+    second: Cylinder053
+  - first:
+      1: 100008
+    second: Group064
+  - first:
+      1: 100010
+    second: Group065
+  - first:
+      1: 100012
+    second: Group066
+  - first:
+      1: 100014
+    second: Object078
+  - first:
+      1: 100016
+    second: Object079
+  - first:
+      1: 100018
+    second: Object080
+  - first:
+      1: 100020
+    second: Sphere019
+  - first:
+      1: 100022
+    second: Sphere020
+  - first:
+      1: 100024
+    second: Sphere021
+  - first:
+      1: 100026
+    second: Sphere022
+  - first:
+      1: 100028
+    second: Tube018
+  - first:
+      1: 100030
+    second: Tube019
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Box014
+  - first:
+      4: 400004
+    second: Cylinder052
+  - first:
+      4: 400006
+    second: Cylinder053
+  - first:
+      4: 400008
+    second: Group064
+  - first:
+      4: 400010
+    second: Group065
+  - first:
+      4: 400012
+    second: Group066
+  - first:
+      4: 400014
+    second: Object078
+  - first:
+      4: 400016
+    second: Object079
+  - first:
+      4: 400018
+    second: Object080
+  - first:
+      4: 400020
+    second: Sphere019
+  - first:
+      4: 400022
+    second: Sphere020
+  - first:
+      4: 400024
+    second: Sphere021
+  - first:
+      4: 400026
+    second: Sphere022
+  - first:
+      4: 400028
+    second: Tube018
+  - first:
+      4: 400030
+    second: Tube019
+  - first:
+      21: 2100000
+    second: Material #37
+  - first:
+      21: 2100002
+    second: Material #26
+  - first:
+      21: 2100004
+    second: Material #27
+  - first:
+      21: 2100006
+    second: Material #28
+  - first:
+      21: 2100008
+    second: Material #29
+  - first:
+      21: 2100010
+    second: Material #39
+  - first:
+      23: 2300000
+    second: Box014
+  - first:
+      23: 2300002
+    second: Cylinder052
+  - first:
+      23: 2300004
+    second: Cylinder053
+  - first:
+      23: 2300006
+    second: Object078
+  - first:
+      23: 2300008
+    second: Object079
+  - first:
+      23: 2300010
+    second: Object080
+  - first:
+      23: 2300012
+    second: Sphere019
+  - first:
+      23: 2300014
+    second: Sphere020
+  - first:
+      23: 2300016
+    second: Sphere021
+  - first:
+      23: 2300018
+    second: Sphere022
+  - first:
+      23: 2300020
+    second: Tube018
+  - first:
+      23: 2300022
+    second: Tube019
+  - first:
+      33: 3300000
+    second: Box014
+  - first:
+      33: 3300002
+    second: Cylinder052
+  - first:
+      33: 3300004
+    second: Cylinder053
+  - first:
+      33: 3300006
+    second: Object078
+  - first:
+      33: 3300008
+    second: Object079
+  - first:
+      33: 3300010
+    second: Object080
+  - first:
+      33: 3300012
+    second: Sphere019
+  - first:
+      33: 3300014
+    second: Sphere020
+  - first:
+      33: 3300016
+    second: Sphere021
+  - first:
+      33: 3300018
+    second: Sphere022
+  - first:
+      33: 3300020
+    second: Tube018
+  - first:
+      33: 3300022
+    second: Tube019
+  - first:
+      43: 4300000
+    second: Box014
+  - first:
+      43: 4300002
+    second: Object078
+  - first:
+      43: 4300004
+    second: Sphere019
+  - first:
+      43: 4300006
+    second: Sphere020
+  - first:
+      43: 4300008
+    second: Cylinder052
+  - first:
+      43: 4300010
+    second: Object079
+  - first:
+      43: 4300012
+    second: Sphere021
+  - first:
+      43: 4300014
+    second: Tube018
+  - first:
+      43: 4300016
+    second: Cylinder053
+  - first:
+      43: 4300018
+    second: Object080
+  - first:
+      43: 4300020
+    second: Sphere022
+  - first:
+      43: 4300022
+    second: Tube019
+  - first:
+      64: 6400000
+    second: Box014
+  - first:
+      64: 6400002
+    second: Cylinder052
+  - first:
+      64: 6400004
+    second: Cylinder053
+  - first:
+      64: 6400006
+    second: Object078
+  - first:
+      64: 6400008
+    second: Object079
+  - first:
+      64: 6400010
+    second: Object080
+  - first:
+      64: 6400012
+    second: Sphere019
+  - first:
+      64: 6400014
+    second: Sphere020
+  - first:
+      64: 6400016
+    second: Sphere021
+  - first:
+      64: 6400018
+    second: Sphere022
+  - first:
+      64: 6400020
+    second: Tube018
+  - first:
+      64: 6400022
+    second: Tube019
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -100,6 +272,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -121,28 +294,39 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 1
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -151,10 +335,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -164,13 +348,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -1,52 +1,134 @@
 fileFormatVersion: 2
 guid: c622aa1ce3d8f4200ad5a54c3917a1ea
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: palm_tree
-    100004: palm_tree_bark_down
-    100006: palm_tree_bark_up
-    100008: palm_tree_coconut_1
-    100010: palm_tree_coconut_2
-    100012: palm_tree_leaf
-    100014: palm_tree_leaves
-    100016: palm_tree_splitted
-    400000: //RootNode
-    400002: palm_tree
-    400004: palm_tree_bark_down
-    400006: palm_tree_bark_up
-    400008: palm_tree_coconut_1
-    400010: palm_tree_coconut_2
-    400012: palm_tree_leaf
-    400014: palm_tree_leaves
-    400016: palm_tree_splitted
-    2100000: Mat
-    2100002: Mat1
-    2300000: palm_tree
-    2300002: palm_tree_bark_down
-    2300004: palm_tree_bark_up
-    2300006: palm_tree_coconut_1
-    2300008: palm_tree_coconut_2
-    2300010: palm_tree_leaf
-    2300012: palm_tree_leaves
-    3300000: palm_tree
-    3300002: palm_tree_bark_down
-    3300004: palm_tree_bark_up
-    3300006: palm_tree_coconut_1
-    3300008: palm_tree_coconut_2
-    3300010: palm_tree_leaf
-    3300012: palm_tree_leaves
-    4300000: palm_tree
-    4300002: palm_tree_leaf
-    4300004: palm_tree_bark_up
-    4300006: palm_tree_coconut_1
-    4300008: palm_tree_coconut_2
-    4300010: palm_tree_leaves
-    4300012: palm_tree_bark_down
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: palm_tree
+  - first:
+      1: 100004
+    second: palm_tree_bark_down
+  - first:
+      1: 100006
+    second: palm_tree_bark_up
+  - first:
+      1: 100008
+    second: palm_tree_coconut_1
+  - first:
+      1: 100010
+    second: palm_tree_coconut_2
+  - first:
+      1: 100012
+    second: palm_tree_leaf
+  - first:
+      1: 100014
+    second: palm_tree_leaves
+  - first:
+      1: 100016
+    second: palm_tree_splitted
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: palm_tree
+  - first:
+      4: 400004
+    second: palm_tree_bark_down
+  - first:
+      4: 400006
+    second: palm_tree_bark_up
+  - first:
+      4: 400008
+    second: palm_tree_coconut_1
+  - first:
+      4: 400010
+    second: palm_tree_coconut_2
+  - first:
+      4: 400012
+    second: palm_tree_leaf
+  - first:
+      4: 400014
+    second: palm_tree_leaves
+  - first:
+      4: 400016
+    second: palm_tree_splitted
+  - first:
+      21: 2100000
+    second: Mat
+  - first:
+      21: 2100002
+    second: Mat1
+  - first:
+      23: 2300000
+    second: palm_tree
+  - first:
+      23: 2300002
+    second: palm_tree_bark_down
+  - first:
+      23: 2300004
+    second: palm_tree_bark_up
+  - first:
+      23: 2300006
+    second: palm_tree_coconut_1
+  - first:
+      23: 2300008
+    second: palm_tree_coconut_2
+  - first:
+      23: 2300010
+    second: palm_tree_leaf
+  - first:
+      23: 2300012
+    second: palm_tree_leaves
+  - first:
+      33: 3300000
+    second: palm_tree
+  - first:
+      33: 3300002
+    second: palm_tree_bark_down
+  - first:
+      33: 3300004
+    second: palm_tree_bark_up
+  - first:
+      33: 3300006
+    second: palm_tree_coconut_1
+  - first:
+      33: 3300008
+    second: palm_tree_coconut_2
+  - first:
+      33: 3300010
+    second: palm_tree_leaf
+  - first:
+      33: 3300012
+    second: palm_tree_leaves
+  - first:
+      43: 4300000
+    second: palm_tree
+  - first:
+      43: 4300002
+    second: palm_tree_leaf
+  - first:
+      43: 4300004
+    second: palm_tree_bark_up
+  - first:
+      43: 4300006
+    second: palm_tree_coconut_1
+  - first:
+      43: 4300008
+    second: palm_tree_coconut_2
+  - first:
+      43: 4300010
+    second: palm_tree_leaves
+  - first:
+      43: 4300012
+    second: palm_tree_bark_down
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -55,6 +137,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -76,36 +159,51 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -115,14 +213,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
