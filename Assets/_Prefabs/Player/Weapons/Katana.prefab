@@ -82,6 +82,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  sliceSound: {fileID: 11400000, guid: 08bf85da2d08fd744b29b2e5128c4fe2, type: 2}
   sparksEffect: {fileID: 3820671097694520992, guid: 782e934d4cd5a7040a47443cf2ccb214, type: 3}
   splashEffect: {fileID: 3433760107342558875, guid: 7ea0ec99985cbf64ca71cdf0b6375c79, type: 3}
   startSlicePoint: {fileID: 6065085771502809476}

@@ -6,6 +6,7 @@ using Valve.VR.InteractionSystem;
 
 public class Katana : Weapon
 {
+    [SerializeField] Sound sliceSound;
     [SerializeField] GameObject sparksEffect;
     [SerializeField] GameObject splashEffect;
     [Space]
@@ -72,6 +73,11 @@ public class Katana : Weapon
         SplashEffect effect = Instantiate(splashEffect, point, Quaternion.LookRotation(planeNormal)).GetComponent<SplashEffect>();
         effect.Init(projectile.Data.OptionalData.SliceParticleEffectColor);
         Destroy(effect.gameObject, 3f);
+
+        var source = gameObject.AddComponent<AudioSource>();
+        AudioManager.Instance.Play(sliceSound, source, SoundType.SFX);
+        Destroy(source, 5f);
+
 
         Destroy(projectile.gameObject);
     }
