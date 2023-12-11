@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72515ba16a636414e9b27045783e3fbf, type: 3}
-  m_Name: BombApocalipse
+  m_Name: FruitsWithSpecial
   m_EditorClassIdentifier: 
   <combos>k__BackingField:
-  - <Projectile>k__BackingField: 1
+  - <Projectile>k__BackingField: 0
     <Wait>k__BackingField: 2
-  - <Projectile>k__BackingField: 1
+  - <Projectile>k__BackingField: 0
     <Wait>k__BackingField: 2
-  - <Projectile>k__BackingField: 1
+  - <Projectile>k__BackingField: 2
     <Wait>k__BackingField: 2
-  - <Projectile>k__BackingField: 1
-    <Wait>k__BackingField: 5
-  - <Projectile>k__BackingField: 1
-    <Wait>k__BackingField: 1
-  - <Projectile>k__BackingField: 1
-    <Wait>k__BackingField: 1
+  - <Projectile>k__BackingField: 0
+    <Wait>k__BackingField: 2
+  - <Projectile>k__BackingField: 0
+    <Wait>k__BackingField: 2
