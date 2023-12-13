@@ -2437,12 +2437,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8362219673174365818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01584ddd699db184e9d839d412c4f3a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 07744c783081ef446a695b98b7384dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   freezingSpeed: 0.45
-  unfreezingSpeed: 1.5
-  targetFreezeValue: 0.6
+  unfreezingSpeed: 2.5
+  targetFreezeValue: 0.65
 --- !u!1001 &2218197980134935868
 PrefabInstance:
   m_ObjectHideFlags: 0
