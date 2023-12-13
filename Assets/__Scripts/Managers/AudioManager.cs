@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -81,9 +82,35 @@ public class AudioManager : Singleton<AudioManager>
         source.Play();
     }
 
-    public void PlayGlobal(Sound sound)
+    public void PlayGlobal(Sound sound, SoundType type = SoundType.SFX)
     {       
-        PlayOnTarget(gameObject, sound);
+        if(type == SoundType.Music)
+        {
+            musicSource.Stop();
+            Play(musicSource, sound, SoundType.Music);
+            StartCoroutine(FadeInMusic(sound, 1f));
+        }
+        else
+        {
+            PlayOnTarget(gameObject, sound);
+        }
+    }
+
+    private IEnumerator FadeInMusic(Sound sound, float duration)
+    {
+        float startVolume = 0.0f;
+        musicSource.volume = startVolume;
+
+        float currentTime = 0.0f;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            musicSource.volume = Mathf.Lerp(startVolume, sound.Volume, currentTime / duration);
+            yield return null;
+        }
+
+        musicSource.volume = sound.Volume;
     }
 
     private void SetMixer(AudioSource source, SoundType type)
@@ -101,7 +128,7 @@ public class AudioManager : Singleton<AudioManager>
 
     public void SetVolume(float value)
     {
-        value = Mathf.Clamp01(value) * 40 - 20; // -20db -- 20db range
+        value = Mathf.Clamp01(value) * 30 - 20; // -20db -- 20db range
 
         if (value <= -19)
             value = float.MinValue;

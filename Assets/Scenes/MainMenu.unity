@@ -4371,6 +4371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af07645f3014a1347a5b1232afc24251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameplayMusic: {fileID: 11400000, guid: 91c2d7573d295dc4a9d7958c09b3f31d, type: 2}
+  menuMusic: {fileID: 11400000, guid: c71139ff1f6187546b8b98e3bde7fc7d, type: 2}
   mainMenu: {fileID: 1163744328}
   selectDifficulty: {fileID: 604569894}
   selectWeapon: {fileID: 872788110}

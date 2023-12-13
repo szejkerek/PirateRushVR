@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class GameStartMenu : MonoBehaviour
 {
+    [SerializeField] Sound gameplayMusic;
+    [SerializeField] Sound menuMusic;
+
     [Header("UI Pages")]
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject selectDifficulty;
@@ -55,6 +58,11 @@ public class GameStartMenu : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        AudioManager.Instance.PlayGlobal(menuMusic, SoundType.Music);
+    }
+
     private void EnablePlayerUIRays()
     {
         SetPlayerPreferences setPlayer = FindObjectOfType<SetPlayerPreferences>();
@@ -64,6 +72,7 @@ public class GameStartMenu : MonoBehaviour
     public void StartGame(bool isRightHand)
     {
         HideAll();
+        AudioManager.Instance.PlayGlobal(gameplayMusic, SoundType.Music);
         Systems.Instance.KatanaRight = isRightHand;
         SceneLoader.Instance.LoadScene(SceneEnum.Gameplay);
     }    

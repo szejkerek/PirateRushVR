@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
+  
     [SerializeField] GameObject startGamePanel;
     [SerializeField] GameObject endGamePanel;
 
