@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dec4304bb045504e83ddec80e5d3b78, type: 3}
   m_Name: BombSound
   m_EditorClassIdentifier: 
-  <Clip>k__BackingField: {fileID: 0}
+  <Clip>k__BackingField: {fileID: 8300000, guid: f407a7916b8cf884e9a24972265d6898, type: 3}
   volume: 1
   initialPitch: 1
   shouldRandomizePitch: 0
-  pitchVariation: 0
+  pitchVariation: 0.16
   loop: 0
   <Settings3D>k__BackingField:
-    spatialBlend: 0
+    spatialBlend: 1
     minDistance: 1
     maxDistance: 500

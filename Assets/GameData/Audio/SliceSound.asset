@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SliceSound
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: 94de0f59ed187f644a1c69403347970d, type: 3}
-  volume: 0.92
+  volume: 0.424
   initialPitch: 1
   shouldRandomizePitch: 1
-  pitchVariation: 0.24
+  pitchVariation: 0.16
   loop: 0
   <Settings3D>k__BackingField:
     spatialBlend: 1
