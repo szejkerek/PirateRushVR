@@ -42,6 +42,7 @@ public class Bomb : MonoBehaviour
             
             rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
         }
+
         var effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
         Destroy(effect, 2f);
 
