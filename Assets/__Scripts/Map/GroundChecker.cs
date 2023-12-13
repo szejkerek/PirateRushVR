@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GroundChecker : MonoBehaviour
 {
+    [SerializeField] Sound plumSound;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Projectile projectile))
@@ -23,5 +25,7 @@ public class GroundChecker : MonoBehaviour
                 Destroy(projectile.gameObject, 1f); // Start coroutine to destroy after 3 seconds
             }
         }
+
+        AudioManager.Instance.Play(other.gameObject, plumSound, SoundType.SFX);
     }
 }

@@ -118,3 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e017a9f530e6fd47969842347ff88c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plumSound: {fileID: 11400000, guid: f85cd12dada0bde4ba6065d2c81d36b1, type: 2}
