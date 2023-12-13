@@ -63,8 +63,16 @@ MonoBehaviour:
   tutorialImage: {fileID: 6475288855520745926}
   tutorialText: {fileID: 6705261341225129476}
   tutorialPanels:
+  - {fileID: 11400000, guid: c5e9714036a2ef14d936009da41b448b, type: 2}
+  - {fileID: 11400000, guid: 467e0521be48a6949b76724499bf2a03, type: 2}
   - {fileID: 11400000, guid: 38649c9fee8a7394fbba6bfc8603b702, type: 2}
+  - {fileID: 11400000, guid: 9e0592529a9cb0a45b4309584014639f, type: 2}
+  - {fileID: 11400000, guid: 151571fbadf97044dad222725c15c396, type: 2}
   - {fileID: 11400000, guid: ae19fc78d12e56f43ad210398fefb64c, type: 2}
+  - {fileID: 11400000, guid: ccfdae54810e655428e97c63d1a84336, type: 2}
+  - {fileID: 11400000, guid: e644fbd8400caf140b8817b26418a764, type: 2}
+  - {fileID: 11400000, guid: 9ddef27aa76514d4d9393c67fddd047c, type: 2}
+  - {fileID: 11400000, guid: 0046e561c15b5a146851a532ddf81418, type: 2}
 --- !u!1 &2445137997803307549
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Title>k__BackingField: Avoid bombs
   <Text>k__BackingField: Bombs inflict damage and repel incoming projectiles.
-  <Image>k__BackingField: {fileID: 21300000, guid: 5ea9c862c3579764cada22c457e540b1, type: 3}
+  <Image>k__BackingField: {fileID: 21300000, guid: 8341975f48288df4099843b1c0a5d061, type: 3}
