@@ -15,9 +15,10 @@ MonoBehaviour:
   <ComboSpawnType>k__BackingField: 0
   <ProjectileType>k__BackingField: 0
   <Model>k__BackingField: {fileID: 7355399924929733234, guid: 30d9b9580755bc146b34b329870e2034, type: 3}
-  <Points>k__BackingField: 120
+  <Points>k__BackingField: 175
   <MutualEffects>k__BackingField: []
   <OptionalData>k__BackingField:
+    <CustomHitSound>k__BackingField: {fileID: 0}
     <AlwaysNegativePoints>k__BackingField: 0
     <FracturedModel>k__BackingField: {fileID: 0}
     <CrossSectionMaterial>k__BackingField: {fileID: 2100000, guid: e4c7902983371ab49b82f60338a3712b, type: 2}
