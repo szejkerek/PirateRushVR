@@ -46,13 +46,13 @@ public class AudioManager : Singleton<AudioManager>
         source.clip = sound.Clip;
         source.volume = sound.Volume;
 
-        if (sound.ShouldRandomizePitch)
+        if (sound.PitchVariation > 0)
         {
-            source.pitch = sound.InitialPitch + Random.Range(-sound.PitchVariation, sound.PitchVariation);
+            source.pitch = 1 + Random.Range(-sound.PitchVariation, sound.PitchVariation);
         }
         else
         {
-            source.pitch = sound.InitialPitch;
+            source.pitch = 1;
         }
 
         source.loop = sound.Loop;

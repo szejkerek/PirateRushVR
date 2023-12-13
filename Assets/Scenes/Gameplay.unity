@@ -878,11 +878,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6982000879393223617, guid: 2269c5cfaa7f7314bba868f540b5ddad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.583
+      value: 30.8
       objectReference: {fileID: 0}
     - target: {fileID: 6982000879393223617, guid: 2269c5cfaa7f7314bba868f540b5ddad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6200001
+      value: -1.788
       objectReference: {fileID: 0}
     - target: {fileID: 6982000879393223617, guid: 2269c5cfaa7f7314bba868f540b5ddad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3527,8 +3527,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1304501539}
+  - component: {fileID: 1304501540}
   m_Layer: 0
-  m_Name: Enviroment
+  m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3552,6 +3553,19 @@ Transform:
   - {fileID: 1699827879}
   m_Father: {fileID: 2116150240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1304501540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304501538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067280a1c8f8e5e49be6eba449a5d78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterSound: {fileID: 11400000, guid: f858e5a0e2f312f409aeb3bbcdbe2e2c, type: 2}
 --- !u!1001 &1311031782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5755,7 +5769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6982000879393223617, guid: 2269c5cfaa7f7314bba868f540b5ddad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5636785
+      value: -0.659
       objectReference: {fileID: 0}
     - target: {fileID: 6982000879393223617, guid: 2269c5cfaa7f7314bba868f540b5ddad, type: 3}
       propertyPath: m_LocalPosition.z

@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: c1882c757d26f52459504e3f4bbed5f6, type: 3}
   volume: 0.312
-  initialPitch: 1
-  shouldRandomizePitch: 0
   pitchVariation: 0.23
   loop: 0
   <Settings3D>k__BackingField:
