@@ -46,14 +46,9 @@ public class ScoreManager : Singleton<ScoreManager>
         Random.InitState(123);
 
         List<string> allNicknames = new List<string> {
-        "BeginnerBuddy", "EasyGoer", "NoSweat", "Chill Champ", "SimpleSimon",
-        "RandomRider", "Moderate Master", "DecentDabbler", "AverageAce", "Midway Maven",
-        "QueenOfChaos", "HardcoreHero", "ToughCookie", "Ruthless Ruler", "Challenge Champ",
-        "Perceptive Pro", "StrategicSultan", "Limitless Legend", "Resilient Rider",
-        "SupremeSovereign", "Whiz Wanderer", "TrailblazingTactician", "Sly Sorcerer",
-        "UnstoppableUtopian", "Boundless Boss", "DaringDynamo", "MajesticMaestro",
-        "UltimateUnderdog", "Ambitious Adventurer", "Intrepid Innovator", "Phenomenal Pathfinder"
-        };
+        "Beginner Buddy", "Easy Goer", "No Sweat", "Chill Champ", "SimpleSimon",
+        "Random Rider", "Moderate Master", "Decent Dabbler", "Average Ace", "Midway Maven",
+        "Queen Of Chaos", "Hardcore Hero" };
 
         List<string> allDifficulties = new List<string> {"Easy", "Medium", "Hard"};
 
