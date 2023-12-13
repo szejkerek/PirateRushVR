@@ -2,14 +2,19 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
+    [SerializeField] Sound collectibleSound;
     [SerializeField] LayerMask layerMask;
-
     
     private void Update()
     {
         if (DidHit(out Projectile projectile, out Vector3 point,layerMask))
         {
-            
+            Sound customSound = projectile.Data.OptionalData.CustomHitSound;
+            if (customSound != null)
+            {
+                AudioManager.Instance.Play(gameObject, customSound, SoundType.SFX);    
+            }
+
             switch (projectile.Data.ProjectileType)
             {
                 case ProjectileType.Sliceable:
@@ -30,6 +35,11 @@ public abstract class Weapon : MonoBehaviour
     protected abstract void SliceableBehavior(Projectile projectile, Vector3 point);
     private void CollectibleBehavior(Projectile projectile, Vector3 point)
     {
+        if (!projectile.TryGetComponent(out Bomb _))
+        {
+            AudioManager.Instance.Play(gameObject, collectibleSound, SoundType.SFX);
+        }
+
         projectile.ApplyEffects(false);
         projectile.ApplyPoints();
         Destroy(projectile.gameObject);     

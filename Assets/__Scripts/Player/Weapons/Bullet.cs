@@ -13,7 +13,7 @@ public class Bullet : Weapon
     private void Start()
     {
         perfectShootChance = Systems.Instance.difficultyLevel.PerfectShootChance;
-        Destroy(gameObject, 4f);
+        Destroy(gameObject, 6f);
     }
 
     bool hitOnce = false;
@@ -24,7 +24,7 @@ public class Bullet : Weapon
         {
             point = hitPoint;
             projectile = hitProjectile;
-            Destroy(gameObject, 3f);
+            Destroy(gameObject, 5f);
             hitOnce = true;
             return true;
         }

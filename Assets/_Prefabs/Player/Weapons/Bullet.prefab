@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca55cf9f0376e7f46b2b154be4f59da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectibleSound: {fileID: 11400000, guid: 1bcd8695d048f204881d3c23c1c92c06, type: 2}
   layerMask:
     serializedVersion: 2
     m_Bits: 256

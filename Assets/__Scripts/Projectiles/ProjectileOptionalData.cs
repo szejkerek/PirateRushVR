@@ -4,6 +4,7 @@ using UnityEngine;
 [Serializable]
 public class ProjectileOptionalData
 {
+    [field: SerializeField] public Sound CustomHitSound { private set; get; }
     [field: SerializeField] public bool AlwaysNegativePoints { private set; get; }
 
     [field: Header("Shooting")]
