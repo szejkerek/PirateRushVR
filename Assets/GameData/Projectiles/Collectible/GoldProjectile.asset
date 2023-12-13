@@ -18,6 +18,7 @@ MonoBehaviour:
   <Points>k__BackingField: 500
   <MutualEffects>k__BackingField: []
   <OptionalData>k__BackingField:
+    <CustomHitSound>k__BackingField: {fileID: 11400000, guid: a913cef2caa529149a949753baa91184, type: 2}
     <AlwaysNegativePoints>k__BackingField: 0
     <FracturedModel>k__BackingField: {fileID: 0}
     <CrossSectionMaterial>k__BackingField: {fileID: 0}
