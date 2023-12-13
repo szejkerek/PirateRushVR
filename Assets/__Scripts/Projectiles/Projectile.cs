@@ -67,6 +67,8 @@ public partial class Projectile : MonoBehaviour
     {
         data.MutualEffects.ForEach(e => e.ApplyHitEffect(this));
 
+        GetComponent<Bomb>()?.Explode(); //if bomb explode here
+
         if( critical )
         {
             ApplyCritical();

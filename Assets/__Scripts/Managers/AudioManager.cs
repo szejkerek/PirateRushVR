@@ -34,17 +34,12 @@ public class AudioManager : Singleton<AudioManager>
     }
 
 
-    public void Play(Sound sound, AudioSource source, SoundType type)
+    public void Play(GameObject target, Sound sound, SoundType type)
     {
+        AudioSource source = target.AddComponent<AudioSource>();
         if (sound == null)
         {
-            Debug.LogWarning("Sound is null");
-            return;
-        }
-
-        if (source == null)
-        {
-            Debug.LogWarning("Audio source is null");
+            Debug.LogWarning($"Sound of {target.name} is null");
             return;
         }
 
@@ -62,27 +57,20 @@ public class AudioManager : Singleton<AudioManager>
 
         source.loop = sound.Loop;
 
+        source.spatialBlend = sound.Settings3D.SpatialBlend ? 1f : 0f;
+        source.minDistance = sound.Settings3D.MinDistance;
+        source.maxDistance = sound.Settings3D.MaxDistance;
+
         SetMixer(source, type);
+
+        Destroy(source, sound.Clip.length + 0.1f);
 
         source.Play();
     }
 
     public void PlayGlobal(Sound sound, SoundType type = SoundType.SFX)
-    {
-        AudioSource source = gameObject.AddComponent<AudioSource>();
-        Play(sound, source, type);
-
-        Destroy(source, source.clip.length + 0.25f);
-    }
-
-    public void PlayMusic(Sound sound)
-    {
-        Play(sound, musicSource, SoundType.Music);
-    }
-
-    public void StopMusic()
-    {
-        musicSource.Stop();
+    {       
+        Play(gameObject, sound, type);
     }
 
     private void SetMixer(AudioSource source, SoundType type)

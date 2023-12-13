@@ -18,3 +18,7 @@ MonoBehaviour:
   shouldRandomizePitch: 1
   pitchVariation: 0.24
   loop: 0
+  <Settings3D>k__BackingField:
+    spatialBlend: 1
+    minDistance: 1
+    maxDistance: 200

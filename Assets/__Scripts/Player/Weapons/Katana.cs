@@ -72,13 +72,10 @@ public class Katana : Weapon
 
         SplashEffect effect = Instantiate(splashEffect, point, Quaternion.LookRotation(planeNormal)).GetComponent<SplashEffect>();
         effect.Init(projectile.Data.OptionalData.SliceParticleEffectColor);
+
+        AudioManager.Instance.Play(gameObject, sliceSound, SoundType.SFX);
+
         Destroy(effect.gameObject, 3f);
-
-        var source = gameObject.AddComponent<AudioSource>();
-        AudioManager.Instance.Play(sliceSound, source, SoundType.SFX);
-        Destroy(source, 5f);
-
-
         Destroy(projectile.gameObject);
     }
 

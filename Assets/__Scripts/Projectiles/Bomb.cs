@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     [Header("Effects")]
+    [SerializeField] Sound explosionSound;
+    [Header("Effects")]
     [SerializeField] GameObject fireEffect;
     [SerializeField] GameObject explosionEffect;
     [Header("Explosion")]
@@ -16,12 +18,7 @@ public class Bomb : MonoBehaviour
         fireEffect.transform.rotation = Quaternion.LookRotation(Vector3.up, transform.up);
     }
 
-    private void OnDestroy()
-    {
-        Explode();
-    }
-
-    private void Explode()
+    public void Explode()
     {
         if (!gameObject.scene.isLoaded) return;
 
@@ -39,6 +36,8 @@ public class Bomb : MonoBehaviour
         }
 
         GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 1.5f);
+        AudioManager.Instance.Play(effect, explosionSound, SoundType.SFX);
+
+        Destroy(effect, explosionSound.Clip.length + 0.2f);
     }
 }
