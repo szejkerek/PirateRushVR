@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 679327de6d365894f953ca42d192aa8f, type: 3}
-  m_Name: FruitsTutorial
+  m_Name: BombTutorial
   m_EditorClassIdentifier: 
   <Title>k__BackingField: Avoid bombs
   <Text>k__BackingField: Bombs inflict damage and repel incoming projectiles.
-  <Image>k__BackingField: {fileID: 21300000, guid: 219cc4bd4882bcc4fa5131c965a296ed, type: 3}
+  <Image>k__BackingField: {fileID: 21300000, guid: c8f3282096717c74dbfb5893bcee5166, type: 3}

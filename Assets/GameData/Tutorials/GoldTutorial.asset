@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 679327de6d365894f953ca42d192aa8f, type: 3}
-  m_Name: SpecialHourglassTutorial
+  m_Name: GoldTutorial
   m_EditorClassIdentifier: 
   <Title>k__BackingField: TYTUL TITLE
   <Text>k__BackingField: 22222222222
-  <Image>k__BackingField: {fileID: 0}
+  <Image>k__BackingField: {fileID: 21300000, guid: d5483657918d3644092c388a393dbd80, type: 3}
