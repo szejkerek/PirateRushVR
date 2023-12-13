@@ -1018,6 +1018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 78ddc84630ea8c742b268de989e554b2, type: 2}
+  shootingSound: {fileID: 11400000, guid: b4869d8a19fad3047938b9c624bde0a7, type: 2}
   shootingPoint: {fileID: 3346188032015467760}
 --- !u!114 &-1236606511423103301
 MonoBehaviour:

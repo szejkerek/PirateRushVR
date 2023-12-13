@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dec4304bb045504e83ddec80e5d3b78, type: 3}
-  m_Name: SeaSounds
+  m_Name: CannonPoofSound
   m_EditorClassIdentifier: 
-  <Clip>k__BackingField: {fileID: 8300000, guid: a3e35f4a20a404447acb7b6e589f12f5, type: 3}
-  volume: 0.162
-  pitchVariation: 0
-  loop: 1
+  <Clip>k__BackingField: {fileID: 8300000, guid: ad8fc8a2e931ec24aa300d05f9e4e435, type: 3}
+  volume: 1
+  pitchVariation: 0.12
+  loop: 0
   <Settings3D>k__BackingField:
-    spatialBlend: 0
-    minDistance: 1
-    maxDistance: 500
+    spatialBlend: 1
+    minDistance: 2.14
+    maxDistance: 48

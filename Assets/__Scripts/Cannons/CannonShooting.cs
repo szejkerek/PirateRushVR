@@ -6,6 +6,7 @@ public class CannonShooting : MonoBehaviour
     [SerializeField] CannonSettings settings;
 
     //[SerializeField] private GameObject cannonSmoke;
+    [SerializeField] private Sound shootingSound;
     [SerializeField] private Transform shootingPoint;
 
     Transform target;
@@ -45,6 +46,7 @@ public class CannonShooting : MonoBehaviour
 
         InitProjectile(projectile, targetDirection, gravity);
 
+        AudioManager.Instance.Play(gameObject, shootingSound, SoundType.SFX);
         //GameObject effect = Instantiate(cannonSmoke, shootingPoint.transform.position, Quaternion.LookRotation(shootingPoint.transform.forward));
         //Destroy(effect, 5f);
     }
