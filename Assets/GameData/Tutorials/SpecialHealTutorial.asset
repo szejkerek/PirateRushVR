@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 679327de6d365894f953ca42d192aa8f, type: 3}
-  m_Name: TutorialPanelSO1
+  m_Name: SpecialHealTutorial
   m_EditorClassIdentifier: 
   <Title>k__BackingField: TYTUL TITLE
   <Text>k__BackingField: 22222222222
