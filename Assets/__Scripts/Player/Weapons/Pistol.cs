@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Pistol : MonoBehaviour
 {
+    [SerializeField] private Sound gunShotSound;
     [SerializeField] private GameObject muzzleFlashEffect;
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Transform shootingPoint;
@@ -58,7 +59,6 @@ public class Pistol : MonoBehaviour
         nextShootTime = Time.time + shootCooldown;
         canShoot = false;
 
-
-
+        AudioManager.Instance.PlayAtPosition(transform.position, gunShotSound);
     }
 }
