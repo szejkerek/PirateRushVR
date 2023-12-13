@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679327de6d365894f953ca42d192aa8f, type: 3}
   m_Name: HealTutorial
   m_EditorClassIdentifier: 
-  <Title>k__BackingField: TYTUL TITLE
+  <Title>k__BackingField: Heal yourself
   <Text>k__BackingField: 22222222222
   <Image>k__BackingField: {fileID: 21300000, guid: 382eec16da7c89148937fa6546d56ad5, type: 3}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679327de6d365894f953ca42d192aa8f, type: 3}
   m_Name: CannonTutorial
   m_EditorClassIdentifier: 
-  <Title>k__BackingField: Avoid bombs
+  <Title>k__BackingField: Cannons shoots projectiles
   <Text>k__BackingField: Bombs inflict damage and repel incoming projectiles.
   <Image>k__BackingField: {fileID: 21300000, guid: 237c90a1b5850bb4fa78b0a26ecf54a8, type: 3}
