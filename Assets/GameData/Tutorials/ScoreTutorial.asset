@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: ScoreTutorial
   m_EditorClassIdentifier: 
   <Title>k__BackingField: Score display
-  <Text>k__BackingField: Bombs inflict damage and repel incoming projectiles.
+  <Text>k__BackingField: Ye be needin' to keep an eye on the sign beneath yer feet
+    to learn yer nickname, health, and score, matey!
   <Image>k__BackingField: {fileID: 21300000, guid: 5ea9c862c3579764cada22c457e540b1, type: 3}

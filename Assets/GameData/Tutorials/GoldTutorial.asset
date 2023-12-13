@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GoldTutorial
   m_EditorClassIdentifier: 
   <Title>k__BackingField: Collect gold bars
-  <Text>k__BackingField: 22222222222
+  <Text>k__BackingField: "\rYe can gather gold bars to amass wealth in points and
+    riches!"
   <Image>k__BackingField: {fileID: 21300000, guid: d5483657918d3644092c388a393dbd80, type: 3}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: HealTutorial
   m_EditorClassIdentifier: 
   <Title>k__BackingField: Heal yourself
-  <Text>k__BackingField: 22222222222
+  <Text>k__BackingField: Ye can gather hearts to mend yerself and stay hearty on
+    yer journey!
   <Image>k__BackingField: {fileID: 21300000, guid: 382eec16da7c89148937fa6546d56ad5, type: 3}

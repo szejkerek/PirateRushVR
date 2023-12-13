@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BombTutorial
   m_EditorClassIdentifier: 
   <Title>k__BackingField: Avoid bombs!
-  <Text>k__BackingField: Bombs inflict damage and repel incoming projectiles.
+  <Text>k__BackingField: Ye must steer clear o' bombs as they cause harm to yer ship!
   <Image>k__BackingField: {fileID: 21300000, guid: c8f3282096717c74dbfb5893bcee5166, type: 3}
