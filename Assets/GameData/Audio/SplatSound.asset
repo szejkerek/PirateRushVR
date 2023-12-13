@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dec4304bb045504e83ddec80e5d3b78, type: 3}
+  m_Name: SplatSound
+  m_EditorClassIdentifier: 
+  <Clip>k__BackingField: {fileID: 8300000, guid: 717ae6fd1c401fb4c80954f4de3db568, type: 3}
+  volume: 0.225
+  pitchVariation: 0.21
+  loop: 0
+  <Settings3D>k__BackingField:
+    spatialBlend: 1
+    minDistance: 2.5
+    maxDistance: 100

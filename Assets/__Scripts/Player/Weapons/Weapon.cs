@@ -2,8 +2,8 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] Sound collectibleSound;
     [SerializeField] LayerMask layerMask;
+    [SerializeField] Sound collectibleSound;
     
     private void Update()
     {

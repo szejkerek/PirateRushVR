@@ -46,11 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca55cf9f0376e7f46b2b154be4f59da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleSound: {fileID: 11400000, guid: 1bcd8695d048f204881d3c23c1c92c06, type: 2}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  collectibleSound: {fileID: 11400000, guid: 1bcd8695d048f204881d3c23c1c92c06, type: 2}
   woodBreakSound: {fileID: 11400000, guid: fc1c8149f0277cc4fb8a65ce68be5043, type: 2}
+  splatSound: {fileID: 11400000, guid: 17f967c59e442c04a828c052a53847cb, type: 2}
   minExplosionForce: 3
   maxExplosionForce: 6
   explosionForceRadius: 3.6

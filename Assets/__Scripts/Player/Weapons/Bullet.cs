@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bullet : Weapon
 {
     [SerializeField] private Sound woodBreakSound;
+    [SerializeField] private Sound splatSound;
     [Space]
     [SerializeField] float minExplosionForce;
     [SerializeField] float maxExplosionForce;
@@ -75,6 +76,7 @@ public class Bullet : Weapon
     {
         projectile.ApplyEffects(false);
         projectile.ApplyPoints(negative: true);
+        AudioManager.Instance.PlayAtPosition(point, splatSound);
 
     }
     private void OnCollisionEnter(Collision collision)

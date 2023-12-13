@@ -7,6 +7,9 @@ using Valve.VR.InteractionSystem;
 public class Katana : Weapon
 {
     [SerializeField] Sound sliceSound;
+    [SerializeField] Sound metalHitSound;
+    [SerializeField] float metalHitCooldown;
+    float lastSound = 0;
     [SerializeField] GameObject sparksEffect;
     [SerializeField] GameObject splashEffect;
     [Space]
@@ -24,9 +27,16 @@ public class Katana : Weapon
 
     protected override void ShootableBehavior(Projectile projectile, Vector3 point)
     {
+
         Vector3 velocity = endPointVelocity.GetVelocityEstimate();
         Vector3 sparksDirection = Vector3.Cross(endSlicePoint.position - startSlicePoint.position, velocity).normalized;
         var effect = Instantiate(sparksEffect, point, Quaternion.LookRotation(sparksDirection));
+        if(Time.time - lastSound >= metalHitCooldown) 
+        {
+            lastSound = Time.time;
+            AudioManager.Instance.PlayAtPosition(point, metalHitSound);
+        }
+        
         Destroy(effect, 2f);
         projectile.ApplyPoints(negative: true);
     }
