@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    [Header("Effects")]
+    [Header("Sounds")]
     [SerializeField] Sound explosionSound;
+    [SerializeField] Sound fuseSound;
+    [SerializeField] Sound flamePutDownSound;
     [Header("Effects")]
     [SerializeField] GameObject fireEffect;
     [SerializeField] GameObject explosionEffect;
@@ -13,6 +15,12 @@ public class Bomb : MonoBehaviour
     [SerializeField] float explosionForce;
     [SerializeField] float explosionRadius;
 
+    AudioSource fuseAudioSource;
+    private void Awake()
+    {
+        fuseAudioSource = GetComponent<AudioSource>();
+        AudioManager.Instance.Play(fuseAudioSource, fuseSound, SoundType.SFX);
+    }
     private void Update()
     {
         fireEffect.transform.rotation = Quaternion.LookRotation(Vector3.up, transform.up);
@@ -36,5 +44,12 @@ public class Bomb : MonoBehaviour
         }
 
         AudioManager.Instance.PlayAtPosition(transform.position, explosionSound);
+    }
+
+    public void PutDownFire()
+    {
+        fireEffect.gameObject.SetActive(false);
+        fuseAudioSource.Stop();
+        AudioManager.Instance.PlayAtPosition(transform.position, flamePutDownSound);
     }
 }

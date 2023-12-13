@@ -26,6 +26,11 @@ public class GroundChecker : MonoBehaviour
             }
         }
 
+        if(other.TryGetComponent(out Bomb bomb))
+        {
+            bomb.PutDownFire();
+        }
+
         AudioManager.Instance.PlayAtPosition(other.transform.position, plumSound);
     }
 }
