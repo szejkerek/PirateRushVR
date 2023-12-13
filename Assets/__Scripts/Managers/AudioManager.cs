@@ -33,13 +33,28 @@ public class AudioManager : Singleton<AudioManager>
         SetVolume(volume);
     }
 
-
-    public void Play(GameObject target, Sound sound, SoundType type)
+    public void PlayOnTarget(GameObject target, Sound sound)
     {
-        AudioSource source = target.AddComponent<AudioSource>();
+        var sourceObj = target.AddComponent<AudioSource>();
+        Play(sourceObj, sound, SoundType.SFX);
+        Destroy(sourceObj, sound.Clip.length + 0.4f);
+    }
+
+    public void PlayAtPosition(Vector3 position, Sound sound)
+    {
+        GameObject gameObject = new GameObject(sound.name);
+        var soundObj = Instantiate(gameObject, position, Quaternion.identity);
+        var sourceObj = soundObj.AddComponent<AudioSource>();
+        Play(sourceObj, sound, SoundType.SFX);
+
+        Destroy(soundObj, sound.Clip.length + 0.4f);
+    }
+
+    public void Play(AudioSource source, Sound sound, SoundType type)
+    {
         if (sound == null)
         {
-            Debug.LogWarning($"Sound of {target.name} is null");
+            Debug.LogWarning($"Sound of {source.gameObject.name} is null");
             return;
         }
 
@@ -63,14 +78,12 @@ public class AudioManager : Singleton<AudioManager>
 
         SetMixer(source, type);
 
-        Destroy(source, sound.Clip.length + 0.1f);
-
         source.Play();
     }
 
-    public void PlayGlobal(Sound sound, SoundType type = SoundType.SFX)
+    public void PlayGlobal(Sound sound)
     {       
-        Play(gameObject, sound, type);
+        PlayOnTarget(gameObject, sound);
     }
 
     private void SetMixer(AudioSource source, SoundType type)

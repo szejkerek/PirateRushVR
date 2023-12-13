@@ -12,7 +12,7 @@ public abstract class Weapon : MonoBehaviour
             Sound customSound = projectile.Data.OptionalData.CustomHitSound;
             if (customSound != null)
             {
-                AudioManager.Instance.Play(gameObject, customSound, SoundType.SFX);    
+                AudioManager.Instance.PlayAtPosition(point, customSound);    
             }
 
             switch (projectile.Data.ProjectileType)
@@ -37,7 +37,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (!projectile.TryGetComponent(out Bomb _))
         {
-            AudioManager.Instance.Play(gameObject, collectibleSound, SoundType.SFX);
+            AudioManager.Instance.PlayAtPosition(point, collectibleSound);
         }
 
         projectile.ApplyEffects(false);

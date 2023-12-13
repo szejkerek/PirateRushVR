@@ -7,6 +7,6 @@ public class FreezeEffect : Effect
     [field: SerializeField] public float Duration { private set; get; }
     public override void ApplyHitEffect(Projectile context)
     {
-        FreezeManager.Instance.Freeze(Duration);
+        SlowMotionManager.Instance.Freeze(Duration);
     }
 }

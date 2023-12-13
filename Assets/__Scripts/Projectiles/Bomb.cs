@@ -35,9 +35,6 @@ public class Bomb : MonoBehaviour
             rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
         }
 
-        GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-        AudioManager.Instance.Play(effect, explosionSound, SoundType.SFX);
-
-        Destroy(effect, explosionSound.Clip.length + 0.2f);
+        AudioManager.Instance.PlayAtPosition(transform.position, explosionSound);
     }
 }

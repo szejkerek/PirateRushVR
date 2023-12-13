@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: f407a7916b8cf884e9a24972265d6898, type: 3}
   volume: 1
-  initialPitch: 1
-  shouldRandomizePitch: 0
   pitchVariation: 0.16
   loop: 0
   <Settings3D>k__BackingField:
     spatialBlend: 1
-    minDistance: 1
+    minDistance: 3
     maxDistance: 500

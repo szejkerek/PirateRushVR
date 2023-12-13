@@ -26,6 +26,6 @@ public class GroundChecker : MonoBehaviour
             }
         }
 
-        AudioManager.Instance.Play(other.gameObject, plumSound, SoundType.SFX);
+        AudioManager.Instance.PlayAtPosition(other.transform.position, plumSound);
     }
 }

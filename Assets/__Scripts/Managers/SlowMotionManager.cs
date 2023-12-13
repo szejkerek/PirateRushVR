@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class FreezeManager : Singleton<FreezeManager>
+public class SlowMotionManager : Singleton<SlowMotionManager>
 {
     [SerializeField] float freezingSpeed;
     [SerializeField] float unfreezingSpeed;

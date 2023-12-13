@@ -8,6 +8,6 @@ public class EnviromentAudio : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.Play(gameObject, waterSound, SoundType.SFX);
+        AudioManager.Instance.PlayOnTarget(gameObject, waterSound);
     }
 }

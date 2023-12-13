@@ -2,6 +2,8 @@ using DG.Tweening;
 using UnityEngine;
 public class Bullet : Weapon
 {
+    [SerializeField] private Sound woodBreakSound;
+    [Space]
     [SerializeField] float minExplosionForce;
     [SerializeField] float maxExplosionForce;
     [SerializeField] float explosionForceRadius;
@@ -59,6 +61,7 @@ public class Bullet : Weapon
                 }
 
             }
+            AudioManager.Instance.PlayAtPosition(point, woodBreakSound);
 
             Destroy(obj, Random.Range(3, 5));
         }

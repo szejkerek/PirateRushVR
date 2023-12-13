@@ -50,6 +50,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  woodBreakSound: {fileID: 11400000, guid: fc1c8149f0277cc4fb8a65ce68be5043, type: 2}
   minExplosionForce: 3
   maxExplosionForce: 6
   explosionForceRadius: 3.6

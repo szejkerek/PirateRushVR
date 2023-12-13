@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dec4304bb045504e83ddec80e5d3b78, type: 3}
-  m_Name: PlumSound
+  m_Name: HealingSound
   m_EditorClassIdentifier: 
-  <Clip>k__BackingField: {fileID: 8300000, guid: c1882c757d26f52459504e3f4bbed5f6, type: 3}
-  volume: 0.335
-  pitchVariation: 0.23
+  <Clip>k__BackingField: {fileID: 8300000, guid: 7a3562f5638605c44b5f414a63d2624d, type: 3}
+  volume: 1
+  pitchVariation: 0
   loop: 0
   <Settings3D>k__BackingField:
-    spatialBlend: 1
-    minDistance: 5
-    maxDistance: 300
+    spatialBlend: 0
+    minDistance: 1
+    maxDistance: 500

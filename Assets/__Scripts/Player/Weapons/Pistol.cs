@@ -58,5 +58,7 @@ public class Pistol : MonoBehaviour
         nextShootTime = Time.time + shootCooldown;
         canShoot = false;
 
+
+
     }
 }

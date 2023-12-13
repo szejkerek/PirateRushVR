@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: CollectibleSound
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: 5e96f366c51be974e811c9ce5081ab93, type: 3}
-  volume: 0.48
+  volume: 0.087
   pitchVariation: 0.05
   loop: 0
   <Settings3D>k__BackingField:
-    spatialBlend: 1
+    spatialBlend: 0
     minDistance: 10
     maxDistance: 100
