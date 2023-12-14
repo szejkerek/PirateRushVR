@@ -285,6 +285,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 950773652}
     m_Modifications:
+    - target: {fileID: 5294037241303515614, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5434009612620633512, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
       propertyPath: m_Name
       value: Water_05
@@ -1148,6 +1152,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 950773652}
     m_Modifications:
+    - target: {fileID: 5294037241303515614, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5434009612620633512, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
       propertyPath: m_Name
       value: Water_02
@@ -3143,6 +3151,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 950773652}
     m_Modifications:
+    - target: {fileID: 5294037241303515614, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5434009612620633512, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
       propertyPath: m_Name
       value: Water_03
@@ -3712,6 +3724,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 950773652}
     m_Modifications:
+    - target: {fileID: 5294037241303515614, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5434009612620633512, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
       propertyPath: m_Name
       value: Water_06
@@ -4352,6 +4368,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 950773652}
     m_Modifications:
+    - target: {fileID: 5294037241303515614, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5434009612620633512, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
       propertyPath: m_Name
       value: Water_07
@@ -5103,6 +5123,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 950773652}
     m_Modifications:
+    - target: {fileID: 5294037241303515614, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5434009612620633512, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
       propertyPath: m_Name
       value: Water_08
@@ -5444,6 +5468,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 950773652}
     m_Modifications:
+    - target: {fileID: 5294037241303515614, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5434009612620633512, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
       propertyPath: m_Name
       value: Water_04
@@ -5517,6 +5545,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 950773652}
     m_Modifications:
+    - target: {fileID: 5294037241303515614, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5434009612620633512, guid: e8edf352e0d48a54395b01e1b4fa6a98, type: 3}
       propertyPath: m_Name
       value: Water_01
