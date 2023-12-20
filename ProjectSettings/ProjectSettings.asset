@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: "Bart\u0142omiejGordon"
+  companyName: BartlomiejGordon
   productName: EngineeringThesis
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -161,7 +161,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.BartomiejGordon.EngineeringThesis
+    Android: com.BartlomiejGordon.EngineeringThesis
+    Standalone: com.BartlomiejGordon.EngineeringThesis
   buildNumber:
     Standalone: 0
     VisionOS: 0
