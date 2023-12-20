@@ -12,16 +12,16 @@ public class SetOptionFromUI : MonoBehaviour
 
     private void Start()
     {
-        UpdateSettingsValue();
         volumeSlider.onValueChanged.AddListener(SetGlobalVolume);
         turnDropdown.onValueChanged.AddListener(SetTurnPlayerPref);
         vignetteToggle.onValueChanged.AddListener(SetVignetteUsage);
+        UpdateSettingsValue();
     }
 
     private void SetVignetteUsage(bool arg)
     {
         FindObjectOfType<SetPlayerPreferences>()?.SetVignetteUsage(arg);
-        GlobalSettingManager.Instance.SetVignetteUsage(arg);
+        GlobalSettingManager.Instance?.SetVignetteUsage(arg);
     }
 
     private void UpdateSettingsValue()
@@ -46,8 +46,8 @@ public class SetOptionFromUI : MonoBehaviour
     public void SetGlobalVolume(float value)
     {
         float normalizedValue = value / 100f;
-        AudioManager.Instance.SetVolume(normalizedValue);
-        GlobalSettingManager.Instance.SetVolume(normalizedValue);
+        AudioManager.Instance?.SetVolume(normalizedValue);
+        GlobalSettingManager.Instance?.SetVolume(normalizedValue);
     }
 
     public void SetTurnPlayerPref(int value)
@@ -66,6 +66,6 @@ public class SetOptionFromUI : MonoBehaviour
                 break;
         }
         FindObjectOfType<SetPlayerPreferences>()?.SetTurnType(type);
-        GlobalSettingManager.Instance.SetTurnType(type);
+        GlobalSettingManager.Instance?.SetTurnType(type);
     }
 }
