@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Represents a Pistol with shooting capabilities.
+/// </summary>
 public class Pistol : MonoBehaviour
 {
     [SerializeField] private Sound gunShotSound;
@@ -13,9 +16,13 @@ public class Pistol : MonoBehaviour
     [SerializeField] private InputActionReference shootInputRight;
     [SerializeField] private float shootForce;
     [SerializeField] private float shootCooldown = 0.25f; // Adjust the cooldown time as needed
+
     private float nextShootTime = 0f;
     private bool canShoot = true;
 
+    /// <summary>
+    /// Subscribes to the correct shoot input action based on the equipped Katana.
+    /// </summary>
     private void OnEnable()
     {
         if (Systems.Instance.KatanaRight)
@@ -28,12 +35,18 @@ public class Pistol : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Unsubscribes from shoot input actions.
+    /// </summary>
     private void OnDisable()
     {
         shootInputLeft.action.performed -= Shoot;
         shootInputRight.action.performed -= Shoot;
     }
 
+    /// <summary>
+    /// Updates the shooting cooldown.
+    /// </summary>
     private void Update()
     {
         if (!canShoot && Time.time >= nextShootTime)
@@ -42,6 +55,10 @@ public class Pistol : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Initiates the shooting sequence upon receiving the shoot input action.
+    /// </summary>
+    /// <param name="context">The callback context of the shoot input.</param>
     private void Shoot(InputAction.CallbackContext context)
     {
         if (!canShoot)

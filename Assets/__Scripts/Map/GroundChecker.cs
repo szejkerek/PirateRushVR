@@ -1,10 +1,17 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Checks for collisions with the ground and handles associated actions.
+/// </summary>
 public class GroundChecker : MonoBehaviour
 {
     [SerializeField] Sound plumSound;
 
+    /// <summary>
+    /// Triggers actions upon collision with other objects.
+    /// </summary>
+    /// <param name="other">The collider that this object collided with.</param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Projectile projectile))
@@ -18,7 +25,7 @@ public class GroundChecker : MonoBehaviour
 
                 if (Systems.Instance.difficultyLevel.DecrementMultiplierOnMiss)
                 {
-                    if(!projectile.PointsChanged)
+                    if (!projectile.PointsChanged)
                         ScoreManager.Instance.DecrementMultiplier();
                 }
 
@@ -26,7 +33,7 @@ public class GroundChecker : MonoBehaviour
             }
         }
 
-        if(other.TryGetComponent(out Bomb bomb))
+        if (other.TryGetComponent(out Bomb bomb))
         {
             bomb.PutDownFire();
         }

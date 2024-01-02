@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the movement and behavior of a shark along defined waypoints.
+/// </summary>
 public class SharkController : MonoBehaviour
 {
     [SerializeField] Transform shark;
@@ -12,12 +15,18 @@ public class SharkController : MonoBehaviour
 
     private int currentWaypoint = 0;
 
+    /// <summary>
+    /// Updates the shark's movement and behavior.
+    /// </summary>
     void Update()
     {
         MoveTowardsWaypoint();
         Wiggle();
     }
 
+    /// <summary>
+    /// Moves the shark towards the defined waypoints.
+    /// </summary>
     void MoveTowardsWaypoint()
     {
         Vector3 targetDirection = waypoints[currentWaypoint].position - shark.position;
@@ -36,6 +45,9 @@ public class SharkController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Applies a wiggling motion to the shark.
+    /// </summary>
     void Wiggle()
     {
         float wiggleAmount = Mathf.PerlinNoise(Time.time, 0) * wiggleFactor; // Use Perlin noise for smooth oscillation

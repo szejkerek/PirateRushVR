@@ -1,14 +1,18 @@
-// Copyright (c) Bartłomiej Gordon 2023. All rights reserved.
-using DG.Tweening;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
+/// <summary>
+/// Manages the Cannons in the game.
+/// </summary>
 public class CannonsManager : Singleton<CannonsManager>
 {
     [SerializeField] AssetLabelReference combosLabel;
 
+    /// <summary>
+    /// List of Combo Databases.
+    /// </summary>
     public List<ComboDatabase> ComboDatabases => comboDatabases;
     List<ComboDatabase> comboDatabases;
 
@@ -16,10 +20,13 @@ public class CannonsManager : Singleton<CannonsManager>
     bool isPaused = false;
     TickEngine tickEngine;
 
+    /// <summary>
+    /// Initializes the tick engine and spawns cannons.
+    /// </summary>
     void Start()
-    {        
-        tickEngine = new TickEngine(Systems.Instance.TickRate);      
-       
+    {
+        tickEngine = new TickEngine(Systems.Instance.TickRate);
+
         comboDatabases = DataLoader<ComboDatabase>.Load(combosLabel);
 
         int towerCount = Systems.Instance.difficultyLevel.TowerCount;
@@ -30,6 +37,9 @@ public class CannonsManager : Singleton<CannonsManager>
         });
     }
 
+    /// <summary>
+    /// Updates the tick engine.
+    /// </summary>
     void Update()
     {
         if (isPaused)
@@ -38,16 +48,25 @@ public class CannonsManager : Singleton<CannonsManager>
         tickEngine.UpdateTicks(Time.deltaTime);
     }
 
+    /// <summary>
+    /// Pauses the Cannons.
+    /// </summary>
     public void Pause()
     {
         isPaused = true;
     }
 
+    /// <summary>
+    /// Unpauses the Cannons.
+    /// </summary>
     public void UnPause()
     {
         isPaused = false;
     }
 
+    /// <summary>
+    /// Clears all projectiles from the scene.
+    /// </summary>
     public void ClearAllProjectiles()
     {
         Projectile[] allProjectiles = FindObjectsOfType<Projectile>();
@@ -57,11 +76,12 @@ public class CannonsManager : Singleton<CannonsManager>
             {
                 projectile.gameObject.SetActive(false);
             }
-
         }
     }
 
-
+    /// <summary>
+    /// Spawns cannons based on the count.
+    /// </summary>
     void SpawnCannons(int count)
     {
         cannonsOnScene = GetComponentsInChildren<ComboController>().ToList();
@@ -79,5 +99,4 @@ public class CannonsManager : Singleton<CannonsManager>
             cannonsOnScene.Remove(cannon);
         });
     }
-
 }

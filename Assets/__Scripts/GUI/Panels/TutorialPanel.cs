@@ -25,19 +25,24 @@ public class TutorialPanel : MonoBehaviour
         previousTutorialPanel.onClick.AddListener(ShowPreviousTutorialPanel);
     }
 
-    private void OnEnable()
-    {
-        if (tutorialPanels.Count <= 0)
-            return;
-        ShowTutorialPanel(0);
-    }
-
+    /// <summary>
+    /// Hides the tutorial panel and shows the back panel.
+    /// </summary>
     private void HidePanel()
     {
         backPanel.SetActive(true);
         gameObject.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        if (tutorialPanels.Count > 0)
+            ShowTutorialPanel(0);
+    }
+
+    /// <summary>
+    /// Shows the tutorial panel with the specified index.
+    /// </summary>
     private void ShowTutorialPanel(int index)
     {
         if (index >= 0 && index < tutorialPanels.Count)
@@ -49,6 +54,9 @@ public class TutorialPanel : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Shows the next tutorial panel in the sequence.
+    /// </summary>
     public void ShowNextTutorialPanel()
     {
         currentTutorialIndex++;
@@ -59,6 +67,9 @@ public class TutorialPanel : MonoBehaviour
         ShowTutorialPanel(currentTutorialIndex);
     }
 
+    /// <summary>
+    /// Shows the previous tutorial panel in the sequence.
+    /// </summary>
     public void ShowPreviousTutorialPanel()
     {
         currentTutorialIndex--;

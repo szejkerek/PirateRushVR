@@ -3,6 +3,9 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Manages the game's scoring system and leaderboard.
+/// </summary>
 public class ScoreManager : Singleton<ScoreManager>
 {
     [SerializeField] TMP_Text nicknameText;
@@ -18,6 +21,10 @@ public class ScoreManager : Singleton<ScoreManager>
     int multiplierCount = 0;
     HighscoreEntry entry;
     float highscore;
+
+    /// <summary>
+    /// Overrides the base Awake method to set up initial configurations for score and leaderboard.
+    /// </summary>
     protected override void Awake()
     {
         base.Awake();
@@ -39,6 +46,9 @@ public class ScoreManager : Singleton<ScoreManager>
         nicknameText.text = GlobalSettingManager.Instance.GetNickname();
     }
 
+    /// <summary>
+    /// Creates mock data for the leaderboard for testing purposes.
+    /// </summary>
     private void CreateMockLeaderboardData()
     {
         Random.State originalSeed = Random.state; 
@@ -64,30 +74,36 @@ public class ScoreManager : Singleton<ScoreManager>
         Random.state = originalSeed;
     }
 
-
-
+    /// <summary>
+    /// Sets the multiplier based on the game's difficulty level.
+    /// </summary>
     private void Start()
     {
         multiplier = Systems.Instance.difficultyLevel.MultiplierIncrement;
     }
 
 
+    /// <summary>
+    /// Adds points to the player's score, updates the leaderboard, and displays the score.
+    /// </summary>
+    /// <param name="points">The points to be added.</param>
     public void AddPoints(float points)
     {
-        if(entry.Score + points >= 0)
+        if (entry.Score + points >= 0)
         {
             entry.Score += points;
-        }     
+        }
 
         leaderboard.UpdateScore(entry);
         DisplayScore();
     }
 
-
-
+    /// <summary>
+    /// Displays the current score and manages high score notifications.
+    /// </summary>
     void DisplayScore()
     {
-        if(highscore != 0 && entry.Score > highscore)
+        if (highscore != 0 && entry.Score > highscore)
         {
             highscoreText.gameObject.SetActive(true);
         }
@@ -99,6 +115,13 @@ public class ScoreManager : Singleton<ScoreManager>
         scoreDisplay.text = $"Score: {entry.Score} (X{multiplierCount + 1})";
     }
 
+    /// <summary>
+    /// Calculates the points based on various conditions such as being negative or critical.
+    /// </summary>
+    /// <param name="basePoints">The base points to calculate from.</param>
+    /// <param name="isNegative">Flag indicating if the points are negative.</param>
+    /// <param name="isCritical">Flag indicating if the points are critical.</param>
+    /// <returns>The calculated points based on the conditions.</returns>
     public float CalculatePoints(float basePoints, bool isNegative = false, bool isCritical = false)
     {
         basePoints = Mathf.Abs(basePoints);
@@ -118,25 +141,34 @@ public class ScoreManager : Singleton<ScoreManager>
         return regularPoints;
     }
 
-
+    /// <summary>
+    /// Resets the score multiplier to zero and updates the displayed score.
+    /// </summary>
     public void ResetMultiplier()
     {
         multiplierCount = 0;
         DisplayScore();
     }
 
+    /// <summary>
+    /// Decrements the score multiplier and updates the displayed score.
+    /// </summary>
     public void DecrementMultiplier()
     {
         multiplierCount--;
-        if(multiplierCount <= 0)
+        if (multiplierCount <= 0)
         {
             multiplierCount = 0;
         }
         DisplayScore();
     }
 
+    /// <summary>
+    /// Increments the score multiplier.
+    /// </summary>
     public void IncrementMultiplier()
     {
         multiplierCount++;
     }
+
 }

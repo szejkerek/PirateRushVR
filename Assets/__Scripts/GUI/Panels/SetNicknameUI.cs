@@ -17,11 +17,17 @@ public class SetNicknameUI : MonoBehaviour
         selectBtn.onClick.AddListener(SetNicknameFromUI);
     }
 
+    /// <summary>
+    /// Generates a guest nickname and sets it in the input field.
+    /// </summary>
     public void GenerateGuestNickButton()
-    {    
+    {
         nicknameInput.text = GenerateGuestNickname();
     }
 
+    /// <summary>
+    /// Generates a random guest nickname.
+    /// </summary>
     public static string GenerateGuestNickname()
     {
         string uuid = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 5);
@@ -32,13 +38,19 @@ public class SetNicknameUI : MonoBehaviour
     {
         string nickname = GlobalSettingManager.Instance.GetNickname();
 
-        if(String.IsNullOrEmpty(nickname))
+        if (String.IsNullOrEmpty(nickname))
         {
             nicknameInput.text = GenerateGuestNickname();
         }
-        nicknameInput.text = nickname;
+        else
+        {
+            nicknameInput.text = nickname;
+        }
     }
 
+    /// <summary>
+    /// Sets the nickname based on the UI input field.
+    /// </summary>
     public void SetNicknameFromUI()
     {
         if (nicknameInput.text == "")
@@ -47,13 +59,12 @@ public class SetNicknameUI : MonoBehaviour
             return;
         }
 
-        if(nicknameInput.text.Length > nicknameMaxLength)
+        if (nicknameInput.text.Length > nicknameMaxLength)
         {
             nicknameWarning.ShowWarning("Nickname is too long!");
             return;
         }
 
         GlobalSettingManager.Instance.SetNickname(nicknameInput.text);
-        
     }
 }

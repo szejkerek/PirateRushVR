@@ -5,11 +5,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages the game start menu functionality.
+/// </summary>
 public class GameStartMenu : MonoBehaviour
 {
     [SerializeField] Sound gameplayMusic;
     [SerializeField] Sound menuMusic;
 
+    // UI Pages
     [Header("UI Pages")]
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject selectDifficulty;
@@ -19,6 +23,7 @@ public class GameStartMenu : MonoBehaviour
     [SerializeField] private GameObject tutorial;
     [SerializeField] private GameObject about;
 
+    // Main Menu Buttons
     [Header("Main Menu Buttons")]
     [SerializeField] private Button startButton;
     [SerializeField] private Button optionButton;
@@ -26,14 +31,15 @@ public class GameStartMenu : MonoBehaviour
     [SerializeField] private Button tutorialButton;
     [SerializeField] private Button quitButton;
 
+    // Select weapon Buttons
     [Header("Select weapon Buttons")]
     [SerializeField] private Button rightButton;
-    [SerializeField] private Button leftButton;    
-    
+    [SerializeField] private Button leftButton;
+
+    // Select nickname
     [Header("Select nickname")]
     [SerializeField] private Button selectNicknameBtn;
     [SerializeField] private TMP_InputField nicknameInputField;
-    
 
     [Space]
     [SerializeField] private List<Button> returnButtons;
@@ -43,6 +49,7 @@ public class GameStartMenu : MonoBehaviour
         EnablePlayerUIRays();
         EnableView(mainMenu);
 
+        // Adding listeners to buttons
         startButton.onClick.AddListener(() => EnableView(selectNickname));
         selectNicknameBtn.onClick.AddListener(() => EnableView(selectDifficulty));
         aboutButton.onClick.AddListener(() => EnableView(about));
@@ -69,27 +76,39 @@ public class GameStartMenu : MonoBehaviour
         setPlayer.SetHandItems(HandHeldType.UIRays);
     }
 
+    /// <summary>
+    /// Starts the game based on the selected hand.
+    /// </summary>
     public void StartGame(bool isRightHand)
     {
         HideAll();
         AudioManager.Instance.PlayGlobal(gameplayMusic, SoundType.Music);
         Systems.Instance.KatanaRight = isRightHand;
         SceneLoader.Instance.LoadScene(SceneEnum.Gameplay);
-    }    
+    }
 
+    /// <summary>
+    /// Sets the game difficulty based on the selected DifficultySO.
+    /// </summary>
     public void SetDifficulty(DifficultySO difficultySO)
     {
         Systems.Instance.difficultyLevel = difficultySO;
         EnableView(selectWeapon);
     }
 
+    /// <summary>
+    /// Enables the specified view while hiding others.
+    /// </summary>
     public void EnableView(GameObject view)
     {
         HideAll();
         view.SetActive(true);
-    }    
+    }
 
-    public void QuitGame()
+    /// <summary>
+    /// Quits the game.
+    /// </summary>
+    private void QuitGame()
     {
         Application.Quit();
     }

@@ -2,13 +2,19 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 
+/// <summary>
+/// Enum defining different types of sounds.
+/// </summary>
 public enum SoundType
 {
     SFX,
     Music,
 }
 
-public class AudioManager : Singleton<AudioManager> 
+/// <summary>
+/// Manages the audio for the game.
+/// </summary>
+public class AudioManager : Singleton<AudioManager>
 {
     [SerializeField] AudioMixerGroup masterMixer;
     [SerializeField] AudioMixerGroup sfxMixer;
@@ -34,6 +40,9 @@ public class AudioManager : Singleton<AudioManager>
         SetVolume(volume);
     }
 
+    /// <summary>
+    /// Plays a sound on a target GameObject.
+    /// </summary>
     public void PlayOnTarget(GameObject target, Sound sound)
     {
         var sourceObj = target.AddComponent<AudioSource>();
@@ -41,16 +50,21 @@ public class AudioManager : Singleton<AudioManager>
         Destroy(sourceObj, sound.Clip.length + 0.4f);
     }
 
+    /// <summary>
+    /// Plays a sound at a specific position in the scene.
+    /// </summary>
     public void PlayAtPosition(Vector3 position, Sound sound)
     {
         GameObject gameObject = new GameObject(sound.name);
         var soundObj = Instantiate(gameObject, position, Quaternion.identity);
         var sourceObj = soundObj.AddComponent<AudioSource>();
         Play(sourceObj, sound, SoundType.SFX);
-
         Destroy(soundObj, sound.Clip.length + 0.4f);
     }
 
+    /// <summary>
+    /// Plays a sound using the provided AudioSource and Sound parameters.
+    /// </summary>
     public void Play(AudioSource source, Sound sound, SoundType type)
     {
         if (sound == null)
@@ -82,9 +96,12 @@ public class AudioManager : Singleton<AudioManager>
         source.Play();
     }
 
+    /// <summary>
+    /// Plays a sound globally.
+    /// </summary>
     public void PlayGlobal(Sound sound, SoundType type = SoundType.SFX)
-    {       
-        if(type == SoundType.Music)
+    {
+        if (type == SoundType.Music)
         {
             musicSource.Stop();
             Play(musicSource, sound, SoundType.Music);
@@ -96,6 +113,9 @@ public class AudioManager : Singleton<AudioManager>
         }
     }
 
+    /// <summary>
+    /// Fades in the music over a specified duration.
+    /// </summary>
     private IEnumerator FadeInMusic(Sound sound, float duration)
     {
         float startVolume = 0.0f;
@@ -113,6 +133,9 @@ public class AudioManager : Singleton<AudioManager>
         musicSource.volume = sound.Volume;
     }
 
+    /// <summary>
+    /// Sets the audio mixer for the given AudioSource based on the SoundType.
+    /// </summary>
     private void SetMixer(AudioSource source, SoundType type)
     {
         switch (type)
@@ -126,6 +149,9 @@ public class AudioManager : Singleton<AudioManager>
         }
     }
 
+    /// <summary>
+    /// Sets the volume level for the audio mixer.
+    /// </summary>
     public void SetVolume(float value)
     {
         value = Mathf.Clamp01(value) * 30 - 20; // -20db -- 20db range

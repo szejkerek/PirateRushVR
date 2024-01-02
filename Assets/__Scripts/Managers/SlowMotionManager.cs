@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Manages the slow-motion effects in the game.
+/// </summary>
 public class SlowMotionManager : Singleton<SlowMotionManager>
 {
     [SerializeField] float freezingSpeed;
@@ -10,6 +13,10 @@ public class SlowMotionManager : Singleton<SlowMotionManager>
 
     Coroutine freezeCoroutine;
 
+    /// <summary>
+    /// Freezes time for a specified duration.
+    /// </summary>
+    /// <param name="duration">Duration for which time will be frozen.</param>
     public void Freeze(float duration)
     {
         if (freezeCoroutine != null)
@@ -20,7 +27,10 @@ public class SlowMotionManager : Singleton<SlowMotionManager>
         freezeCoroutine = StartCoroutine(ChangeTimeScaleOverDuration(duration));
     }
 
-
+    /// <summary>
+    /// Changes the time scale gradually over a specified duration to simulate freezing and unfreezing time.
+    /// </summary>
+    /// <param name="duration">Duration over which the time scale will change.</param>
     IEnumerator ChangeTimeScaleOverDuration(float duration)
     {
         float currentTime = 0f;
@@ -42,7 +52,7 @@ public class SlowMotionManager : Singleton<SlowMotionManager>
         }
 
         currentTime = 0f;
-        
+
         initialTimeScale = targetFreezeValue;
         while (currentTime < unfreezingSpeed)
         {

@@ -3,13 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Partial class representing the Projectile behavior.
+/// </summary>
 public partial class Projectile : MonoBehaviour
 {
+    /// <summary>
+    /// Retrieves the data associated with the projectile.
+    /// </summary>
     public ProjectileSO Data => data;
     ProjectileSO data;
+
+    /// <summary>
+    /// Indicates if the points have been changed.
+    /// </summary>
     public bool PointsChanged => pointsChanged;
     bool pointsChanged = false;
-    
+
     Rigidbody rb;
     ConstantForce cForce;
 
@@ -35,21 +45,31 @@ public partial class Projectile : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Initializes the projectile with provided data, velocity, and gravity.
+    /// </summary>
+    /// <param name="data">Projectile data.</param>
+    /// <param name="velocity">Initial velocity of the projectile.</param>
+    /// <param name="gravity">Gravity to apply to the projectile.</param>
     public void Init(ProjectileSO data, Vector3 velocity, float gravity)
     {
         this.data = data;
         rb.velocity = velocity;
         cForce.force = new Vector3(0, gravity - Physics.gravity.y, 0);
-        float randomSpinSpeed = Random.Range(10f, 50f); 
+        float randomSpinSpeed = Random.Range(10f, 50f);
         Vector3 randomSpinAxis = Random.onUnitSphere;
         rb.angularVelocity = randomSpinAxis * randomSpinSpeed;
 
-        foreach(Transform t in transform)
+        foreach (Transform t in transform)
         {
             t.gameObject.layer = LayerMask.NameToLayer("Projectile");
-        }   
+        }
     }
 
+    /// <summary>
+    /// Retrieves the cross-section material of the projectile.
+    /// </summary>
+    /// <returns>The cross-section material of the projectile.</returns>
     public Material GetCrossSectionMaterial()
     {
         if (data.OptionalData.CrossSectionMaterial == null)
@@ -63,13 +83,17 @@ public partial class Projectile : MonoBehaviour
         return data.OptionalData.CrossSectionMaterial;
     }
 
+    /// <summary>
+    /// Applies hit effects to the projectile.
+    /// </summary>
+    /// <param name="critical">Indicates if the effect is critical.</param>
     public void ApplyEffects(bool critical)
     {
         data.MutualEffects.ForEach(e => e.ApplyHitEffect(this));
 
-        GetComponent<Bomb>()?.Explode(); //if bomb explode here
+        GetComponent<Bomb>()?.Explode(); // If bomb, explode here
 
-        if( critical )
+        if (critical)
         {
             ApplyCritical();
         }
@@ -80,6 +104,11 @@ public partial class Projectile : MonoBehaviour
         AudioManager.Instance.PlayGlobal(AudioManager.Instance.SFXLib.CriticalStrike);
     }
 
+    /// <summary>
+    /// Applies points to the score based on certain conditions.
+    /// </summary>
+    /// <param name="negative">Indicates if the points are negative.</param>
+    /// <param name="critical">Indicates if the points are critical.</param>
     public void ApplyPoints(bool negative = false, bool critical = false)
     {
         if (pointsChanged)
@@ -93,7 +122,7 @@ public partial class Projectile : MonoBehaviour
         if (negative)
         {
             points = scoreManager.CalculatePoints(data.Points, isNegative: true);
-            scoreManager.ResetMultiplier();          
+            scoreManager.ResetMultiplier();
         }
         else
         {

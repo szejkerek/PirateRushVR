@@ -6,25 +6,75 @@ using Valve.VR.InteractionSystem;
 
 public class Katana : Weapon
 {
+    /// <summary>
+    /// Sound for successful slice.
+    /// </summary>
     [SerializeField] Sound sliceSound;
+
+    /// <summary>
+    /// Sound for hitting metal.
+    /// </summary>
     [SerializeField] Sound metalHitSound;
+
+    /// <summary>
+    /// Cooldown duration for metal hit sound.
+    /// </summary>
     [SerializeField] float metalHitCooldown;
+
+    /// <summary>
+    /// Time of the last sound effect.
+    /// </summary>
     float lastSound = 0;
+
+    /// <summary>
+    /// Effect for sparking.
+    /// </summary>
     [SerializeField] GameObject sparksEffect;
+
+    /// <summary>
+    /// Effect for splashing.
+    /// </summary>
     [SerializeField] GameObject splashEffect;
+
     [Space]
+
+    /// <summary>
+    /// Starting point for slicing.
+    /// </summary>
     [SerializeField] Transform startSlicePoint;
+
+    /// <summary>
+    /// Ending point for slicing.
+    /// </summary>
     [SerializeField] Transform endSlicePoint;
+
+    /// <summary>
+    /// Velocity estimator for the endpoint.
+    /// </summary>
     [SerializeField] VelocityEstimator endPointVelocity;
+
     [Space]
+
+    /// <summary>
+    /// Force applied during cutting.
+    /// </summary>
     [SerializeField] float cutForce = 2000f;
 
     float perfectSliceTolerance;
+
+    /// <summary>
+    /// Initializes perfect slice tolerance based on the difficulty level.
+    /// </summary>
     private void Start()
     {
         perfectSliceTolerance = Systems.Instance.difficultyLevel.PerfectSliceTolerance;
     }
 
+    /// <summary>
+    /// Defines behavior upon shooting.
+    /// </summary>
+    /// <param name="projectile">The projectile fired.</param>
+    /// <param name="point">The point of impact.</param>
     protected override void ShootableBehavior(Projectile projectile, Vector3 point)
     {
 
@@ -41,6 +91,13 @@ public class Katana : Weapon
         projectile.ApplyPoints(negative: true);
     }
 
+    /// <summary>
+    /// Determines if a hit occurred.
+    /// </summary>
+    /// <param name="projectile">The projectile hit.</param>
+    /// <param name="point">The point of impact.</param>
+    /// <param name="layerMask">Layer mask for detection.</param>
+    /// <returns>True if hit; otherwise, false.</returns>
     protected override bool DidHit(out Projectile projectile, out Vector3 point, int layerMask)
     {
        projectile = null;
@@ -54,6 +111,11 @@ public class Katana : Weapon
        return false;
     }
 
+    /// <summary>
+    /// Defines behavior upon slicing.
+    /// </summary>
+    /// <param name="projectile">The projectile being sliced.</param>
+    /// <param name="point">The point of slicing.</param>
     protected override void SliceableBehavior(Projectile projectile, Vector3 point) 
     {
         if (projectile == null)
@@ -89,6 +151,10 @@ public class Katana : Weapon
         Destroy(projectile.gameObject);
     }
 
+    /// <summary>
+    /// Sets up the hull after slicing.
+    /// </summary>
+    /// <param name="hull">The sliced hull object.</param>
     private void SetUpHull(GameObject hull)
     {
         Rigidbody rb = hull.AddComponent<Rigidbody>();
@@ -100,6 +166,12 @@ public class Katana : Weapon
         StartCoroutine(DisappearAfterDelay(hull, 2, 0.25f));
     }
 
+    /// <summary>
+    /// Coroutine to make an object disappear after a delay.
+    /// </summary>
+    /// <param name="obj">The object to disappear.</param>
+    /// <param name="delay">The delay before disappearance.</param>
+    /// <param name="animationTime">The time taken for the disappearance animation.</param>
     private IEnumerator DisappearAfterDelay(GameObject obj, float delay, float animationTime)
     {
         yield return new WaitForSeconds(delay);
@@ -107,6 +179,11 @@ public class Katana : Weapon
         Destroy(obj, animationTime + 0.2f);
     }
 
+    /// <summary>
+    /// Calculates the volume of a mesh collider.
+    /// </summary>
+    /// <param name="collider">The mesh collider.</param>
+    /// <returns>The calculated volume.</returns>
     private float CalculateVolume(MeshCollider collider)
     {
         Mesh mesh = collider.sharedMesh;
@@ -130,11 +207,24 @@ public class Katana : Weapon
         return 0f;
     }
 
+    /// <summary>
+    /// Calculates the signed volume of a triangle.
+    /// </summary>
+    /// <param name="p1">Point 1 of the triangle.</param>
+    /// <param name="p2">Point 2 of the triangle.</param>
+    /// <param name="p3">Point 3 of the triangle.</param>
+    /// <returns>The signed volume of the triangle.</returns>
     private float SignedVolumeOfTriangle(Vector3 p1, Vector3 p2, Vector3 p3)
     {
         return Vector3.Dot(Vector3.Cross(p1, p2), p3) / 6f;
     }
 
+    /// <summary>
+    /// Checks if the slice is perfect.
+    /// </summary>
+    /// <param name="upperHull">The upper sliced hull object.</param>
+    /// <param name="lowerHull">The lower sliced hull object.</param>
+    /// <returns>True if the slice is perfect; otherwise, false.</returns>
     private bool IsSlicePerfect(GameObject upperHull, GameObject lowerHull)
     {
         float upperVolume = CalculateVolume(upperHull.GetComponent<MeshCollider>());
@@ -147,6 +237,11 @@ public class Katana : Weapon
         return IsWithinPerfectSlice(upperRatio) && IsWithinPerfectSlice(lowerRatio);
     }
 
+    /// <summary>
+    /// Checks if a value is within the perfect slice range.
+    /// </summary>
+    /// <param name="value">The value to check.</param>
+    /// <returns>True if the value is within the perfect slice range; otherwise, false.</returns>
     bool IsWithinPerfectSlice(float value)
     {
         float lowerBound = 0.5f - perfectSliceTolerance;

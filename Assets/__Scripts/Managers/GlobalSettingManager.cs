@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Enum defining different types of turns.
+/// </summary>
 [Serializable]
 public enum TurnType
 {
@@ -10,6 +13,9 @@ public enum TurnType
     Continuous
 }
 
+/// <summary>
+/// Manages global settings and configurations for the game.
+/// </summary>
 public class GlobalSettingManager : Singleton<GlobalSettingManager>
 {
     GlobalSettings currentSettings = new GlobalSettings();
@@ -20,12 +26,18 @@ public class GlobalSettingManager : Singleton<GlobalSettingManager>
         currentSettings.Load();
     }
 
+    /// <summary>
+    /// Sets the nickname for the player.
+    /// </summary>
     public void SetNickname(string newNickname)
     {
         currentSettings.LastNickname = newNickname;
         currentSettings.Save();
     }
 
+    /// <summary>
+    /// Sets the type of turn (Snap or Continuous).
+    /// </summary>
     public void SetTurnType(TurnType turnType)
     {
         switch (turnType)
@@ -40,23 +52,36 @@ public class GlobalSettingManager : Singleton<GlobalSettingManager>
         currentSettings.Save();
     }
 
+    /// <summary>
+    /// Sets the usage of vignette effect.
+    /// </summary>
     public void SetVignetteUsage(bool isUsing)
     {
         currentSettings.UsingVignette = isUsing;
         currentSettings.Save();
     }
 
+    /// <summary>
+    /// Sets the volume level.
+    /// </summary>
     public void SetVolume(float volume)
     {
         currentSettings.Volume = volume;
         currentSettings.Save();
     }
 
+    /// <summary>
+    /// Retrieves the stored player nickname.
+    /// </summary>
     public string GetNickname()
     {
         currentSettings.Load();
         return currentSettings.LastNickname;
     }
+
+    /// <summary>
+    /// Retrieves the stored turn type.
+    /// </summary>
     public TurnType GetTurnType()
     {
         currentSettings.Load();
@@ -68,15 +93,21 @@ public class GlobalSettingManager : Singleton<GlobalSettingManager>
         }
     }
 
+    /// <summary>
+    /// Retrieves the status of vignette usage.
+    /// </summary>
     public bool GetVignetteUsage()
     {
         currentSettings.Load();
         return currentSettings.UsingVignette;
     }
+
+    /// <summary>
+    /// Retrieves the stored volume level.
+    /// </summary>
     public float GetVolume()
     {
         currentSettings.Load();
         return currentSettings.Volume;
     }
-
 }

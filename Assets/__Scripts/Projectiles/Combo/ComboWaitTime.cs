@@ -1,4 +1,7 @@
-﻿[System.Serializable]
+﻿/// <summary>
+/// Enum representing different combo wait times.
+/// </summary>
+[System.Serializable]
 public enum ComboWaitTime
 {
     None,

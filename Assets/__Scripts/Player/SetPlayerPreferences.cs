@@ -2,6 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/// <summary>
+/// Manages player preferences for VR interactions, hand items, vignette usage, and turn type.
+/// </summary>
 public class SetPlayerPreferences : MonoBehaviour
 {
     [SerializeField] AnimateHandsOnInput leftAnim;
@@ -23,11 +26,19 @@ public class SetPlayerPreferences : MonoBehaviour
         SetVignetteUsage(GlobalSettingManager.Instance.GetVignetteUsage());
     }
 
+    /// <summary>
+    /// Sets vignette usage based on the given argument.
+    /// </summary>
+    /// <param name="arg">Boolean indicating whether to activate vignette.</param>
     public void SetVignetteUsage(bool arg)
     {
         vignette.SetActive(arg);
     }
 
+    /// <summary>
+    /// Sets hand items based on the provided hand-held type.
+    /// </summary>
+    /// <param name="type">The type of hand-held items to set.</param>
     public void SetHandItems(HandHeldType type)
     {
         left.TurnOffAll();
@@ -63,18 +74,31 @@ public class SetPlayerPreferences : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the visibility of hand models.
+    /// </summary>
+    /// <param name="active">Boolean indicating the visibility status of hand models.</param>
+
     private void SetModelsActive(bool active)
     {
         left.Model.SetActive(active);
         right.Model.SetActive(active);
     }
 
+    /// <summary>
+    /// Sets the visibility of UI rays.
+    /// </summary>
+    /// <param name="active">Boolean indicating the visibility status of UI rays.</param>
     private void SetUIRaysActive(bool active)
     {
         left.UIRay.SetActive(active);
         right.UIRay.SetActive(active);
     }
 
+    /// <summary>
+    /// Sets the turn type based on the provided type.
+    /// </summary>
+    /// <param name="type">The type of turn to be set.</param>
     public void SetTurnType(TurnType type)
     {
         switch (type)
@@ -88,6 +112,9 @@ public class SetPlayerPreferences : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enables continuous turn action and disables snap turn action.
+    /// </summary>
     private void EnableContinuousTurn()
     {
         snapTurn.leftHandSnapTurnAction.action.Disable();
@@ -96,6 +123,9 @@ public class SetPlayerPreferences : MonoBehaviour
         continuousTurn.rightHandTurnAction.action.Enable();
     }
 
+    /// <summary>
+    /// Enables snap turn action and disables continuous turn action.
+    /// </summary>
     private void EnableSnapTurn()
     {
         snapTurn.leftHandSnapTurnAction.action.Enable();
@@ -104,6 +134,10 @@ public class SetPlayerPreferences : MonoBehaviour
         continuousTurn.rightHandTurnAction.action.Disable();
     }
 
+    /// <summary>
+    /// Sets the state of animations for hands.
+    /// </summary>
+    /// <param name="active">Boolean indicating the state of hand animations.</param>
     void SetAnimationsActive(bool active)
     {
         leftAnim.SetAnimationActive(active);

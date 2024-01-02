@@ -1,7 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-public class HandItems: MonoBehaviour
+/// <summary>
+/// Manages different hand-held items and associated models.
+/// </summary>
+public class HandItems : MonoBehaviour
 {
     public GameObject Model;
     public GameObject Katana;
@@ -10,6 +13,9 @@ public class HandItems: MonoBehaviour
     public GameObject PistolHand;
     public GameObject UIRay;
 
+    /// <summary>
+    /// Turns off all hand-held item GameObjects associated with this script.
+    /// </summary>
     public void TurnOffAll()
     {
         Model?.SetActive(false);

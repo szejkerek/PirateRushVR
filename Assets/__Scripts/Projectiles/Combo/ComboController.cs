@@ -1,8 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the combo behavior in the game.
+/// </summary>
 public class ComboController : MonoBehaviour
 {
+    /// <summary>
+    /// Gets the tick rate of the combo controller.
+    /// </summary>
     public int TickRate => _tickRate;
     int _tickRate = 0;
 
@@ -12,6 +18,9 @@ public class ComboController : MonoBehaviour
     Queue<ICannonBehavior> queuedBehaviors = new Queue<ICannonBehavior>();
     DifficultySO currentDifficulty;
 
+    /// <summary>
+    /// Gets the cannon shooting component used for launching projectiles.
+    /// </summary>
     public CannonShooting Launcher => launcher;
     CannonShooting launcher;
 
@@ -24,12 +33,15 @@ public class ComboController : MonoBehaviour
         EnqueueRandomWaits(currentDifficulty.CountOf25msWaits);
     }
 
+    /// <summary>
+    /// Updates the combo controller on each tick.
+    /// </summary>
     public void UpdateOnTick()
     {
         if (isPaused())
             return;
 
-        if(queuedBehaviors.Count != 0)
+        if (queuedBehaviors.Count != 0)
         {
             queuedBehaviors.Dequeue().Execute();
         }
@@ -50,7 +62,7 @@ public class ComboController : MonoBehaviour
     private void AddGlobalCombo()
     {
         ComboDatabase comboDatabase = CannonsManager.Instance.ComboDatabases.SelectRandomElement();
-        foreach(var combo in comboDatabase.combos)
+        foreach (var combo in comboDatabase.combos)
         {
             queuedBehaviors.Enqueue(comboItemFactory.CreateSpawn(combo.Projectile));
             queuedBehaviors.Enqueue(comboItemFactory.CreateWait(combo.Wait));
@@ -96,6 +108,10 @@ public class ComboController : MonoBehaviour
         return waitTicks > 0;
     }
 
+    /// <summary>
+    /// Sets the wait time in ticks.
+    /// </summary>
+    /// <param name="waitTick">The number of ticks to wait.</param>
     public void Wait(int waitTick)
     {
         this.waitTicks = waitTick;
