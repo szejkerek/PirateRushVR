@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-public class Katana : Weapon
+public class Sabre : Weapon
 {
     /// <summary>
     /// Sound for successful slice.

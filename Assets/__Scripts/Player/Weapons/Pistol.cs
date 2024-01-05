@@ -21,7 +21,7 @@ public class Pistol : MonoBehaviour
     private bool canShoot = true;
 
     /// <summary>
-    /// Subscribes to the correct shoot input action based on the equipped Katana.
+    /// Subscribes to the correct shoot input action based on the equipped Sabre.
     /// </summary>
     private void OnEnable()
     {
