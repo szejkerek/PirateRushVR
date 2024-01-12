@@ -4,6 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// UI class responsible for handling the start game panel.
+/// </summary>
 public class StartGamePanel : MonoBehaviour
 {
     [SerializeField] Button endGameBtn;

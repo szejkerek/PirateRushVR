@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// Represents a Pistol with shooting capabilities.
+/// Represents a pistol with shooting capabilities.
 /// </summary>
 public class Pistol : MonoBehaviour
 {

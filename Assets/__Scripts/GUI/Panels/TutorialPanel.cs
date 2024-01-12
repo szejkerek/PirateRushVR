@@ -5,6 +5,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// UI class responsible for managing the tutorial panel.
+/// </summary>
 public class TutorialPanel : MonoBehaviour
 {
     [SerializeField] GameObject backPanel;

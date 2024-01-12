@@ -3,6 +3,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// UI class responsible for setting and managing player nicknames.
+/// </summary>
 public class SetNicknameUI : MonoBehaviour
 {
     [SerializeField] int nicknameMaxLength = 15;

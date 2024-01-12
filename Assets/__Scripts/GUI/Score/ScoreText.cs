@@ -6,6 +6,9 @@ using TMPro;
 using System.Collections;
 using System;
 
+/// <summary>
+/// Handles the behavior of the score text displayed in the game.
+/// </summary>
 public class ScoreText : MonoBehaviour
 {
     /// <summary>

@@ -1,5 +1,3 @@
-// Copyright (c) Bartłomiej Gordon 2023. All rights reserved.
-
 using System;
 using System.Collections.Generic;
 using UnityEngine;

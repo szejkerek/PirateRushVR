@@ -3,6 +3,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// UI class responsible for setting and managing game options.
+/// </summary>
 public class SetOptionFromUI : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;

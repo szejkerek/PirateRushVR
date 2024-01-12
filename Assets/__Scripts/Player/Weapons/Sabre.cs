@@ -4,6 +4,9 @@ using System.Collections;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
+/// <summary>
+/// Represents a sabre weapon with slicing capabilities.
+/// </summary>
 public class Sabre : Weapon
 {
     /// <summary>

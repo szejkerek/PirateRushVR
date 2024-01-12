@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Class responsible for handling cannon shooting mechanics.
+/// </summary>
 public class CannonShooting : MonoBehaviour
 {
     public CannonSettings Settings => settings;
