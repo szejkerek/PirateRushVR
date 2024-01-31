@@ -32,9 +32,15 @@
 
 ## Introduction
 
-## Table of Contents
+Wlecome to the Vr game project created as engineering project. In this game you became piate and your main goal is to destrooy fruits with your sabre and barrels with you pistol, be aware of bombs and dodge them! Game was created to be fully compatible with Oculus Quest 2
+
+## Table of Contents  
+- [Gameplay]()  
+
 
 ## Gameplay
+
+You have to youse your sabbre to slice thro all fruits, each actrion gives you point and gameplay with no mistakes gives you multiplier of poitns you have to also shoot the barrels and boxes with your flitlock pistol. If you use wrong tool agains a projectile the game will cout you negative amout of points. If you shoot down the bomb it explodes and reduces your helath. Game has a lot of toutrials inside so if someone do not know how to opeerate it can check it. Optios of the game give you ability to change volume and turn type, it implemetns also optioon to turn on comfort mode to reduse nusea of vr. When statring game you can add your own nickname to be showcased in leaderboard later.
 
 ![Gameplay1](https://github.com/szejkerek/PirateRushVR/assets/69083596/8c5175ea-ef9d-4b9e-bcde-6a9cd17dd5b3)
 
@@ -44,17 +50,18 @@
 
 ![Bomb](https://github.com/szejkerek/PirateRushVR/assets/69083596/21184acf-da0e-4785-8d7d-218ff0a0ed46)
 
-Tutorial
+![Leaderboard](https://github.com/szejkerek/PirateRushVR/assets/69083596/42ed9683-129b-4d45-944a-d1adb10b42fc)
 
 ![Tutorial](https://github.com/szejkerek/PirateRushVR/assets/69083596/cea52970-f84b-4edd-8bbe-89e54a332ccf)
-
-Options
 
 ![Options](https://github.com/szejkerek/PirateRushVR/assets/69083596/fb4c4fc4-2322-4910-9b2f-d1f6f1cb807d)
 
 ![Keyboard](https://github.com/szejkerek/PirateRushVR/assets/69083596/f2398f81-21c5-46f7-bd52-3fd8d48b569c)
 
 ## Installation
+
+Download ADB Drivers or use ```platform-tools``` folder from repository.
+
 
 ## License
 
