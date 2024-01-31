@@ -28,7 +28,8 @@ This is an open-source engineering project that's currently in progress. Contrib
 
 ## About
 
-[Still prototyping ;)]
+Tutorial
+![Tutorial](https://github.com/szejkerek/EngineeringThesis/assets/69083596/db930b22-967b-46d3-93cb-8b265315517c)
 
 ## License
 
