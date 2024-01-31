@@ -37,6 +37,10 @@ Tutorial
 Options
 ![Options](https://github.com/szejkerek/PirateRushVR/assets/69083596/fb4c4fc4-2322-4910-9b2f-d1f6f1cb807d)
 
+Bomb
+![bomb](https://github.com/szejkerek/PirateRushVR/assets/69083596/21184acf-da0e-4785-8d7d-218ff0a0ed46)
+
+
 
 
 ## License
