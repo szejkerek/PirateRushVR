@@ -32,15 +32,15 @@ Gameplay
 ![Gameplay1](https://github.com/szejkerek/PirateRushVR/assets/69083596/8c5175ea-ef9d-4b9e-bcde-6a9cd17dd5b3)
 ![Gameplay2](https://github.com/szejkerek/PirateRushVR/assets/69083596/8e96835d-8381-421b-aec9-d850dcc2a09e)
 ![Barrel](https://github.com/szejkerek/PirateRushVR/assets/69083596/19993b1b-a4e0-4bb9-aa1f-77b32b41b545)
+![Bomb](https://github.com/szejkerek/PirateRushVR/assets/69083596/21184acf-da0e-4785-8d7d-218ff0a0ed46)
 
 Tutorial
 ![Tutorial](https://github.com/szejkerek/PirateRushVR/assets/69083596/cea52970-f84b-4edd-8bbe-89e54a332ccf)
 
 Options
 ![Options](https://github.com/szejkerek/PirateRushVR/assets/69083596/fb4c4fc4-2322-4910-9b2f-d1f6f1cb807d)
+![Keyboard](https://github.com/szejkerek/PirateRushVR/assets/69083596/f2398f81-21c5-46f7-bd52-3fd8d48b569c)
 
-Bomb
-![bomb](https://github.com/szejkerek/PirateRushVR/assets/69083596/21184acf-da0e-4785-8d7d-218ff0a0ed46)
 
 
 
