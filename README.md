@@ -1,11 +1,14 @@
 <p align="center"><h1>Pirate Rush VR</h1></p>
 <p align="center">
+
   <a>
-    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/szejkerek/PirateRushVR/UnityCI.yml">
-  </a>
-  <a>
+    <a href="https://unity.com/">
     <img alt="Made With Unity" src="https://img.shields.io/badge/made%20with-Unity-57b9d3.svg?logo=Unity">
   </a>
+  <a>
+    <a href="https://github.com/szejkerek/PirateRushVR/actions">
+    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/szejkerek/PirateRushVR/UnityCI.yml">
+  </a> 
   <a>
   <img alt="License" src="https://img.shields.io/github/license/szejkerek/PirateRushVR?logo=github">
   </a>
