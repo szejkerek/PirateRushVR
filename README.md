@@ -16,7 +16,7 @@
     <img alt="Repo Size" src="https://img.shields.io/github/repo-size/szejkerek/PirateRushVR?logo=VirtualBox">
   </a>
   <a href="https://github.com/szejkerek/PirateRushVR/releases">
-    <img alt="Downloads" src="https://img.shields.io/github/downloads/szejkerek/PirateRushVR/total?color=brightgreen">
+    <img alt="GitHub Release" src="https://img.shields.io/github/v/release/szejkerek/PirateRushVR">
   </a>
   <a>
     <img alt="GitHub stars" src="https://img.shields.io/github/stars/szejkerek/PirateRushVR?branch=main&label=Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat">
