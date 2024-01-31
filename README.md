@@ -32,19 +32,22 @@
 
 ## Introduction
 
-Are you ready to become the ultimate VR pirate?
+# Are you ready to become the ultimate VR pirate?
 
 Welcome to the VR game project, an engineering project designed for Oculus Quest 2. In this immersive experience, you take on the role of a pirate with the primary objective of destroying fruits using your saber and barrels with your trusty flintlock pistol. Beware of bombs and skillfully dodge them to stay in the game!
 
 ## Table of Contents  
-- [Gameplay](##gameplay)  
-
+- [Gameplay](#gameplay)
+- [Features](#features)
+- [Installation](#installation)
+- [License](#license)
+- [Contact](#contact)
 
 ## Gameplay
 
 Engage in a thrilling adventure where your precision and speed are crucial. Utilize your saber to slice through fruits, earning points for each successful action and shoot down barrels and boxes with your flintlock pistol. Maintain a flawless gameplay to benefit from a multiplier, but be cautious—using the wrong tool against a projectile will result in a deduction of points. 
 
-# Features
+### Features
 - **Immersive VR Experience**: Dive into a captivating world with Oculus Quest 2 compatibility.
 - **Dual Weapon System**: Wield both a saber for slicing fruits and a flintlock pistol for shooting barrels and boxes.
 - **Scoring Mechanism**: Earn points for each successful action, with multipliers for flawless gameplay.
@@ -56,7 +59,7 @@ Beware of bombs! If you shoot a bomb, it explodes and reduces your health. The g
 
 Upon starting the game, add your chosen nickname to compete for a spot on the leaderboard. Showcase your gaming prowess and climb to the top by achieving the highest score. 
 
-Customize your experience with various options:
+### Customize your experience with various options:
 
 - **Volume Control**: Adjust the game's audio to your preference.
 - **Turn Type**: Choose between different turning mechanisms for a personalized VR experience.
