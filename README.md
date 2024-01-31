@@ -60,8 +60,11 @@ You have to youse your sabbre to slice thro all fruits, each actrion gives you p
 
 ## Installation
 
-Download ADB Drivers or use ```platform-tools``` folder from repository.
-
+- Download ADB Drivers or use ```platform-tools``` folder from repository.
+- Check the driver version using the command:
+```
+adb version
+```
 
 ## License
 
