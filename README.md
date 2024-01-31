@@ -32,15 +32,25 @@
 
 ## Introduction
 
-Wlecome to the Vr game project created as engineering project. In this game you became piate and your main goal is to destrooy fruits with your sabre and barrels with you pistol, be aware of bombs and dodge them! Game was created to be fully compatible with Oculus Quest 2
+Are you ready to become the ultimate VR pirate?
+
+Welcome to the VR game project, an engineering project designed for Oculus Quest 2. In this immersive experience, you take on the role of a pirate with the primary objective of destroying fruits using your saber and barrels with your trusty flintlock pistol. Beware of bombs and skillfully dodge them to stay in the game!
 
 ## Table of Contents  
-- [Gameplay]()  
+- [Gameplay](##gameplay)  
 
 
 ## Gameplay
 
-You have to youse your sabbre to slice thro all fruits, each actrion gives you point and gameplay with no mistakes gives you multiplier of poitns you have to also shoot the barrels and boxes with your flitlock pistol. If you use wrong tool agains a projectile the game will cout you negative amout of points. If you shoot down the bomb it explodes and reduces your helath. Game has a lot of toutrials inside so if someone do not know how to opeerate it can check it. Optios of the game give you ability to change volume and turn type, it implemetns also optioon to turn on comfort mode to reduse nusea of vr. When statring game you can add your own nickname to be showcased in leaderboard later.
+Engage in a thrilling adventure where your precision and speed are crucial. Utilize your saber to slice through fruits, earning points for each successful action. Maintain a flawless gameplay to benefit from a multiplier, but be cautious—using the wrong tool against a projectile will result in a deduction of points. Additionally, shoot down barrels and boxes with your flintlock pistol to rack up more points.
+
+# Features
+- **Immersive VR Experience**: Dive into a captivating world with Oculus Quest 2 compatibility.
+- **Dual Weapon System**: Wield both a saber for slicing fruits and a flintlock pistol for shooting barrels and boxes.
+- **Scoring Mechanism**: Earn points for each successful action, with multipliers for flawless gameplay.
+- **Projectile Management**: Use the correct tool for projectiles to avoid point deductions.
+- **Bomb Threat**: Dodge bombs to maintain your health; shooting them results in an explosive setback.
+- **Tutorial System**: In-depth tutorials guide players on using controls and understanding game mechanics.
 
 ![Gameplay1](https://github.com/szejkerek/PirateRushVR/assets/69083596/8c5175ea-ef9d-4b9e-bcde-6a9cd17dd5b3)
 
@@ -48,11 +58,21 @@ You have to youse your sabbre to slice thro all fruits, each actrion gives you p
 
 ![Barrel](https://github.com/szejkerek/PirateRushVR/assets/69083596/19993b1b-a4e0-4bb9-aa1f-77b32b41b545)
 
+Beware of bombs! If you shoot a bomb, it explodes and reduces your health. The game incorporates informative tutorials, ensuring that players are well-acquainted with the controls and mechanics. Your performance is reflected in the leaderboard, so aim for the top spot by showcasing your skills and strategic prowess.
+
 ![Bomb](https://github.com/szejkerek/PirateRushVR/assets/69083596/21184acf-da0e-4785-8d7d-218ff0a0ed46)
+
+Upon starting the game, add your chosen nickname to compete for a spot on the leaderboard. Showcase your gaming prowess and climb to the top by achieving the highest score. 
 
 ![Leaderboard](https://github.com/szejkerek/PirateRushVR/assets/69083596/42ed9683-129b-4d45-944a-d1adb10b42fc)
 
 ![Tutorial](https://github.com/szejkerek/PirateRushVR/assets/69083596/cea52970-f84b-4edd-8bbe-89e54a332ccf)
+
+Customize your experience with various options:
+
+- **Volume Control**: Adjust the game's audio to your preference.
+- **Turn Type**: Choose between different turning mechanisms for a personalized VR experience.
+- **Comfort Mode**: Enable comfort mode to reduce VR-induced nausea.
 
 ![Options](https://github.com/szejkerek/PirateRushVR/assets/69083596/fb4c4fc4-2322-4910-9b2f-d1f6f1cb807d)
 
@@ -65,6 +85,20 @@ You have to youse your sabbre to slice thro all fruits, each actrion gives you p
 ```
 adb version
 ```
+- Configure Oculus Quest 2 Headset and perform basic user account setup.
+- Download the Oculus app for both desktop and mobile devices.
+- Enable developer mode in the mobile app.
+- Allow installation from unknown sources on the desktop.
+- Physically connect the headset to the computer using a USB-C cable for data transfer.
+- Check connected devices using the command:
+```
+  adb devices -l
+```
+- Install the application on the device using the command:
+```
+adb install -r <file_location.apk>
+```
+- After successful installation, safely disconnect the headset from the computer.
 
 ## License
 
