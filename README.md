@@ -28,6 +28,9 @@ This is an open-source engineering project that's currently in progress. Contrib
 
 ## About
 
+Gameplay
+![Gameplay1](https://github.com/szejkerek/PirateRushVR/assets/69083596/8c5175ea-ef9d-4b9e-bcde-6a9cd17dd5b3)
+
 Tutorial
 ![Tutorial](https://github.com/szejkerek/PirateRushVR/assets/69083596/cea52970-f84b-4edd-8bbe-89e54a332ccf)
 
