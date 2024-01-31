@@ -31,6 +31,7 @@ This is an open-source engineering project that's currently in progress. Contrib
 Gameplay
 ![Gameplay1](https://github.com/szejkerek/PirateRushVR/assets/69083596/8c5175ea-ef9d-4b9e-bcde-6a9cd17dd5b3)
 ![Gameplay2](https://github.com/szejkerek/PirateRushVR/assets/69083596/8e96835d-8381-421b-aec9-d850dcc2a09e)
+![Barrel](https://github.com/szejkerek/PirateRushVR/assets/69083596/19993b1b-a4e0-4bb9-aa1f-77b32b41b545)
 
 Tutorial
 ![Tutorial](https://github.com/szejkerek/PirateRushVR/assets/69083596/cea52970-f84b-4edd-8bbe-89e54a332ccf)
