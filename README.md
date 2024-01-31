@@ -10,6 +10,7 @@
   <img alt="License" src="https://img.shields.io/github/license/szejkerek/PirateRushVR?logo=github">
   </a>
   <a>
+    <a href="https://github.com/szejkerek/PirateRushVR/commits/main/">
     <img alt="Last Commit" src="https://img.shields.io/github/last-commit/szejkerek/PirateRushVR?logo=Mapbox&color=orange">
   </a>
   <a>
