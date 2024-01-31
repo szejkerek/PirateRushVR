@@ -12,11 +12,8 @@
   <a>
     <img alt="Repo Size" src="https://img.shields.io/github/repo-size/szejkerek/EngineeringThesis?logo=VirtualBox">
   </a>
-  <a>
+  <a href="https://github.com/szejkerek/EngineeringThesis/releases">
     <img alt="Downloads" src="https://img.shields.io/github/downloads/szejkerek/EngineeringThesis/total?color=brightgreen">
-  </a>
-  <a>
-    <img alt="Last Release" src="https://img.shields.io/github/v/release/szejkerek/EngineeringThesis?include_prereleases&logo=Dropbox&color=yellow">
   </a>
   <a>
     <img alt="GitHub stars" src="https://img.shields.io/github/stars/szejkerek/EngineeringThesis?branch=main&label=Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat">
