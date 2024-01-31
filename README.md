@@ -31,6 +31,10 @@ This is an open-source engineering project that's currently in progress. Contrib
 Tutorial
 ![Tutorial](https://github.com/szejkerek/PirateRushVR/assets/69083596/cea52970-f84b-4edd-8bbe-89e54a332ccf)
 
+Options
+![Options](https://github.com/szejkerek/PirateRushVR/assets/69083596/fb4c4fc4-2322-4910-9b2f-d1f6f1cb807d)
+
+
 
 ## License
 
