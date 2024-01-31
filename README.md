@@ -65,7 +65,7 @@ Upon starting the game, add your chosen nickname to compete for a spot on the le
 - **Turn Type**: Choose between different turning mechanisms for a personalized VR experience.
 - **Comfort Mode**: Enable comfort mode to reduce VR-induced nausea.
 
-![Gameplay1](https://github.com/szejkerek/PirateRushVR/assets/69083596/8c5175ea-ef9d-4b9e-bcde-6a9cd17dd5b3)
+![Gameplay1](https://github.com/szejkerek/PirateRushVR/assets/69083596/8c5175ea-ef9d-4b9e-bcde-6a9cd17dd5b3 "Gameplay gif")
 
 ![Gameplay2](https://github.com/szejkerek/PirateRushVR/assets/69083596/8e96835d-8381-421b-aec9-d850dcc2a09e)
 
