@@ -1,38 +1,13 @@
+# Pirate Rush VR
+
 [![Made With Unity](https://img.shields.io/badge/made%20with-Unity-57b9d3.svg?logo=Unity)](https://unity.com/)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/szejkerek/PirateRushVR/UnityCI.yml)](https://github.com/szejkerek/PirateRushVR/actions)
-
-
-<p align="center"><h1>Pirate Rush VR</h1></p>
-<p align="center">
-
-  <a>
-    <a href="https://unity.com/">
-    <img alt="Made With Unity" src="https://img.shields.io/badge/made%20with-Unity-57b9d3.svg?logo=Unity">
-  </a>
-  <a>
-    <a href="https://github.com/szejkerek/PirateRushVR/actions">
-    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/szejkerek/PirateRushVR/UnityCI.yml">
-  </a> 
-  <a>
-  <img alt="License" src="https://img.shields.io/github/license/szejkerek/PirateRushVR?logo=github">
-  </a>
-  <a>
-    <a href="https://github.com/szejkerek/PirateRushVR/commits/main/">
-    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/szejkerek/PirateRushVR?logo=Mapbox&color=orange">
-  </a>
-  <a>
-    <img alt="Repo Size" src="https://img.shields.io/github/repo-size/szejkerek/PirateRushVR?logo=VirtualBox">
-  </a>
-  <a href="https://github.com/szejkerek/PirateRushVR/releases">
-    <img alt="GitHub Release" src="https://img.shields.io/github/v/release/szejkerek/PirateRushVR">
-  </a>
-  <a>
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/szejkerek/PirateRushVR?branch=main&label=Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat">
-  </a>
-  <a>
-    <img alt="GitHub user stars" src="https://img.shields.io/github/stars/szejkerek?affiliations=OWNER&branch=main&label=User%20Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat">
-  </a>
-</p>
+[![License](https://img.shields.io/github/license/szejkerek/PirateRushVR?logo=github)]()
+[![Last Commit](https://img.shields.io/github/last-commit/szejkerek/PirateRushVR?logo=Mapbox&color=orange)](https://github.com/szejkerek/PirateRushVR/commits/main/)
+[![Repo Size](https://img.shields.io/github/repo-size/szejkerek/PirateRushVR?logo=VirtualBox)]()
+[![GitHub Release](https://img.shields.io/github/v/release/szejkerek/PirateRushVR)](https://github.com/szejkerek/PirateRushVR/releases)
+[![GitHub stars](https://img.shields.io/github/stars/szejkerek/PirateRushVR?branch=main&label=Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat)](https://github.com/szejkerek)
+[![GitHub user stars](https://img.shields.io/github/stars/szejkerek?affiliations=OWNER&branch=main&label=User%20Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat)](https://github.com/szejkerek)
 
 ## Introduction
 
