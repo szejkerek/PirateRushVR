@@ -99,7 +99,7 @@ adb version
 ```
   adb devices -l
 ```
-- Install the application on the device using the command:
+- [Download](https://github.com/szejkerek/PirateRushVR/releases) and install the application on the device using the command:
 ```
 adb install -r <file_location.apk>
 ```
