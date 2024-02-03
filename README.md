@@ -1,3 +1,7 @@
+[![Made With Unity](https://img.shields.io/badge/made%20with-Unity-57b9d3.svg?logo=Unity)](https://unity.com/)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/szejkerek/PirateRushVR/UnityCI.yml)](https://github.com/szejkerek/PirateRushVR/actions)
+
+
 <p align="center"><h1>Pirate Rush VR</h1></p>
 <p align="center">
 
