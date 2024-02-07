@@ -12,9 +12,11 @@
 ## Introduction
 
 ### Are you ready to become the ultimate VR pirate?
-[Thesis](RAu-INZ-295650-2024.pdf)
+
+[Final thesis document](RAu-INZ-295650-2024.pdf)
 
 [![YTLINK](https://github.com/szejkerek/PirateRushVR/assets/69083596/2b427374-4505-431a-85f3-ee924fa180d9)](https://youtu.be/OX5DuAdb4XI?si=0gu1AhMoBGAOVXAX)
+
 Welcome to the VR game project, an engineering project designed for Oculus Quest 2. In this immersive experience, you take on the role of a pirate with the primary objective of destroying fruits using your saber and barrels with your trusty flintlock pistol. Beware of bombs and skillfully dodge them to stay in the game!
 
 ## Table of Contents  
