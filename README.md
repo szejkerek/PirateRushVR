@@ -93,3 +93,132 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 
 If you have any questions or need further information, feel free to contact me at [bartekk.gordon@gmail.com](mailto:bartekk.gordon@gmail.com).
+
+## Code Highlights
+
+### Perfect Slice Detection via Signed Mesh Volume
+
+```csharp
+// Assets/__Scripts/Player/Weapons/Sabre.cs
+
+private float CalculateVolume(MeshCollider collider)
+{
+    Mesh mesh = collider.sharedMesh;
+    if (mesh != null)
+    {
+        Vector3[] vertices = mesh.vertices;
+        int[] triangles = mesh.triangles;
+
+        float volume = 0f;
+        for (int i = 0; i < triangles.Length; i += 3)
+        {
+            Vector3 v1 = vertices[triangles[i]];
+            Vector3 v2 = vertices[triangles[i + 1]];
+            Vector3 v3 = vertices[triangles[i + 2]];
+
+            volume += SignedVolumeOfTriangle(v1, v2, v3);
+        }
+        return Mathf.Abs(volume);
+    }
+  
+    return 0f;
+}
+
+private float SignedVolumeOfTriangle(Vector3 p1, Vector3 p2, Vector3 p3)
+{
+    return Vector3.Dot(Vector3.Cross(p1, p2), p3) / 6f;
+}
+
+private bool IsSlicePerfect(GameObject upperHull, GameObject lowerHull)
+{
+    float upperVolume = CalculateVolume(upperHull.GetComponent<MeshCollider>());
+    float lowerVolume = CalculateVolume(lowerHull.GetComponent<MeshCollider>());
+    float totalVolume = upperVolume + lowerVolume;
+
+    float upperRatio = upperVolume / totalVolume;
+    float lowerRatio = lowerVolume / totalVolume;
+
+    return IsWithinPerfectSlice(upperRatio) && IsWithinPerfectSlice(lowerRatio);
+}
+
+bool IsWithinPerfectSlice(float value)
+{
+    float lowerBound = 0.5f - perfectSliceTolerance;
+    float upperBound = 0.5f + perfectSliceTolerance;
+    return (value >= lowerBound && value <= upperBound);
+}
+```
+
+After EzySlice splits a projectile into two mesh halves, the game must judge whether the player cut it near the center. Rather than using bounding-box approximations, `CalculateVolume` applies the divergence theorem: each triangle of the mesh is paired with the origin to form a signed tetrahedron, whose volume is `(v1 × v2) · v3 / 6`. Summing all tetrahedra and taking the absolute value gives the exact mesh volume. `IsSlicePerfect` then checks that neither hull deviates too far from a 50/50 volume split, with `perfectSliceTolerance` scaling with difficulty.
+
+---
+
+### Ballistic Trajectory Calculation
+
+```csharp
+// Assets/__Scripts/Cannons/CannonShooting.cs
+
+public Vector3 CalculateDirection(Vector3 target, float gravity = -9.81f)
+{
+    float height = Mathf.Max(settings.Height.GetValueBetween(), target.y);
+
+    float displacementY = target.y - shootingPoint.position.y;
+    Vector3 displacementXZ = new Vector3(target.x - shootingPoint.position.x, 0, target.z - shootingPoint.position.z);
+
+    Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * height);
+    Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * height / gravity) + Mathf.Sqrt(2 * (displacementY - height) / gravity));
+
+    return velocityY + velocityXZ;
+}
+```
+
+Cannons aim at the player using full projectile-motion kinematics rather than simple raycasting. Given a configurable apex height `h`, the vertical launch speed is derived from `v_y = sqrt(-2*g*h)`. The total flight time is `sqrt(-2*h/g) + sqrt(2*(dy-h)/g)` — time to rise to apex plus time to fall to the target's altitude. Dividing the XZ displacement by that time gives the horizontal velocity component. Each shot also samples a random offset around the player position (`CalculateRandomTargetPosition`) and a random gravity value from an `Interval<float>`, producing varied arc shapes per difficulty level.
+
+---
+
+### Tick-based Command Queue for Projectile Combos
+
+```csharp
+// Assets/__Scripts/Projectiles/Combo/ComboController.cs
+
+public void UpdateOnTick()
+{
+    if (isPaused())
+        return;
+
+    if (queuedBehaviors.Count != 0)
+    {
+        queuedBehaviors.Dequeue().Execute();
+    }
+    else
+    {
+        float comboChance = Random.Range(0f, 1f);
+        if (comboChance <= currentDifficulty.GlobalComboChance)
+        {
+            AddGlobalCombo();
+        }
+        else
+        {
+            AddLocalCombo();
+        }
+    }
+}
+
+private void AddGlobalCombo()
+{
+    ComboDatabase comboDatabase = CannonsManager.Instance.ComboDatabases.SelectRandomElement();
+    foreach (var combo in comboDatabase.combos)
+    {
+        queuedBehaviors.Enqueue(comboItemFactory.CreateSpawn(combo.Projectile));
+        queuedBehaviors.Enqueue(comboItemFactory.CreateWait(combo.Wait));
+    }
+}
+
+private void AddLocalCombo()
+{
+    EnqueueRandomProjectile();
+    EnqueueRandomWaits(currentDifficulty.CountOf25msWaits);
+}
+```
+
+Each cannon runs a `ComboController` that is driven by a `TickEngine` (32 Hz by default) rather than Unity's `Update` loop. On every tick it dequeues one `ICannonBehavior` command — either a `CannonSpawnBehavior` (fires a projectile) or a `CannonWaitBehavior` (blocks the queue for N ticks). When the queue empties, a probability roll decides between a *global* combo (a hand-authored sequence loaded from a `ComboDatabase` ScriptableObject) and a *local* combo (stochastically selected projectile type + random wait). `ComboItemFactory` translates human-readable wait durations (25 ms, 50 ms, ...) into tick counts at the current tick rate, keeping timing correct regardless of frame rate.
